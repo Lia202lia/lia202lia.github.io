@@ -1,156 +1,66 @@
 /*--------------------------------------------------------------
-# Home Page Specific Styles
+# General
 --------------------------------------------------------------*/
-
 :root {
-  /* Reuse same variables as main.css */
-  --ivory: #FAF8F5;
-  --parchment: #F5F1E8;
-  --warm-gray: #E8E4DD;
-  --charcoal: #2C3E50;
-  --navy: #1A365D;
-  --burgundy: #6A1B1B;
-  --dark-burgundy: #4A0F0F;
-  --accent-gold: #C5A572;
-  --dark-gold: #9C7C4A;
-  --academic-blue: #2D3748;
-  --slate: #4A5568;
+  /* --primary-colors --*/
+  --white-ish:#F9F7F7;
+  --light-gray: #F5F5F5;
+  --blue-light:#EF5350;
+  --blue-medium: #D32F2F;
+  --blue-dark:rgb(183, 28, 28);
+  --dark-b: #900000;
+  --gray-black: #424242;
+  --darker-b:#212121;
+  /* https://colorhunt.co/palette/f9f7f7dbe2ef3f72af112d4e */
 }
-
-/* Typography for home page */
-h4, h5, p, ul>li, .btn-blue {
-  font-family: 'Crimson Pro', serif;
+h4,h5, p, ul>li, .btn-blue{
+    font-family: 'Merriweather', serif;
 }
-
-/* Profile image styling */
-.rounded-circle {
-  border: 3px solid var(--accent-gold) !important;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+/* body > div > ol:nth-child(7) > li > button > a */
+.btn-blue{
+    color: var(--white-ish) !important;
+    background-color: var(--blue-light);
+border: 2px solid var(--blue-medium);
 }
-
-.rounded-circle:hover {
-  transform: scale(1.02);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+.btn-blue > a{
+    color: var(--white-ish);
+    /* background-color: var(--blue-medium); */
+    border-color: var(--light-gray);
 }
-
-/* Name styling */
-.text-center.mb-0 {
-  color: var(--navy) !important;
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem !important;
-  font-weight: 700;
-  margin-top: 15px;
-  position: relative;
-  display: inline-block;
+button:hover{
+    font-size:1.0001rem ;
+    background-color: var(--blue-medium);
+    /* color: var(--white-ish) !important; */
 }
-
-.text-center.mb-0::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+button > a {
+    color: var(--white-ish) !important;
 }
-
-/* Social icons list */
-.social-icons {
-  list-style-type: none;
-  padding-left: 0;
+button > a:hover{
+    color: var(--white-ish) !important;
+    text-decoration: none;
 }
-
-.social-icons li {
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(197, 165, 114, 0.2);
-  transition: all 0.3s ease;
-}
-
-.social-icons li:last-child {
-  border-bottom: none;
-}
-
-.social-icons li:hover {
-  background: rgba(197, 165, 114, 0.05);
-  padding-left: 10px;
-  border-bottom: 1px solid var(--accent-gold);
-}
-
-.social-icons a {
-  color: var(--slate);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-}
-
-.social-icons a:hover {
-  color: var(--burgundy);
-}
-
-.fa-fw {
-  color: var(--accent-gold);
-  min-width: 25px;
-  font-size: 1.1em;
-}
-
-/* Research interests styling */
-p.text-justify span.font-weight-bold {
-  color: var(--navy);
-  font-family: 'Playfair Display', serif;
-}
-
-/* News list styling */
-.ref-journal {
-  font-weight: 600;
-  font-style: italic;
-  color: var(--burgundy);
-  font-family: 'Playfair Display', serif;
-}
-
-ul small li {
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 1px dashed rgba(197, 165, 114, 0.3);
-  transition: all 0.3s ease;
-}
-
-ul small li:hover {
-  background: rgba(245, 241, 232, 0.3);
-  padding-left: 10px;
-}
-
-/* Buttons container */
-.text-center .btn {
-  margin: 5px;
-  min-width: 200px;
-}
-
-/* Bio section */
-p.text-justify {
-  line-height: 1.8;
-  text-align: justify;
-  font-size: 1.05em;
-}
-
-/* CV buttons section */
-.mb-5 .btn {
-  min-width: 180px;
-  margin: 5px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .social-icons li {
-    padding: 6px 0;
+a {
+    color:var(--blue-light);
   }
-  
-  .rounded-circle {
-    width: 70% !important;
+  a:hover {
+    color: var(--blue-medium) ;
+    text-decoration: none !important;
+    /* font-size:1.3rem !important; */
   }
-  
-  .text-center.mb-0 {
-    font-size: 1.75rem !important;
+ 
+  .fa-fw{
+    color: var(--blue-medium) ;
   }
+  .social-icons {
+    list-style-type: none;
+  }
+ 
+.ref-journal{
+    font-weight: 600;
+    font-style: italic;
+    font-family: 'Merriweather', serif;
+    color:var(--blue-medium);
 }
+/* .pl-5{
+padding-left: 100px !important;
+} */
