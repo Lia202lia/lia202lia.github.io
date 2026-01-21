@@ -3,64 +3,73 @@
 --------------------------------------------------------------*/
 :root {
   /* --primary-colors --*/
-  --white-ish:#F9F7F7;
-  --light-gray: #F5F5F5;
-  --blue-light:#EF5350;
-  --blue-medium: #D32F2F;
-  --blue-dark:rgb(183, 28, 28);
-  --dark-b: #900000;
-  --gray-black: #424242;
-  --darker-b:#212121;
-  /* https://colorhunt.co/palette/f9f7f7dbe2ef3f72af112d4e */
+  --white-ish: #F8F5F0;
+  --light-gray: #E4E0D8;
+  --blue-light: #B89B82;      /* warm accent for buttons */
+  --blue-medium: #1E3A5F;     /* academic navy */
+  --blue-dark: #0B1424;
+  --dark-b: #02101F;
+  --gray-black: #2F3B4C;
+  --darker-b: #121826;
+  --accent-gold: #D4AF37;
 }
-h4,h5, p, ul>li, .btn-blue{
-    font-family: 'Merriweather', serif;
+
+h4, h5, p, ul > li, .btn-blue {
+  font-family: 'Ubuntu Sans', sans-serif;
 }
-/* body > div > ol:nth-child(7) > li > button > a */
-.btn-blue{
-    color: var(--white-ish) !important;
-    background-color: var(--blue-light);
-border: 2px solid var(--blue-medium);
+
+/* buttons */
+.btn-blue {
+  color: var(--white-ish) !important;
+  background: linear-gradient(135deg, var(--blue-medium), var(--blue-dark));
+  border: 1px solid rgba(212, 175, 55, 0.8);
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
 }
-.btn-blue > a{
-    color: var(--white-ish);
-    /* background-color: var(--blue-medium); */
-    border-color: var(--light-gray);
+
+.btn-blue > a {
+  color: var(--white-ish);
+  border-color: transparent;
 }
-button:hover{
-    font-size:1.0001rem ;
-    background-color: var(--blue-medium);
-    /* color: var(--white-ish) !important; */
+
+button:hover {
+  font-size: 1.0001rem;
+  background: linear-gradient(135deg, var(--accent-gold), #F2D57A);
+  color: var(--dark-b) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
+
 button > a {
-    color: var(--white-ish) !important;
+  color: var(--white-ish) !important;
 }
-button > a:hover{
-    color: var(--white-ish) !important;
-    text-decoration: none;
+
+button > a:hover {
+  color: var(--dark-b) !important;
+  text-decoration: none;
 }
+
 a {
-    color:var(--blue-light);
-  }
-  a:hover {
-    color: var(--blue-medium) ;
-    text-decoration: none !important;
-    /* font-size:1.3rem !important; */
-  }
- 
-  .fa-fw{
-    color: var(--blue-medium) ;
-  }
-  .social-icons {
-    list-style-type: none;
-  }
- 
-.ref-journal{
-    font-weight: 600;
-    font-style: italic;
-    font-family: 'Merriweather', serif;
-    color:var(--blue-medium);
+  color: var(--blue-medium);
 }
-/* .pl-5{
-padding-left: 100px !important;
-} */
+
+a:hover {
+  color: var(--accent-gold);
+  text-decoration: none !important;
+}
+
+.fa-fw {
+  color: var(--accent-gold);
+}
+
+.social-icons {
+  list-style-type: none;
+}
+
+/* news / journals highlight */
+.ref-journal {
+  font-weight: 600;
+  font-style: italic;
+  font-family: 'Ubuntu Sans', sans-serif;
+  color: var(--blue-medium);
+}
