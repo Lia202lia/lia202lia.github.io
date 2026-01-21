@@ -43,35 +43,27 @@
     <div id="page-container">
         <header-component></header-component>
 
-        <!-- Hero / cover image using header.jpeg -->
-        <section class="hero-cover d-flex align-items-center"
-                 style="background-image:
-                        linear-gradient(to bottom, rgba(2, 8, 23, 0.80), rgba(2, 8, 23, 0.88)),
-                        url('/assets/img/header.jpeg');">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-md-10">
-                        <h1 class="hero-title mb-3">
-                            Your Name
-                        </h1>
-                        <p class="hero-subtitle mb-3">
-                            Graduate Researcher in [Field] · [University / Department]
-                        </p>
-                        <p class="hero-text mb-0">
-                            Researching [focus area 1], [focus area 2], and [focus area 3] with applications in [application domain].
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Simple header banner (no container around name/contact) -->
+        <div style="
+            width: 100%;
+            height: 220px;
+            background-image:
+                linear-gradient(to bottom, rgba(2, 8, 23, 0.60), rgba(2, 8, 23, 0.80)),
+                url('/assets/img/header.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.35);">
+        </div>
 
+        <!-- original container / columns start here -->
         <div class="container mt-4" id="content-wrap">
             <div class="mb-4"></div>
             <div class="row">
-                <!-- Left column: profile card -->
+                <!-- Left column: profile card (same structure) -->
                 <div class="col-sm-4">
                     <div class="">
-                        <!-- Profile picture using profile.jpg -->
+                        <!-- Profile image -->
                         <img class="rounded-circle mx-auto d-block mb-1"
                              style="border: solid rgba(199, 158, 59, 0.85) 2px;
                                     width:60%; max-width: 250px;
@@ -79,10 +71,9 @@
                              src="/assets/img/profile.jpg" alt="Portrait of Your Name">
 
                         <div class="card-body"
-                             style="background: rgba(255,255,255,0.72);
+                             style="background: rgba(255,255,255,0.9);
                                     border-radius: 18px;
-                                    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-                                    backdrop-filter: blur(6px);">
+                                    box-shadow: 0 10px 25px rgba(0,0,0,0.12);">
 
                             <h4 class="text-center mb-0"
                                 style="color: var(--blue-dark);
@@ -166,7 +157,7 @@
                     </div>
                 </div>
 
-                <!-- Right column: main content -->
+                <!-- Right column: content (original sections kept) -->
                 <div class="col-sm-8">
                     <div class="">
                         <h4 class="font-weight-bold">About Me</h4>
