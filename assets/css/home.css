@@ -1,110 +1,88 @@
 /*--------------------------------------------------------------
-# Home Page - Academic Elegance
+# Home Page Specific Styles
 --------------------------------------------------------------*/
 
 :root {
-  /* Inherit from main.css */
+  /* Reuse same variables as main.css */
+  --ivory: #FAF8F5;
+  --parchment: #F5F1E8;
+  --warm-gray: #E8E4DD;
+  --charcoal: #2C3E50;
+  --navy: #1A365D;
+  --burgundy: #6A1B1B;
+  --dark-burgundy: #4A0F0F;
+  --accent-gold: #C5A572;
+  --dark-gold: #9C7C4A;
+  --academic-blue: #2D3748;
+  --slate: #4A5568;
 }
 
-/* Profile Section */
-.profile-container {
-  background: white;
-  border-radius: 12px;
-  padding: 2.5rem;
-  box-shadow: var(--elevated-shadow);
-  border: 1px solid rgba(212, 175, 55, 0.15);
-  position: relative;
-  overflow: hidden;
+/* Typography for home page */
+h4, h5, p, ul>li, .btn-blue {
+  font-family: 'Crimson Pro', serif;
 }
 
-.profile-container:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 150px;
-  height: 150px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
-  z-index: 0;
+/* Profile image styling */
+.rounded-circle {
+  border: 3px solid var(--accent-gold) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-.profile-image {
-  width: 60%;
-  max-width: 250px;
-  border: 3px solid var(--accent-gold);
-  box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
-  transition: var(--transition-smooth);
-}
-
-.profile-image:hover {
+.rounded-circle:hover {
   transform: scale(1.02);
-  box-shadow: 0 0 35px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-.profile-name {
-  color: var(--oxford-blue);
-  font-size: 2.2rem;
+/* Name styling */
+.text-center.mb-0 {
+  color: var(--navy) !important;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem !important;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-top: 15px;
   position: relative;
   display: inline-block;
 }
 
-.profile-name:after {
+.text-center.mb-0::after {
   content: '';
   position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent-gold), transparent);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
 }
 
-.profile-title {
-  color: var(--slate-gray);
-  font-style: italic;
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(108, 122, 137, 0.2);
-}
-
-/* Social Links */
+/* Social icons list */
 .social-icons {
-  list-style: none;
+  list-style-type: none;
   padding-left: 0;
 }
 
 .social-icons li {
-  margin-bottom: 1rem;
-  position: relative;
-  padding-left: 2.5rem;
-  transition: var(--transition-smooth);
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(197, 165, 114, 0.2);
+  transition: all 0.3s ease;
 }
 
-.social-icons li:before {
-  content: '▸';
-  position: absolute;
-  left: 0;
-  color: var(--accent-gold);
-  font-size: 1.2rem;
-  transition: var(--transition-smooth);
+.social-icons li:last-child {
+  border-bottom: none;
 }
 
 .social-icons li:hover {
-  transform: translateX(5px);
-}
-
-.social-icons li:hover:before {
-  color: var(--burgundy);
-  transform: scale(1.2);
+  background: rgba(197, 165, 114, 0.05);
+  padding-left: 10px;
+  border-bottom: 1px solid var(--accent-gold);
 }
 
 .social-icons a {
-  color: var(--velvet-navy);
-  font-weight: 500;
-  display: inline-block;
-  padding: 0.3rem 0;
+  color: var(--slate);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 
 .social-icons a:hover {
@@ -112,152 +90,67 @@
 }
 
 .fa-fw {
-  color: var(--burgundy);
-  width: 1.8rem;
-  font-size: 1.1rem;
-  transition: var(--transition-smooth);
-}
-
-.social-icons a:hover .fa-fw {
   color: var(--accent-gold);
-  transform: scale(1.1);
+  min-width: 25px;
+  font-size: 1.1em;
 }
 
-/* Content Sections */
-.content-section {
-  margin-bottom: 3rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+/* Research interests styling */
+p.text-justify span.font-weight-bold {
+  color: var(--navy);
+  font-family: 'Playfair Display', serif;
 }
 
-.content-section:last-child {
-  border-bottom: none;
-}
-
-.content-section p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-  text-align: justify;
-}
-
-/* Research Interests */
-.research-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  margin-top: 1rem;
-}
-
-.research-tag {
-  background: rgba(212, 175, 55, 0.1);
-  color: var(--velvet-navy);
-  padding: 0.5rem 1.2rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  transition: var(--transition-smooth);
-}
-
-.research-tag:hover {
-  background: rgba(212, 175, 55, 0.2);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(212, 175, 55, 0.15);
-}
-
-/* News Items */
+/* News list styling */
 .ref-journal {
   font-weight: 600;
   font-style: italic;
-  font-family: 'Merriweather', 'Georgia', serif;
   color: var(--burgundy);
-  background: rgba(139, 0, 0, 0.05);
-  padding: 0.2rem 0.5rem;
-  border-radius: 3px;
-  border-left: 3px solid var(--burgundy);
+  font-family: 'Playfair Display', serif;
 }
 
-ul:not(.social-icons) li {
-  margin-bottom: 1.2rem;
-  padding-left: 1.5rem;
-  position: relative;
+ul small li {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed rgba(197, 165, 114, 0.3);
+  transition: all 0.3s ease;
 }
 
-ul:not(.social-icons) li:before {
-  content: '•';
-  color: var(--accent-gold);
-  font-size: 1.5rem;
-  position: absolute;
-  left: 0;
-  top: -0.2rem;
+ul small li:hover {
+  background: rgba(245, 241, 232, 0.3);
+  padding-left: 10px;
 }
 
-/* Buttons in Home */
-.btn-blue {
-  background: linear-gradient(135deg, var(--burgundy) 0%, #6B0019 100%);
-  color: white !important;
-  border: none;
-  padding: 0.8rem 1.8rem;
-  border-radius: 4px;
-  font-weight: 600;
-  transition: var(--transition-smooth);
-  box-shadow: 0 4px 15px rgba(139, 0, 0, 0.2);
-  margin: 0.5rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+/* Buttons container */
+.text-center .btn {
+  margin: 5px;
+  min-width: 200px;
 }
 
-.btn-blue:hover {
-  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--bronze) 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
-  color: white !important;
+/* Bio section */
+p.text-justify {
+  line-height: 1.8;
+  text-align: justify;
+  font-size: 1.05em;
 }
 
-.btn-blue i {
-  margin-left: 0.8rem;
-  transition: var(--transition-smooth);
+/* CV buttons section */
+.mb-5 .btn {
+  min-width: 180px;
+  margin: 5px;
 }
 
-.btn-blue:hover i {
-  transform: translateX(3px);
-}
-
-/* CV Section */
-.cv-section {
-  background: linear-gradient(135deg, rgba(245, 240, 230, 0.5) 0%, rgba(212, 175, 55, 0.05) 100%);
-  border-radius: 8px;
-  padding: 2rem;
-  border: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-/* Responsive Design */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .profile-container {
-    padding: 1.5rem;
-  }
-  
-  .profile-image {
-    width: 70%;
-    max-width: 200px;
-  }
-  
-  .profile-name {
-    font-size: 1.8rem;
-  }
-  
   .social-icons li {
-    padding-left: 2rem;
+    padding: 6px 0;
   }
   
-  .btn-blue {
-    width: 100%;
-    margin: 0.5rem 0;
+  .rounded-circle {
+    width: 70% !important;
   }
   
-  .research-tags {
-    justify-content: center;
+  .text-center.mb-0 {
+    font-size: 1.75rem !important;
   }
 }
