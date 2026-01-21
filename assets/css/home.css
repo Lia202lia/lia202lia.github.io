@@ -64,3 +64,20 @@ a {
 /* .pl-5{
 padding-left: 100px !important;
 } */
+
+/* Hero cover image styles */
+.hero-section {
+  width: 100%;
+  height: 400px; /* Adjustable for luxury feel */
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Enhanced shadow for depth */
+  margin-bottom: 2rem;
+}
+
+.hero-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures elegant fit without distortion */
+  filter: brightness(0.95); /* Subtle lighting adjustment for catchy, professional look */
+}
