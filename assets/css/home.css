@@ -1,83 +1,83 @@
 /*--------------------------------------------------------------
-# General
+# Home / profile-specific styles
 --------------------------------------------------------------*/
 :root {
-  /* --primary-colors --*/
-  --white-ish:#FAFAFA;
-  --light-gray: #F5F5F5;
-  --blue-light:#C8102E;
-  --blue-medium: #A51C30;
-  --blue-dark:rgb(132, 29, 38);
-  --dark-b: #5E0F18;
-  --gray-black: #333333;
-  --darker-b:#1A1A1A;
-  /* Inspired by Ivy League palettes */
+  --white-ish: #F8F5F0;
+  --light-gray: #E5E0D6;
+  --blue-light: #9C8C7A;
+  --blue-medium: #1E3A5F;
+  --blue-dark: #0B1424;
+  --dark-b: #020B18;
+  --gray-black: #2F3847;
+  --darker-b: #111726;
+  --accent-gold: #C79E3B;
 }
-h4,h5, p, ul>li, .btn-blue{
-    font-family: 'Inter', sans-serif;
+
+/* Typography */
+h4,
+h5,
+p,
+ul > li,
+.btn-blue {
+  font-family: 'Ubuntu Sans', sans-serif;
 }
-/* body > div > ol:nth-child(7) > li > button > a */
-.btn-blue{
-    color: var(--white-ish) !important;
-    background-color: var(--blue-light);
-border: 2px solid var(--blue-medium);
+
+/* Primary action buttons */
+.btn-blue {
+  color: var(--white-ish) !important;
+  background: linear-gradient(135deg, var(--blue-medium), var(--blue-dark));
+  border: 1px solid rgba(199, 158, 59, 0.85);
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
 }
-.btn-blue > a{
-    color: var(--white-ish);
-    /* background-color: var(--blue-medium); */
-    border-color: var(--light-gray);
+
+.btn-blue > a {
+  color: var(--white-ish);
+  border-color: transparent;
 }
-button:hover{
-    font-size:1.0001rem ;
-    background-color: var(--blue-medium);
-    /* color: var(--white-ish) !important; */
+
+button:hover {
+  font-size: 1.0001rem;
+  background: linear-gradient(135deg, var(--accent-gold), #F0D27A);
+  color: var(--dark-b) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
 }
+
 button > a {
-    color: var(--white-ish) !important;
+  color: var(--white-ish) !important;
 }
-button > a:hover{
-    color: var(--white-ish) !important;
-    text-decoration: none;
+
+button > a:hover {
+  color: var(--dark-b) !important;
+  text-decoration: none;
 }
+
+/* Links */
 a {
-    color:var(--blue-light);
-  }
-  a:hover {
-    color: var(--blue-medium) ;
-    text-decoration: none !important;
-    /* font-size:1.3rem !important; */
-  }
- 
-  .fa-fw{
-    color: var(--blue-medium) ;
-  }
-  .social-icons {
-    list-style-type: none;
-  }
- 
-.ref-journal{
-    font-weight: 600;
-    font-style: italic;
-    font-family: 'Inter', sans-serif;
-    color:var(--blue-medium);
-}
-/* .pl-5{
-padding-left: 100px !important;
-} */
-
-/* Hero cover image styles */
-.hero-section {
-  width: 100%;
-  height: 300px; /* Smaller height for compact academic feel */
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Enhanced shadow for depth */
-  margin-bottom: 2rem;
+  color: var(--blue-medium);
 }
 
-.hero-section img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures elegant fit without distortion */
-  filter: brightness(0.95); /* Subtle lighting adjustment for catchy, professional look */
+a:hover {
+  color: var(--accent-gold);
+  text-decoration: none !important;
+}
+
+/* Icons */
+.fa-fw {
+  color: var(--accent-gold);
+}
+
+.social-icons {
+  list-style-type: none;
+}
+
+/* Highlight for journal / news labels */
+.ref-journal {
+  font-weight: 600;
+  font-style: italic;
+  font-family: 'Ubuntu Sans', sans-serif;
+  color: var(--blue-medium);
 }
