@@ -1,174 +1,262 @@
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-lg-4 col-md-5">
-            <div class="profile-container">
-                <img class="rounded-circle profile-img mx-auto d-block mb-4" 
-                     src="/assets/img/Lemos_avatar.png" alt="Your Name">
-                
-                <h2 class="profile-name text-center">Your Name</h2>
-                <p class="profile-title text-center mb-4">Position at University</p>
-                
-                <div class="text-center mb-4 button-group">
-                    <button class="btn btn-academic btn-sm mr-2">
-                        <i class="fa-solid fa-download mr-2"></i>Download CV
-                    </button>
-                    <button class="btn btn-academic-outline btn-sm">
-                        <i class="fa-regular fa-envelope mr-2"></i>Contact Me
-                    </button>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- begin SEO -->
+    <title>Your Name | Academic Portfolio</title>
+    <meta name="title" content="Your Name | Academic Portfolio">
+    <meta property="og:title" content="Your Name | Academic Portfolio">
+    <meta property="og:site_name" content="Your Name Academic Portfolio">
+    <meta property="og:description" content="Academic portfolio of Your Name - Scholar in [Your Field]">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="/">
+    <meta property="og:type" content="website">
+    <meta property="twitter:title" content="Your Name | Academic Portfolio">
+    <meta name="description" content="Academic portfolio and research profile of Your Name">
+    <meta name="keywords" content="Academic, Research, Scholarship, [Your Field], [Your University]">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="/">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="EN">
+    <meta name="revisit-after" content="30 days">
+    <meta name="author" content="Your Name">
+    <!-- end SEO -->
+
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="/assets/css/main.css" rel="stylesheet">
+    <link href="/assets/css/home.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/fontawesome651.all.min.css">
+
+    <!-- Google Fonts CSS - Elegant Academic Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Favicon styling for academic look -->
+    <style>
+        .fa-fw {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="page-container">
+        <header-component></header-component>
+
+        <div class="container mt-5">
+            <div class="mb-5"></div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-5">
+                    <div class="profile-container academic-card mb-5 mb-md-0">
+                        <img class="rounded-circle profile-image mx-auto d-block mb-4" 
+                            src="/assets/img/Lemos_avatar.png" 
+                            alt="Your Name - Professional Portrait">
+                        
+                        <div class="text-center">
+                            <h1 class="profile-name">Your Name</h1>
+                            <p class="profile-title">Academic Position / Research Area</p>
+                            <p class="text-muted mb-4">A concise and impactful bio highlighting your academic achievements and research focus</p>
+                        </div>
+
+                        <div class="mt-4">
+                            <ul class="social-icons">
+                                <li><a href="" target="_blank">
+                                    <i class="mr-3 fa-fw fa-solid fa-location-dot" aria-hidden="true"></i>
+                                    University Address
+                                </a></li>
+                                <li><a href="" target="_blank">
+                                    <i class="mr-3 fa fa-fw fa-school" aria-hidden="true"></i> 
+                                    University Name
+                                </a></li>
+                                <li><a href="">
+                                    <i class="mr-3 fa-fw fa-solid fa-globe" aria-hidden="true"></i> 
+                                    Personal Website
+                                </a></li>
+                                <li><a href="mailto:" target="_blank">
+                                    <i class="mr-3 fa-fw fa-regular fa-envelope" aria-hidden="true"></i> 
+                                    Email Address
+                                </a></li>
+                                <li><a href="" target="_blank">
+                                    <i class="mr-3 fa-fw fa-brands fa-google-scholar" aria-hidden="true"></i> 
+                                    Google Scholar
+                                </a></li>
+                                <li><a href="" target="_blank">
+                                    <i class="mr-3 fa-fw fa-brands fa-researchgate" aria-hidden="true"></i> 
+                                    ResearchGate
+                                </a></li>
+                                <li><a href="" target="_blank">
+                                    <i class="mr-3 fa-fw fa-brands fa-orcid" aria-hidden="true"></i> 
+                                    ORCID Profile
+                                </a></li>
+                                <li><a href="" target="_blank">
+                                    <i class="mr-3 fab fa-fw fa-linkedin" aria-hidden="true"></i> 
+                                    LinkedIn Profile
+                                </a></li>
+                                <li><a href="" target="_blank">
+                                    <i class="mr-3 fab fa-fw fa-github" aria-hidden="true"></i> 
+                                    GitHub Repository
+                                </a></li>
+                                <li><a href="" target="_blank">
+                                    <i class="mr-3 fa-fw fa-brands fa-x-twitter" aria-hidden="true"></i> 
+                                    Academic Twitter
+                                </a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 
-                <ul class="social-icons">
-                    <li>
-                        <a href="mailto:your.email@university.edu">
-                            <i class="fa-fw fa-regular fa-envelope"></i>your.email@university.edu
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <i class="fa-fw fa-solid fa-location-dot"></i>University Address
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <i class="fa-fw fa-solid fa-globe"></i>Personal Website
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <i class="fa-fw fa-brands fa-google-scholar"></i>Google Scholar
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <i class="fa-fw fa-brands fa-researchgate"></i>ResearchGate
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <i class="fa-fw fa-brands fa-orcid"></i>ORCID
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <i class="fa-fw fab fa-linkedin"></i>LinkedIn
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <i class="fa-fw fab fa-github"></i>GitHub
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <i class="fa-fw fa-brands fa-x-twitter"></i>Twitter/X
-                        </a>
-                    </li>
-                </ul>
+                <div class="col-lg-8 col-md-7">
+                    <div class="academic-card">
+                        <section class="content-section">
+                            <h2>About Me</h2>
+                            <p class="mb-4">
+                                As a dedicated scholar in [Your Field], I specialize in [specific research areas]. 
+                                My academic journey combines rigorous theoretical frameworks with innovative 
+                                methodological approaches to address [specific problems or questions]. Currently 
+                                pursuing my [degree level] at [University Name], I am committed to advancing 
+                                knowledge through interdisciplinary research and collaborative projects.
+                            </p>
+                            <p>
+                                My work has been recognized through [awards, grants, or publications], and I 
+                                actively contribute to the academic community through [teaching, mentoring, or 
+                                service activities]. I believe in the transformative power of education and 
+                                research to address complex global challenges.
+                            </p>
+                        </section>
+
+                        <section class="content-section">
+                            <h2>Research Program</h2>
+                            <p class="mb-4">
+                                My research investigates [core research question]. Through a combination of 
+                                [methods/approaches], I explore [specific phenomena or relationships]. This 
+                                work contributes to [theoretical frameworks] while offering practical 
+                                implications for [application areas].
+                            </p>
+                            
+                            <div class="text-center mt-4">
+                                <button type="button" class="btn btn-academic">
+                                    <a href="" target="_blank">
+                                        Research Group Webpage
+                                        <i class="ml-2 fa-solid fa-arrow-up-right-from-square"></i>
+                                    </a>
+                                </button>
+
+                                <button type="button" class="btn btn-academic-outline ml-3">
+                                    <a href="" target="_blank">
+                                        Research Group Twitter
+                                        <i class="ml-2 fa-brands fa-x-twitter"></i>
+                                    </a>
+                                </button>
+
+                                <button type="button" class="btn btn-academic-outline ml-3">
+                                    <a href="" target="_blank">
+                                        Research GitHub
+                                        <i class="ml-2 fa-brands fa-github"></i>
+                                    </a>
+                                </button>
+                            </div>
+
+                            <div class="mt-4">
+                                <h5 class="font-weight-bold text-burgundy">Research Interests:</h5>
+                                <div class="research-tags">
+                                    <span class="research-tag">Interest 1</span>
+                                    <span class="research-tag">Interest 2</span>
+                                    <span class="research-tag">Interest 3</span>
+                                    <span class="research-tag">Interest 4</span>
+                                    <span class="research-tag">Interest 5</span>
+                                    <span class="research-tag">Interest 6</span>
+                                    <span class="research-tag">Interest 7</span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="content-section">
+                            <h2>Academic Updates</h2>
+                            <ul class="mb-0">
+                                <li class="mb-3">
+                                    <span class="ref-journal">Month Year:</span> 
+                                    Paper accepted! "Innovative Research on [Topic]" - 
+                                    <em>Prestigious Conference/Journal Name</em>, Year
+                                </li>
+                                <li class="mb-3">
+                                    <span class="ref-journal">Month Year:</span> 
+                                    Awarded [Scholarship/Grant Name] for research excellence in [Area]
+                                </li>
+                                <li class="mb-3">
+                                    <span class="ref-journal">Month Year:</span> 
+                                    Joined [University Name] as a [Position] in [Department]
+                                </li>
+                                <li class="mb-3">
+                                    <span class="ref-journal">Month Year:</span> 
+                                    Invited to present research at [Conference/Institution Name]
+                                </li>
+                            </ul>
+                        </section>
+
+                        <section class="content-section">
+                            <h2>Academic Background</h2>
+                            <p class="mb-4">
+                                My academic foundation includes [brief overview of degrees and key experiences]. 
+                                I completed my [previous degree] at [Institution], where I [notable achievements]. 
+                                This background equipped me with [skills/knowledge] that inform my current research 
+                                agenda and scholarly pursuits.
+                            </p>
+                        </section>
+
+                        <section class="cv-section">
+                            <h3>Academic Documents</h3>
+                            <p class="mb-4">Access my comprehensive academic records and professional documentation:</p>
+                            <div class="text-center">
+                                <button type="button" class="btn btn-academic">
+                                    <a href="" target="_blank">
+                                        <i class="mr-2 fa-solid fa-file-contract"></i>
+                                        Curriculum Vitae
+                                    </a>
+                                </button>
+                                <button type="button" class="btn btn-academic-outline ml-3">
+                                    <a href="" target="_blank">
+                                        <i class="mr-2 fa-solid fa-file-lines"></i>
+                                        Academic Resume
+                                    </a>
+                                </button>
+                                <button type="button" class="btn btn-academic-outline ml-3">
+                                    <a href="" target="_blank">
+                                        <i class="mr-2 fa-solid fa-file-pdf"></i>
+                                        Research Statement
+                                    </a>
+                                </button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <div class="col-lg-8 col-md-7 mt-md-0 mt-4">
-            <div class="content-area">
-                <!-- About Me Section -->
-                <div class="mb-5">
-                    <h4>About Me</h4>
-                    <p class="lead-paragraph">
-                        A compelling introductory sentence that captures your academic focus and passion.
-                    </p>
-                    <p class="text-justify">
-                        Your detailed biography here. Consider breaking into 2-3 concise paragraphs 
-                        rather than one long block. Aliquam aliquet feugiat neque at molestie. 
-                        Nunc vel euismod orci. Vestibulum magna tortor, pretium et eleifend eu, 
-                        ornare ut nunc. Donec ullamcorper orci nibh, non imperdiet justo scelerisque nec.
-                    </p>
-                    <p class="text-justify">
-                        Maecenas tincidunt mattis risus, at faucibus dolor faucibus id. Nam vitae 
-                        dolor vitae nibh dignissim faucibus. Integer in luctus lectus, at sagittis 
-                        lectus. Nunc posuere, erat vitae consectetur blandit, lectus quam suscipit 
-                        lectus, quis luctus mauris arcu nec neque.
-                    </p>
-                </div>
-                
-                <div class="section-divider"></div>
-                
-                <!-- Research Section with Tags -->
-                <div class="mb-5">
-                    <h4>Research Focus</h4>
-                    <p class="text-justify">
-                        Brief overview of your primary research areas and methodologies. 
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-                        pulvinar lacinia dui pulvinar gravida. Maecenas rhoncus felis sit amet 
-                        euismod porta. Vivamus id ante eleifend, porta arcu ac, egestas libero.
-                    </p>
-                    
-                    <div class="research-tags">
-                        <span class="research-tag">Machine Learning</span>
-                        <span class="research-tag">Computational Biology</span>
-                        <span class="research-tag">Data Visualization</span>
-                        <span class="research-tag">Human-Computer Interaction</span>
-                        <span class="research-tag">Artificial Intelligence</span>
-                        <span class="research-tag">Bioinformatics</span>
-                    </div>
-                </div>
-                
-                <div class="section-divider"></div>
-                
-                <!-- News in Elegant Timeline Style -->
-                <div class="mb-5">
-                    <h4>Recent Updates</h4>
-                    <div class="news-timeline">
-                        <div class="news-item">
-                            <span class="ref-journal">March 2024:</span> 
-                            Paper accepted at prestigious conference. 
-                            <a href="#" class="text-italic">"Paper Title"</a>
-                        </div>
-                        <div class="news-item">
-                            <span class="ref-journal">February 2024:</span> 
-                            Awarded the Distinguished Research Fellowship.
-                        </div>
-                        <div class="news-item">
-                            <span class="ref-journal">January 2024:</span> 
-                            Joined __________ University as a Graduate Student.
-                        </div>
-                        <div class="news-item">
-                            <span class="ref-journal">December 2023:</span> 
-                            Presented research at International Conference Name.
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="section-divider"></div>
-                
-                <!-- Bio Section -->
-                <div class="mb-5">
-                    <h4>Academic Bio</h4>
-                    <p class="text-justify">
-                        Aliquam aliquet feugiat neque at molestie. Nunc vel euismod orci.
-                        Vestibulum magna tortor, pretium et eleifend eu, ornare ut nunc. 
-                        Donec ullamcorper orci nibh, non imperdiet justo scelerisque nec. 
-                        Nam vehicula dignissim eros, eu varius leo aliquet sed.
-                    </p>
-                    <p class="text-justify">
-                        Maecenas fermentum purus et sem condimentum elementum. Sed maximus 
-                        euismod felis nec mollis. Sed nec mauris justo. Nullam sit amet purus 
-                        lobortis nunc luctus volutpat. Suspendisse faucibus urna ac laoreet 
-                        maximus.
-                    </p>
-                </div>
-                
-                <!-- CV & Resume Section -->
-                <div class="mb-5">
-                    <h4>CV & Resume</h4>
-                    <div class="button-group">
-                        <button class="btn btn-academic btn-sm">
-                            <i class="fa-solid fa-file-pdf mr-2"></i>Download Resume
-                        </button>
-                        <button class="btn btn-academic-outline btn-sm">
-                            <i class="fa-regular fa-file mr-2"></i>Curriculum Vitae
-                        </button>
-                    </div>
-                </div>
-            </div>
+
+        <div id="footer">
+            <footer-component></footer-component>
+            <footer-component-lemos></footer-component-lemos>
         </div>
     </div>
-</div>
+
+    <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="/assets/vendor/jquery/jquery.slim.min.js"></script>
+    <script src="/assets/vendor/bootstrap/js/popper.min.js"></script>
+    <script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="/assets/js/main.js"></script>
+    <script src="/components/header.js" type="text/javascript"></script>
+    <script src="/components/footer.js" type="text/javascript"></script>
+    <script src="/components/footer-lemos.js" type="text/javascript"></script>
+    <script src="/assets/js/fontawesome651all.min.js" type="text/javascript" defer></script>
+
+</body>
+
+</html>
