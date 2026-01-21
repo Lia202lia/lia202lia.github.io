@@ -4,23 +4,23 @@
 :root {
   /* --primary-colors --*/
   --white-ish:#FAFAFA;
-  --light-gray: #F0F0F0;
-  --bluish-gray: #DCDCDC;
-  --blue-light:#C04040;
-  --blue-medium: #A52A2A;
-  --blue-medium-rgb: rgb(165, 42, 42);
-  --blue-dark:#800020;
-  --dark-b: #4B0000;
+  --light-gray: #F5F5F5;
+  --bluish-gray: #E0E0E0;
+  --blue-light:#C8102E;
+  --blue-medium: #A51C30;
+  --blue-medium-rgb: rgb(165, 28, 48);
+  --blue-dark:#841D26;
+  --dark-b: #5E0F18;
   --gray-black: #333333;
   --darker-b:#1A1A1A;
-  /* https://colorhunt.co/palette/f9f7f7dbe2ef3f72af112d4e */
+  /* Inspired by Ivy League palettes */
 }
 html, body {
     height:100%;
 }
 /* Use the root variable for primary color in your CSS */
 body {
-  background: linear-gradient(to bottom, var(--light-gray), #E0E0E0);
+  background: linear-gradient(to bottom, var(--light-gray), #E8E8E8);
   /* font-family: "Open Sans", sans-serif; */
   font-family: 'Inter', sans-serif;
   color: var(--gray-black);
@@ -71,7 +71,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* footer */
 .footer-lemos {
-  background-color: #800020;
+  background-color: #841D26;
   font-size: smaller;
 }
 .footer-lemos-nifme {
@@ -102,12 +102,4 @@ h1, h2, h3, h4, h5, h6 {
     /* height: 100px; Footer height */
     height: 2.5rem; /*Footer height*/
    
-}
-.hero-banner {
-  background-size: cover;
-  background-position: center;
-  height: 400px;
-  position: relative;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('/assets/img/cover.jpg');
 }
