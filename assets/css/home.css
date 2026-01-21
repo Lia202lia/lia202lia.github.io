@@ -2,41 +2,37 @@
 # General
 --------------------------------------------------------------*/
 :root {
-  --white-ish: #FCF7F5;
-  --light-gray: #F2E9E6;
-  --blue-light: #C56A63;   /* accent red */
-  --blue-medium: #9E3B3F;  /* main red */
-  --blue-dark: #5A1F29;
-  --dark-b: #3A121A;
-  --gray-black: #3B3940;
-  --darker-b: #241017;
+  --white-ish: #FCFAF8;
+  --light-gray: #F2EEEB;
+  --blue-light: #C25A5A;
+  --blue-medium: #9B3237;
+  --blue-dark: #5A1F2A;
+  --dark-b: #30252A;
+  --gray-black: #333135;
+  --darker-b: #1E1519;
 }
 
 h4, h5, p, ul > li, .btn-blue {
   font-family: 'Ubuntu Sans', sans-serif;
 }
 
-/* primary buttons */
+/* buttons */
 .btn-blue {
   color: var(--white-ish) !important;
   background-color: var(--blue-light);
-  border: 2px solid var(--blue-medium);
+  border: 1px solid var(--blue-medium);
 }
-
 .btn-blue > a {
   color: var(--white-ish);
   border-color: var(--light-gray);
 }
-
 button:hover {
   font-size: 1.0001rem;
   background-color: var(--blue-medium);
 }
-
 button > a {
   color: var(--white-ish) !important;
 }
-
 button > a:hover {
   color: var(--white-ish) !important;
   text-decoration: none;
@@ -46,7 +42,6 @@ button > a:hover {
 a {
   color: var(--blue-light);
 }
-
 a:hover {
   color: var(--blue-medium);
   text-decoration: none !important;
@@ -56,11 +51,11 @@ a:hover {
 .fa-fw {
   color: var(--blue-medium);
 }
-
 .social-icons {
   list-style-type: none;
 }
 
+/* news label */
 .ref-journal {
   font-weight: 600;
   font-style: italic;
