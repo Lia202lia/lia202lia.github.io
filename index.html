@@ -1,74 +1,173 @@
-<!-- In the head section, add this font for more academic feel -->
-<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-<!-- Replace the entire row div (lines 59-232) with this: -->
-<div class="row">
-    <div class="col-lg-4 col-md-5">
-        <div class="profile-container">
-            <img class="rounded-circle profile-img mx-auto d-block mb-4" 
-                 style="width:70%; max-width: 220px;"
-                 src="/assets/img/Lemos_avatar.png" alt="Your Name">
-            
-            <h2 class="profile-name text-center">Your Name</h2>
-            <p class="profile-title text-center mb-4">Position at University</p>
-            
-            <div class="text-center mb-4">
-                <button class="btn btn-academic btn-sm mr-2">Download CV</button>
-                <button class="btn btn-outline-academic btn-sm">Contact Me</button>
-            </div>
-            
-            <ul class="social-icons">
-                <!-- Keep your existing li elements but remove the pl-4 pl-md-5 classes -->
-                <li><a href="mailto:your.email@harvard.edu"><i class="fa-fw fa-regular fa-envelope"></i> your.email@harvard.edu</a></li>
-                <li><a href="#" target="_blank"><i class="fa-fw fa-solid fa-location-dot"></i> University Address</a></li>
-                <!-- Continue with other icons... -->
-            </ul>
-        </div>
-    </div>
-    
-    <div class="col-lg-8 col-md-7 mt-md-0 mt-4">
-        <div class="content-area">
-            <!-- About Me Section -->
-            <div class="mb-5">
-                <h4>About Me</h4>
-                <p class="lead" style="color: var(--slate-gray); font-size: 1.1rem;">
-                    A compelling introductory sentence that captures your academic focus and passion.
-                </p>
-                <p class="text-justify">
-                    Your detailed biography here. Consider breaking into 2-3 concise paragraphs 
-                    rather than one long block.
-                </p>
-            </div>
-            
-            <!-- Research Section with Tags -->
-            <div class="mb-5">
-                <h4>Research Focus</h4>
-                <p class="text-justify">
-                    Brief overview of your primary research areas and methodologies.
-                </p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-4 col-md-5">
+            <div class="profile-container">
+                <img class="rounded-circle profile-img mx-auto d-block mb-4" 
+                     src="/assets/img/Lemos_avatar.png" alt="Your Name">
                 
-                <div class="research-tags">
-                    <span class="tag">Machine Learning</span>
-                    <span class="tag">Computational Biology</span>
-                    <span class="tag">Data Visualization</span>
-                    <span class="tag">Human-Computer Interaction</span>
-                    <!-- Add more tags -->
+                <h2 class="profile-name text-center">Your Name</h2>
+                <p class="profile-title text-center mb-4">Position at University</p>
+                
+                <div class="text-center mb-4 button-group">
+                    <button class="btn btn-academic btn-sm mr-2">
+                        <i class="fa-solid fa-download mr-2"></i>Download CV
+                    </button>
+                    <button class="btn btn-academic-outline btn-sm">
+                        <i class="fa-regular fa-envelope mr-2"></i>Contact Me
+                    </button>
                 </div>
+                
+                <ul class="social-icons">
+                    <li>
+                        <a href="mailto:your.email@university.edu">
+                            <i class="fa-fw fa-regular fa-envelope"></i>your.email@university.edu
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <i class="fa-fw fa-solid fa-location-dot"></i>University Address
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <i class="fa-fw fa-solid fa-globe"></i>Personal Website
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <i class="fa-fw fa-brands fa-google-scholar"></i>Google Scholar
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <i class="fa-fw fa-brands fa-researchgate"></i>ResearchGate
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <i class="fa-fw fa-brands fa-orcid"></i>ORCID
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <i class="fa-fw fab fa-linkedin"></i>LinkedIn
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <i class="fa-fw fab fa-github"></i>GitHub
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+                            <i class="fa-fw fa-brands fa-x-twitter"></i>Twitter/X
+                        </a>
+                    </li>
+                </ul>
             </div>
-            
-            <!-- News in Elegant Timeline Style -->
-            <div class="mb-5">
-                <h4>Recent Updates</h4>
-                <div class="news-item">
-                    <span class="ref-journal">March 2024:</span> 
-                    Paper accepted at prestigious conference. 
-                    <a href="#" class="text-italic">"Paper Title"</a>
+        </div>
+        
+        <div class="col-lg-8 col-md-7 mt-md-0 mt-4">
+            <div class="content-area">
+                <!-- About Me Section -->
+                <div class="mb-5">
+                    <h4>About Me</h4>
+                    <p class="lead-paragraph">
+                        A compelling introductory sentence that captures your academic focus and passion.
+                    </p>
+                    <p class="text-justify">
+                        Your detailed biography here. Consider breaking into 2-3 concise paragraphs 
+                        rather than one long block. Aliquam aliquet feugiat neque at molestie. 
+                        Nunc vel euismod orci. Vestibulum magna tortor, pretium et eleifend eu, 
+                        ornare ut nunc. Donec ullamcorper orci nibh, non imperdiet justo scelerisque nec.
+                    </p>
+                    <p class="text-justify">
+                        Maecenas tincidunt mattis risus, at faucibus dolor faucibus id. Nam vitae 
+                        dolor vitae nibh dignissim faucibus. Integer in luctus lectus, at sagittis 
+                        lectus. Nunc posuere, erat vitae consectetur blandit, lectus quam suscipit 
+                        lectus, quis luctus mauris arcu nec neque.
+                    </p>
                 </div>
-                <div class="news-item">
-                    <span class="ref-journal">February 2024:</span> 
-                    Awarded the Distinguished Research Fellowship.
+                
+                <div class="section-divider"></div>
+                
+                <!-- Research Section with Tags -->
+                <div class="mb-5">
+                    <h4>Research Focus</h4>
+                    <p class="text-justify">
+                        Brief overview of your primary research areas and methodologies. 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+                        pulvinar lacinia dui pulvinar gravida. Maecenas rhoncus felis sit amet 
+                        euismod porta. Vivamus id ante eleifend, porta arcu ac, egestas libero.
+                    </p>
+                    
+                    <div class="research-tags">
+                        <span class="research-tag">Machine Learning</span>
+                        <span class="research-tag">Computational Biology</span>
+                        <span class="research-tag">Data Visualization</span>
+                        <span class="research-tag">Human-Computer Interaction</span>
+                        <span class="research-tag">Artificial Intelligence</span>
+                        <span class="research-tag">Bioinformatics</span>
+                    </div>
                 </div>
-                <!-- Add more news items -->
+                
+                <div class="section-divider"></div>
+                
+                <!-- News in Elegant Timeline Style -->
+                <div class="mb-5">
+                    <h4>Recent Updates</h4>
+                    <div class="news-timeline">
+                        <div class="news-item">
+                            <span class="ref-journal">March 2024:</span> 
+                            Paper accepted at prestigious conference. 
+                            <a href="#" class="text-italic">"Paper Title"</a>
+                        </div>
+                        <div class="news-item">
+                            <span class="ref-journal">February 2024:</span> 
+                            Awarded the Distinguished Research Fellowship.
+                        </div>
+                        <div class="news-item">
+                            <span class="ref-journal">January 2024:</span> 
+                            Joined __________ University as a Graduate Student.
+                        </div>
+                        <div class="news-item">
+                            <span class="ref-journal">December 2023:</span> 
+                            Presented research at International Conference Name.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-divider"></div>
+                
+                <!-- Bio Section -->
+                <div class="mb-5">
+                    <h4>Academic Bio</h4>
+                    <p class="text-justify">
+                        Aliquam aliquet feugiat neque at molestie. Nunc vel euismod orci.
+                        Vestibulum magna tortor, pretium et eleifend eu, ornare ut nunc. 
+                        Donec ullamcorper orci nibh, non imperdiet justo scelerisque nec. 
+                        Nam vehicula dignissim eros, eu varius leo aliquet sed.
+                    </p>
+                    <p class="text-justify">
+                        Maecenas fermentum purus et sem condimentum elementum. Sed maximus 
+                        euismod felis nec mollis. Sed nec mauris justo. Nullam sit amet purus 
+                        lobortis nunc luctus volutpat. Suspendisse faucibus urna ac laoreet 
+                        maximus.
+                    </p>
+                </div>
+                
+                <!-- CV & Resume Section -->
+                <div class="mb-5">
+                    <h4>CV & Resume</h4>
+                    <div class="button-group">
+                        <button class="btn btn-academic btn-sm">
+                            <i class="fa-solid fa-file-pdf mr-2"></i>Download Resume
+                        </button>
+                        <button class="btn btn-academic-outline btn-sm">
+                            <i class="fa-regular fa-file mr-2"></i>Curriculum Vitae
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
