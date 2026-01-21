@@ -4,14 +4,14 @@
 :root {
   /* --primary-colors --*/
   --white-ish:#FAFAFA;
-  --light-gray: #F0F0F0;
-  --blue-light:#C04040;
-  --blue-medium: #A52A2A;
-  --blue-dark:rgb(128, 0, 32);
-  --dark-b: #4B0000;
+  --light-gray: #F5F5F5;
+  --blue-light:#C8102E;
+  --blue-medium: #A51C30;
+  --blue-dark:rgb(132, 29, 38);
+  --dark-b: #5E0F18;
   --gray-black: #333333;
   --darker-b:#1A1A1A;
-  /* https://colorhunt.co/palette/f9f7f7dbe2ef3f72af112d4e */
+  /* Inspired by Ivy League palettes */
 }
 h4,h5, p, ul>li, .btn-blue{
     font-family: 'Inter', sans-serif;
@@ -68,7 +68,7 @@ padding-left: 100px !important;
 /* Hero cover image styles */
 .hero-section {
   width: 100%;
-  height: 400px; /* Adjustable for luxury feel */
+  height: 300px; /* Smaller height for compact academic feel */
   overflow: hidden;
   position: relative;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Enhanced shadow for depth */
