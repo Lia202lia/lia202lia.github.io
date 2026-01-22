@@ -2,7 +2,7 @@
 # General
 --------------------------------------------------------------*/
 :root {
-  /* neutral + red accent inspired by minimalist academic sites [web:33][web:37] */
+  /* neutral base + muted academic red accent */
   --white-ish: #FCFAF8;
   --light-gray: #F2EEEB;
   --bluish-gray: #E6E0DD;
@@ -25,24 +25,28 @@ body {
   color: var(--gray-black);
 }
 
-/* nav */
+/* navigation */
 nav {
   background-color: var(--blue-dark);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
+
 .navbar-brand {
   color: var(--white-ish) !important;
   font-size: 1.75rem !important;
   font-weight: 700;
   letter-spacing: 0.06em;
 }
+
 .nav-link {
   color: var(--white-ish) !important;
 }
+
 .nav-link:hover,
 .nav-link:focus {
   color: var(--blue-light) !important;
 }
+
 .navbar-expand-lg {
   font-size: 1.2rem !important;
 }
@@ -51,11 +55,14 @@ nav {
 #header_middle_letter {
   color: var(--blue-light);
 }
+
 a {
   color: var(--blue-light);
 }
+
 a:hover {
   color: var(--blue-medium) !important;
+  text-decoration: none !important;
 }
 
 /* headings */
@@ -69,13 +76,16 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--blue-dark);
   font-size: smaller;
 }
+
 .footer-lemos-nifme {
   background-color: var(--darker-b);
   font-size: smaller;
 }
+
 .footer-icons {
   color: var(--blue-light);
 }
+
 .footer-icons:hover {
   color: var(--blue-medium);
 }
@@ -85,9 +95,11 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   min-height: 93vh;
 }
+
 #content-wrap {
   padding-bottom: 2.5rem; /* footer height */
 }
+
 #footer {
   position: absolute;
   bottom: 0;
@@ -95,15 +107,32 @@ h1, h2, h3, h4, h5, h6 {
   height: 2.5rem;
 }
 
-/* simple top cover using header.jpg */
+/* minimal top strip (no image) */
 .header-cover {
   width: 100%;
-  height: 200px;
-  background-image:
-    linear-gradient(to bottom, rgba(90, 31, 42, 0.4), rgba(90, 31, 42, 0.7)),
-    url('/assets/img/header.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  height: 120px;
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--blue-medium-rgb), 0.96),
+    rgba(var(--blue-medium-rgb), 0.88)
+  );
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+/* circular profile image, used on home */
+.profile-photo-round {
+  width: 80%;
+  max-width: 180px;
+  border-radius: 50%;
+  border: 2px solid rgba(var(--blue-medium-rgb), 0.85);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+  background-color: var(--white-ish);
+}
+
+/* subtle content container without heavy boxes */
+.main-content-block {
+  background-color: var(--white-ish);
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
