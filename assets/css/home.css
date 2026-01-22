@@ -3,62 +3,60 @@
 --------------------------------------------------------------*/
 
 :root {
-  /* --primary-colors --*/
   --white-ish: #FCFAF8;
-  --light-gray: #F8F6F4;
-  --blue-light: #8A8D9A;
-  --blue-medium: #5D6A7B;
-  --blue-dark: #3A4553;
-  --dark-b: #2A2F3A;
-  --gray-black: #3D4A5A;
-  --darker-b: #1E232D;
+  --light-gray: #F5F3F0;
+  --blue-light: #6B7280;
+  --blue-medium: #4B5563;
+  --blue-dark: #374151;
+  --dark-b: #1F2937;
+  --gray-black: #374151;
+  --darker-b: #111827;
 }
 
-h4, h5, p, ul > li, .btn-blue {
-  font-family: 'Ubuntu Sans', sans-serif;
+h4,h5, p, ul>li, .btn-blue{
+    font-family: 'Ubuntu Sans', sans-serif;
 }
 
-/* elegant capsule buttons */
-.btn-blue {
-  color: var(--white-ish) !important;
-  background-color: var(--blue-light);
-  border: 2px solid var(--blue-medium);
-  border-radius: 999px;        /* pill/capsule shape */
-  padding: 0.4rem 1.3rem;
-  transition: all 0.2s ease;
+.btn-blue{
+    color: var(--white-ish) !important;
+    background-color: var(--blue-light);
+    border: 2px solid var(--blue-medium);
+    border-radius: 25px;          /* capsule shape for academic elegance */
+    padding: 0.4rem 1.2rem;
+    transition: all 0.2s ease;
 }
 
-.btn-blue > a {
-  color: var(--white-ish);
-  border-color: var(--light-gray);
+.btn-blue > a{
+    color: var(--white-ish);
+    border-color: var(--light-gray);
 }
 
-button:hover {
-  font-size: 1.0001rem;
-  background-color: var(--blue-medium);
-  box-shadow: 0 4px 12px rgba(93, 106, 123, 0.3);
-  transform: translateY(-1px);
+button:hover{
+    font-size:1.0001rem ;
+    background-color: var(--blue-medium);
+    box-shadow: 0 4px 12px rgba(75, 85, 99, 0.3);
+    transform: translateY(-1px);
 }
 
 button > a {
-  color: var(--white-ish) !important; 
+    color: var(--white-ish) !important; 
 }
 
-button > a:hover {
-  color: var(--white-ish) !important;
-  text-decoration: none;
+button > a:hover{
+    color: var(--white-ish) !important;
+    text-decoration: none;
 }
 
 a {
-  color: var(--blue-light);
+    color: var(--blue-light);
 }
 
 a:hover {
-  color: var(--blue-medium);
-  text-decoration: none !important;
+    color: var(--blue-medium);
+    text-decoration: none !important;
 }
 
-.fa-fw {
+.fa-fw{
   color: var(--blue-medium);
 }
 
@@ -66,10 +64,9 @@ a:hover {
   list-style-type: none;
 }
 
-.ref-journal {
-  font-weight: 600; 
-  font-style: italic;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
-               'Lucida Sans', Arial, sans-serif;
-  color: var(--blue-medium);
+.ref-journal{
+    font-weight: 600; 
+    font-style: italic;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: var(--blue-medium);
 }
