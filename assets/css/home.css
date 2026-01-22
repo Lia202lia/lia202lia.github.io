@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------
-# General
+# Home-specific styles
 --------------------------------------------------------------*/
 :root {
   --white-ish: #FCFAF8;
@@ -16,23 +16,34 @@ h4, h5, p, ul > li, .btn-blue {
   font-family: 'Ubuntu Sans', sans-serif;
 }
 
-/* buttons */
+/* capsule buttons (pill) */
 .btn-blue {
   color: var(--white-ish) !important;
   background-color: var(--blue-light);
   border: 1px solid var(--blue-medium);
+  border-radius: 999px;         /* pill shape */
+  padding: 0.35rem 1.25rem;
+  letter-spacing: 0.02em;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease,
+              transform 0.1s ease;
 }
+
 .btn-blue > a {
   color: var(--white-ish);
   border-color: var(--light-gray);
 }
-button:hover {
-  font-size: 1.0001rem;
+
+button:hover,
+.btn-blue:hover {
   background-color: var(--blue-medium);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+  transform: translateY(-1px);
 }
+
 button > a {
   color: var(--white-ish) !important;
 }
+
 button > a:hover {
   color: var(--white-ish) !important;
   text-decoration: none;
@@ -42,6 +53,7 @@ button > a:hover {
 a {
   color: var(--blue-light);
 }
+
 a:hover {
   color: var(--blue-medium);
   text-decoration: none !important;
@@ -51,8 +63,10 @@ a:hover {
 .fa-fw {
   color: var(--blue-medium);
 }
+
 .social-icons {
   list-style-type: none;
+  padding-left: 0;
 }
 
 /* news label */
