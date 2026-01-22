@@ -3,14 +3,14 @@
 --------------------------------------------------------------*/
 
 :root {
-  --white-ish: #FCFAF8;
-  --light-gray: #F5F3F0;
-  --blue-light: #6B7280;
-  --blue-medium: #4B5563;
-  --blue-dark: #374151;
-  --dark-b: #1F2937;
-  --gray-black: #374151;
-  --darker-b: #111827;
+  --white-ish: #FDFAF7;
+  --light-gray: #F4F1ED;
+  --blue-light: #5A9CB7;
+  --blue-medium: #3E8BA3;
+  --blue-dark: #2B6A88;
+  --dark-b: #1F4A5E;
+  --gray-black: #3D5A6A;
+  --darker-b: #1A2D3A;
 }
 
 h4,h5, p, ul>li, .btn-blue{
@@ -21,9 +21,11 @@ h4,h5, p, ul>li, .btn-blue{
     color: var(--white-ish) !important;
     background-color: var(--blue-light);
     border: 2px solid var(--blue-medium);
-    border-radius: 25px;          /* capsule shape for academic elegance */
-    padding: 0.4rem 1.2rem;
-    transition: all 0.2s ease;
+    border-radius: 25px;
+    padding: 0.45rem 1.3rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(90, 156, 183, 0.2);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-blue > a{
@@ -34,8 +36,8 @@ h4,h5, p, ul>li, .btn-blue{
 button:hover{
     font-size:1.0001rem ;
     background-color: var(--blue-medium);
-    box-shadow: 0 4px 12px rgba(75, 85, 99, 0.3);
-    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(62, 139, 163, 0.35);
+    transform: translateY(-2px);
 }
 
 button > a {
@@ -48,25 +50,25 @@ button > a:hover{
 }
 
 a {
-    color: var(--blue-light);
-}
+    color:var(--blue-light);
+  }
 
 a:hover {
     color: var(--blue-medium);
     text-decoration: none !important;
-}
-
+  }
+  
 .fa-fw{
-  color: var(--blue-medium);
-}
+    color: var(--blue-medium);
+  }
 
 .social-icons {
-  list-style-type: none;
-}
-
+    list-style-type: none;
+  }
+  
 .ref-journal{
     font-weight: 600; 
     font-style: italic;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: var(--blue-medium);
+    color:var(--blue-medium);
 }
