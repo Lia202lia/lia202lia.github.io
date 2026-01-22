@@ -1,41 +1,60 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
 :root {
   --white-ish: #FFFFFF;
-  --light-gray: #F9FAFB;
-  --blue-light: #0066CC;
-  --blue-medium: #003D80;
-  --blue-dark: #002B5C;
-  --dark-b: #1F2937;
-  --gray-black: #374151;
-  --darker-b: #111827;
+  --light-gray: #FAFAFA;
+  --blue-light: #007BFF;
+  --blue-medium: #0056D2;
+  --blue-dark: #343A40;
+  --dark-b: #212529;
+  --gray-black: #495057;
+  --darker-b: #1C1F23;
 }
-
-.btn-blue {
-  color: var(--white-ish) !important;
-  background-color: var(--blue-light);
-  border: none;
-  border-radius: 50px;
-  padding: 0.5rem 1.5rem;
+h4,h5, p, ul>li, .btn-blue{
+    font-family: 'Ubuntu Sans', sans-serif;
 }
-
-.btn-blue:hover {
-  background-color: var(--blue-medium);
+/* body > div > ol:nth-child(7) > li > button > a */
+.btn-blue{
+    color: var(--white-ish) !important;
+    background-color: var(--blue-light);
+    border: none;
+    border-radius: 50px; /* capsule shape */
 }
-
+.btn-blue > a{
+    color: var(--white-ish);
+}
+button:hover{
+    background-color: var(--blue-medium);
+}
+button > a {
+    color: var(--white-ish) !important;
+}
+button > a:hover{
+    color: var(--white-ish) !important;
+    text-decoration: none;
+}
 a {
-  color: var(--blue-light);
+    color:var(--blue-light);
+  }
+  a:hover {
+    color: var(--blue-medium) ;
+    text-decoration: none !important;
+  }
+ 
+  .fa-fw{
+    color: var(--blue-medium) ;
+  }
+  .social-icons {
+    list-style-type: none;
+  }
+ 
+.ref-journal{
+    font-weight: 600;
+    font-style: italic;
+    font-family: 'Ubuntu Sans', sans-serif;
+    color:var(--blue-medium);
 }
-
-a:hover {
-  color: var(--blue-medium);
-  text-decoration: none !important;
-}
-
-.ref-journal {
-  color: var(--blue-medium);
-  font-weight: 600;
-  font-style: italic;
-}
-
-.fa-fw {
-  color: var(--blue-medium);
-}
+/* .pl-5{
+padding-left: 100px !important;
+} */
