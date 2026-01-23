@@ -1,10 +1,14 @@
-/* Profile image */
+/* ============================================================
+   Home Page Academic Layout
+   ============================================================ */
+
+/* Profile Image */
 .profile-img {
   width: 60%;
   max-width: 240px;
   border-radius: 50%;
   border: 2px solid var(--primary);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 /* Name */
@@ -14,14 +18,14 @@
   margin-bottom: 4px;
 }
 
-/* Short bio */
+/* Subtitle */
 .profile-sub {
   font-size: 0.95rem;
   color: var(--text-muted);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
-/* Social list */
+/* Social / Contact List */
 .social-icons {
   list-style: none;
   padding-left: 0;
@@ -34,9 +38,10 @@
 
 .social-icons i {
   color: var(--primary);
+  margin-right: 8px;
 }
 
-/* News highlight */
+/* News emphasis */
 .ref-journal {
   font-weight: 600;
   color: var(--primary);
