@@ -1,12 +1,29 @@
-/* ===== PORTRAIT AS ACADEMIC SEAL ===== */
+/* ===== ACADEMIC MEDALLION ===== */
 
-.profile-frame {
-  width: 230px;
-  height: 230px;
+.profile-medallion {
+  width: 280px;
+  height: 280px;
   margin: 0 auto 28px;
   border-radius: 50%;
-  padding: 6px;
-  background: var(--platinum);
+  padding: 10px;
+
+  background:
+    radial-gradient(
+      circle at top,
+      var(--antique-gold),
+      var(--royal-gold),
+      #9e8234
+    );
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.35),
+    inset 0 0 0 2px rgba(255,255,255,0.35);
+
+  transition: transform 0.6s ease;
+}
+
+.profile-medallion:hover {
+  transform: translateY(-6px);
 }
 
 .profile-img {
@@ -20,13 +37,14 @@
 /* ===== TEXT ===== */
 
 .profile-name {
-  font-size: 1.65rem;
+  font-size: 1.9rem;
+  color: var(--deep-navy);
 }
 
 .profile-sub {
   font-size: 0.95rem;
-  color: var(--ink-muted);
-  margin-bottom: 32px;
+  color: var(--ink-soft);
+  margin-bottom: 36px;
 }
 
 /* ===== META ===== */
@@ -44,6 +62,6 @@
 /* ===== SIGNAL ===== */
 
 .ref-signal {
-  color: var(--signal);
+  color: var(--deep-navy);
   font-weight: 500;
 }
