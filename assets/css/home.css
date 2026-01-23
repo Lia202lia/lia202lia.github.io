@@ -1,34 +1,34 @@
 /* ===== ACADEMIC MEDALLION ===== */
 
 .profile-medallion {
-  width: 280px;
-  height: 280px;
-  margin: 0 auto 28px;
+  width: 240px; /* smaller medallion */
+  height: 240px;
+  margin: 0 auto 24px;
   border-radius: 50%;
-  padding: 10px;
+  padding: 8px;
 
   background:
     radial-gradient(
       circle at top,
-      var(--antique-gold),
-      var(--royal-gold),
+      #e6d8a3,  /* antique gold */
+      #c8a951,  /* royal gold */
       #9e8234
     );
 
   box-shadow:
-    0 30px 80px rgba(0,0,0,0.35),
-    inset 0 0 0 2px rgba(255,255,255,0.35);
+    0 20px 50px rgba(0,0,0,0.35),
+    inset 0 0 0 1.5px rgba(255,255,255,0.35);
 
   transition: transform 0.6s ease;
 }
 
 .profile-medallion:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
 }
 
 .profile-img {
-  width: 100%;
-  height: 100%;
+  width: 92%;  /* slightly smaller image */
+  height: 92%;
   border-radius: 50%;
   object-fit: cover;
   background: #ffffff;
@@ -37,14 +37,14 @@
 /* ===== TEXT ===== */
 
 .profile-name {
-  font-size: 1.9rem;
+  font-size: 1.8rem;
   color: var(--deep-navy);
 }
 
 .profile-sub {
   font-size: 0.95rem;
   color: var(--ink-soft);
-  margin-bottom: 36px;
+  margin-bottom: 32px;
 }
 
 /* ===== META ===== */
@@ -56,7 +56,7 @@
 }
 
 .meta-list li {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 /* ===== SIGNAL ===== */
@@ -64,4 +64,28 @@
 .ref-signal {
   color: var(--deep-navy);
   font-weight: 500;
+}
+
+/* ===== BUTTONS ===== */
+
+.btn-academic {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-top: 8px;
+  margin-right: 8px;
+
+  background-color: var(--obsidian); /* header/footer color */
+  color: var(--antique-gold);       /* ceremonial gold text */
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-academic:hover {
+  background-color: var(--deep-navy);
+  color: var(--royal-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
 }
