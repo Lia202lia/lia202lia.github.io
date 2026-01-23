@@ -1,64 +1,40 @@
-:root {
-  --bg-main: #fbfbfa;
-  --bg-soft: #f1f3f5;
-  --text-main: #1c1e21;
-  --text-muted: #5f6368;
+/* --------------------------------------------------
+   Academic Header (Minimal, Serious)
+-------------------------------------------------- */
 
-  --primary: #2f5e8c;
-  --primary-soft: #e7eef6;
-  --border-soft: #dcdfe3;
-}
-
-html, body {
+header, 
+header-component {
+  display: block;
   background-color: var(--bg-main);
-  color: var(--text-main);
-  font-family: "Ubuntu Sans", system-ui, sans-serif;
-  line-height: 1.7;
-  margin: 0;
+  border-bottom: 1px solid var(--border-soft);
 }
 
-a {
-  color: var(--primary);
-  text-decoration: none;
+nav {
+  background-color: transparent !important;
+  padding: 12px 0;
 }
 
-a:hover {
+/* Site title / name */
+.navbar-brand {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-main) !important;
+}
+
+/* Navigation links */
+.nav-link {
+  font-size: 0.95rem;
+  color: var(--text-muted) !important;
+  margin-left: 14px;
+}
+
+.nav-link:hover {
+  color: var(--primary) !important;
   text-decoration: underline;
 }
 
-/* Headings */
-h1, h2, h3, h4 {
-  font-family: "Georgia", "Times New Roman", serif;
-  font-weight: 600;
-  color: var(--text-main);
-}
-
-/* Section titles */
-h4 {
-  margin-top: 1.6rem;
-  margin-bottom: 0.8rem;
-}
-
-/* Buttons */
-.btn-blue {
-  background-color: var(--primary);
-  border: 1px solid var(--primary);
-  color: #ffffff;
-  border-radius: 6px;
-  padding: 6px 14px;
-  font-size: 0.85rem;
-}
-
-.btn-blue:hover {
-  background-color: #244b6f;
-  border-color: #244b6f;
-}
-
-/* Footer */
-footer {
-  border-top: 1px solid var(--border-soft);
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  padding: 18px 0;
-  margin-top: 60px;
+/* Mobile toggle */
+.navbar-toggler {
+  border: none;
 }
