@@ -1,63 +1,57 @@
-/* ==========================================================
-   HOME.CSS — ACADEMIC PROFILE DETAILS
-   ========================================================== */
+/* ======================================================
+   HOME.CSS — PORTRAIT & IDENTITY
+   ====================================================== */
 
-/* PROFILE IMAGE */
+/* Profile column */
+.profile-box {
+  text-align: center;
+  padding: 28px 18px;
+}
+
+/* Profile image (PORTRAIT STYLE) */
 .profile-img {
-  width: 68%;
-  max-width: 240px;
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
   border-radius: 50%;
-  border: 4px solid var(--accent-slate);
-  padding: 3px;
-  margin-bottom: 12px;
-}
-
-/* PROFILE TITLE */
-.profile-name {
-  font-family: 'Georgia', serif;
-  font-size: 1.85rem;
-  font-weight: 700;
-  color: var(--accent-slate);
-  margin-bottom: 6px;
-}
-
-.profile-subtitle {
-  font-size: 0.95rem;
-  color: var(--text-muted);
+  border: 4px solid var(--accent);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
   margin-bottom: 18px;
 }
 
-/* SOCIAL LIST */
-.social-icons {
+/* Name */
+.profile-name {
+  font-family: "Georgia", serif;
+  font-size: 1.9rem;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+/* Subtitle */
+.profile-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 22px;
+}
+
+/* Contact list */
+.profile-list {
   list-style: none;
   padding-left: 0;
-  font-size: 0.9rem;
-}
-.social-icons li {
-  margin-bottom: 8px;
-}
-.social-icons i {
-  color: var(--accent-gold);
+  font-size: 0.92rem;
 }
 
-/* BUTTONS */
-.btn-blue {
-  background: none;
-  border: 1.5px solid var(--accent-slate);
-  color: var(--accent-slate) !important;
-  border-radius: 8px;
-  padding: 7px 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  transition: 0.3s ease;
-}
-.btn-blue:hover {
-  background-color: var(--accent-slate);
-  color: #fff !important;
+.profile-list li {
+  margin-bottom: 10px;
 }
 
-/* RESEARCH NEWS HIGHLIGHT */
+.profile-list i {
+  color: var(--accent);
+  margin-right: 8px;
+}
+
+/* News highlight */
 .ref-journal {
-  font-weight: 600;
-  color: var(--accent-gold);
+  font-weight: 700;
+  color: var(--primary);
 }
