@@ -1,65 +1,94 @@
+/* ==========================================================
+   MAIN.CSS — PRESTIGIOUS ACADEMIC LUXURY
+   ========================================================== */
+
+/* COLOR SYSTEM */
 :root {
-    --bg-main: #f7f6f3;
-    --bg-card: #ffffff;
-    --ink-main: #1f2933;
-    --ink-soft: #4b5563;
-    --primary: #2f4a63;
-    --secondary: #6b7280;
-    --accent: #b08d57;
-    --border-soft: #e5e7eb;
+  --bg-ivory: #FAFAF8;
+  --text-charcoal: #2A2E35;
+  --text-muted: #4F5666;
+  --accent-slate: #41637E;
+  --accent-gold: #C9A274;
+  --border-light: #E4E6E8;
 }
 
 html, body {
-    background-color: var(--bg-main);
-    color: var(--ink-main);
-    font-family: "Ubuntu Sans", system-ui, sans-serif;
-    line-height: 1.7;
+  height: 100%;
 }
 
-a {
-    color: var(--primary);
-    text-decoration: none;
-    transition: all 0.2s ease;
+body {
+  background-color: var(--bg-ivory);
+  color: var(--text-charcoal);
+  font-family: 'Ubuntu Sans', sans-serif;
+  line-height: 1.7;
+  font-size: 16px;
 }
 
-a:hover {
-    color: var(--accent);
-    text-decoration: none;
-}
-
-/* Headings */
-h1, h2, h3, h4 {
-    font-family: "Georgia", "Times New Roman", serif;
-    letter-spacing: 0.3px;
+/* TYPOGRAPHY STANDARDS */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: var(--text-charcoal);
+  margin-top: 1.4rem;
+  margin-bottom: 0.6rem;
 }
 
 h4 {
-    border-left: 4px solid var(--accent);
-    padding-left: 12px;
-    margin-bottom: 16px;
+  border-left: 3px solid var(--accent-gold);
+  padding-left: 10px;
 }
 
-/* Buttons */
-.btn-blue {
-    background-color: transparent;
-    border: 1px solid var(--primary);
-    color: var(--primary);
-    border-radius: 999px;
-    padding: 6px 18px;
-    font-size: 0.9rem;
+/* LINKS */
+a {
+  color: var(--accent-slate);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: var(--accent-gold);
+  text-decoration: underline;
 }
 
-.btn-blue:hover {
-    background-color: var(--primary);
-    color: #ffffff;
+/* BASIC LAYOUT */
+.container {
+  padding-top: 2rem;
 }
 
-/* Footer */
-footer {
-    background-color: transparent;
-    border-top: 1px solid var(--border-soft);
-    color: var(--secondary);
-    font-size: 0.85rem;
-    padding: 20px 0;
-    margin-top: 60px;
+/* HEADER / NAVIGATION */
+nav {
+  background-color: transparent;
+  border-bottom: 1px solid var(--border-light);
+}
+.navbar-brand {
+  color: var(--accent-slate) !important;
+  font-size: 1.8rem !important;
+  font-weight: 700;
+}
+.nav-link {
+  color: var(--text-charcoal) !important;
+  font-size: 1.05rem;
+}
+.nav-link:hover {
+  color: var(--accent-slate) !important;
+}
+
+/* FOOTER */
+.footer-lemos {
+  background-color: transparent;
+  border-top: 1px solid var(--border-light);
+  color: var(--text-muted);
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  font-size: 0.85rem;
+}
+.footer-lemos-nifme {
+  background-color: transparent;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+.footer-icons {
+  color: var(--accent-slate);
+}
+.footer-icons:hover {
+  color: var(--accent-gold);
 }
