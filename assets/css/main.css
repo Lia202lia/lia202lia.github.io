@@ -1,42 +1,45 @@
 :root {
-  --paper: #fefefe;
-  --ink: #111827;
-  --ink-soft: #4b5563;
+  --paper: #fbfaf8;
+  --ink: #0e0f11;
+  --ink-muted: #5b5e66;
 
-  --navy: #0f172a;
-  --navy-soft: #1e293b;
+  --obsidian: #121417;
+  --smoke: #1a1d22;
 
-  --ivy-blue: #1f4fd8;
-  --champagne: #c9b37e;
+  --platinum: #cfd2d8;
+  --champagne: #d6c7a1;
 
-  --border: #e5e7eb;
+  --accent: #3b5ccc;
 }
 
 html, body {
   margin: 0;
   padding: 0;
-  background-color: var(--paper);
+  background: var(--paper);
   color: var(--ink);
-  font-family: "Ubuntu Sans", system-ui, sans-serif;
-  line-height: 1.75;
+  font-family: "Inter", "Ubuntu Sans", system-ui, sans-serif;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* ===== HEADER ===== */
 
 .site-header {
-  background-color: var(--navy);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: rgba(18, 20, 23, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .site-header .navbar-brand {
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.6px;
 }
 
 .site-header .nav-link {
-  color: #cbd5f5;
-  font-size: 0.95rem;
+  color: rgba(255,255,255,0.65);
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
 }
 
 .site-header .nav-link:hover {
@@ -46,20 +49,20 @@ html, body {
 /* ===== TYPOGRAPHY ===== */
 
 h1, h2, h3, h4 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 600;
-  color: var(--ink);
+  font-family: "Canela", "Georgia", serif;
+  font-weight: 500;
+  letter-spacing: 0.2px;
 }
 
 h4 {
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
+  margin-top: 2.4rem;
+  margin-bottom: 0.9rem;
 }
 
 /* ===== LINKS ===== */
 
 a {
-  color: var(--ivy-blue);
+  color: var(--accent);
   text-decoration: none;
 }
 
@@ -70,25 +73,24 @@ a:hover {
 /* ===== BUTTONS ===== */
 
 .btn-academic {
-  background-color: var(--ivy-blue);
-  border: 1px solid var(--ivy-blue);
-  color: #ffffff;
-  border-radius: 5px;
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid rgba(59,92,204,0.35);
+  border-radius: 999px;
   padding: 6px 18px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  transition: all 0.25s ease;
 }
 
 .btn-academic:hover {
-  background-color: #163db5;
-  border-color: #163db5;
+  background: rgba(59,92,204,0.08);
 }
 
 /* ===== FOOTER ===== */
 
 .site-footer {
-  background-color: var(--navy-soft);
-  color: #9ca3af;
-  font-size: 0.8rem;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  margin-top: 100px;
+  background: var(--obsidian);
+  color: rgba(255,255,255,0.55);
+  font-size: 0.75rem;
+  margin-top: 120px;
 }
