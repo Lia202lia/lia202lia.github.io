@@ -1,24 +1,19 @@
-/* =========================================================
-   PROFILE — PRESTIGE FRAME
-   ========================================================= */
-
 .profile-frame {
   width: 240px;
   height: 240px;
-  margin: 0 auto 16px;
+  margin: 0 auto 1.2rem;
   border-radius: 50%;
-  padding: 6px;
+  padding: 4px;
+  background: linear-gradient(145deg, var(--accent-gold) 0%, var(--accent-silver) 50%, var(--accent-gold) 100%);
+  box-shadow: 
+    0 8px 32px var(--shadow-light),
+    inset 0 0 0 1px rgba(255,255,255,0.5),
+    0 0 0 1px rgba(255,255,255,0.2);
+  transition: transform 0.2s ease;
+}
 
-  background: linear-gradient(
-    145deg,
-    var(--accent-gold),
-    var(--accent-silver),
-    var(--accent-gold)
-  );
-
-  box-shadow:
-    0 14px 28px rgba(0, 0, 0, 0.14),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+.profile-frame:hover {
+  transform: scale(1.02);
 }
 
 .profile-img {
@@ -27,47 +22,47 @@
   border-radius: 50%;
   object-fit: cover;
   background-color: #ffffff;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.9), 0 4px 16px var(--shadow-light);
 }
 
-/* =========================================================
-   PROFILE TEXT
-   ========================================================= */
-
 .profile-name {
-  font-size: 1.55rem;
+  font-size: 1.8rem;
+  font-family: Georgia, serif;
   color: var(--primary);
-  margin-bottom: 4px;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
 }
 
 .profile-sub {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--text-muted);
-  margin-bottom: 26px;
+  margin-bottom: 2rem;
+  font-style: italic;
 }
-
-/* =========================================================
-   SOCIAL / METADATA
-   ========================================================= */
 
 .social-icons {
   list-style: none;
-  padding-left: 0;
-  font-size: 0.85rem;
+  padding: 0;
+  margin: 0;
+  font-size: 0.95rem;
 }
 
 .social-icons li {
-  margin-bottom: 9px;
+  margin-bottom: 0.8rem;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.social-icons li:hover {
+  opacity: 1;
 }
 
 .social-icons i {
   color: var(--primary);
-  margin-right: 7px;
+  width: 18px;
+  margin-right: 10px;
+  font-size: 1rem;
 }
-
-/* =========================================================
-   NEWS / HIGHLIGHTS
-   ========================================================= */
 
 .ref-journal {
   font-weight: 600;
