@@ -1,4 +1,19 @@
-:root { /* Colors above */ }
+:root { :root {
+  --bg-main: #fcfcfb;          /* paper white */
+  --bg-header: #0f172a;        /* deeper slate navy (ETH-inspired) */
+  --bg-footer: #111827;        /* warm institutional slate */
+
+  --text-main: #1e1f23;
+  --text-muted: #6b7280;
+  --text-invert: #f9fafb;      /* off-white for max header clarity */
+
+  --primary: #1d42a6;          /* Oxford royal blue (better harmony) */
+  --accent-gold: #bfa46f;      /* muted gold */
+  --accent-silver: #9ca3af;
+  --border-soft: #d1d5db;
+  --shadow-light: rgba(0,0,0,0.08);
+}
+ }
 
 html, body {
   margin: 0;
