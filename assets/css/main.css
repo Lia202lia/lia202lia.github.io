@@ -1,71 +1,94 @@
+/*--------------------------------------------------------------
+# Global Academic Style
+--------------------------------------------------------------*/
+:root {
+
+  /* Main Palette */
+  --bg-white: #FFFFFF;
+  --bg-soft: #F2F4F6;
+  --text-primary: #1A1A1A;
+  --text-secondary: #3B3B3B;
+
+  /* Academic Blue Accent */
+  --accent-deep: #0A3F71;
+  --accent-light: #375A7F;
+
+  /* Neutral Slate */
+  --slate-gray: #8A95A5;
+  --dark-nav: #13182A;
+  --footer-dark: #0F1120;
+}
+
 html, body {
   height: 100%;
 }
 
 body {
-  background-color: var(--bg-primary);
+  background-color: var(--bg-white);
   font-family: 'Ubuntu Sans', sans-serif;
-  color: var(--text-main);
+  color: var(--text-primary);
   line-height: 1.65;
 }
 
-/* NAVBAR — elite dark slate */
+/* Navigation */
 nav {
-  background-color: var(--nav-dark);
+  background-color: var(--dark-nav);
 }
 
 .navbar-brand {
-  color: white !important;
-  font-size: 1.75rem !important;
+  color: var(--bg-white) !important;
+  font-size: 1.8rem !important;
   font-weight: 700;
-  letter-spacing: 0.02em;
 }
 
 .nav-link {
-  color: #D1D5DB !important;
+  color: var(--bg-white) !important;
+  font-size: 1.15rem;
 }
 
 .nav-link:hover {
-  color: white !important;
+  color: var(--accent-light) !important;
 }
 
-/* LINKS */
+/* Links */
 a {
-  color: var(--accent-primary);
-  text-decoration: none;
+  color: var(--accent-deep);
+  text-decoration: underline;
 }
 
 a:hover {
-  color: var(--accent-hover);
+  color: var(--accent-light);
+  text-decoration: none;
 }
 
-/* HEADINGS */
+/* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Ubuntu Sans', sans-serif;
   font-weight: 700;
-  letter-spacing: 0.01em;
+  color: var(--text-primary);
 }
 
-/* FOOTER */
+/* Footer */
 .footer-lemos {
-  background-color: var(--nav-dark);
-  font-size: smaller;
+  background-color: var(--dark-nav);
+  font-size: 0.78rem;
+  color: var(--slate-gray);
 }
 
 .footer-lemos-nifme {
   background-color: var(--footer-dark);
-  font-size: smaller;
+  font-size: 0.75rem;
+  color: var(--slate-gray);
 }
 
 .footer-icons {
-  color: var(--icon-muted);
+  color: var(--accent-deep);
 }
 
 .footer-icons:hover {
-  color: var(--accent-hover);
+  color: var(--accent-light);
 }
 
-/* PAGE STRUCTURE */
+/* Layout Helpers */
 #page-container {
   position: relative;
   min-height: 93vh;
