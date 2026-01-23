@@ -1,52 +1,64 @@
-/* =======================================================
-   HOME PAGE — MODERN ACADEMIC PROFILE STYLE
-   ======================================================= */
+/* ==========================================================
+   HOME.CSS — ACADEMIC PROFILE DETAILS
+   ========================================================== */
 
-h4, h5, p, ul > li, .btn-academic {
+h4, h5, p, ul > li {
   font-family: 'Ubuntu Sans', sans-serif;
 }
 
-/* BUTTONS — REFRESHED FOR PRESTIGE */
-.btn-academic {
-  color: #FFFFFF !important;
-  background-color: var(--accent-main);
-  border: 2px solid var(--accent-main);
-  border-radius: 8px;
-  padding: 8px 20px;
-  font-size: 0.9rem;
+/* =========================
+   PROFILE IMAGE — LUXURY
+========================= */
+.profile-img {
+  border-radius: 50%;
+  width: 60%;
+  max-width: 240px;
+  border: 3px solid rgba(200, 164, 93, 0.55); /* champagne ring */
+}
+
+/* =========================
+   BUTTONS — EDITORIAL
+========================= */
+.btn-blue {
+  background-color: transparent;
+  border: 1.5px solid var(--accent-blue);
+  color: var(--accent-blue) !important;
+  border-radius: 6px;
+  padding: 6px 18px;
+  font-size: 0.85rem;
   font-weight: 600;
-  transition: 0.3s ease;
+  transition: 0.25s ease;
 }
 
-.btn-academic:hover {
-  background-color: var(--accent-secondary);
-  border-color: var(--accent-secondary);
+.btn-blue:hover {
+  background-color: var(--accent-blue);
+  color: #FFFFFF !important;
 }
 
-/* LINKS */
-a {
-  color: var(--accent-main);
+.btn-blue a {
+  color: inherit !important;
 }
 
-a:hover {
-  color: var(--accent-secondary);
-  text-decoration: underline;
-}
-
-/* ICONS */
+/* =========================
+   ICONS
+========================= */
 .fa-fw {
-  color: var(--accent-main);
+  color: var(--accent-blue);
 }
 
-/* SOCIAL LIST */
-.social-icons {
-  list-style: none;
-  padding-left: 0;
-}
-
-/* RESEARCH / NEWS HIGHLIGHT */
+/* =========================
+   RESEARCH / NEWS
+========================= */
 .ref-journal {
   font-weight: 600;
   font-style: italic;
-  color: var(--accent-secondary);
+  color: var(--accent-gold);
+}
+
+/* =========================
+   SOCIAL LIST
+========================= */
+.social-icons {
+  list-style: none;
+  padding-left: 0;
 }
