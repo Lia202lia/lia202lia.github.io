@@ -1,57 +1,43 @@
-/* ======================================================
-   HOME.CSS — PORTRAIT & IDENTITY
-   ====================================================== */
-
-/* Profile column */
-.profile-box {
-  text-align: center;
-  padding: 28px 18px;
-}
-
-/* Profile image (PORTRAIT STYLE) */
+/* Profile image */
 .profile-img {
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
+  width: 60%;
+  max-width: 240px;
   border-radius: 50%;
-  border: 4px solid var(--accent);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  margin-bottom: 18px;
+  border: 2px solid var(--primary);
+  margin-bottom: 10px;
 }
 
 /* Name */
 .profile-name {
-  font-family: "Georgia", serif;
-  font-size: 1.9rem;
+  font-size: 1.7rem;
   color: var(--primary);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
-/* Subtitle */
-.profile-subtitle {
+/* Short bio */
+.profile-sub {
   font-size: 0.95rem;
   color: var(--text-muted);
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 }
 
-/* Contact list */
-.profile-list {
+/* Social list */
+.social-icons {
   list-style: none;
   padding-left: 0;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
 }
 
-.profile-list li {
-  margin-bottom: 10px;
+.social-icons li {
+  margin-bottom: 8px;
 }
 
-.profile-list i {
-  color: var(--accent);
-  margin-right: 8px;
+.social-icons i {
+  color: var(--primary);
 }
 
 /* News highlight */
 .ref-journal {
-  font-weight: 700;
+  font-weight: 600;
   color: var(--primary);
 }
