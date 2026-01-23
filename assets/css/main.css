@@ -1,110 +1,104 @@
-:root {
---bg-main: #fcfcfb;          /* paper white */
---bg-header: #1b2430;       /* deep academic navy */
---bg-footer: #0f172a;       /* institutional footer */
+/* =========================================================
+   BASE
+   ========================================================= */
 
---text-main: #1e1f23;
---text-muted: #6b7280;
---text-invert: #f8fafc;
-
---primary: #2f5dab;         /* Ivy blue */
---accent-gold: #bfa46f;     /* muted academic gold */
---accent-silver: #9ca3af;
---border-soft: #d1d5db;
---shadow-light: rgba(0,0,0,0.08);  /* subtle depth */
+html {
+  scroll-behavior: smooth;
 }
 
-html, body {
+body {
   margin: 0;
-  padding: 0;
   background-color: var(--bg-main);
   color: var(--text-main);
-  font-family: "Ubuntu Sans", system-ui, -apple-system, sans-serif;
-  line-height: 1.7;
-  font-size: 16px;  /* Baseline for accessibility */
+  font-family: "Source Sans 3", system-ui, -apple-system, sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* =========================================================
+   HEADER
+   ========================================================= */
 
 .site-header {
   background-color: var(--bg-header);
   border-bottom: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .site-header .navbar-brand {
   color: var(--text-invert);
   font-weight: 600;
-  letter-spacing: 0.5px;
-  font-size: 1.4rem;
+  letter-spacing: 0.7px;
 }
 
 .site-header .nav-link {
   color: #cbd5e1;
   font-size: 0.95rem;
-  transition: color 0.2s ease;
+  margin-left: 18px;
 }
 
 .site-header .nav-link:hover {
-  color: var(--text-invert);
+  color: #ffffff;
 }
 
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
 h1, h2, h3, h4 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-weight: 600;
   color: var(--text-main);
-  margin-top: 2rem;
-  margin-bottom: 1rem;
 }
 
 h4 {
-  margin-top: 2.2rem;
+  margin-top: 2.6rem;
   margin-bottom: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
 }
 
-a { color: var(--primary); text-decoration: none; transition: opacity 0.2s; }
-a:hover { opacity: 0.8; text-decoration: underline; }
+p {
+  margin-bottom: 1.25rem;
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
 
 .btn-academic {
   background-color: var(--primary);
   color: #ffffff;
-  border: 1px solid var(--primary);
   border-radius: 6px;
-  padding: 8px 20px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  text-decoration: none;
-  display: inline-block;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
+  padding: 7px 20px;
+  font-size: 0.82rem;
+  letter-spacing: 0.4px;
 }
 
 .btn-academic:hover {
-  background-color: #224a86;
-  border-color: #224a86;
-  transform: translateY(-1px);
+  background-color: #163f8f;
 }
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 .site-footer {
   background-color: var(--bg-footer);
-  color: var(--accent-silver);
-  font-size: 0.85rem;
+  color: #9aa1ad;
+  font-size: 0.82rem;
   border-top: 1px solid rgba(255,255,255,0.06);
-  margin-top: 4rem;
-  padding: 2rem 0;
-}
-
-.site-footer a { color: #c7d2fe; }
-.site-footer a:hover { color: var(--text-invert); }
-
-/* Responsiveness */
-@media (max-width: 768px) {
-  .container { padding: 0 1rem; }
-  .profile-frame { width: 200px; height: 200px; }
-}
-
-/* Print optimization */
-@media print {
-  .site-header, .site-footer { background: white !important; color: black !important; }
-  body { font-size: 12pt; }
+  margin-top: 120px;
 }
