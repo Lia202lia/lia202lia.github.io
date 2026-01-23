@@ -1,94 +1,113 @@
-/* ==========================================================
-   MAIN.CSS — PRESTIGIOUS ACADEMIC LUXURY
-   ========================================================== */
+/* ======================================================
+   MAIN.CSS — PRESTIGIOUS ACADEMIC IDENTITY
+   ====================================================== */
 
-/* COLOR SYSTEM */
 :root {
-  --bg-ivory: #FAFAF8;
-  --text-charcoal: #2A2E35;
-  --text-muted: #4F5666;
-  --accent-slate: #41637E;
-  --accent-gold: #C9A274;
-  --border-light: #E4E6E8;
-}
+  --bg-main: #f4f5f2;
+  --bg-card: #ffffff;
 
-html, body {
-  height: 100%;
+  --header-grad-start: #1e3a5f;
+  --header-grad-end: #355f8a;
+
+  --footer-bg: #1b2e44;
+
+  --text-main: #1f2933;
+  --text-muted: #5b6775;
+
+  --primary: #2e5d89;
+  --accent: #c7a24b;
+  --accent-soft: #e7dcc0;
+
+  --border-soft: #dde2e8;
 }
 
 body {
-  background-color: var(--bg-ivory);
-  color: var(--text-charcoal);
-  font-family: 'Ubuntu Sans', sans-serif;
-  line-height: 1.7;
-  font-size: 16px;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: "Ubuntu Sans", system-ui, sans-serif;
+  line-height: 1.75;
+  margin: 0;
 }
 
-/* TYPOGRAPHY STANDARDS */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Georgia', 'Times New Roman', serif;
-  color: var(--text-charcoal);
-  margin-top: 1.4rem;
-  margin-bottom: 0.6rem;
+/* ================= HEADER ================= */
+.site-header {
+  background: linear-gradient(
+    135deg,
+    var(--header-grad-start),
+    var(--header-grad-end)
+  );
+  color: #ffffff;
+  padding: 26px 0;
 }
 
-h4 {
-  border-left: 3px solid var(--accent-gold);
-  padding-left: 10px;
+.site-header h1 {
+  font-family: "Georgia", serif;
+  font-size: 2.2rem;
+  letter-spacing: 0.4px;
+  margin: 0;
 }
 
-/* LINKS */
-a {
-  color: var(--accent-slate);
-  text-decoration: none;
+.site-header nav a {
+  color: #e8eef6;
+  margin-left: 22px;
   font-weight: 500;
-  transition: color 0.2s ease;
-}
-a:hover {
-  color: var(--accent-gold);
-  text-decoration: underline;
 }
 
-/* BASIC LAYOUT */
+.site-header nav a:hover {
+  color: var(--accent);
+}
+
+/* ================= CONTENT ================= */
 .container {
-  padding-top: 2rem;
+  margin-top: 40px;
+  margin-bottom: 60px;
 }
 
-/* HEADER / NAVIGATION */
-nav {
-  background-color: transparent;
-  border-bottom: 1px solid var(--border-light);
-}
-.navbar-brand {
-  color: var(--accent-slate) !important;
-  font-size: 1.8rem !important;
-  font-weight: 700;
-}
-.nav-link {
-  color: var(--text-charcoal) !important;
-  font-size: 1.05rem;
-}
-.nav-link:hover {
-  color: var(--accent-slate) !important;
+.section-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 34px;
+  border: 1px solid var(--border-soft);
+  margin-bottom: 36px;
 }
 
-/* FOOTER */
-.footer-lemos {
+/* Titles */
+.section-card h2 {
+  font-family: "Georgia", serif;
+  font-size: 1.55rem;
+  border-bottom: 2px solid var(--accent-soft);
+  padding-bottom: 8px;
+  margin-bottom: 18px;
+}
+
+/* ================= BUTTONS ================= */
+.btn-academic {
   background-color: transparent;
-  border-top: 1px solid var(--border-light);
-  color: var(--text-muted);
-  padding-top: 0.8rem;
-  padding-bottom: 0.8rem;
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
+  border-radius: 30px;
+  padding: 8px 22px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-academic:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+/* ================= FOOTER ================= */
+.site-footer {
+  background-color: var(--footer-bg);
+  color: #cdd6e3;
+  padding: 26px 0;
   font-size: 0.85rem;
 }
-.footer-lemos-nifme {
-  background-color: transparent;
-  color: var(--text-muted);
-  font-size: 0.78rem;
+
+.site-footer a {
+  color: var(--accent-soft);
 }
-.footer-icons {
-  color: var(--accent-slate);
-}
-.footer-icons:hover {
-  color: var(--accent-gold);
+
+.site-footer a:hover {
+  color: var(--accent);
 }
