@@ -1,124 +1,67 @@
-/*--------------------------------------------------------------
-# General – Elite Academic Palette
---------------------------------------------------------------*/
 :root {
-  /* Backgrounds */
-  --white-ish: #FDFEFE;        /* warm academic white */
-  --light-gray: #F5F7F9;       /* subtle paper-like gray */
-  --bluish-gray: #ECEFF3;
+  --bg-main: #fbfbfa;         /* near-paper white */
+  --bg-soft: #f1f3f5;         /* very light gray */
+  --text-main: #1c1e21;       /* academic black */
+  --text-muted: #5f6368;      /* muted gray */
 
-  /* Primary Academic Colors */
-  --blue-light: #3A5F8F;       /* muted slate blue (links) */
-  --blue-medium: #243B5A;      /* deep academic blue */
-  --blue-medium-rgb: 36, 59, 90;
-
-  /* Authority Neutrals */
-  --blue-dark: #1E2329;        /* oxford black-blue */
-  --dark-b: #161A1E;
-  --gray-black: #2E3440;
-  --darker-b: #0F1215;
-
-  /* Prestige Accent (very sparing) */
-  --accent-bronze: #8A6D3B;
+  --primary: #2f5e8c;         /* academic blue */
+  --primary-soft: #e7eef6;    /* blue tint */
+  --border-soft: #dcdfe3;
 }
 
 html, body {
-  height: 100%;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: "Ubuntu Sans", system-ui, sans-serif;
+  line-height: 1.7;
+  margin: 0;
 }
 
-body {
-  background-color: var(--light-gray);
-  font-family: 'Ubuntu Sans', sans-serif;
-  color: var(--gray-black);
-  line-height: 1.65;
-}
-
-/*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
-nav {
-  background-color: var(--blue-dark);
-}
-
-.navbar-brand {
-  color: var(--white-ish) !important;
-  font-size: 1.8rem !important;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-.nav-link {
-  color: #DDE3EA !important;
-}
-
-.nav-link:hover {
-  color: var(--accent-bronze) !important;
-}
-
-.navbar-expand-lg {
-  font-size: 1.15rem !important;
-}
-
-/*--------------------------------------------------------------
-# Typography & Links
---------------------------------------------------------------*/
 a {
-  color: var(--blue-light);
-  font-weight: 500;
-}
-
-a:hover {
-  color: var(--accent-bronze);
+  color: var(--primary);
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Ubuntu Sans', sans-serif;
-  color: var(--blue-medium);
+a:hover {
+  text-decoration: underline;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+/* Section titles */
+h4 {
+  margin-top: 1.6rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.25rem;
   font-weight: 700;
 }
 
-/* subtle academic emphasis */
-#header_middle_letter {
-  color: var(--accent-bronze);
+/* Buttons */
+.btn-blue {
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
 }
 
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-.footer-lemos {
-  background-color: var(--blue-dark);
-  font-size: smaller;
+.btn-blue:hover {
+  background-color: #244b6f;
+  border-color: #244b6f;
 }
 
-.footer-lemos-nifme {
-  background-color: var(--darker-b);
-  font-size: smaller;
-}
-
-.footer-icons {
-  color: #B8C4D6;
-}
-
-.footer-icons:hover {
-  color: var(--accent-bronze);
-}
-
-/*--------------------------------------------------------------
-# Layout
---------------------------------------------------------------*/
-#page-container {
-  position: relative;
-  min-height: 93vh;
-}
-
-#content-wrap {
-  padding-bottom: 2.5rem;
-}
-
-#footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
+/* Footer */
+footer {
+  border-top: 1px solid var(--border-soft);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  padding: 18px 0;
+  margin-top: 60px;
 }
