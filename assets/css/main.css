@@ -1,127 +1,92 @@
 /* ==========================================================
-   MAIN STYLES — PRESTIGIOUS ACADEMIC AESTHETIC
+   PRESTIGIOUS ACADEMIC PALETTE — CLARITY + MODERNITY
    ========================================================== */
 
 :root {
-  /* Backgrounds */
-  --bg-primary: #F9FAFB;        /* warm academic white */
-  --bg-secondary: #F1F3F5;      /* light neutral gray */
+  /* Backdrops */
+  --bg-base: #FFFFFF;
+  --bg-light: #F8F9FA;
 
-  /* Header & Footer — soft academic blue-gray */
-  --nav-academic: #2F3A4A;
-  --footer-academic: #273240;
-  --footer-deeper: #1F2933;
+  /* Typography */
+  --text-primary: #20232A;
+  --text-secondary: #6C757D;
 
-  /* Accent — restrained academic blue */
-  --accent-primary: #1E40AF;
-  --accent-hover: #1D4ED8;
+  /* Elegant academic accent */
+  --accent-main: #386FA4;   /* calm academic blue */
+  --accent-secondary: #EAB464; /* soft warm highlight */
 
-  /* Text */
-  --text-main: #1F2937;         /* charcoal */
-  --text-muted: #4B5563;
-
-  /* Icons */
-  --icon-muted: #3B82F6;
+  /* Borders / separators */
+  --border-light: #E9ECEF;
 }
 
+/* GLOBAL SETTINGS */
 html, body {
   height: 100%;
 }
 
 body {
-  background-color: var(--bg-primary);
+  background-color: var(--bg-base);
   font-family: 'Ubuntu Sans', sans-serif;
-  color: var(--text-main);
-  line-height: 1.65;
+  color: var(--text-primary);
+  line-height: 1.6;
 }
 
-/* ----------------------------
-   Navigation (Header)
------------------------------ */
+/* NAVIGATION (HEADER) */
 nav {
-  background-color: var(--nav-academic);
+  background-color: var(--bg-light);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .navbar-brand {
-  color: #F9FAFB !important;
-  font-size: 1.75rem !important;
+  color: var(--accent-main) !important;
+  font-size: 1.8rem !important;
   font-weight: 700;
-  letter-spacing: 0.02em;
 }
 
 .nav-link {
-  color: #D6DADF !important;
-  font-size: 1.05rem;
+  color: var(--text-primary) !important;
+  font-size: 1.1rem;
 }
 
 .nav-link:hover {
-  color: #FFFFFF !important;
+  color: var(--accent-main) !important;
 }
 
-/* ----------------------------
-   Typography
------------------------------ */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Ubuntu Sans', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  color: var(--text-main);
-}
-
-p {
-  color: var(--text-muted);
-}
-
-/* ----------------------------
-   Links
------------------------------ */
+/* LINKS & INTERACTIVE */
 a {
-  color: var(--accent-primary);
+  color: var(--accent-main);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--accent-hover);
+  color: var(--accent-secondary);
+  text-decoration: underline;
 }
 
-/* ----------------------------
-   Footer
------------------------------ */
+/* HEADINGS */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* FOOTER STYLING */
 .footer-lemos {
-  background-color: var(--footer-academic);
-  font-size: 0.8rem;
-  color: #D1D5DB;
+  background-color: var(--bg-light);
+  border-top: 1px solid var(--border-light);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
 }
 
 .footer-lemos-nifme {
-  background-color: var(--footer-deeper);
-  font-size: 0.75rem;
-  color: #9CA3AF;
+  background-color: #FFFFFF;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
 }
 
 .footer-icons {
-  color: var(--icon-muted);
+  color: var(--accent-main);
 }
 
 .footer-icons:hover {
-  color: var(--accent-hover);
-}
-
-/* ----------------------------
-   Layout helpers
------------------------------ */
-#page-container {
-  position: relative;
-  min-height: 93vh;
-}
-
-#content-wrap {
-  padding-bottom: 2.5rem;
-}
-
-#footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
+  color: var(--accent-secondary);
 }
