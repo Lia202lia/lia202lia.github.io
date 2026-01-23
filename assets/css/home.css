@@ -1,22 +1,19 @@
-/* ===== PROFILE MEDALLION ===== */
-
+/* PROFILE IMAGE MEDALLION */
 .profile-medallion {
-  width: 220px;          /* slightly smaller */
-  height: 220px;
+  width: 200px;
+  height: 200px;
   margin: 0 auto 24px;
-  border-radius: 50%;    /* perfectly circular */
-  padding: 4px;          /* thin frame */
-
-  background: none;      /* frame color is border only */
-  border: 3px solid #c5a369; /* muted elegant gold */
-  box-shadow:
-    0 12px 28px rgba(0,0,0,0.25); /* soft prestige shadow */
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  border-radius: 50%;
+  border: 2px solid var(--accent-gold);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  background: #fff;
 }
 
 .profile-medallion:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 36px rgba(0,0,0,0.35);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.3);
 }
 
 .profile-img {
@@ -26,22 +23,20 @@
   object-fit: cover;
 }
 
-/* ===== TEXT ===== */
-
+/* TEXT */
 .profile-name {
   font-size: 1.75rem;
-  color: #3b3a39; /* deep slate */
+  color: var(--primary);
   font-weight: 600;
 }
 
 .profile-sub {
   font-size: 0.95rem;
-  color: #666562;  /* muted sophisticated gray */
+  color: var(--text-muted);
   margin-bottom: 28px;
 }
 
-/* ===== META LIST ===== */
-
+/* SOCIAL / META */
 .meta-list {
   list-style: none;
   padding-left: 0;
@@ -50,36 +45,16 @@
 
 .meta-list li {
   margin-bottom: 6px;
-  color: #555452;
+  color: var(--text-muted);
 }
 
-/* ===== SIGNAL (News/Updates) ===== */
+.meta-list i {
+  margin-right: 6px;
+  color: var(--primary);
+}
 
+/* NEWS / RESEARCH HIGHLIGHTS */
 .ref-signal {
-  color: #a17c50; /* muted gold for highlights */
-  font-weight: 500;
-}
-
-/* ===== ACADEMIC BUTTONS ===== */
-
-.btn-academic {
-  display: inline-block;
-  padding: 8px 16px;
-  margin-top: 8px;
-  margin-right: 8px;
-
-  background-color: #3b3a39; /* deep slate (matches header/footer) */
-  color: #c5a369;             /* muted gold */
-  font-weight: 500;
-  text-decoration: none;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
-}
-
-.btn-academic:hover {
-  background-color: #2e2d2c;  /* slightly darker on hover */
-  color: #e0c77d;             /* brighter gold on hover */
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  color: var(--primary);
+  font-weight: 600;
 }
