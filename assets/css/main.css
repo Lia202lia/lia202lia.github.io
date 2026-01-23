@@ -1,22 +1,27 @@
-/*--------------------------------------------------------------
-# Global Academic Style
---------------------------------------------------------------*/
+/* ==========================================================
+   MAIN STYLES — PRESTIGIOUS ACADEMIC AESTHETIC
+   ========================================================== */
+
 :root {
+  /* Backgrounds */
+  --bg-primary: #F9FAFB;        /* warm academic white */
+  --bg-secondary: #F1F3F5;      /* light neutral gray */
 
-  /* Main Palette */
-  --bg-white: #FFFFFF;
-  --bg-soft: #F2F4F6;
-  --text-primary: #1A1A1A;
-  --text-secondary: #3B3B3B;
+  /* Header & Footer — soft academic blue-gray */
+  --nav-academic: #2F3A4A;
+  --footer-academic: #273240;
+  --footer-deeper: #1F2933;
 
-  /* Academic Blue Accent */
-  --accent-deep: #0A3F71;
-  --accent-light: #375A7F;
+  /* Accent — restrained academic blue */
+  --accent-primary: #1E40AF;
+  --accent-hover: #1D4ED8;
 
-  /* Neutral Slate */
-  --slate-gray: #8A95A5;
-  --dark-nav: #13182A;
-  --footer-dark: #0F1120;
+  /* Text */
+  --text-main: #1F2937;         /* charcoal */
+  --text-muted: #4B5563;
+
+  /* Icons */
+  --icon-muted: #3B82F6;
 }
 
 html, body {
@@ -24,71 +29,87 @@ html, body {
 }
 
 body {
-  background-color: var(--bg-white);
+  background-color: var(--bg-primary);
   font-family: 'Ubuntu Sans', sans-serif;
-  color: var(--text-primary);
+  color: var(--text-main);
   line-height: 1.65;
 }
 
-/* Navigation */
+/* ----------------------------
+   Navigation (Header)
+----------------------------- */
 nav {
-  background-color: var(--dark-nav);
+  background-color: var(--nav-academic);
 }
 
 .navbar-brand {
-  color: var(--bg-white) !important;
-  font-size: 1.8rem !important;
+  color: #F9FAFB !important;
+  font-size: 1.75rem !important;
   font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .nav-link {
-  color: var(--bg-white) !important;
-  font-size: 1.15rem;
+  color: #D6DADF !important;
+  font-size: 1.05rem;
 }
 
 .nav-link:hover {
-  color: var(--accent-light) !important;
+  color: #FFFFFF !important;
 }
 
-/* Links */
+/* ----------------------------
+   Typography
+----------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Ubuntu Sans', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--text-main);
+}
+
+p {
+  color: var(--text-muted);
+}
+
+/* ----------------------------
+   Links
+----------------------------- */
 a {
-  color: var(--accent-deep);
-  text-decoration: underline;
-}
-
-a:hover {
-  color: var(--accent-light);
+  color: var(--accent-primary);
   text-decoration: none;
 }
 
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  color: var(--text-primary);
+a:hover {
+  color: var(--accent-hover);
 }
 
-/* Footer */
+/* ----------------------------
+   Footer
+----------------------------- */
 .footer-lemos {
-  background-color: var(--dark-nav);
-  font-size: 0.78rem;
-  color: var(--slate-gray);
+  background-color: var(--footer-academic);
+  font-size: 0.8rem;
+  color: #D1D5DB;
 }
 
 .footer-lemos-nifme {
-  background-color: var(--footer-dark);
+  background-color: var(--footer-deeper);
   font-size: 0.75rem;
-  color: var(--slate-gray);
+  color: #9CA3AF;
 }
 
 .footer-icons {
-  color: var(--accent-deep);
+  color: var(--icon-muted);
 }
 
 .footer-icons:hover {
-  color: var(--accent-light);
+  color: var(--accent-hover);
 }
 
-/* Layout Helpers */
+/* ----------------------------
+   Layout helpers
+----------------------------- */
 #page-container {
   position: relative;
   min-height: 93vh;
