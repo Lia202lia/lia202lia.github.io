@@ -1,38 +1,126 @@
-/* --------------------------------------------------
-   Academic Footer
--------------------------------------------------- */
+/* ============================================================
+   Academic Core Styles
+   ============================================================ */
 
-footer,
-footer-component,
-footer-component-lemos {
-  display: block;
+:root {
+  --bg-main: #fbfbfa;          /* paper white */
+  --bg-soft: #f2f4f6;          /* light neutral */
+  --text-main: #1c1e21;        /* ink black */
+  --text-muted: #5f6368;       /* muted gray */
+
+  --primary: #2f5e8c;          /* academic blue */
+  --primary-dark: #244b6f;
+  --border-soft: #dcdfe3;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
   background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: "Ubuntu Sans", system-ui, -apple-system, sans-serif;
+  line-height: 1.7;
+}
+
+/* ------------------------------------------------------------
+   Typography
+------------------------------------------------------------ */
+
+h1, h2, h3, h4, h5 {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+h4 {
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+/* ------------------------------------------------------------
+   Links
+------------------------------------------------------------ */
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* ------------------------------------------------------------
+   Header (Minimal Academic)
+------------------------------------------------------------ */
+
+header {
+  border-bottom: 1px solid var(--border-soft);
+  background-color: var(--bg-main);
+}
+
+.navbar {
+  padding: 14px 0;
+}
+
+.navbar-brand {
+  font-family: "Georgia", serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-main) !important;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  color: var(--text-muted) !important;
+  margin-left: 16px;
+}
+
+.nav-link:hover {
+  color: var(--primary) !important;
+}
+
+/* ------------------------------------------------------------
+   Buttons (Academic, restrained)
+------------------------------------------------------------ */
+
+.btn-blue {
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+}
+
+.btn-blue:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+/* ------------------------------------------------------------
+   Footer (Quiet, factual)
+------------------------------------------------------------ */
+
+footer {
   border-top: 1px solid var(--border-soft);
   color: var(--text-muted);
   font-size: 0.8rem;
-}
-
-/* Footer spacing */
-#footer {
+  padding: 18px 0;
   margin-top: 80px;
+  background-color: var(--bg-main);
 }
 
-/* Footer links */
 footer a {
   color: var(--primary);
 }
 
 footer a:hover {
   text-decoration: underline;
-}
-
-/* Footer icons */
-.footer-icons,
-footer i {
-  color: var(--primary);
-  font-size: 0.9rem;
-}
-
-footer i:hover {
-  color: #244b6f;
 }
