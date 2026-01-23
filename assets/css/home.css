@@ -1,48 +1,65 @@
-/*--------------------------------------------------------------
-# Home Page Enhancements
---------------------------------------------------------------*/
+/* ==========================================================
+   HOME PAGE — ACADEMIC PROFILE STYLING
+   ========================================================== */
 
-:root {
-  --accent-deep: #0A3F71;
-  --accent-light: #375A7F;
-  --slate-gray: #8A95A5;
-}
-
-p, ul > li {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
+h4, h5, p, ul > li, .btn-blue {
   font-family: 'Ubuntu Sans', sans-serif;
 }
 
-/* Buttons (Academic Blue) */
+/* ----------------------------
+   Buttons — calm & academic
+----------------------------- */
 .btn-blue {
-  background-color: var(--accent-deep);
-  color: var(--bg-white) !important;
+  color: #FFFFFF !important;
+  background-color: var(--accent-primary);
+  border: none;
   border-radius: 999px;
-  padding: 7px 20px;
-  font-size: 0.88rem;
+  padding: 6px 18px;
+  font-size: 0.85rem;
   font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .btn-blue:hover {
-  background-color: var(--accent-light);
-  color: var(--bg-white) !important;
+  background-color: var(--accent-hover);
 }
 
-/* Icons */
+.btn-blue a {
+  color: #FFFFFF !important;
+}
+
+/* ----------------------------
+   Links
+----------------------------- */
+a {
+  color: var(--accent-primary);
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: none !important;
+}
+
+/* ----------------------------
+   Icons
+----------------------------- */
 .fa-fw {
-  color: var(--accent-deep);
+  color: var(--accent-primary);
 }
 
-/* Social Icons List */
+/* ----------------------------
+   Social icons list
+----------------------------- */
 .social-icons {
   list-style: none;
   padding-left: 0;
 }
 
-/* Academic Journal Tag */
+/* ----------------------------
+   Research / News Highlight
+----------------------------- */
 .ref-journal {
-  font-style: italic;
   font-weight: 600;
-  color: var(--accent-deep);
+  font-style: italic;
+  color: var(--accent-primary);
 }
