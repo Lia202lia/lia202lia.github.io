@@ -12,9 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* ========= IMPROVED COLOR DISTRIBUTION ========= */
+        /* ========= CONSISTENT HEADER/FOOTER COLORS ========= */
         :root {
-            /* Balanced Color Palette - Better Distribution */
+            /* Header & Footer Colors (same as other pages) */
+            --color-header-bg: #05475E;     /* Dark navy blue */
+            --color-footer-bg: #05475E;     /* Dark navy blue */
+            --color-footer-light: #127686;  /* Lighter teal */
+            
+            /* Body Colors (improved distribution) */
             --color-bg: #F8FBFF;           /* Very light blue background */
             --color-paper: #FFFFFF;
             --color-light-accent: #EAF5FF;  /* Light blue accent for backgrounds */
@@ -24,29 +29,21 @@
             --color-text-light: #5D728E;
             
             /* Main Colors - Better Distribution */
-            --color-primary: #3A8CA8;       /* Primary teal - more balanced */
+            --color-primary: #339BA7;       /* Teal primary */
             --color-primary-light: #6DB4CC; /* Lighter teal for accents */
-            --color-primary-dark: #1A6C82;  /* Darker teal for depth */
+            --color-primary-dark: #127686;  /* Darker teal for depth */
             
-            --color-secondary: #5A9BC8;     /* Blue secondary - more present */
+            --color-secondary: #4F97C8;     /* Blue secondary */
             --color-secondary-light: #8DC1E8; /* Light blue for highlights */
-            --color-secondary-dark: #3A7BA8; /* Darker blue */
+            --color-secondary-dark: #3175A3; /* Darker blue */
             
             --color-accent: #4F97C8;        /* Main blue accent */
             --color-accent-light: #ACCDE4;  /* Light blue from palette */
-            --color-accent-dark: #3175A3;   /* Darker accent */
-            
-            /* Header & Footer */
-            --color-header-bg: #1A6C82;     /* Dark teal header */
-            --color-footer-bg: #05475E;     /* Navy footer */
-            --color-footer-light: #0E6C8A;
             
             /* UI Colors */
             --color-border: #C6D9F5;
             --color-white: #FFFFFF;
             --color-black: #000000;
-            --color-success: #2E7D32;
-            --color-warning: #F57C00;
 
             /* Typography */
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -122,14 +119,14 @@
             text-align: justify;
         }
 
-        /* ========= HEADER ========= */
+        /* ========= HEADER (SAME AS OTHER PAGES) ========= */
         .site-header {
-            background: linear-gradient(135deg, var(--color-header-bg), var(--color-primary-dark));
-            border-bottom: 3px solid var(--color-accent);
+            background: var(--color-header-bg);
+            border-bottom: 3px solid var(--color-accent-light);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(26, 108, 130, 0.3);
+            box-shadow: 0 4px 20px rgba(5, 71, 94, 0.25);
         }
 
         .nav-inner {
@@ -154,7 +151,7 @@
         .nav-logo-mark {
             width: 42px;
             height: 42px;
-            background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
+            background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
             color: var(--color-white);
             border-radius: 10px;
             display: flex;
@@ -168,7 +165,7 @@
 
         .nav-logo:hover .nav-logo-mark {
             transform: rotate(5deg);
-            background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
         }
 
         .nav-logo-text {
@@ -289,11 +286,11 @@
             overflow: hidden;
             border: 2px solid var(--color-medium-accent);
             transition: var(--transition);
-            box-shadow: 0 6px 20px rgba(58, 140, 168, 0.1);
+            box-shadow: 0 6px 20px rgba(51, 155, 167, 0.1);
         }
 
         .research-item:hover {
-            box-shadow: 0 12px 30px rgba(90, 155, 200, 0.2);
+            box-shadow: 0 12px 30px rgba(79, 151, 200, 0.2);
             transform: translateY(-5px);
             border-color: var(--color-accent);
         }
@@ -348,13 +345,13 @@
             border-radius: var(--border-radius);
             object-fit: cover;
             border: 3px solid var(--color-white);
-            box-shadow: 0 6px 15px rgba(58, 140, 168, 0.2);
+            box-shadow: 0 6px 15px rgba(51, 155, 167, 0.2);
             transition: var(--transition);
         }
 
         .research-item:hover .research-img {
             transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(58, 140, 168, 0.3);
+            box-shadow: 0 8px 20px rgba(51, 155, 167, 0.3);
         }
 
         .research-details {
@@ -369,7 +366,7 @@
         }
 
         .research-highlights {
-            background: linear-gradient(135deg, rgba(172, 205, 228, 0.15), rgba(90, 155, 200, 0.1));
+            background: linear-gradient(135deg, rgba(172, 205, 228, 0.15), rgba(79, 151, 200, 0.1));
             padding: 1.5rem;
             border-radius: var(--border-radius);
             margin: 1.5rem 0;
@@ -450,7 +447,7 @@
             color: var(--color-white);
             border-color: transparent;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(90, 155, 200, 0.3);
+            box-shadow: 0 4px 12px rgba(79, 151, 200, 0.3);
         }
 
         /* ========= PROJECT ALBUM SECTION ========= */
@@ -477,7 +474,7 @@
 
         .album-card:hover {
             transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 35px rgba(90, 155, 200, 0.25);
+            box-shadow: 0 15px 35px rgba(79, 151, 200, 0.25);
             border-color: var(--color-accent);
         }
 
@@ -498,7 +495,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(26, 108, 130, 0.9), transparent);
+            background: linear-gradient(to top, rgba(5, 71, 94, 0.9), transparent);
             padding: 1.5rem;
             color: white;
             transform: translateY(100%);
@@ -539,23 +536,23 @@
             line-height: 1.8;
             color: var(--color-text);
             padding: 2rem;
-            background: linear-gradient(135deg, rgba(58, 140, 168, 0.08), rgba(90, 155, 200, 0.08));
+            background: linear-gradient(135deg, rgba(51, 155, 167, 0.08), rgba(79, 151, 200, 0.08));
             border-radius: var(--border-radius);
             margin-bottom: 2.5rem;
             border-left: 4px solid var(--color-primary);
-            box-shadow: 0 4px 12px rgba(58, 140, 168, 0.1);
+            box-shadow: 0 4px 12px rgba(51, 155, 167, 0.1);
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        /* ========= FOOTER ========= */
+        /* ========= FOOTER (SAME AS OTHER PAGES) ========= */
         .site-footer {
             background: linear-gradient(135deg, var(--color-footer-bg), var(--color-footer-light));
             color: var(--color-white);
             padding: 4rem 0 3rem;
             margin-top: 4rem;
-            border-top: 4px solid var(--color-accent);
+            border-top: 3px solid var(--color-accent-light);
         }
 
         .footer-inner {
@@ -701,7 +698,7 @@
 </head>
 
 <body>
-    <!-- Header -->
+    <!-- Header (Same as other pages) -->
     <header class="site-header">
         <div class="container">
             <nav class="nav-inner">
@@ -957,61 +954,10 @@
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer (Same as other pages) -->
     <footer class="site-footer">
         <div class="footer-inner">
             <p class="footer-name">Tala Khaddour</p>
             <p class="footer-tagline">Robotics · Intelligent Systems · Sustainable Energy</p>
             <p class="footer-meta">
-                Research portfolio showcasing technical projects and implementations in robotics, control systems, and intelligent automation.
-            </p>
-        </div>
-    </footer>
-
-    <script>
-        // Set active nav link based on current page
-        const currentPage = window.location.pathname.split('/').pop();
-        document.querySelectorAll('.nav-link').forEach(link => {
-            if (link.getAttribute('href') === currentPage) {
-                link.classList.add('nav-link-active');
-            }
-        });
-
-        // Animate research items and album cards on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-
-        // Animate research items
-        document.querySelectorAll('.research-item').forEach((item, index) => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(20px)';
-            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            item.style.transitionDelay = `${index * 0.1}s`;
-            observer.observe(item);
-        });
-
-        // Animate album cards
-        document.querySelectorAll('.album-card').forEach((card, index) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            card.style.transitionDelay = `${index * 0.1}s`;
-            observer.observe(card);
-        });
-
-        // Add click handlers for album cards
-        document.querySelectorAll('.album-card').forEach(card => {
-            card.addEventListener('click', function() {
-                const title = this.getAttribute('data-title') || this.querySelector('.album-card-title').textContent;
-                alert(`Opening details for: ${title}`);
-            });
-        });
-    </script>
-</body>
-</html>
+                Research portfolio
