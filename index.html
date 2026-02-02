@@ -23,6 +23,7 @@
             --color-white: #FFFFFF;
             --color-navy: #05475E;
             --color-header-bg: #05475E;
+            --color-light-bg: #F8FAFC;
 
             /* Typography */
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -88,7 +89,7 @@
             text-align: center;
         }
 
-        /* ========= HEADER WITH CONTACT INFO ========= */
+        /* ========= HEADER ========= */
         .site-header {
             background: var(--color-header-bg);
             position: sticky;
@@ -161,135 +162,70 @@
             font-weight: 600;
         }
 
-        /* Contact info in header */
-        .header-contact {
-            display: flex;
-            gap: 1.5rem;
+        /* ========= HERO SECTION WITH NEW LAYOUT ========= */
+        .hero-section {
+            background: var(--color-light-bg);
+            padding: 4rem 0 3rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .header-contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
-
-        .header-contact-item:hover {
-            color: var(--color-white);
-        }
-
-        .header-contact-item i {
-            font-size: 1rem;
-        }
-
-        /* ========= NEW LAYOUT: PROFILE ON LEFT, CONTACT ON RIGHT ========= */
-        .profile-contact-container {
-            display: flex;
-            gap: 3rem;
+        .hero-container {
             max-width: var(--max-width);
-            margin: 2rem auto 3rem;
+            margin: 0 auto;
             padding: 0 1.5rem;
-            align-items: flex-start;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: start;
         }
 
-        /* Left side profile section */
-        .profile-side {
-            flex: 2;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+        /* Left Column: Contact Info (Clean, no borders) */
+        .contact-column {
+            padding-top: 1rem;
         }
 
-        .profile-img-container {
-            margin-bottom: 2rem;
-        }
-
-        .profile-img-rectangular {
-            width: 280px;
-            height: 280px;
-            object-fit: cover;
-            border: 5px solid var(--color-white);
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-            background: var(--color-white);
-            border-radius: 5px;
-        }
-
-        .profile-info-left {
-            text-align: left;
-            max-width: 600px;
-        }
-
-        .profile-name-full {
-            font-size: 2.5rem;
-            color: var(--color-navy);
-            margin-bottom: 0.5rem;
-        }
-
-        .profile-title-full {
-            color: var(--color-primary);
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-
-        .profile-bio {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: var(--color-text);
-            margin-bottom: 2rem;
-        }
-
-        /* Right side contact section */
-        .contact-side {
-            flex: 1;
-            min-width: 280px;
-            position: sticky;
-            top: 100px;
-            background: var(--color-paper);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            border: 1px solid var(--color-border);
-        }
-
-        .contact-title {
+        .contact-column h2 {
             font-size: 1.5rem;
             color: var(--color-navy);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--color-primary);
+            margin-bottom: 2rem;
+            position: relative;
         }
 
-        .contact-list {
+        .contact-column h2:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--color-primary);
+        }
+
+        .contact-info-list {
             list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
         }
 
-        .contact-item {
+        .contact-info-item {
             display: flex;
             align-items: flex-start;
             gap: 1rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--color-border);
         }
 
-        .contact-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--color-primary);
-            color: var(--color-white);
+        .contact-icon-wrapper {
+            width: 44px;
+            height: 44px;
+            background: var(--color-white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: var(--color-primary);
+            font-size: 1.1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             flex-shrink: 0;
         }
 
@@ -302,6 +238,7 @@
             color: var(--color-navy);
             font-size: 0.95rem;
             margin-bottom: 0.25rem;
+            letter-spacing: 0.3px;
         }
 
         .contact-value {
@@ -311,87 +248,198 @@
         }
 
         .contact-link {
-            color: var(--color-primary);
-            word-break: break-word;
+            color: var(--color-text);
+            transition: var(--transition);
+            display: inline-block;
         }
 
         .contact-link:hover {
-            color: var(--color-primary-dark);
-            text-decoration: underline;
+            color: var(--color-primary);
         }
 
-        /* ========= COVER BANNER ========= */
-        .cover-section {
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background: var(--color-white);
+            border-radius: 30px;
+            color: var(--color-text);
+            font-weight: 500;
+            font-size: 0.9rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            color: var(--color-primary);
+        }
+
+        /* Right Column: Profile & About Me */
+        .profile-column {
             position: relative;
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
         }
 
-        .cover-banner {
+        .profile-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .profile-name {
+            font-size: 2.8rem;
+            color: var(--color-navy);
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .profile-title {
+            color: var(--color-primary);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.3px;
+        }
+
+        .profile-image-container {
+            width: 280px;
+            height: 280px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+
+        .profile-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .profile-image-container:hover .profile-image {
+            transform: scale(1.03);
+        }
+
+        .about-section {
+            margin-top: 2rem;
+        }
+
+        .about-section h3 {
+            font-size: 1.5rem;
+            color: var(--color-navy);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .about-section h3:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--color-primary);
+        }
+
+        .about-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--color-text);
+        }
+
+        .about-content p {
+            margin-bottom: 1.2rem;
         }
 
         /* ========= MAIN CONTENT AREA ========= */
         .main-content {
-            padding: 2rem 0 4rem;
+            padding: 4rem 0;
             background: var(--color-bg);
         }
 
         .content-section {
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         .section-title {
             font-size: 1.8rem;
             color: var(--color-navy);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             padding-bottom: 0.75rem;
             border-bottom: 2px solid var(--color-border);
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 80px;
+            height: 2px;
+            background: var(--color-primary);
         }
 
         /* Education Section */
         .education-item {
             margin-bottom: 2.5rem;
-            padding: 2rem;
-            background: var(--color-paper);
+            padding: 2.5rem;
+            background: var(--color-light-bg);
             border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
             border-left: 4px solid var(--color-primary);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            max-width: 800px;
+            transition: var(--transition);
+            max-width: 900px;
+        }
+
+        .education-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
         }
 
         .education-period {
             display: inline-block;
             background: var(--color-primary);
             color: var(--color-white);
-            padding: 0.25rem 0.75rem;
-            border-radius: 12px;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
         }
 
         .education-title {
             font-weight: 600;
             color: var(--color-navy);
-            margin-bottom: 0.25rem;
-            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
         }
 
         .education-institution {
-            color: var(--color-text-light);
-            margin-bottom: 1rem;
-            font-size: 1.05rem;
+            color: var(--color-primary);
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+            font-weight: 500;
         }
 
         .education-details {
             color: var(--color-text);
-            font-size: 1rem;
-            line-height: 1.6;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .education-details p {
+            margin-bottom: 0.8rem;
         }
 
         /* Images Gallery Section */
@@ -402,23 +450,24 @@
         .images-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            gap: 2rem;
             margin-top: 1.5rem;
         }
 
         .image-card {
-            background: var(--color-paper);
+            background: var(--color-white);
             border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
             border: 1px solid var(--color-border);
-            height: 250px;
+            height: 260px;
+            position: relative;
         }
 
         .image-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
         }
 
         .image-item {
@@ -472,58 +521,78 @@
         }
 
         /* ========= RESPONSIVE ========= */
-        @media (max-width: 992px) {
-            .profile-contact-container {
+        @media (max-width: 1024px) {
+            .hero-container {
+                gap: 3rem;
+            }
+            
+            .profile-name {
+                font-size: 2.5rem;
+            }
+            
+            .profile-image-container {
+                width: 250px;
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .contact-column {
+                order: 2;
+            }
+            
+            .profile-column {
+                order: 1;
+            }
+            
+            .profile-header {
+                display: flex;
                 flex-direction: column;
-                gap: 2rem;
+                align-items: center;
+                text-align: center;
             }
             
-            .contact-side {
-                min-width: 100%;
-                position: static;
+            .profile-image-container {
+                margin: 0 auto 2rem;
             }
             
-            .profile-info-left {
-                max-width: 100%;
+            .about-section h3:after,
+            .contact-column h2:after {
+                left: 50%;
+                transform: translateX(-50%);
             }
             
-            .nav-content {
-                flex-direction: column;
-                gap: 1rem;
-                align-items: flex-start;
+            .about-section h3,
+            .contact-column h2 {
+                text-align: center;
             }
             
-            .header-contact {
-                flex-wrap: wrap;
-                gap: 1rem;
-            }
-            
-            .profile-img-rectangular {
-                width: 240px;
-                height: 240px;
-            }
-            
-            .profile-name-full {
-                font-size: 2.2rem;
+            .social-links {
+                justify-content: center;
             }
         }
 
         @media (max-width: 768px) {
-            .cover-section {
-                height: 180px;
+            .hero-section {
+                padding: 3rem 0 2rem;
             }
             
-            .profile-img-rectangular {
+            .profile-name {
+                font-size: 2.2rem;
+            }
+            
+            .profile-title {
+                font-size: 1.2rem;
+            }
+            
+            .profile-image-container {
                 width: 220px;
                 height: 220px;
-            }
-            
-            .profile-name-full {
-                font-size: 2rem;
-            }
-            
-            .profile-title-full {
-                font-size: 1.2rem;
             }
             
             .nav-inner {
@@ -532,35 +601,34 @@
                 padding: 1.5rem 0;
             }
             
+            .nav-content {
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+                align-items: center;
+            }
+            
             .nav-links {
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 1rem;
             }
             
-            .header-contact {
-                justify-content: center;
-            }
-            
-            .contact-side {
-                padding: 1.5rem;
-            }
-            
             .section-title {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
             
             .education-item {
-                padding: 1.5rem;
+                padding: 2rem;
             }
             
             .images-grid {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 1rem;
+                gap: 1.5rem;
             }
             
             .image-card {
-                height: 220px;
+                height: 240px;
             }
         }
 
@@ -569,57 +637,55 @@
                 padding: 0 1rem;
             }
             
-            .cover-section {
-                height: 160px;
+            .hero-section {
+                padding: 2.5rem 0 2rem;
             }
             
-            .profile-img-rectangular {
+            .profile-name {
+                font-size: 2rem;
+            }
+            
+            .profile-image-container {
                 width: 200px;
                 height: 200px;
             }
             
-            .profile-name-full {
-                font-size: 1.8rem;
-            }
-            
-            .profile-title-full {
-                font-size: 1.1rem;
-            }
-            
-            .contact-side {
-                padding: 1.25rem;
-            }
-            
-            .contact-item {
+            .contact-info-item {
                 flex-direction: column;
+                align-items: flex-start;
                 gap: 0.75rem;
             }
             
-            .contact-icon {
+            .contact-icon-wrapper {
                 align-self: flex-start;
             }
             
-            .header-contact {
-                flex-direction: column;
-                gap: 0.5rem;
+            .social-link {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
             }
             
             .education-item {
-                padding: 1.25rem;
+                padding: 1.5rem;
+            }
+            
+            .education-title {
+                font-size: 1.2rem;
             }
             
             .images-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
             
             .image-card {
-                height: 200px;
+                height: 220px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header with Contact Info -->
+    <!-- Header -->
     <header class="site-header">
         <div class="container">
             <nav class="nav-inner">
@@ -637,109 +703,101 @@
                         <li><a href="cv.html" class="nav-link">CV</a></li>
                         <li><a href="contact.html" class="nav-link">Contact</a></li>
                     </ul>
-                    
-                    <div class="header-contact">
-                        <a href="mailto:khaddour.tala@gmail.com" class="header-contact-item">
-                            <i class="far fa-envelope"></i>
-                            <span>Email</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/tala-khaddour/" target="_blank" class="header-contact-item">
-                            <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="https://github.com/KHADDOUR-TALA" target="_blank" class="header-contact-item">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                        </a>
-                    </div>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- Cover Banner -->
-    <section class="cover-section">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfRBS9Qqx5QQTCECY2lXwJQgXst9MEOA3f1g&s" alt="IoT & Industrial Automation Cover Banner" class="cover-banner">
-    </section>
-
-    <!-- Profile & Contact Layout -->
-    <div class="profile-contact-container">
-        <!-- Left side: Profile -->
-        <div class="profile-side">
-            <div class="profile-img-container">
-                <img src="imgs/profile.jpg" alt="Tala Khaddour" class="profile-img-rectangular">
+    <!-- Hero Section with Contact & About -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <!-- Left Column: Contact Info (Clean, no borders) -->
+            <div class="contact-column">
+                <h2>Contact Information</h2>
+                <ul class="contact-info-list">
+                    <li class="contact-info-item">
+                        <div class="contact-icon-wrapper">
+                            <i class="far fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <div class="contact-label">Email</div>
+                            <a href="mailto:khaddour.tala@gmail.com" class="contact-value contact-link">khaddour.tala@gmail.com</a>
+                        </div>
+                    </li>
+                    
+                    <li class="contact-info-item">
+                        <div class="contact-icon-wrapper">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <div class="contact-label">Location</div>
+                            <div class="contact-value">Latakia, Syria</div>
+                        </div>
+                    </li>
+                    
+                    <li class="contact-info-item">
+                        <div class="contact-icon-wrapper">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="contact-details">
+                            <div class="contact-label">Education</div>
+                            <div class="contact-value">B.Sc. Robotics & Intelligent Systems Engineering<br>Manara University</div>
+                        </div>
+                    </li>
+                    
+                    <li class="contact-info-item">
+                        <div class="contact-icon-wrapper">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="contact-details">
+                            <div class="contact-label">Status</div>
+                            <div class="contact-value">Graduated with Honors (GPA: 3.28/4.0)</div>
+                        </div>
+                    </li>
+                </ul>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/tala-khaddour/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/KHADDOUR-TALA" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="mailto:khaddour.tala@gmail.com" class="social-link">
+                        <i class="far fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+                </div>
             </div>
             
-            <div class="profile-info-left">
-                <h1 class="profile-name-full">Tala Khaddour</h1>
-                <div class="profile-title-full">Robotics & Intelligent Systems Engineer</div>
+            <!-- Right Column: Profile & About Me -->
+            <div class="profile-column">
+                <div class="profile-header">
+                    <h1 class="profile-name">Tala Khaddour</h1>
+                    <div class="profile-title">Robotics & Intelligent Systems Engineer</div>
+                    
+                    <div class="profile-image-container">
+                        <img src="imgs/profile.jpg" alt="Tala Khaddour" class="profile-image">
+                    </div>
+                </div>
                 
-                <div class="profile-bio">
-                    <p>I am a robotics engineer specializing in intelligent systems and sustainable energy solutions. My work combines technical expertise with practical applications, focusing on creating innovative solutions for real-world challenges.</p>
-                    
-                    <p>My academic journey began with a deep interest in how machines can be designed to assist and enhance human capabilities. This led me to pursue studies in robotics engineering, where I developed skills in control systems, artificial intelligence, and mechanical design.</p>
-                    
-                    <p>I believe that technology should serve humanity in meaningful ways. Whether through rehabilitation robotics that help stroke patients regain mobility or sustainable energy systems that address environmental challenges, I'm committed to engineering solutions that make a positive impact.</p>
+                <div class="about-section">
+                    <h3>About Me</h3>
+                    <div class="about-content">
+                        <p>I am a robotics engineer specializing in intelligent systems and sustainable energy solutions. My work combines technical expertise with practical applications, focusing on creating innovative solutions for real-world challenges.</p>
+                        
+                        <p>My academic journey began with a deep interest in how machines can be designed to assist and enhance human capabilities. This led me to pursue studies in robotics engineering, where I developed skills in control systems, artificial intelligence, and mechanical design.</p>
+                        
+                        <p>I believe that technology should serve humanity in meaningful ways. Whether through rehabilitation robotics that help stroke patients regain mobility or sustainable energy systems that address environmental challenges, I'm committed to engineering solutions that make a positive impact.</p>
+                        
+                        <p>Currently, I'm expanding my knowledge through advanced research and practical projects, always seeking new challenges at the intersection of intelligent systems, robotics, and sustainable technology.</p>
+                    </div>
                 </div>
             </div>
         </div>
-        
-        <!-- Right side: Contact Info -->
-        <div class="contact-side">
-            <h3 class="contact-title">Contact Information</h3>
-            <ul class="contact-list">
-                <li class="contact-item">
-                    <div class="contact-icon">
-                        <i class="far fa-envelope"></i>
-                    </div>
-                    <div class="contact-details">
-                        <div class="contact-label">Email</div>
-                        <a href="mailto:khaddour.tala@gmail.com" class="contact-value contact-link">khaddour.tala@gmail.com</a>
-                    </div>
-                </li>
-                
-                <li class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fab fa-linkedin"></i>
-                    </div>
-                    <div class="contact-details">
-                        <div class="contact-label">LinkedIn</div>
-                        <a href="https://www.linkedin.com/in/tala-khaddour/" target="_blank" class="contact-value contact-link">linkedin.com/in/tala-khaddour</a>
-                    </div>
-                </li>
-                
-                <li class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fab fa-github"></i>
-                    </div>
-                    <div class="contact-details">
-                        <div class="contact-label">GitHub</div>
-                        <a href="https://github.com/KHADDOUR-TALA" target="_blank" class="contact-value contact-link">github.com/KHADDOUR-TALA</a>
-                    </div>
-                </li>
-                
-                <li class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="contact-details">
-                        <div class="contact-label">Education</div>
-                        <div class="contact-value">Manara University<br>Robotics & Intelligent Systems Engineering</div>
-                    </div>
-                </li>
-                
-                <li class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div class="contact-details">
-                        <div class="contact-label">Location</div>
-                        <div class="contact-value">Latakia, Syria</div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
+    </section>
 
     <!-- Main Content -->
     <main class="main-content">
@@ -810,7 +868,7 @@
             }
         });
 
-        // Simple animation for image cards
+        // Animation for elements
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -825,6 +883,7 @@
             });
         }, observerOptions);
 
+        // Animate image cards
         document.querySelectorAll('.image-card').forEach((card, index) => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(20px)';
@@ -833,12 +892,24 @@
             observer.observe(card);
         });
 
+        // Animate education items
         document.querySelectorAll('.education-item').forEach((item, index) => {
             item.style.opacity = '0';
             item.style.transform = 'translateY(20px)';
             item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             item.style.transitionDelay = `${index * 0.1 + 0.2}s`;
             observer.observe(item);
+        });
+
+        // Add subtle hover effect to social links
+        document.querySelectorAll('.social-link').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
         });
     </script>
 </body>
