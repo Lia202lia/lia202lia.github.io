@@ -88,21 +88,6 @@
             text-align: center;
         }
 
-        /* ========= COVER BANNER ========= */
-        .cover-banner {
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-            background-color: var(--color-navy); /* Fallback color */
-        }
-
-        .cover-banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
         /* ========= HEADER ========= */
         .site-header {
             background: var(--color-header-bg);
@@ -168,6 +153,21 @@
         .nav-link-active {
             color: var(--color-white);
             font-weight: 600;
+        }
+
+        /* ========= COVER BANNER ========= */
+        .cover-banner {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background-color: var(--color-navy); /* Fallback color */
+        }
+
+        .cover-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         /* ========= MAIN LAYOUT - TWO COLUMNS ========= */
@@ -488,12 +488,7 @@
     </style>
 </head>
 <body>
-    <!-- Cover Banner -->
-    <section class="cover-banner">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfRBS9Qqx5QQTCECY2lXwJQgXst9MEOA3f1g&s" alt="IoT & Industrial Automation Cover Banner">
-    </section>
-
-    <!-- Header -->
+    <!-- Header - Comes FIRST -->
     <header class="site-header">
         <div class="container">
             <nav class="nav-inner">
@@ -512,6 +507,11 @@
             </nav>
         </div>
     </header>
+
+    <!-- Cover Banner - Comes AFTER header -->
+    <section class="cover-banner">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfRBS9Qqx5QQTCECY2lXwJQgXst9MEOA3f1g&s" alt="IoT & Industrial Automation Cover Banner">
+    </section>
 
     <!-- Main Content with Two Columns -->
     <div class="container main-wrapper">
