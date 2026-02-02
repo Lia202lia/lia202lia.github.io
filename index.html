@@ -9,26 +9,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* ========= PROFESSIONAL COLOR SCHEME ========= */
+        /* ========= UNIFIED COLOR SCHEME ========= */
         :root {
-            /* Professional Color Palette */
             --color-bg: #FFFFFF;
             --color-paper: #F8FAFC;
             --color-text: #1A2A36;
             --color-text-light: #5A6B7A;
-            --color-primary: #339BA7;
-            --color-primary-dark: #127686;
-            --color-accent: #4F97C8;
+            --color-primary: #339BA7; /* Teal primary */
+            --color-primary-dark: #127686; /* Darker teal */
+            --color-accent: #4F97C8; /* Blue accent */
             --color-border: #E2E8F0;
             --color-white: #FFFFFF;
             --color-navy: #05475E;
             --color-header-bg: #05475E;
+            --color-footer-bg: linear-gradient(135deg, #05475E, #127686);
             /* Typography */
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             --font-heading: 'Source Sans Pro', sans-serif;
             --max-width: 1200px;
             --border-radius: 8px;
             --transition: all 0.3s ease;
+            --shadow-light: 0 2px 8px rgba(5, 71, 94, 0.1); /* Minimal shadow */
         }
         /* ========= GENERAL ========= */
         * {
@@ -82,7 +83,6 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            /* Removed box-shadow */
         }
         .nav-inner {
             display: flex;
@@ -101,7 +101,7 @@
             height: 36px;
             background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
             color: var(--color-white);
-            border-radius: 8px;
+            border-radius: var(--border-radius);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -134,35 +134,59 @@
             color: var(--color-white);
             font-weight: 600;
         }
-        /* ========= MAIN LAYOUT - SINGLE COLUMN ========= */
+        /* ========= HERO/COVER SECTION ========= */
+        .hero-section {
+            position: relative;
+            padding: 6rem 0;
+            overflow: hidden;
+            background: linear-gradient(rgba(5, 71, 94, 0.85), rgba(18, 118, 134, 0.9)),
+                        url('https://qcs.ae/wp-content/uploads/2023/04/1020X450.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--color-white);
+        }
+        .hero-content {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .hero-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        /* ========= MAIN LAYOUT ========= */
         .main-wrapper {
-            display: block; /* Changed to block for single column */
+            display: block;
             flex: 1;
             padding: 2rem 0;
         }
-        /* LEFT SIDEBAR - NOW TOP SECTION */
         .sidebar {
-            width: 100%; /* Full width */
+            width: 100%;
             padding-right: 0;
             position: static;
             height: fit-content;
-            margin-bottom: 2rem; /* Added margin for separation */
+            margin-bottom: 2rem;
         }
         .profile-card {
             background: var(--color-white);
             border-radius: var(--border-radius);
             padding: 2rem;
-            /* Removed box-shadow and border */
             margin-bottom: 2rem;
+            box-shadow: var(--shadow-light); /* Minimal */
         }
         .profile-img {
             width: 160px;
             height: 160px;
-            border-radius: 0; /* Changed to square */
+            border-radius: 0;
             object-fit: cover;
             display: block;
             margin: 0 auto 1.5rem;
-            /* Removed border and box-shadow */
         }
         .profile-name {
             font-size: 1.8rem;
@@ -204,9 +228,8 @@
         .contact-detail a:hover {
             color: var(--color-primary);
         }
-        /* RIGHT CONTENT AREA */
         .content-area {
-            padding-left: 0; /* Removed padding */
+            padding-left: 0;
         }
         .content-section {
             margin-bottom: 3rem;
@@ -216,21 +239,18 @@
             color: var(--color-navy);
             margin-bottom: 1.5rem;
             padding-bottom: 0.75rem;
-            /* Removed border-bottom */
         }
-        /* About Section */
         .about-content {
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--color-text);
         }
-        /* Education Section */
         .education-item {
             margin-bottom: 2.5rem;
             padding: 2rem;
             background: var(--color-paper);
             border-radius: var(--border-radius);
-            /* Removed border-left and box-shadow */
+            box-shadow: var(--shadow-light); /* Minimal */
         }
         .education-period {
             display: inline-block;
@@ -258,7 +278,6 @@
             font-size: 1rem;
             line-height: 1.6;
         }
-        /* Images Gallery Section */
         .images-section {
             padding: 1rem 0;
         }
@@ -272,13 +291,12 @@
             background: var(--color-paper);
             border-radius: var(--border-radius);
             overflow: hidden;
-            /* Removed box-shadow and border */
             transition: var(--transition);
             height: 250px;
+            box-shadow: var(--shadow-light); /* Minimal */
         }
         .image-card:hover {
             transform: translateY(-5px);
-            /* Removed box-shadow on hover */
         }
         .image-item {
             width: 100%;
@@ -291,7 +309,7 @@
         }
         /* ========= FOOTER ========= */
         .site-footer {
-            background: var(--color-header-bg);
+            background: var(--color-footer-bg);
             color: var(--color-white);
             padding: 3rem 0 2rem;
             margin-top: 2rem;
@@ -326,7 +344,7 @@
         /* ========= RESPONSIVE ========= */
         @media (max-width: 992px) {
             .main-wrapper {
-                /* Already block */
+                display: block;
             }
             .sidebar {
                 width: 100%;
@@ -389,7 +407,7 @@
     </style>
 </head>
 <body>
-    <!-- Header - Comes FIRST -->
+    <!-- Header -->
     <header class="site-header">
         <div class="container">
             <nav class="nav-inner">
@@ -408,16 +426,23 @@
             </nav>
         </div>
     </header>
-    <!-- Removed Cover Banner -->
-    <!-- Main Content with Single Column -->
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to My Portfolio</h1>
+                <p class="hero-subtitle">Exploring robotics, intelligent systems, and sustainable energy solutions.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Main Content -->
     <div class="container main-wrapper">
-        <!-- PROFILE SECTION ON TOP -->
+        <!-- Profile Section -->
         <aside class="sidebar">
             <div class="profile-card">
                 <img src="imgs/profile.jpg" alt="Tala Khaddour" class="profile-img">
                 <h1 class="profile-name">Tala Khaddour</h1>
                 <div class="profile-title">Robotics & Intelligent Systems Engineer | Bioengineering Applications (Rehab Exoskeleton) | AI & Computer Vision | Control Systems (MPC, Adaptive) | Interdisciplinary Researcher</div>
-               
                 <div class="contact-info">
                     <div class="contact-item">
                         <div class="contact-icon">
@@ -427,7 +452,6 @@
                             <a href="mailto:khaddour.tala@gmail.com">khaddour.tala@gmail.com</a>
                         </div>
                     </div>
-                   
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fab fa-linkedin"></i>
@@ -436,7 +460,6 @@
                             <a href="https://www.linkedin.com/in/tala-khaddour/" target="_blank">LinkedIn Profile</a>
                         </div>
                     </div>
-                   
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fab fa-github"></i>
@@ -445,7 +468,6 @@
                             <a href="https://github.com/KHADDOUR-TALA" target="_blank">GitHub Profile</a>
                         </div>
                     </div>
-                   
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-globe"></i>
@@ -457,25 +479,21 @@
                 </div>
             </div>
         </aside>
-        <!-- CONTENT AREA BELOW -->
+        <!-- Content Area -->
         <main class="content-area">
             <!-- About Me Section -->
             <section class="content-section">
                 <h2 class="section-title">About Me</h2>
                 <div class="about-content">
                     <p>I am a robotics engineer specializing in intelligent systems and sustainable energy solutions. My work combines technical expertise with practical applications, focusing on creating innovative solutions for real-world challenges.</p>
-                   
                     <p>My academic journey began with a deep interest in how machines can be designed to assist and enhance human capabilities. This led me to pursue studies in robotics engineering, where I developed skills in control systems, artificial intelligence, and mechanical design.</p>
-                   
                     <p>I believe that technology should serve humanity in meaningful ways. Whether through rehabilitation robotics that help stroke patients regain mobility or sustainable energy systems that address environmental challenges, I'm committed to engineering solutions that make a positive impact.</p>
-                   
                     <p>Currently, I'm expanding my knowledge through advanced research and practical projects, always seeking new challenges at the intersection of intelligent systems, robotics, and sustainable technology.</p>
                 </div>
             </section>
             <!-- Education Section -->
             <section class="content-section">
                 <h2 class="section-title">Education</h2>
-               
                 <div class="education-item">
                     <div class="education-period">2020 – 2025</div>
                     <h3 class="education-title">Bachelor of Science in Robotics and Intelligent Systems Engineering</h3>
@@ -533,7 +551,7 @@
                 link.classList.add('nav-link-active');
             }
         });
-        // Simple animation for image cards
+        // Minimal animation for image cards
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -542,22 +560,17 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
                 }
             });
         }, observerOptions);
-        document.querySelectorAll('.image-card').forEach((card, index) => {
+        document.querySelectorAll('.image-card').forEach(card => {
             card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            card.style.transitionDelay = `${index * 0.1}s`;
+            card.style.transition = 'opacity 0.5s ease';
             observer.observe(card);
         });
-        document.querySelectorAll('.education-item').forEach((item, index) => {
+        document.querySelectorAll('.education-item').forEach(item => {
             item.style.opacity = '0';
-            item.style.transform = 'translateY(20px)';
-            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            item.style.transitionDelay = `${index * 0.1 + 0.2}s`;
+            item.style.transition = 'opacity 0.5s ease';
             observer.observe(item);
         });
     </script>
