@@ -50,6 +50,9 @@
             background-color: var(--color-bg);
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -152,101 +155,94 @@
             font-weight: 600;
         }
 
-        /* ========= COVER IMAGE SECTION ========= */
-        .cover-section {
-            position: relative;
-            height: 300px;
-            overflow: hidden;
-            margin-bottom: 60px;
+        /* ========= MAIN LAYOUT - TWO COLUMNS ========= */
+        .main-wrapper {
+            display: flex;
+            flex: 1;
+            padding: 2rem 0;
         }
 
-        .cover-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        /* LEFT SIDEBAR - PROFILE & CONTACT */
+        .sidebar {
+            flex: 0 0 320px;
+            padding-right: 2rem;
+            position: sticky;
+            top: 80px;
+            height: fit-content;
         }
 
-        /* ========= PROFILE SECTION ========= */
-        .profile-section {
-            position: relative;
-            margin-top: -60px;
-            z-index: 2;
-        }
-
-        .profile-container {
-            max-width: 1000px;
-            margin: 0 auto;
+        .profile-card {
             background: var(--color-white);
             border-radius: var(--border-radius);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            border: 1px solid var(--color-border);
             padding: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .profile-img-container {
-            flex-shrink: 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--color-border);
+            margin-bottom: 2rem;
         }
 
         .profile-img {
-            width: 140px;
-            height: 140px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
+            display: block;
+            margin: 0 auto 1.5rem;
             border: 4px solid var(--color-white);
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        .profile-info {
-            flex: 1;
         }
 
         .profile-name {
             font-size: 1.8rem;
             color: var(--color-navy);
             margin-bottom: 0.25rem;
+            text-align: center;
         }
 
         .profile-title {
             color: var(--color-primary);
             font-size: 1.1rem;
             font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-top: 1.5rem;
+        }
+
+        .contact-item {
             margin-bottom: 1rem;
-        }
-
-        .social-links {
             display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
+            align-items: flex-start;
         }
 
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: var(--color-paper);
-            border: 1px solid var(--color-border);
-            border-radius: 4px;
+        .contact-icon {
+            width: 24px;
+            color: var(--color-primary);
+            margin-right: 0.75rem;
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        .contact-detail {
             color: var(--color-text);
-            font-size: 0.9rem;
-            font-weight: 500;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .contact-detail a {
+            color: var(--color-text);
             transition: var(--transition);
         }
 
-        .social-link:hover {
-            background: var(--color-primary);
-            color: white;
-            text-decoration: none;
-            border-color: var(--color-primary);
+        .contact-detail a:hover {
+            color: var(--color-primary);
         }
 
-        /* ========= MAIN CONTENT ========= */
-        .main-content {
-            padding: 3rem 0 4rem;
-            background: var(--color-bg);
+        /* RIGHT CONTENT AREA */
+        .content-area {
+            flex: 1;
+            padding-left: 1rem;
         }
 
         .content-section {
@@ -266,8 +262,6 @@
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--color-text);
-            max-width: 800px;
-            margin: 0 auto;
         }
 
         /* Education Section */
@@ -312,7 +306,7 @@
 
         /* Images Gallery Section */
         .images-section {
-            padding: 2rem 0;
+            padding: 1rem 0;
         }
 
         .images-grid {
@@ -329,7 +323,7 @@
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
             transition: var(--transition);
             border: 1px solid var(--color-border);
-            height: 300px;
+            height: 250px;
         }
 
         .image-card:hover {
@@ -388,6 +382,29 @@
         }
 
         /* ========= RESPONSIVE ========= */
+        @media (max-width: 992px) {
+            .main-wrapper {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                flex: 0 0 auto;
+                width: 100%;
+                padding-right: 0;
+                position: static;
+                margin-bottom: 2rem;
+            }
+
+            .content-area {
+                padding-left: 0;
+            }
+
+            .profile-card {
+                max-width: 500px;
+                margin: 0 auto 2rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-inner {
                 flex-direction: column;
@@ -399,31 +416,6 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 1rem;
-            }
-
-            .cover-section {
-                height: 250px;
-                margin-bottom: 40px;
-            }
-
-            .profile-section {
-                margin-top: -40px;
-            }
-
-            .profile-container {
-                flex-direction: column;
-                text-align: center;
-                gap: 1.5rem;
-                padding: 1.5rem;
-            }
-
-            .profile-img {
-                width: 120px;
-                height: 120px;
-            }
-
-            .profile-name {
-                font-size: 1.6rem;
             }
 
             .section-title {
@@ -440,11 +432,7 @@
             }
 
             .image-card {
-                height: 250px;
-            }
-
-            .social-links {
-                justify-content: center;
+                height: 220px;
             }
         }
 
@@ -453,17 +441,13 @@
                 padding: 0 1rem;
             }
 
-            .cover-section {
-                height: 200px;
-            }
-
             .profile-img {
-                width: 100px;
-                height: 100px;
+                width: 140px;
+                height: 140px;
             }
 
             .profile-name {
-                font-size: 1.4rem;
+                font-size: 1.6rem;
             }
 
             .education-item {
@@ -475,13 +459,7 @@
             }
 
             .image-card {
-                height: 220px;
-            }
-
-            .social-link {
-                flex: 1;
-                justify-content: center;
-                min-width: 120px;
+                height: 200px;
             }
         }
     </style>
@@ -507,43 +485,57 @@
         </div>
     </header>
 
-    <!-- Cover Image Section -->
-    <section class="cover-section">
-        <img src="imgs/background.jpg" alt="Cover Image" class="cover-image">
-    </section>
-
-    <!-- Profile Section -->
-    <section class="profile-section">
-        <div class="container">
-            <div class="profile-container">
-                <div class="profile-img-container">
-                    <img src="imgs/profile.jpg" alt="Tala Khaddour" class="profile-img">
-                </div>
-                <div class="profile-info">
-                    <h1 class="profile-name">Tala Khaddour</h1>
-                    <div class="profile-title">Robotics & Intelligent Systems Engineer</div>
-                    <div class="social-links">
-                        <a href="mailto:khaddour.tala@gmail.com" target="_blank" class="social-link">
-                            <i class="far fa-envelope"></i> Email
-                        </a>
-                        <a href="https://www.linkedin.com/in/tala-khaddour/" target="_blank" class="social-link">
-                            <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
-                        <a href="https://github.com/KHADDOUR-TALA" target="_blank" class="social-link">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                        <a href="https://khaddour-tala.github.io/" target="_blank" class="social-link">
-                            <i class="fas fa-globe"></i> Website
-                        </a>
+    <!-- Main Content with Two Columns -->
+    <div class="container main-wrapper">
+        <!-- LEFT SIDEBAR: Profile & Contact Information -->
+        <aside class="sidebar">
+            <div class="profile-card">
+                <img src="imgs/profile.jpg" alt="Tala Khaddour" class="profile-img">
+                <h1 class="profile-name">Tala Khaddour</h1>
+                <div class="profile-title">Robotics & Intelligent Systems Engineer</div>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="far fa-envelope"></i>
+                        </div>
+                        <div class="contact-detail">
+                            <a href="mailto:khaddour.tala@gmail.com">khaddour.tala@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-detail">
+                            <a href="https://www.linkedin.com/in/tala-khaddour/" target="_blank">LinkedIn Profile</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-detail">
+                            <a href="https://github.com/KHADDOUR-TALA" target="_blank">GitHub Profile</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-detail">
+                            <a href="https://khaddour-tala.github.io/" target="_blank">Personal Website</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </aside>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
+        <!-- RIGHT CONTENT: About, Education, Images -->
+        <main class="content-area">
             <!-- About Me Section -->
             <section class="content-section">
                 <h2 class="section-title">About Me</h2>
@@ -602,8 +594,8 @@
                     </div>
                 </div>
             </section>
-        </div>
-    </main>
+        </main>
+    </div>
 
     <!-- Footer -->
     <footer class="site-footer">
