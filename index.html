@@ -159,100 +159,45 @@
             font-weight: 600;
         }
 
-        /* ========= HERO SECTION WITH CLEAN BACKGROUND ========= */
+        /* ========= SHORT HERO SECTION ========= */
         .hero-section {
             position: relative;
-            padding: 5rem 0;
+            height: 300px; /* Shorter height */
             overflow: hidden;
             background: url('imgs/background.jpg');
             background-size: cover;
             background-position: center;
-            color: var(--color-text);
+            margin-bottom: 60px; /* Space for profile image overlap */
         }
 
-        .hero-overlay {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 3rem;
+        /* Profile image overlapping the hero section */
+        .profile-container {
+            position: relative;
+            max-width: 1000px;
+            margin: -60px auto 0; /* Pull up to overlap hero section */
+            z-index: 2;
+        }
+
+        .profile-img-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: var(--color-white);
+            padding: 1.5rem;
             border-radius: var(--border-radius);
-            max-width: 800px;
-            margin: 0 auto;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero-title {
-            font-size: 2.5rem;
-            color: var(--color-navy);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: var(--color-text-light);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--color-border);
             margin-bottom: 2rem;
         }
 
-        .hero-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            background: var(--color-primary);
-            color: white;
-            border-radius: 4px;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .hero-cta:hover {
-            background: var(--color-primary-dark);
-            color: white;
-            text-decoration: none;
-            transform: translateY(-2px);
-        }
-
-        /* ========= MAIN CONTENT ========= */
-        .main-content {
-            padding: 3rem 0;
-            background: var(--color-bg);
-        }
-
-        .profile-section {
-            display: flex;
-            gap: 3rem;
-            margin-bottom: 3rem;
-            align-items: flex-start;
-        }
-
-        /* LinkedIn-style profile image with partial visibility */
-        .profile-img-container {
-            flex: 0 0 200px;
-            position: relative;
-            height: 200px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 4px solid var(--color-border);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
         .profile-img {
-            width: 100%;
-            height: 100%;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
             object-fit: cover;
-            object-position: center 30%; /* Adjust this to show desired part of image */
-        }
-
-        /* Add a subtle gradient overlay for LinkedIn look */
-        .profile-img-container::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.1));
+            border: 4px solid var(--color-white);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+            margin-top: -40px; /* Overlap effect */
         }
 
         .profile-info {
@@ -260,28 +205,21 @@
         }
 
         .profile-name {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--color-navy);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
         }
 
         .profile-title {
             color: var(--color-primary);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-
-        .profile-description {
-            color: var(--color-text);
-            line-height: 1.6;
-            margin-bottom: 2rem;
-            font-size: 1.05rem;
+            margin-bottom: 1rem;
         }
 
         .social-links {
             display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
             flex-wrap: wrap;
         }
 
@@ -306,26 +244,82 @@
             border-color: var(--color-primary);
         }
 
-        /* ========= EDUCATION SECTION ========= */
-        .education-section {
-            margin-top: 3rem;
+        /* ========= PICTURE CARDS SECTION ========= */
+        .pictures-section {
+            padding: 2rem 0 3rem;
+            background: var(--color-bg);
         }
 
         .section-title {
             font-size: 1.5rem;
             color: var(--color-navy);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .pictures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
             margin-bottom: 2rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 2px solid var(--color-border);
+        }
+
+        .picture-card {
+            background: var(--color-paper);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            border: 1px solid var(--color-border);
+            height: 250px; /* Fixed height for uniform cards */
+        }
+
+        .picture-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .picture-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .picture-card:hover .picture-img {
+            transform: scale(1.05);
+        }
+
+        .picture-caption {
+            padding: 1rem;
+        }
+
+        .picture-caption h4 {
+            font-size: 1rem;
+            color: var(--color-navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .picture-caption p {
+            color: var(--color-text-light);
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        /* ========= EDUCATION SECTION ========= */
+        .education-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-border);
         }
 
         .education-item {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             padding: 1.5rem;
             background: var(--color-paper);
             border-radius: var(--border-radius);
-            border-left: 4px solid var(--color-primary);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-left: 3px solid var(--color-primary);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
 
         .education-period {
@@ -348,31 +342,27 @@
 
         .education-institution {
             color: var(--color-text-light);
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
             font-size: 0.95rem;
         }
 
         .education-details {
             color: var(--color-text);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .education-details p {
-            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
 
         /* ========= FEATURED PROJECTS ========= */
         .featured-projects {
             margin-top: 3rem;
-            padding: 2rem 0;
+            padding: 2rem;
             background: var(--color-paper);
             border-radius: var(--border-radius);
         }
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
             margin-top: 1.5rem;
         }
@@ -414,6 +404,28 @@
             color: var(--color-text-light);
             font-size: 0.9rem;
             line-height: 1.5;
+        }
+
+        .view-all-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--color-primary);
+            color: white;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            margin-top: 1.5rem;
+        }
+
+        .view-all-btn:hover {
+            background: var(--color-primary-dark);
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
         }
 
         /* ========= FOOTER ========= */
@@ -470,39 +482,33 @@
             }
 
             .hero-section {
-                padding: 3rem 0;
+                height: 250px;
             }
 
-            .hero-overlay {
-                padding: 2rem 1.5rem;
-            }
-
-            .hero-title {
-                font-size: 2rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-
-            .profile-section {
+            .profile-img-wrapper {
                 flex-direction: column;
-                gap: 2rem;
-                align-items: center;
                 text-align: center;
+                gap: 1rem;
+                padding: 1.5rem 1rem;
             }
 
-            .profile-img-container {
-                width: 150px;
+            .profile-img {
+                width: 120px;
+                height: 120px;
+                margin-top: -30px;
+            }
+
+            .pictures-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1rem;
+            }
+
+            .picture-card {
+                height: 220px;
+            }
+
+            .picture-img {
                 height: 150px;
-            }
-
-            .profile-name {
-                font-size: 1.8rem;
-            }
-
-            .social-links {
-                justify-content: center;
             }
 
             .projects-grid {
@@ -515,19 +521,31 @@
                 padding: 0 1rem;
             }
 
-            .hero-title {
-                font-size: 1.8rem;
+            .hero-section {
+                height: 200px;
             }
 
-            .profile-img-container {
-                width: 120px;
-                height: 120px;
+            .profile-img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .profile-name {
+                font-size: 1.5rem;
             }
 
             .social-link {
                 flex: 1;
                 justify-content: center;
                 min-width: 120px;
+            }
+
+            .pictures-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .picture-card {
+                height: 200px;
             }
         }
     </style>
@@ -554,108 +572,144 @@
         </div>
     </header>
 
-    <!-- Hero Section with Clean Background -->
+    <!-- Short Hero Section -->
     <section class="hero-section">
+        <!-- No content above - just background -->
+    </section>
+
+    <!-- Profile Section Overlapping Hero -->
+    <div class="container profile-container">
+        <div class="profile-img-wrapper">
+            <img src="imgs/profile.jpg" alt="Tala Khaddour" class="profile-img">
+            <div class="profile-info">
+                <h2 class="profile-name">Tala Khaddour</h2>
+                <div class="profile-title">Robotics & Intelligent Systems Engineer</div>
+                <div class="social-links">
+                    <a href="mailto:khaddour.tala@gmail.com" target="_blank" class="social-link">
+                        <i class="far fa-envelope"></i> Email
+                    </a>
+                    <a href="https://www.linkedin.com/in/tala-khaddour/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/KHADDOUR-TALA" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pictures Cards Section -->
+    <section class="pictures-section">
         <div class="container">
-            <div class="hero-overlay">
-                <h1 class="hero-title">Robotics & Intelligent Systems Engineer</h1>
-                <p class="hero-subtitle">
-                    Specializing in adaptive control, rehabilitation robotics, and sustainable energy solutions.
-                </p>
-                <a href="#profile" class="hero-cta">
-                    <i class="fas fa-arrow-down"></i> View Profile
-                </a>
+            <h3 class="section-title">My Work & Projects</h3>
+            <div class="pictures-grid">
+                <!-- Card 1 -->
+                <div class="picture-card">
+                    <img src="imgs/project1.jpg" alt="Robotics Research" class="picture-img">
+                    <div class="picture-caption">
+                        <h4>Robotics Research</h4>
+                        <p>Advanced control systems and intelligent robotics</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="picture-card">
+                    <img src="imgs/project2.jpg" alt="Rehabilitation Systems" class="picture-img">
+                    <div class="picture-caption">
+                        <h4>Rehabilitation Systems</h4>
+                        <p>Hand exoskeleton design for stroke rehabilitation</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="picture-card">
+                    <img src="imgs/project3.jpg" alt="Autonomous Systems" class="picture-img">
+                    <div class="picture-caption">
+                        <h4>Autonomous Systems</h4>
+                        <p>MPC control and autonomous navigation</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="picture-card">
+                    <img src="imgs/project4.jpg" alt="Sustainable Energy" class="picture-img">
+                    <div class="picture-caption">
+                        <h4>Sustainable Energy</h4>
+                        <p>Solar energy systems and sustainable solutions</p>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="picture-card">
+                    <img src="imgs/project5.jpg" alt="Academic Projects" class="picture-img">
+                    <div class="picture-caption">
+                        <h4>Academic Projects</h4>
+                        <p>University research and technical implementations</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <section id="profile" class="main-content">
+    <!-- Education Section -->
+    <section class="education-section">
         <div class="container">
-            <!-- Profile Section -->
-            <div class="profile-section">
-                <div class="profile-img-container">
-                    <img src="imgs/profile.jpg" alt="Tala Khaddour" class="profile-img">
-                </div>
-                <div class="profile-info">
-                    <h2 class="profile-name">Tala Khaddour</h2>
-                    <div class="profile-title">Robotics & Intelligent Systems Engineer</div>
-                    <p class="profile-description">
-                        I am a robotics engineer specializing in intelligent systems and sustainable energy solutions. 
-                        My work combines technical expertise with practical applications, focusing on creating innovative 
-                        solutions for real-world challenges.
-                    </p>
-                    <div class="social-links">
-                        <a href="mailto:khaddour.tala@gmail.com" target="_blank" class="social-link">
-                            <i class="far fa-envelope"></i> Email
-                        </a>
-                        <a href="https://www.linkedin.com/in/tala-khaddour/" target="_blank" class="social-link">
-                            <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
-                        <a href="https://github.com/KHADDOUR-TALA" target="_blank" class="social-link">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                    </div>
+            <h3 class="section-title">Education</h3>
+            
+            <div class="education-item">
+                <div class="education-period">2020 – 2025</div>
+                <h4 class="education-title">BSc in Robotics and Intelligent Systems Engineering</h4>
+                <div class="education-institution">Manara University, Latakia, Syria</div>
+                <div class="education-details">
+                    <p><strong>GPA:</strong> 3.28/4.0 | <strong>Thesis Score:</strong> 96/100 (Graduated with Honors)</p>
                 </div>
             </div>
 
-            <!-- Education Section -->
-            <div class="education-section">
-                <h3 class="section-title">Education</h3>
+            <div class="education-item">
+                <div class="education-period">2017 – 2020</div>
+                <h4 class="education-title">High School Diploma – Scientific Stream</h4>
+                <div class="education-institution">National Center for the Distinguished (NCD), Latakia, Syria</div>
+                <div class="education-details">
+                    <p><strong>Final Grade:</strong> 92.3% (Rank: 3 out of 75 nationwide)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="featured-projects">
+        <div class="container">
+            <h3 class="section-title">Featured Research Projects</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h4>MPC Autonomous Vehicle</h4>
+                    <p>Model Predictive Control for autonomous vehicle trajectory tracking with constraint handling.</p>
+                </div>
                 
-                <div class="education-item">
-                    <div class="education-period">2020 – 2025</div>
-                    <h4 class="education-title">BSc in Robotics and Intelligent Systems Engineering</h4>
-                    <div class="education-institution">Manara University, Latakia, Syria</div>
-                    <div class="education-details">
-                        <p><strong>GPA:</strong> 3.28/4.0</p>
-                        <p><strong>Thesis:</strong> Design and Nonlinear Control of Hand Exoskeleton | Score: 96/100 (Graduated with Honors)</p>
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-hand-holding-medical"></i>
                     </div>
+                    <h4>Hand Exoskeleton Design</h4>
+                    <p>Rehabilitation exoskeleton for stroke patients with genetic algorithm optimization.</p>
                 </div>
-
-                <div class="education-item">
-                    <div class="education-period">2017 – 2020</div>
-                    <h4 class="education-title">High School Diploma – Scientific Stream</h4>
-                    <div class="education-institution">National Center for the Distinguished (NCD), Latakia, Syria</div>
-                    <div class="education-details">
-                        <p><strong>Final Grade:</strong> 92.3% (Rank: 3 out of 75 nationwide)</p>
+                
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-robot"></i>
                     </div>
+                    <h4>ROS Navigation System</h4>
+                    <p>Autonomous robot navigation through mazes using LiDAR and wall-following algorithms.</p>
                 </div>
             </div>
-
-            <!-- Featured Projects -->
-            <div class="featured-projects">
-                <h3 class="section-title text-center">Featured Projects</h3>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-icon">
-                            <i class="fas fa-car"></i>
-                        </div>
-                        <h4>MPC Autonomous Vehicle</h4>
-                        <p>Advanced control systems for autonomous vehicle trajectory tracking.</p>
-                    </div>
-                    
-                    <div class="project-card">
-                        <div class="project-icon">
-                            <i class="fas fa-hand-holding-medical"></i>
-                        </div>
-                        <h4>Hand Exoskeleton</h4>
-                        <p>Rehabilitation robotics for stroke patients with optimization algorithms.</p>
-                    </div>
-                    
-                    <div class="project-card">
-                        <div class="project-icon">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <h4>ROS Navigation</h4>
-                        <p>Autonomous maze navigation using LiDAR and intelligent algorithms.</p>
-                    </div>
-                </div>
-                <div class="text-center" style="margin-top: 1.5rem;">
-                    <a href="research.html" class="hero-cta">
-                        <i class="fas fa-code-branch"></i> View All Projects
-                    </a>
-                </div>
+            <div class="text-center">
+                <a href="research.html" class="view-all-btn">
+                    <i class="fas fa-code-branch"></i> View All Research Projects
+                </a>
             </div>
         </div>
     </section>
@@ -679,15 +733,7 @@
             }
         });
 
-        // Smooth scroll for CTA button
-        document.querySelector('.hero-cta').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector('#profile').scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-
-        // Simple animation for project cards
+        // Animation for picture cards
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -702,11 +748,19 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.project-card').forEach((card, index) => {
+        document.querySelectorAll('.picture-card').forEach((card, index) => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(20px)';
             card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             card.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(card);
+        });
+
+        document.querySelectorAll('.project-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            card.style.transitionDelay = `${index * 0.1 + 0.2}s`;
             observer.observe(card);
         });
     </script>
