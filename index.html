@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tala Khaddour | Robotics & Intelligent Systems Engineer</title>
     <meta name="description" content="Academic portfolio of Tala Khaddour, specializing in robotics, intelligent systems, and sustainable energy solutions.">
-
     <!-- Font Awesome & Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-
     <style>
         /* ========= PROFESSIONAL COLOR SCHEME ========= */
         :root {
             /* Professional Color Palette */
-            --color-bg: #FFFFFF;           /* White background */
+            --color-bg: #FFFFFF;
             --color-paper: #F8FAFC;
-            --color-text: #1A2A36;         /* Dark text */
+            --color-text: #1A2A36;
             --color-text-light: #5A6B7A;
-            --color-primary: #339BA7;      /* Teal primary */
+            --color-primary: #339BA7;
             --color-primary-dark: #127686;
-            --color-accent: #4F97C8;       /* Blue accent */
+            --color-accent: #4F97C8;
             --color-border: #E2E8F0;
             --color-white: #FFFFFF;
-            --color-navy: #05475E;         /* Dark navy/teal */
+            --color-navy: #05475E;
             --color-header-bg: #05475E;
 
             /* Typography */
@@ -86,10 +83,6 @@
 
         .text-center {
             text-align: center;
-        }
-
-        .text-justify {
-            text-align: justify;
         }
 
         /* ========= HEADER ========= */
@@ -159,167 +152,67 @@
             font-weight: 600;
         }
 
-        /* ========= SHORT HERO SECTION ========= */
+        /* ========= HERO SECTION ========= */
         .hero-section {
             position: relative;
-            height: 300px; /* Shorter height */
-            overflow: hidden;
-            background: url('imgs/background.jpg');
-            background-size: cover;
-            background-position: center;
-            margin-bottom: 60px; /* Space for profile image overlap */
-        }
-
-        /* Profile image overlapping the hero section */
-        .profile-container {
-            position: relative;
-            max-width: 1000px;
-            margin: -60px auto 0; /* Pull up to overlap hero section */
-            z-index: 2;
-        }
-
-        .profile-img-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            background: var(--color-white);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            border: 1px solid var(--color-border);
-            margin-bottom: 2rem;
-        }
-
-        .profile-img {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--color-white);
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-            margin-top: -40px; /* Overlap effect */
-        }
-
-        .profile-info {
-            flex: 1;
-        }
-
-        .profile-name {
-            font-size: 1.8rem;
-            color: var(--color-navy);
-            margin-bottom: 0.25rem;
-        }
-
-        .profile-title {
-            color: var(--color-primary);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: var(--color-paper);
-            border: 1px solid var(--color-border);
-            border-radius: 4px;
-            color: var(--color-text);
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .social-link:hover {
-            background: var(--color-primary);
-            color: white;
-            text-decoration: none;
-            border-color: var(--color-primary);
-        }
-
-        /* ========= PICTURE CARDS SECTION ========= */
-        .pictures-section {
-            padding: 2rem 0 3rem;
+            padding: 4rem 0 2rem;
             background: var(--color-bg);
         }
 
-        .section-title {
-            font-size: 1.5rem;
-            color: var(--color-navy);
-            margin-bottom: 1.5rem;
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
             text-align: center;
         }
 
-        .pictures-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+        .hero-title {
+            font-size: 2.5rem;
+            color: var(--color-navy);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--color-text-light);
             margin-bottom: 2rem;
         }
 
-        .picture-card {
-            background: var(--color-paper);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-            transition: var(--transition);
-            border: 1px solid var(--color-border);
-            height: 250px; /* Fixed height for uniform cards */
+        /* ========= MAIN CONTENT ========= */
+        .main-content {
+            padding: 2rem 0 4rem;
+            background: var(--color-bg);
         }
 
-        .picture-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        .content-section {
+            margin-bottom: 3rem;
         }
 
-        .picture-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .picture-card:hover .picture-img {
-            transform: scale(1.05);
-        }
-
-        .picture-caption {
-            padding: 1rem;
-        }
-
-        .picture-caption h4 {
-            font-size: 1rem;
+        .section-title {
+            font-size: 1.8rem;
             color: var(--color-navy);
-            margin-bottom: 0.25rem;
-        }
-
-        .picture-caption p {
-            color: var(--color-text-light);
-            font-size: 0.85rem;
-            line-height: 1.4;
-        }
-
-        /* ========= EDUCATION SECTION ========= */
-        .education-section {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--color-border);
-        }
-
-        .education-item {
             margin-bottom: 1.5rem;
-            padding: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--color-border);
+        }
+
+        /* About Section */
+        .about-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--color-text);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Education Section */
+        .education-item {
+            margin-bottom: 2.5rem;
+            padding: 2rem;
             background: var(--color-paper);
             border-radius: var(--border-radius);
-            border-left: 3px solid var(--color-primary);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--color-primary);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
         .education-period {
@@ -337,95 +230,57 @@
             font-weight: 600;
             color: var(--color-navy);
             margin-bottom: 0.25rem;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
         }
 
         .education-institution {
             color: var(--color-text-light);
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
         }
 
         .education-details {
             color: var(--color-text);
-            font-size: 0.9rem;
-            line-height: 1.5;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
-        /* ========= FEATURED PROJECTS ========= */
-        .featured-projects {
-            margin-top: 3rem;
-            padding: 2rem;
-            background: var(--color-paper);
-            border-radius: var(--border-radius);
+        /* Images Gallery Section */
+        .images-section {
+            padding: 2rem 0;
         }
 
-        .projects-grid {
+        .images-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
             margin-top: 1.5rem;
         }
 
-        .project-card {
-            background: var(--color-bg);
+        .image-card {
+            background: var(--color-paper);
             border-radius: var(--border-radius);
-            padding: 1.5rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
             transition: var(--transition);
             border: 1px solid var(--color-border);
+            height: 300px;
         }
 
-        .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
-        .project-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-            color: var(--color-white);
-            font-size: 1.2rem;
-        }
-
-        .project-card h4 {
-            font-size: 1.1rem;
-            color: var(--color-navy);
-            margin-bottom: 0.5rem;
-        }
-
-        .project-card p {
-            color: var(--color-text-light);
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        .view-all-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            background: var(--color-primary);
-            color: white;
-            border-radius: 4px;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
+        .image-item {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             transition: var(--transition);
-            margin-top: 1.5rem;
         }
 
-        .view-all-btn:hover {
-            background: var(--color-primary-dark);
-            color: white;
-            text-decoration: none;
-            transform: translateY(-2px);
+        .image-card:hover .image-item {
+            transform: scale(1.05);
         }
 
         /* ========= FOOTER ========= */
@@ -433,7 +288,7 @@
             background: var(--color-header-bg);
             color: var(--color-white);
             padding: 3rem 0 2rem;
-            margin-top: 3rem;
+            margin-top: 2rem;
         }
 
         .footer-inner {
@@ -481,38 +336,29 @@
                 gap: 1rem;
             }
 
-            .hero-section {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .education-item {
+                padding: 1.5rem;
+            }
+
+            .images-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+
+            .image-card {
                 height: 250px;
-            }
-
-            .profile-img-wrapper {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-                padding: 1.5rem 1rem;
-            }
-
-            .profile-img {
-                width: 120px;
-                height: 120px;
-                margin-top: -30px;
-            }
-
-            .pictures-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 1rem;
-            }
-
-            .picture-card {
-                height: 220px;
-            }
-
-            .picture-img {
-                height: 150px;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
             }
         }
 
@@ -521,36 +367,24 @@
                 padding: 0 1rem;
             }
 
-            .hero-section {
-                height: 200px;
+            .hero-title {
+                font-size: 1.8rem;
             }
 
-            .profile-img {
-                width: 100px;
-                height: 100px;
+            .education-item {
+                padding: 1.25rem;
             }
 
-            .profile-name {
-                font-size: 1.5rem;
-            }
-
-            .social-link {
-                flex: 1;
-                justify-content: center;
-                min-width: 120px;
-            }
-
-            .pictures-grid {
+            .images-grid {
                 grid-template-columns: 1fr;
             }
 
-            .picture-card {
-                height: 200px;
+            .image-card {
+                height: 220px;
             }
         }
     </style>
 </head>
-
 <body>
     <!-- Header -->
     <header class="site-header">
@@ -572,147 +406,79 @@
         </div>
     </header>
 
-    <!-- Short Hero Section -->
+    <!-- Hero Section -->
     <section class="hero-section">
-        <!-- No content above - just background -->
-    </section>
-
-    <!-- Profile Section Overlapping Hero -->
-    <div class="container profile-container">
-        <div class="profile-img-wrapper">
-            <img src="imgs/profile.jpg" alt="Tala Khaddour" class="profile-img">
-            <div class="profile-info">
-                <h2 class="profile-name">Tala Khaddour</h2>
-                <div class="profile-title">Robotics & Intelligent Systems Engineer</div>
-                <div class="social-links">
-                    <a href="mailto:khaddour.tala@gmail.com" target="_blank" class="social-link">
-                        <i class="far fa-envelope"></i> Email
-                    </a>
-                    <a href="https://www.linkedin.com/in/tala-khaddour/" target="_blank" class="social-link">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="https://github.com/KHADDOUR-TALA" target="_blank" class="social-link">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Pictures Cards Section -->
-    <section class="pictures-section">
         <div class="container">
-            <h3 class="section-title">My Work & Projects</h3>
-            <div class="pictures-grid">
-                <!-- Card 1 -->
-                <div class="picture-card">
-                    <img src="imgs/project1.jpg" alt="Robotics Research" class="picture-img">
-                    <div class="picture-caption">
-                        <h4>Robotics Research</h4>
-                        <p>Advanced control systems and intelligent robotics</p>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="picture-card">
-                    <img src="imgs/project2.jpg" alt="Rehabilitation Systems" class="picture-img">
-                    <div class="picture-caption">
-                        <h4>Rehabilitation Systems</h4>
-                        <p>Hand exoskeleton design for stroke rehabilitation</p>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="picture-card">
-                    <img src="imgs/project3.jpg" alt="Autonomous Systems" class="picture-img">
-                    <div class="picture-caption">
-                        <h4>Autonomous Systems</h4>
-                        <p>MPC control and autonomous navigation</p>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="picture-card">
-                    <img src="imgs/project4.jpg" alt="Sustainable Energy" class="picture-img">
-                    <div class="picture-caption">
-                        <h4>Sustainable Energy</h4>
-                        <p>Solar energy systems and sustainable solutions</p>
-                    </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="picture-card">
-                    <img src="imgs/project5.jpg" alt="Academic Projects" class="picture-img">
-                    <div class="picture-caption">
-                        <h4>Academic Projects</h4>
-                        <p>University research and technical implementations</p>
-                    </div>
-                </div>
+            <div class="hero-content">
+                <h1 class="hero-title">Tala Khaddour</h1>
+                <p class="hero-subtitle">Robotics & Intelligent Systems Engineer</p>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section class="education-section">
+    <!-- Main Content -->
+    <main class="main-content">
         <div class="container">
-            <h3 class="section-title">Education</h3>
-            
-            <div class="education-item">
-                <div class="education-period">2020 – 2025</div>
-                <h4 class="education-title">BSc in Robotics and Intelligent Systems Engineering</h4>
-                <div class="education-institution">Manara University, Latakia, Syria</div>
-                <div class="education-details">
-                    <p><strong>GPA:</strong> 3.28/4.0 | <strong>Thesis Score:</strong> 96/100 (Graduated with Honors)</p>
+            <!-- About Me Section -->
+            <section class="content-section">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <p>I am a robotics engineer specializing in intelligent systems and sustainable energy solutions. My work combines technical expertise with practical applications, focusing on creating innovative solutions for real-world challenges.</p>
+                    
+                    <p>My academic journey began with a deep interest in how machines can be designed to assist and enhance human capabilities. This led me to pursue studies in robotics engineering, where I developed skills in control systems, artificial intelligence, and mechanical design.</p>
+                    
+                    <p>I believe that technology should serve humanity in meaningful ways. Whether through rehabilitation robotics that help stroke patients regain mobility or sustainable energy systems that address environmental challenges, I'm committed to engineering solutions that make a positive impact.</p>
+                    
+                    <p>Currently, I'm expanding my knowledge through advanced research and practical projects, always seeking new challenges at the intersection of intelligent systems, robotics, and sustainable technology.</p>
                 </div>
-            </div>
+            </section>
 
-            <div class="education-item">
-                <div class="education-period">2017 – 2020</div>
-                <h4 class="education-title">High School Diploma – Scientific Stream</h4>
-                <div class="education-institution">National Center for the Distinguished (NCD), Latakia, Syria</div>
-                <div class="education-details">
-                    <p><strong>Final Grade:</strong> 92.3% (Rank: 3 out of 75 nationwide)</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Projects -->
-    <section class="featured-projects">
-        <div class="container">
-            <h3 class="section-title">Featured Research Projects</h3>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-car"></i>
-                    </div>
-                    <h4>MPC Autonomous Vehicle</h4>
-                    <p>Model Predictive Control for autonomous vehicle trajectory tracking with constraint handling.</p>
-                </div>
+            <!-- Education Section -->
+            <section class="content-section">
+                <h2 class="section-title">Education</h2>
                 
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-hand-holding-medical"></i>
+                <div class="education-item">
+                    <div class="education-period">2020 – 2025</div>
+                    <h3 class="education-title">Bachelor of Science in Robotics and Intelligent Systems Engineering</h3>
+                    <div class="education-institution">Manara University, Latakia, Syria</div>
+                    <div class="education-details">
+                        <p><strong>Final Grade:</strong> GPA: 3.28/4.0 (Graduated with Honors)</p>
+                        <p><strong>Thesis:</strong> Design and Nonlinear Control of Hand Exoskeleton | Score: 96/100</p>
+                        <p><strong>Focus Areas:</strong> Control Systems, Artificial Intelligence, Mechanical Design, Sustainable Energy</p>
                     </div>
-                    <h4>Hand Exoskeleton Design</h4>
-                    <p>Rehabilitation exoskeleton for stroke patients with genetic algorithm optimization.</p>
                 </div>
-                
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-robot"></i>
+
+                <div class="education-item">
+                    <div class="education-period">2017 – 2020</div>
+                    <h3 class="education-title">High School Diploma – Scientific Stream</h3>
+                    <div class="education-institution">National Center for the Distinguished (NCD), Latakia, Syria</div>
+                    <div class="education-details">
+                        <p><strong>Final Grade:</strong> 92.3% (Rank: 3 out of 75 nationwide)</p>
+                        <p><strong>Focus Areas:</strong> Advanced Mathematics, Physics, Computer Science</p>
                     </div>
-                    <h4>ROS Navigation System</h4>
-                    <p>Autonomous robot navigation through mazes using LiDAR and wall-following algorithms.</p>
                 </div>
-            </div>
-            <div class="text-center">
-                <a href="research.html" class="view-all-btn">
-                    <i class="fas fa-code-branch"></i> View All Research Projects
-                </a>
-            </div>
+            </section>
+
+            <!-- Images Section -->
+            <section class="content-section images-section">
+                <h2 class="section-title">Academic & Professional Journey</h2>
+                <div class="images-grid">
+                    <div class="image-card">
+                        <img src="imgs/academic1.jpg" alt="University Studies" class="image-item">
+                    </div>
+                    <div class="image-card">
+                        <img src="imgs/academic2.jpg" alt="Research Work" class="image-item">
+                    </div>
+                    <div class="image-card">
+                        <img src="imgs/academic3.jpg" alt="Technical Projects" class="image-item">
+                    </div>
+                    <div class="image-card">
+                        <img src="imgs/academic4.jpg" alt="Robotics Lab" class="image-item">
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
+    </main>
 
     <!-- Footer -->
     <footer class="site-footer">
@@ -733,7 +499,7 @@
             }
         });
 
-        // Animation for picture cards
+        // Simple animation for image cards
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -748,7 +514,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.picture-card').forEach((card, index) => {
+        document.querySelectorAll('.image-card').forEach((card, index) => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(20px)';
             card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
@@ -756,12 +522,12 @@
             observer.observe(card);
         });
 
-        document.querySelectorAll('.project-card').forEach((card, index) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            card.style.transitionDelay = `${index * 0.1 + 0.2}s`;
-            observer.observe(card);
+        document.querySelectorAll('.education-item').forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            item.style.transitionDelay = `${index * 0.1 + 0.2}s`;
+            observer.observe(item);
         });
     </script>
 </body>
