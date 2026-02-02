@@ -12,21 +12,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* ========= SIMPLIFIED COLOR SCHEME ========= */
+        /* ========= PROFESSIONAL ACADEMIC COLOR SCHEME ========= */
         :root {
-            /* Using provided color palette */
-            --color-dark-navy: #05475E;
-            --color-navy: #127686;
-            --color-teal: #339BA7;
-            --color-blue: #4F97C8;
-            --color-light-blue: #ACCDE4;
+            /* Primary Academic Colors - Minimal & Professional */
+            --color-primary-dark: #05475E;    /* Main headers, strong accents */
+            --color-primary: #127686;         /* Secondary elements */
+            --color-accent: #339BA7;          /* Subtle highlights */
+            --color-accent-light: #4F97C8;    /* Interactive elements */
+            --color-light: #ACCDE4;           /* Backgrounds, borders */
             
-            /* Derived colors */
+            /* Neutral Academic Colors */
             --color-bg: #FFFFFF;
-            --color-paper: #F8FAFC;
-            --color-light-gray: #F0F4F8;
-            --color-text: #1E293B;
-            --color-text-light: #64748B;
+            --color-paper: #F9FBFD;
+            --color-text: #1A1A1A;
+            --color-text-secondary: #4A5568;
             --color-border: #E2E8F0;
             --color-white: #FFFFFF;
 
@@ -35,8 +34,8 @@
             --font-serif: 'Source Serif Pro', Georgia, 'Times New Roman', serif;
 
             --max-width: 1200px;
-            --border-radius: 8px;
-            --transition: all 0.3s ease;
+            --border-radius: 6px;
+            --transition: all 0.25s ease;
         }
 
         /* ========= GENERAL ========= */
@@ -56,13 +55,15 @@
             background-color: var(--color-bg);
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-serif);
-            color: var(--color-dark-navy);
+            color: var(--color-primary-dark);
             font-weight: 600;
             line-height: 1.3;
+            letter-spacing: -0.01em;
         }
 
         p {
@@ -70,20 +71,20 @@
         }
 
         a {
-            color: var(--color-blue);
+            color: var(--color-accent-light);
             text-decoration: none;
             transition: var(--transition);
         }
 
         a:hover {
-            color: var(--color-navy);
+            color: var(--color-primary);
             text-decoration: underline;
         }
 
         .container {
             max-width: var(--max-width);
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 2rem;
         }
 
         .mt-4 {
@@ -102,21 +103,20 @@
             text-align: justify;
         }
 
-        /* ========= HEADER ========= */
+        /* ========= HEADER - PROFESSIONAL & SUBDUED ========= */
         .site-header {
-            background: var(--color-dark-navy);
-            border-bottom: 3px solid var(--color-light-blue);
+            background: var(--color-primary-dark);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(5, 71, 94, 0.25);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .nav-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.25rem 0;
+            padding: 1.5rem 0;
         }
 
         .nav-logo {
@@ -124,155 +124,149 @@
             align-items: center;
             gap: 0.875rem;
             text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .nav-logo:hover {
-            transform: translateY(-2px);
         }
 
         .nav-logo-mark {
-            width: 42px;
-            height: 42px;
-            background: linear-gradient(135deg, var(--color-blue), var(--color-teal));
+            width: 40px;
+            height: 40px;
+            background: var(--color-primary);
             color: var(--color-white);
-            border-radius: 10px;
+            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 12px rgba(79, 151, 200, 0.4);
-            transition: var(--transition);
-        }
-
-        .nav-logo:hover .nav-logo-mark {
-            transform: rotate(5deg);
-            background: linear-gradient(135deg, var(--color-teal), var(--color-blue));
+            font-size: 1rem;
+            font-family: var(--font-sans);
         }
 
         .nav-logo-text {
             font-family: var(--font-serif);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--color-white);
-            font-weight: 700;
+            font-weight: 600;
             letter-spacing: -0.01em;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
+            gap: 2rem;
             font-size: 0.95rem;
         }
 
         .nav-link {
-            color: var(--color-light-blue);
-            font-weight: 600;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 500;
             padding: 0.5rem 0;
             position: relative;
             transition: var(--transition);
-            letter-spacing: 0.01em;
         }
 
         .nav-link:hover {
             color: var(--color-white);
         }
 
-        .nav-link::after {
+        .nav-link-active {
+            color: var(--color-white);
+            font-weight: 600;
+        }
+
+        .nav-link-active::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 0;
-            height: 3px;
-            background: var(--color-light-blue);
-            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 2px;
-        }
-
-        .nav-link:hover::after {
             width: 100%;
-        }
-
-        .nav-link-active {
-            color: var(--color-white);
-            font-weight: 700;
-        }
-
-        .nav-link-active::after {
-            width: 100%;
-            background: var(--color-light-blue);
+            height: 2px;
+            background: var(--color-light);
         }
 
         /* ========= MAIN CONTENT LAYOUT ========= */
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -1rem;
-            padding: 2rem 0;
+        .main-content {
+            padding: 3rem 0;
         }
 
-        .col-sm-12 {
-            flex: 0 0 100%;
-            max-width: 100%;
-            padding: 0 1rem;
+        .content-area {
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        /* ========= RESEARCH PROJECTS STYLES ========= */
+        /* ========= SECTION HEADERS ========= */
+        .section-header {
+            margin-bottom: 2.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--color-primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            color: var(--color-text-secondary);
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        /* ========= RESEARCH PROJECTS - ACADEMIC STYLE ========= */
         .research-section {
             margin-top: 3rem;
         }
 
         .research-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             padding: 2rem;
             background: var(--color-paper);
             border-radius: var(--border-radius);
-            border-left: 4px solid var(--color-blue);
+            border: 1px solid var(--color-border);
             transition: var(--transition);
         }
 
         .research-item:hover {
-            box-shadow: 0 8px 25px rgba(5, 71, 94, 0.15);
-            transform: translateY(-5px);
+            border-color: var(--color-light);
+            box-shadow: 0 4px 12px rgba(5, 71, 94, 0.08);
+        }
+
+        .research-header {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
         }
 
         .research-img {
-            width: 160px;
-            height: 160px;
+            width: 120px;
+            height: 120px;
             border-radius: var(--border-radius);
             object-fit: cover;
-            margin-right: 2rem;
-            border: 3px solid var(--color-white);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-right: 1.5rem;
+            border: 1px solid var(--color-border);
         }
 
-        .research-content {
+        .research-title-container {
             flex: 1;
         }
 
         .research-title {
-            font-weight: 700;
-            color: var(--color-dark-navy);
+            font-size: 1.3rem;
+            color: var(--color-primary-dark);
             margin-bottom: 0.5rem;
-            font-size: 1.4rem;
+            line-height: 1.4;
         }
 
         .research-tech {
-            color: var(--color-teal);
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            font-style: italic;
+            color: var(--color-accent);
+            font-size: 0.95rem;
+            font-weight: 500;
+            font-family: var(--font-sans);
         }
 
         .research-description {
             color: var(--color-text);
-            margin-top: 0.5rem;
-            font-size: 1.05rem;
-            line-height: 1.8;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
         }
 
         .research-description p {
@@ -280,22 +274,23 @@
         }
 
         .research-highlights {
-            background: rgba(172, 205, 228, 0.15);
+            background: rgba(172, 205, 228, 0.05);
             padding: 1.5rem;
-            border-radius: calc(var(--border-radius) - 2px);
+            border-radius: var(--border-radius);
             margin: 1.5rem 0;
-            border-left: 3px solid var(--color-blue);
+            border-left: 3px solid var(--color-accent-light);
         }
 
         .research-highlights h5 {
-            color: var(--color-dark-navy);
+            color: var(--color-primary-dark);
             margin-bottom: 0.75rem;
             font-size: 1rem;
+            font-weight: 600;
         }
 
         .research-highlights ul {
             padding-left: 1.5rem;
-            list-style-type: circle;
+            list-style-type: disc;
         }
 
         .research-highlights li {
@@ -305,6 +300,8 @@
 
         .research-links {
             margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--color-border);
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
@@ -314,33 +311,32 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.6rem 1.2rem;
+            padding: 0.5rem 1rem;
             background: var(--color-white);
-            border: 2px solid var(--color-light-blue);
-            border-radius: 50px;
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
             font-size: 0.9rem;
-            color: var(--color-navy);
-            text-decoration: none;
-            transition: var(--transition);
+            color: var(--color-accent-light);
             font-weight: 500;
+            transition: var(--transition);
         }
 
         .research-link:hover {
-            background: var(--color-blue);
+            background: var(--color-accent-light);
             color: var(--color-white);
-            border-color: var(--color-blue);
+            border-color: var(--color-accent-light);
             text-decoration: none;
         }
 
-        /* ========= PROJECT ALBUM SECTION ========= */
+        /* ========= PROJECT ALBUM - MINIMAL ========= */
         .album-section {
             margin: 4rem 0;
         }
 
         .album-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
             margin-top: 2rem;
         }
 
@@ -348,16 +344,15 @@
             position: relative;
             border-radius: var(--border-radius);
             overflow: hidden;
-            height: 240px;
+            height: 200px;
+            border: 1px solid var(--color-border);
             transition: var(--transition);
-            cursor: pointer;
-            border: 2px solid var(--color-light-blue);
         }
 
         .album-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(5, 71, 94, 0.2);
-            border-color: var(--color-blue);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(5, 71, 94, 0.1);
+            border-color: var(--color-light);
         }
 
         .album-img {
@@ -368,8 +363,7 @@
         }
 
         .album-card:hover .album-img {
-            transform: scale(1.1);
-            filter: brightness(0.9);
+            filter: brightness(1.05);
         }
 
         .album-card-overlay {
@@ -377,151 +371,100 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, var(--color-dark-navy), transparent);
-            padding: 2rem 1.5rem 1.5rem;
-            transform: translateY(100%);
-            transition: var(--transition);
+            background: linear-gradient(to top, rgba(5, 71, 94, 0.9), transparent);
+            padding: 1.5rem;
             color: white;
         }
 
-        .album-card:hover .album-card-overlay {
-            transform: translateY(0);
-        }
-
         .album-card-title {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: 600;
             margin: 0;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.3s ease 0.1s;
         }
 
-        .album-card:hover .album-card-title {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ========= RIGHT CONTENT AREA ========= */
-        .font-weight-bold {
-            font-weight: 600;
-        }
-
-        .content-area h4 {
-            font-size: 1.6rem;
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 2px solid var(--color-blue);
-            color: var(--color-dark-navy);
-        }
-
-        .content-area h4:first-of-type {
-            margin-top: 0;
-        }
-
-        .intro-paragraph {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--color-text);
-            padding: 1.5rem;
-            background: rgba(172, 205, 228, 0.1);
+        /* ========= INTRO SECTION ========= */
+        .intro-section {
+            background: linear-gradient(135deg, rgba(172, 205, 228, 0.03), rgba(79, 151, 200, 0.03));
+            padding: 2rem;
             border-radius: var(--border-radius);
-            margin-bottom: 2rem;
-            border: 1px solid var(--color-light-blue);
+            margin-bottom: 3rem;
+            border: 1px solid var(--color-border);
         }
 
-        /* ========= FOOTER ========= */
+        .intro-title {
+            color: var(--color-primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .intro-text {
+            color: var(--color-text);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* ========= FOOTER - PROFESSIONAL ========= */
         .site-footer {
-            background: linear-gradient(135deg, var(--color-dark-navy), var(--color-navy));
+            background: var(--color-primary-dark);
             color: var(--color-white);
-            padding: 4rem 0 3rem;
+            padding: 3rem 0 2rem;
             margin-top: 4rem;
-            border-top: 3px solid var(--color-light-blue);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer-inner {
             text-align: center;
             max-width: var(--max-width);
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 2rem;
         }
 
         .footer-name {
             font-family: var(--font-serif);
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--color-white);
-            margin-bottom: 0.75rem;
-            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
         .footer-tagline {
-            color: var(--color-light-blue);
+            color: var(--color-light);
             margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            letter-spacing: 0.02em;
+            font-size: 1rem;
+            font-weight: 400;
         }
 
         .footer-meta {
             font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 60ch;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
             margin: 0 auto;
-            line-height: 1.7;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            padding-top: 2rem;
+            line-height: 1.6;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
         }
 
         /* ========= RESPONSIVE ========= */
         @media (max-width: 992px) {
-            .research-item {
+            .research-header {
                 flex-direction: column;
-                align-items: center;
-                text-align: center;
             }
 
             .research-img {
                 margin-right: 0;
                 margin-bottom: 1.5rem;
+                width: 100%;
+                max-width: 300px;
+                height: 180px;
             }
 
             .album-cards {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-            }
-
-            .nav-links {
-                gap: 1.5rem;
-                font-size: 0.9rem;
-            }
-
-            .album-card {
-                height: 220px;
             }
         }
 
         @media (max-width: 768px) {
-            .research-item {
-                padding: 1.5rem;
-            }
-
-            .research-img {
-                width: 140px;
-                height: 140px;
-            }
-
-            .album-cards {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .album-card {
-                height: 200px;
-            }
-
-            .content-area h4 {
-                font-size: 1.4rem;
+            .container {
+                padding: 0 1.5rem;
             }
 
             .nav-inner {
@@ -533,6 +476,42 @@
             .nav-links {
                 flex-wrap: wrap;
                 justify-content: center;
+                gap: 1rem;
+            }
+
+            .nav-link {
+                font-size: 0.9rem;
+            }
+
+            .research-item {
+                padding: 1.5rem;
+            }
+
+            .album-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .research-links {
+                flex-direction: column;
+            }
+
+            .research-link {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .nav-logo-text {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -560,267 +539,313 @@
     </header>
 
     <!-- Main Content -->
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="content-area">
-                    <h4 class="font-weight-bold">Research & Technical Projects</h4>
-                    <p class="intro-paragraph text-justify">
-                        My research focuses on intelligent systems, control algorithms, and robotics applications. Each project combines theoretical analysis with practical implementation, addressing challenges in rehabilitation robotics, autonomous systems, and human-robot interaction.
+    <main class="main-content">
+        <div class="container">
+            <div class="content-area">
+                
+                <!-- Intro Section -->
+                <div class="intro-section">
+                    <h2 class="intro-title">Research & Technical Projects</h2>
+                    <p class="intro-text">
+                        My research focuses on intelligent systems, control algorithms, and robotics applications. 
+                        Each project combines theoretical analysis with practical implementation, addressing challenges 
+                        in rehabilitation robotics, autonomous systems, and human-robot interaction. This portfolio 
+                        represents a systematic approach to solving complex engineering problems through rigorous 
+                        methodology and innovative solutions.
                     </p>
+                </div>
 
-                    <h4 class="font-weight-bold">Featured Projects</h4>
-                    <div class="research-section">
-                        
-                        <!-- MPC Autonomous Vehicle -->
-                        <div class="research-item">
-                            <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Autonomous Vehicle Control" class="research-img">
-                            <div class="research-content">
-                                <div class="research-title">Model Predictive Control for Autonomous Vehicle</div>
+                <!-- Featured Projects -->
+                <div class="section-header">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">Selected research implementations and technical developments</p>
+                </div>
+
+                <div class="research-section">
+                    
+                    <!-- MPC Autonomous Vehicle -->
+                    <article class="research-item">
+                        <div class="research-header">
+                            <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                 alt="Autonomous Vehicle Control" class="research-img">
+                            <div class="research-title-container">
+                                <h3 class="research-title">Model Predictive Control for Autonomous Vehicle</h3>
                                 <div class="research-tech">MATLAB/Simulink • MPC • Trajectory Tracking</div>
-                                <div class="research-description">
-                                    <p>Implemented Model Predictive Control (MPC) for autonomous vehicle trajectory tracking using MATLAB/Simulink. The controller enables precise following of reference paths while accounting for system dynamics and constraints.</p>
-                                    <p>The MPC approach predicts future vehicle behavior and optimizes control inputs, demonstrating superior accuracy compared to traditional PID controllers for complex trajectories.</p>
-                                </div>
-                                <div class="research-highlights">
-                                    <h5>Key Contributions:</h5>
-                                    <ul>
-                                        <li>Developed kinematic vehicle model with MPC controller</li>
-                                        <li>Compared MPC performance against PID for step-input and circular trajectories</li>
-                                        <li>Achieved accurate lateral position and yaw angle tracking</li>
-                                        <li>Implemented constraint handling for realistic vehicle control</li>
-                                    </ul>
-                                </div>
-                                <div class="research-links">
-                                    <a href="https://github.com/KHADDOUR-TALA/MPC-Simulation" target="_blank" class="research-link">
-                                        <i class="fab fa-github"></i> View on GitHub
-                                    </a>
-                                </div>
                             </div>
                         </div>
+                        
+                        <div class="research-description">
+                            <p>Implemented Model Predictive Control (MPC) for autonomous vehicle trajectory tracking using MATLAB/Simulink. The controller enables precise following of reference paths while accounting for system dynamics and constraints.</p>
+                            <p>The MPC approach predicts future vehicle behavior and optimizes control inputs, demonstrating superior accuracy compared to traditional PID controllers for complex trajectories.</p>
+                        </div>
+                        
+                        <div class="research-highlights">
+                            <h5>Key Contributions:</h5>
+                            <ul>
+                                <li>Developed kinematic vehicle model with MPC controller</li>
+                                <li>Compared MPC performance against PID for step-input and circular trajectories</li>
+                                <li>Achieved accurate lateral position and yaw angle tracking</li>
+                                <li>Implemented constraint handling for realistic vehicle control</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="research-links">
+                            <a href="https://github.com/KHADDOUR-TALA/MPC-Simulation" target="_blank" class="research-link">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </article>
 
-                        <!-- Hand Exoskeleton Design -->
-                        <div class="research-item">
-                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Hand Exoskeleton Design" class="research-img">
-                            <div class="research-content">
-                                <div class="research-title">Hand Exoskeleton for Rehabilitation</div>
+                    <!-- Hand Exoskeleton Design -->
+                    <article class="research-item">
+                        <div class="research-header">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                 alt="Hand Exoskeleton Design" class="research-img">
+                            <div class="research-title-container">
+                                <h3 class="research-title">Hand Exoskeleton for Rehabilitation</h3>
                                 <div class="research-tech">SolidWorks • MATLAB • Simscape • Genetic Algorithms</div>
-                                <div class="research-description">
-                                    <p>Designed and modeled a rehabilitation hand exoskeleton to restore finger movements in post-stroke patients. The project includes comprehensive kinematic and dynamic analysis, CAD design in SolidWorks, and simulation in MATLAB/Simscape.</p>
-                                    <p>Performed manipulability analysis and optimization using Genetic Algorithms to ensure safe human-robot interaction and optimal force transmission within natural hand range of motion.</p>
-                                </div>
-                                <div class="research-highlights">
-                                    <h5>Key Contributions:</h5>
-                                    <ul>
-                                        <li>Developed anatomically accurate human hand and exoskeleton models</li>
-                                        <li>Designed closed-chain mechanisms for MCP and PIP joints</li>
-                                        <li>Optimized link lengths using Genetic Algorithms based on manipulability</li>
-                                        <li>Ensured compatibility with natural hand anatomy and safety constraints</li>
-                                    </ul>
-                                </div>
-                                <div class="research-links">
-                                    <a href="https://github.com/KHADDOUR-TALA/Hand-Exoskeleton-Design-and-Modeling" target="_blank" class="research-link">
-                                        <i class="fab fa-github"></i> View on GitHub
-                                    </a>
-                                </div>
                             </div>
                         </div>
+                        
+                        <div class="research-description">
+                            <p>Designed and modeled a rehabilitation hand exoskeleton to restore finger movements in post-stroke patients. The project includes comprehensive kinematic and dynamic analysis, CAD design in SolidWorks, and simulation in MATLAB/Simscape.</p>
+                            <p>Performed manipulability analysis and optimization using Genetic Algorithms to ensure safe human-robot interaction and optimal force transmission within natural hand range of motion.</p>
+                        </div>
+                        
+                        <div class="research-highlights">
+                            <h5>Key Contributions:</h5>
+                            <ul>
+                                <li>Developed anatomically accurate human hand and exoskeleton models</li>
+                                <li>Designed closed-chain mechanisms for MCP and PIP joints</li>
+                                <li>Optimized link lengths using Genetic Algorithms based on manipulability</li>
+                                <li>Ensured compatibility with natural hand anatomy and safety constraints</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="research-links">
+                            <a href="https://github.com/KHADDOUR-TALA/Hand-Exoskeleton-Design-and-Modeling" target="_blank" class="research-link">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </article>
 
-                        <!-- Exoskeleton Control -->
-                        <div class="research-item">
-                            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Control Systems" class="research-img">
-                            <div class="research-content">
-                                <div class="research-title">Control of Nonlinear Hand Exoskeleton</div>
+                    <!-- Exoskeleton Control -->
+                    <article class="research-item">
+                        <div class="research-header">
+                            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                 alt="Control Systems" class="research-img">
+                            <div class="research-title-container">
+                                <h3 class="research-title">Control of Nonlinear Hand Exoskeleton</h3>
                                 <div class="research-tech">MATLAB • Adaptive Control • DMRAC • Nonlinear PID</div>
-                                <div class="research-description">
-                                    <p>Implemented and compared three control strategies for a hand exoskeleton: PD compensator multivariable control, inverse-dynamics nonlinear PID, and Direct Model Reference Adaptive Control (DMRAC).</p>
-                                    <p>Conducted comprehensive comparative analysis to evaluate performance, robustness, and efficiency of each control approach for rehabilitation applications.</p>
-                                </div>
-                                <div class="research-highlights">
-                                    <h5>Key Contributions:</h5>
-                                    <ul>
-                                        <li>Implemented three advanced control strategies for nonlinear system</li>
-                                        <li>Performed comparative analysis of control performance</li>
-                                        <li>Evaluated robustness and adaptation capabilities</li>
-                                        <li>Assessed suitability for rehabilitation robotics applications</li>
-                                    </ul>
-                                </div>
-                                <div class="research-links">
-                                    <a href="https://github.com/KHADDOUR-TALA/Control-of-Nonlinear-Model-of-Hand-Exoskeleton" target="_blank" class="research-link">
-                                        <i class="fab fa-github"></i> View on GitHub
-                                    </a>
-                                </div>
                             </div>
                         </div>
+                        
+                        <div class="research-description">
+                            <p>Implemented and compared three control strategies for a hand exoskeleton: PD compensator multivariable control, inverse-dynamics nonlinear PID, and Direct Model Reference Adaptive Control (DMRAC).</p>
+                            <p>Conducted comprehensive comparative analysis to evaluate performance, robustness, and efficiency of each control approach for rehabilitation applications.</p>
+                        </div>
+                        
+                        <div class="research-highlights">
+                            <h5>Key Contributions:</h5>
+                            <ul>
+                                <li>Implemented three advanced control strategies for nonlinear system</li>
+                                <li>Performed comparative analysis of control performance</li>
+                                <li>Evaluated robustness and adaptation capabilities</li>
+                                <li>Assessed suitability for rehabilitation robotics applications</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="research-links">
+                            <a href="https://github.com/KHADDOUR-TALA/Control-of-Nonlinear-Model-of-Hand-Exoskeleton" target="_blank" class="research-link">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </article>
 
-                        <!-- Fuzzy Logic Control -->
-                        <div class="research-item">
-                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Fuzzy Logic Control" class="research-img">
-                            <div class="research-content">
-                                <div class="research-title">Fuzzy Logic Control for Mobile Robot</div>
+                    <!-- Fuzzy Logic Control -->
+                    <article class="research-item">
+                        <div class="research-header">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                 alt="Fuzzy Logic Control" class="research-img">
+                            <div class="research-title-container">
+                                <h3 class="research-title">Fuzzy Logic Control for Mobile Robot</h3>
                                 <div class="research-tech">MATLAB/Simulink • Fuzzy Logic • Mobile Robotics • Navigation</div>
-                                <div class="research-description">
-                                    <p>Designed and implemented fuzzy logic-based P, PI, PD, and PID-like controllers for unicycle mobile robot navigation. Used Mamdani inference systems to regulate linear velocity and steering rate for goal-reaching tasks.</p>
-                                    <p>PID-like fuzzy controller achieved the best performance with minimal error (~10⁻³) and almost no oscillations, demonstrating fuzzy logic as an effective alternative to classical PID for nonlinear systems.</p>
-                                </div>
-                                <div class="research-highlights">
-                                    <h5>Key Contributions:</h5>
-                                    <ul>
-                                        <li>Designed four fuzzy controllers emulating P, PI, PD, and PID behavior</li>
-                                        <li>Implemented complete unicycle kinematic model in Simulink</li>
-                                        <li>Conducted comparative evaluation of controller performance</li>
-                                        <li>Achieved superior results with PID-like fuzzy control</li>
-                                    </ul>
-                                </div>
-                                <div class="research-links">
-                                    <a href="https://github.com/KHADDOUR-TALA/unicycle-fuzzy-logic-control" target="_blank" class="research-link">
-                                        <i class="fab fa-github"></i> View on GitHub
-                                    </a>
-                                </div>
                             </div>
                         </div>
+                        
+                        <div class="research-description">
+                            <p>Designed and implemented fuzzy logic-based P, PI, PD, and PID-like controllers for unicycle mobile robot navigation. Used Mamdani inference systems to regulate linear velocity and steering rate for goal-reaching tasks.</p>
+                            <p>PID-like fuzzy controller achieved the best performance with minimal error (~10⁻³) and almost no oscillations, demonstrating fuzzy logic as an effective alternative to classical PID for nonlinear systems.</p>
+                        </div>
+                        
+                        <div class="research-highlights">
+                            <h5>Key Contributions:</h5>
+                            <ul>
+                                <li>Designed four fuzzy controllers emulating P, PI, PD, and PID behavior</li>
+                                <li>Implemented complete unicycle kinematic model in Simulink</li>
+                                <li>Conducted comparative evaluation of controller performance</li>
+                                <li>Achieved superior results with PID-like fuzzy control</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="research-links">
+                            <a href="https://github.com/KHADDOUR-TALA/unicycle-fuzzy-logic-control" target="_blank" class="research-link">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </article>
 
-                        <!-- ROS Maze Navigation -->
-                        <div class="research-item">
-                            <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="ROS Robot Navigation" class="research-img">
-                            <div class="research-content">
-                                <div class="research-title">ROS Differential Robot Maze Navigation</div>
+                    <!-- ROS Maze Navigation -->
+                    <article class="research-item">
+                        <div class="research-header">
+                            <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                 alt="ROS Robot Navigation" class="research-img">
+                            <div class="research-title-container">
+                                <h3 class="research-title">ROS Differential Robot Maze Navigation</h3>
                                 <div class="research-tech">ROS • URDF/Xacro • LiDAR • Python • Navigation Algorithms</div>
-                                <div class="research-description">
-                                    <p>Created a differential-drive robot using URDF/Xacro and implemented autonomous navigation through a maze using simulated LiDAR data. Developed wall-following algorithm with obstacle avoidance for maze-escaping tasks.</p>
-                                    <p>The system includes complete robot modeling, sensor simulation, navigation algorithms, and RViz visualization, demonstrating practical robotics software development skills.</p>
-                                </div>
-                                <div class="research-highlights">
-                                    <h5>Key Contributions:</h5>
-                                    <ul>
-                                        <li>Developed URDF robot model with LiDAR sensor simulation</li>
-                                        <li>Implemented wall-following navigation algorithm with obstacle avoidance</li>
-                                        <li>Created RViz visualization and TF coordinate frames</li>
-                                        <li>Designed custom ROS services for pose reset functionality</li>
-                                    </ul>
-                                </div>
-                                <div class="research-links">
-                                    <a href="https://github.com/KHADDOUR-TALA/DifferentialRobot-RosMazeNavigation" target="_blank" class="research-link">
-                                        <i class="fab fa-github"></i> View on GitHub
-                                    </a>
-                                </div>
                             </div>
                         </div>
+                        
+                        <div class="research-description">
+                            <p>Created a differential-drive robot using URDF/Xacro and implemented autonomous navigation through a maze using simulated LiDAR data. Developed wall-following algorithm with obstacle avoidance for maze-escaping tasks.</p>
+                            <p>The system includes complete robot modeling, sensor simulation, navigation algorithms, and RViz visualization, demonstrating practical robotics software development skills.</p>
+                        </div>
+                        
+                        <div class="research-highlights">
+                            <h5>Key Contributions:</h5>
+                            <ul>
+                                <li>Developed URDF robot model with LiDAR sensor simulation</li>
+                                <li>Implemented wall-following navigation algorithm with obstacle avoidance</li>
+                                <li>Created RViz visualization and TF coordinate frames</li>
+                                <li>Designed custom ROS services for pose reset functionality</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="research-links">
+                            <a href="https://github.com/KHADDOUR-TALA/DifferentialRobot-RosMazeNavigation" target="_blank" class="research-link">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </article>
 
-                        <!-- 3D Hand Pose Estimation -->
-                        <div class="research-item">
-                            <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="3D Hand Pose" class="research-img">
-                            <div class="research-content">
-                                <div class="research-title">3D Hand Pose Estimation from Stereo Cameras</div>
+                    <!-- 3D Hand Pose Estimation -->
+                    <article class="research-item">
+                        <div class="research-header">
+                            <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                 alt="3D Hand Pose" class="research-img">
+                            <div class="research-title-container">
+                                <h3 class="research-title">3D Hand Pose Estimation from Stereo Cameras</h3>
                                 <div class="research-tech">Python • OpenCV • PyTorch • Computer Vision • DLT</div>
-                                <div class="research-description">
-                                    <p>Implemented a 3D hand pose estimation pipeline using stereo cameras and Direct Linear Transformation (DLT). Supports multiple 2D keypoint detectors including Mediapipe, RTMPose, and LiteHRNet for triangulation.</p>
-                                    <p>Included fisheye camera distortion modeling to improve accuracy, achieving lower MPJPE error. The system is part of the MirrorGlove project for hand motion mirroring applications.</p>
-                                </div>
-                                <div class="research-highlights">
-                                    <h5>Key Contributions:</h5>
-                                    <ul>
-                                        <li>Implemented stereo camera triangulation using DLT</li>
-                                        <li>Integrated multiple 2D hand keypoint detectors</li>
-                                        <li>Modeled fisheye distortion for improved 3D accuracy</li>
-                                        <li>Developed filtering for reduced noise in 3D trajectories</li>
-                                    </ul>
-                                </div>
-                                <div class="research-links">
-                                    <a href="https://github.com/KHADDOUR-TALA/3D-Hand-Pose-Estimation" target="_blank" class="research-link">
-                                        <i class="fab fa-github"></i> View on GitHub
-                                    </a>
-                                </div>
                             </div>
                         </div>
-
-                    </div>
-
-                    <h4 class="font-weight-bold">Project Album</h4>
-                    <div class="album-section">
-                        <div class="album-cards">
-                            
-                            <div class="album-card" data-title="Autonomous Control">
-                                <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Autonomous Systems" class="album-img">
-                                <div class="album-card-overlay">
-                                    <div class="album-card-title">Autonomous Control</div>
-                                </div>
-                            </div>
-
-                            <div class="album-card" data-title="Rehabilitation Robotics">
-                                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Rehabilitation Robotics" class="album-img">
-                                <div class="album-card-overlay">
-                                    <div class="album-card-title">Rehabilitation Robotics</div>
-                                </div>
-                            </div>
-
-                            <div class="album-card" data-title="Control Systems">
-                                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Control Algorithms" class="album-img">
-                                <div class="album-card-overlay">
-                                    <div class="album-card-title">Control Systems</div>
-                                </div>
-                            </div>
-
-                            <div class="album-card" data-title="Fuzzy Logic">
-                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Intelligent Control" class="album-img">
-                                <div class="album-card-overlay">
-                                    <div class="album-card-title">Fuzzy Logic</div>
-                                </div>
-                            </div>
-
-                            <div class="album-card" data-title="ROS Navigation">
-                                <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Robot Navigation" class="album-img">
-                                <div class="album-card-overlay">
-                                    <div class="album-card-title">ROS Navigation</div>
-                                </div>
-                            </div>
-
-                            <div class="album-card" data-title="Computer Vision">
-                                <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Vision Systems" class="album-img">
-                                <div class="album-card-overlay">
-                                    <div class="album-card-title">Computer Vision</div>
-                                </div>
-                            </div>
-
+                        
+                        <div class="research-description">
+                            <p>Implemented a 3D hand pose estimation pipeline using stereo cameras and Direct Linear Transformation (DLT). Supports multiple 2D keypoint detectors including Mediapipe, RTMPose, and LiteHRNet for triangulation.</p>
+                            <p>Included fisheye camera distortion modeling to improve accuracy, achieving lower MPJPE error. The system is part of the MirrorGlove project for hand motion mirroring applications.</p>
                         </div>
-                    </div>
+                        
+                        <div class="research-highlights">
+                            <h5>Key Contributions:</h5>
+                            <ul>
+                                <li>Implemented stereo camera triangulation using DLT</li>
+                                <li>Integrated multiple 2D hand keypoint detectors</li>
+                                <li>Modeled fisheye distortion for improved 3D accuracy</li>
+                                <li>Developed filtering for reduced noise in 3D trajectories</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="research-links">
+                            <a href="https://github.com/KHADDOUR-TALA/3D-Hand-Pose-Estimation" target="_blank" class="research-link">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </article>
 
                 </div>
+
+                <!-- Project Album -->
+                <div class="section-header">
+                    <h2 class="section-title">Research Portfolio</h2>
+                    <p class="section-subtitle">Visual documentation of project implementations and outcomes</p>
+                </div>
+
+                <div class="album-section">
+                    <div class="album-cards">
+                        
+                        <div class="album-card">
+                            <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Autonomous Systems" class="album-img">
+                            <div class="album-card-overlay">
+                                <div class="album-card-title">Autonomous Control</div>
+                            </div>
+                        </div>
+
+                        <div class="album-card">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Rehabilitation Robotics" class="album-img">
+                            <div class="album-card-overlay">
+                                <div class="album-card-title">Rehabilitation Robotics</div>
+                            </div>
+                        </div>
+
+                        <div class="album-card">
+                            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Control Algorithms" class="album-img">
+                            <div class="album-card-overlay">
+                                <div class="album-card-title">Control Systems</div>
+                            </div>
+                        </div>
+
+                        <div class="album-card">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Intelligent Control" class="album-img">
+                            <div class="album-card-overlay">
+                                <div class="album-card-title">Intelligent Control</div>
+                            </div>
+                        </div>
+
+                        <div class="album-card">
+                            <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Robot Navigation" class="album-img">
+                            <div class="album-card-overlay">
+                                <div class="album-card-title">Robot Navigation</div>
+                            </div>
+                        </div>
+
+                        <div class="album-card">
+                            <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Vision Systems" class="album-img">
+                            <div class="album-card-overlay">
+                                <div class="album-card-title">Computer Vision</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
+    </main>
 
     <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-inner">
             <p class="footer-name">Tala Khaddour</p>
-            <p class="footer-tagline">Robotics · Intelligent Systems · Sustainable Energy</p>
+            <p class="footer-tagline">Robotics Research · Control Systems · Intelligent Automation</p>
             <p class="footer-meta">
-                Research portfolio showcasing technical projects and implementations.
+                Academic research portfolio documenting technical implementations and engineering solutions.
+                This work represents systematic investigation and development in the field of robotics and intelligent systems.
             </p>
         </div>
     </footer>
 
     <script>
-        // Set active nav link based on current page
-        const currentPage = window.location.pathname.split('/').pop();
-        document.querySelectorAll('.nav-link').forEach(link => {
-            if (link.getAttribute('href') === currentPage) {
-                link.classList.add('nav-link-active');
-            }
-        });
+        // Simple scroll animation for research items
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-        // Add hover effect to research items
-        document.querySelectorAll('.research-item').forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px)';
-            });
-            item.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-            });
-        });
-
-        // Animate research items and album cards on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -828,24 +853,31 @@
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
-        }, { threshold: 0.1 });
+        }, observerOptions);
 
-        // Animate research items
+        // Animate research items on scroll
         document.querySelectorAll('.research-item').forEach((item, index) => {
             item.style.opacity = '0';
             item.style.transform = 'translateY(20px)';
-            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            item.style.transitionDelay = `${index * 0.1}s`;
+            item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+            item.style.transitionDelay = `${index * 0.05}s`;
             observer.observe(item);
         });
 
         // Animate album cards
         document.querySelectorAll('.album-card').forEach((card, index) => {
             card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            card.style.transitionDelay = `${index * 0.1}s`;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+            card.style.transitionDelay = `${index * 0.05}s`;
             observer.observe(card);
+        });
+
+        // Set active nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('nav-link-active');
+            }
         });
     </script>
 </body>
