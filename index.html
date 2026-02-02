@@ -1,449 +1,565 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tala Khaddour | Robotics & Intelligent Systems Engineer | Bioengineering Applications (Rehab Exoskeleton) | AI & Computer Vision | Control Systems (MPC, Adaptive) | Interdisciplinary Researcher</title>
-<meta name="description" content="Academic portfolio of Tala Khaddour, specializing in robotics, intelligent systems, and sustainable energy solutions.">
-<!-- Font Awesome & Google Fonts -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-/* ========= PROFESSIONAL COLOR SCHEME ========= */
-:root {
-/* Professional Color Palette */
---color-bg: #FFFFFF;
---color-paper: #F8FAFC;
---color-text: #1A2A36;
---color-text-light: #5A6B7A;
---color-primary: #339BA7;
---color-primary-dark: #127686;
---color-accent: #4F97C8;
---color-border: #E2E8F0;
---color-white: #FFFFFF;
---color-navy: #05475E;
---color-header-bg: #05475E;
-/* Typography */
---font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
---font-heading: 'Source Sans Pro', sans-serif;
---max-width: 1200px;
---border-radius: 8px;
---transition: all 0.3s ease;
-}
-/* ========= GENERAL ========= */
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-html {
-scroll-behavior: smooth;
-}
-body {
-font-family: var(--font-sans);
-color: var(--color-text);
-background-color: var(--color-bg);
-line-height: 1.7;
--webkit-font-smoothing: antialiased;
-display: flex;
-flex-direction: column;
-min-height: 100vh;
-}
-h1, h2, h3, h4, h5, h6 {
-font-family: var(--font-heading);
-color: var(--color-navy);
-font-weight: 600;
-line-height: 1.3;
-letter-spacing: -0.01em;
-}
-p {
-margin-bottom: 1rem;
-}
-a {
-color: var(--color-primary);
-text-decoration: none;
-font-weight: 500;
-transition: var(--transition);
-}
-a:hover {
-color: var(--color-primary-dark);
-}
-.container {
-max-width: var(--max-width);
-margin: 0 auto;
-padding: 0 1.5rem;
-}
-.text-center {
-text-align: center;
-}
-/* ========= HEADER ========= */
-.site-header {
-background: var(--color-header-bg);
-position: sticky;
-top: 0;
-z-index: 1000;
-/* Removed box-shadow */
-}
-.nav-inner {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 1rem 0;
-}
-.nav-logo {
-display: flex;
-align-items: center;
-gap: 0.75rem;
-text-decoration: none;
-}
-.nav-logo-mark {
-width: 36px;
-height: 36px;
-background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
-color: var(--color-white);
-border-radius: 8px;
-display: flex;
-align-items: center;
-justify-content: center;
-font-weight: 700;
-font-size: 1rem;
-}
-.nav-logo-text {
-font-family: var(--font-heading);
-font-size: 1.3rem;
-color: var(--color-white);
-font-weight: 700;
-}
-.nav-links {
-display: flex;
-list-style: none;
-gap: 1.5rem;
-font-size: 0.9rem;
-}
-.nav-link {
-color: rgba(255, 255, 255, 0.9);
-font-weight: 500;
-padding: 0.5rem 0;
-position: relative;
-transition: var(--transition);
-}
-.nav-link:hover {
-color: var(--color-white);
-}
-.nav-link-active {
-color: var(--color-white);
-font-weight: 600;
-}
-/* ========= MAIN LAYOUT - SINGLE COLUMN ========= */
-.main-wrapper {
-display: block; /* Changed to block for single column */
-flex: 1;
-padding: 2rem 0;
-}
-/* LEFT SIDEBAR - NOW TOP SECTION */
-.sidebar {
-width: 100%; /* Full width */
-padding-right: 0;
-position: static;
-height: fit-content;
-margin-bottom: 2rem; /* Added margin for separation */
-}
-.profile-card {
-background: var(--color-white);
-border-radius: var(--border-radius);
-padding: 2rem;
-/* Removed box-shadow and border */
-margin-bottom: 2rem;
-}
-.profile-img {
-width: 160px;
-height: 160px;
-border-radius: 0; /* Changed to square */
-object-fit: cover;
-display: block;
-margin: 0 auto 1.5rem;
-/* Removed border and box-shadow */
-}
-.profile-name {
-font-size: 1.8rem;
-color: var(--color-navy);
-margin-bottom: 0.25rem;
-text-align: center;
-}
-.profile-title {
-color: var(--color-primary);
-font-size: 1.1rem;
-font-weight: 600;
-margin-bottom: 1.5rem;
-text-align: center;
-}
-.contact-info {
-margin-top: 1.5rem;
-}
-.contact-item {
-margin-bottom: 1rem;
-display: flex;
-align-items: flex-start;
-}
-.contact-icon {
-width: 24px;
-color: var(--color-primary);
-margin-right: 0.75rem;
-margin-top: 0.25rem;
-flex-shrink: 0;
-}
-.contact-detail {
-color: var(--color-text);
-font-size: 0.95rem;
-line-height: 1.5;
-}
-.contact-detail a {
-color: var(--color-text);
-transition: var(--transition);
-}
-.contact-detail a:hover {
-color: var(--color-primary);
-}
-/* RIGHT CONTENT AREA */
-.content-area {
-padding-left: 0; /* Removed padding */
-}
-.content-section {
-margin-bottom: 3rem;
-}
-.section-title {
-font-size: 1.8rem;
-color: var(--color-navy);
-margin-bottom: 1.5rem;
-padding-bottom: 0.75rem;
-/* Removed border-bottom */
-}
-/* About Section */
-.about-content {
-font-size: 1.1rem;
-line-height: 1.8;
-color: var(--color-text);
-}
-/* Education Section */
-.education-item {
-margin-bottom: 2.5rem;
-padding: 2rem;
-background: var(--color-paper);
-border-radius: var(--border-radius);
-/* Removed border-left and box-shadow */
-}
-.education-period {
-display: inline-block;
-background: var(--color-primary);
-color: var(--color-white);
-padding: 0.25rem 0.75rem;
-border-radius: 12px;
-font-size: 0.85rem;
-font-weight: 600;
-margin-bottom: 0.75rem;
-}
-.education-title {
-font-weight: 600;
-color: var(--color-navy);
-margin-bottom: 0.25rem;
-font-size: 1.3rem;
-}
-.education-institution {
-color: var(--color-text-light);
-margin-bottom: 1rem;
-font-size: 1.05rem;
-}
-.education-details {
-color: var(--color-text);
-font-size: 1rem;
-line-height: 1.6;
-}
-/* Images Gallery Section */
-.images-section {
-padding: 1rem 0;
-}
-.images-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 1.5rem;
-margin-top: 1.5rem;
-}
-.image-card {
-background: var(--color-paper);
-border-radius: var(--border-radius);
-overflow: hidden;
-/* Removed box-shadow and border */
-transition: var(--transition);
-height: 250px;
-}
-.image-card:hover {
-transform: translateY(-5px);
-/* Removed box-shadow on hover */
-}
-.image-item {
-width: 100%;
-height: 100%;
-object-fit: cover;
-transition: var(--transition);
-}
-.image-card:hover .image-item {
-transform: scale(1.05);
-}
-/* ========= FOOTER ========= */
-.site-footer {
-background: var(--color-header-bg);
-color: var(--color-white);
-padding: 3rem 0 2rem;
-margin-top: 2rem;
-}
-.footer-inner {
-text-align: center;
-max-width: var(--max-width);
-margin: 0 auto;
-padding: 0 1.5rem;
-}
-.footer-name {
-font-family: var(--font-heading);
-font-size: 1.8rem;
-color: var(--color-white);
-margin-bottom: 0.5rem;
-font-weight: 700;
-}
-.footer-tagline {
-color: rgba(255, 255, 255, 0.8);
-margin-bottom: 1.5rem;
-font-size: 1rem;
-}
-.footer-meta {
-font-size: 0.9rem;
-color: rgba(255, 255, 255, 0.7);
-max-width: 600px;
-margin: 0 auto;
-line-height: 1.6;
-border-top: 1px solid rgba(255, 255, 255, 0.2);
-padding-top: 1.5rem;
-}
-/* ========= RESPONSIVE ========= */
-@media (max-width: 992px) {
-.main-wrapper {
-/* Already block */
-}
-.sidebar {
-width: 100%;
-margin-bottom: 2rem;
-}
-.content-area {
-padding-left: 0;
-}
-.profile-card {
-max-width: 500px;
-margin: 0 auto 2rem;
-}
-}
-@media (max-width: 768px) {
-.nav-inner {
-flex-direction: column;
-gap: 1rem;
-padding: 1rem 0;
-}
-.nav-links {
-flex-wrap: wrap;
-justify-content: center;
-gap: 1rem;
-}
-.section-title {
-font-size: 1.5rem;
-}
-.education-item {
-padding: 1.5rem;
-}
-.images-grid {
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 1rem;
-}
-.image-card {
-height: 220px;
-}
-}
-@media (max-width: 480px) {
-.container {
-padding: 0 1rem;
-}
-.profile-img {
-width: 140px;
-height: 140px;
-}
-.profile-name {
-font-size: 1.6rem;
-}
-.education-item {
-padding: 1.25rem;
-}
-.images-grid {
-grid-template-columns: 1fr;
-}
-.image-card {
-height: 200px;
-}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tala Khaddour | Robotics & Intelligent Systems Engineer | Bioengineering Applications (Rehab Exoskeleton) | AI & Computer Vision | Control Systems (MPC, Adaptive) | Interdisciplinary Researcher</title>
+    <meta name="description" content="Academic portfolio of Tala Khaddour, specializing in robotics, intelligent systems, and sustainable energy solutions.">
+    <!-- Font Awesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ========= PROFESSIONAL COLOR SCHEME ========= */
+        :root {
+            /* Professional Color Palette */
+            --color-bg: #FFFFFF;
+            --color-paper: #F8FAFC;
+            --color-text: #1A2A36;
+            --color-text-light: #5A6B7A;
+            --color-primary: #339BA7;
+            --color-primary-dark: #127686;
+            --color-accent: #4F97C8;
+            --color-border: #E2E8F0;
+            --color-white: #FFFFFF;
+            --color-navy: #05475E;
+            --color-header-bg: #05475E;
+            /* Typography */
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-heading: 'Source Sans Pro', sans-serif;
+            --max-width: 1200px;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+        /* ========= GENERAL ========= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            color: var(--color-navy);
+            font-weight: 600;
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+        }
+        p {
+            margin-bottom: 1rem;
+        }
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        a:hover {
+            color: var(--color-primary-dark);
+        }
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .text-center {
+            text-align: center;
+        }
+        /* ========= HEADER ========= */
+        .site-header {
+            background: var(--color-header-bg);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            /* Removed box-shadow */
+        }
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+        .nav-logo-mark {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+            color: var(--color-white);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .nav-logo-text {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: var(--color-white);
+            font-weight: 700;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+        }
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: var(--transition);
+        }
+        .nav-link:hover {
+            color: var(--color-white);
+        }
+        .nav-link-active {
+            color: var(--color-white);
+            font-weight: 600;
+        }
+        /* ========= MAIN LAYOUT - SINGLE COLUMN ========= */
+        .main-wrapper {
+            display: block; /* Changed to block for single column */
+            flex: 1;
+            padding: 2rem 0;
+        }
+        /* LEFT SIDEBAR - NOW TOP SECTION */
+        .sidebar {
+            width: 100%; /* Full width */
+            padding-right: 0;
+            position: static;
+            height: fit-content;
+            margin-bottom: 2rem; /* Added margin for separation */
+        }
+        .profile-card {
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            /* Removed box-shadow and border */
+            margin-bottom: 2rem;
+        }
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 0; /* Changed to square */
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 1.5rem;
+            /* Removed border and box-shadow */
+        }
+        .profile-name {
+            font-size: 1.8rem;
+            color: var(--color-navy);
+            margin-bottom: 0.25rem;
+            text-align: center;
+        }
+        .profile-title {
+            color: var(--color-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .contact-info {
+            margin-top: 1.5rem;
+        }
+        .contact-item {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        .contact-icon {
+            width: 24px;
+            color: var(--color-primary);
+            margin-right: 0.75rem;
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+        .contact-detail {
+            color: var(--color-text);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .contact-detail a {
+            color: var(--color-text);
+            transition: var(--transition);
+        }
+        .contact-detail a:hover {
+            color: var(--color-primary);
+        }
+        /* RIGHT CONTENT AREA */
+        .content-area {
+            padding-left: 0; /* Removed padding */
+        }
+        .content-section {
+            margin-bottom: 3rem;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--color-navy);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            /* Removed border-bottom */
+        }
+        /* About Section */
+        .about-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--color-text);
+        }
+        /* Education Section */
+        .education-item {
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            background: var(--color-paper);
+            border-radius: var(--border-radius);
+            /* Removed border-left and box-shadow */
+        }
+        .education-period {
+            display: inline-block;
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .education-title {
+            font-weight: 600;
+            color: var(--color-navy);
+            margin-bottom: 0.25rem;
+            font-size: 1.3rem;
+        }
+        .education-institution {
+            color: var(--color-text-light);
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+        .education-details {
+            color: var(--color-text);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        /* Images Gallery Section */
+        .images-section {
+            padding: 1rem 0;
+        }
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .image-card {
+            background: var(--color-paper);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            /* Removed box-shadow and border */
+            transition: var(--transition);
+            height: 250px;
+        }
+        .image-card:hover {
+            transform: translateY(-5px);
+            /* Removed box-shadow on hover */
+        }
+        .image-item {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        .image-card:hover .image-item {
+            transform: scale(1.05);
+        }
+        /* ========= FOOTER ========= */
+        .site-footer {
+            background: var(--color-header-bg);
+            color: var(--color-white);
+            padding: 3rem 0 2rem;
+            margin-top: 2rem;
+        }
+        .footer-inner {
+            text-align: center;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .footer-name {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--color-white);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        .footer-tagline {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+        .footer-meta {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1.5rem;
+        }
+        /* ========= RESPONSIVE ========= */
+        @media (max-width: 992px) {
+            .main-wrapper {
+                /* Already block */
+            }
+            .sidebar {
+                width: 100%;
+                margin-bottom: 2rem;
+            }
+            .content-area {
+                padding-left: 0;
+            }
+            .profile-card {
+                max-width: 500px;
+                margin: 0 auto 2rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .nav-inner {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 0;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .education-item {
+                padding: 1.5rem;
+            }
+            .images-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+            .image-card {
+                height: 220px;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+            .profile-img {
+                width: 140px;
+                height: 140px;
+            }
+            .profile-name {
+                font-size: 1.6rem;
+            }
+            .education-item {
+                padding: 1.25rem;
+            }
+            .images-grid {
+                grid-template-columns: 1fr;
+            }
+            .image-card {
+                height: 200px;
+            }
+        }
+    </style>
 </head>
 <body>
-<!-- Header - Comes FIRST -->
-<header class="site-header">
-<div class="container">
-<nav class="nav-inner">
-<a href="index.html" class="nav-logo">
-<span class="nav-logo-mark">TK</span>
-<span class="nav-logo-text">Tala Khaddour</span>
-</a>
-<ul class="nav-links">
-<li><a href="index.html" class="nav-link nav-link-active">Home</a></li>
-<li><a href="about.html" class="nav-link">About</a></li>
-<li><a href="research.html" class="nav-link">Research</a></li>
-<li><a href="volunteering.html" class="nav-link">Volunteering</a></li>
-<li><a href="cv.html" class="nav-link">CV</a></li>
-<li><a href="contact.html" class="nav-link">Contact</a></li>
-</ul>
-</nav>
-</div>
-</header>
-<!-- Removed Cover Banner -->
-<!-- Main Content with Single Column -->
-<div class="container main-wrapper">
-<!-- PROFILE SECTION ON TOP -->
-<aside class="sidebar">
-<div class="profile-card">
-<img src="imgs/profile.jpg" alt="Tala Khaddour" class="profile-img">
-<h1 class="profile-name">Tala Khaddour</h1>
-<div class="profile-title">Robotics & Intelligent Systems Engineer | Bioengineering Applications (Rehab Exoskeleton) | AI & Computer Vision | Control Systems (MPC, Adaptive) | Interdisciplinary Researcher</div>
-                
-                    
-                        
-                            
-                        
-                        
-                            khaddour.tala@gmail.com
-                        
-                    
-                    
-                        
-                            
-                        
-                        
-                            LinkedIn Profile
-                        
-                    
-                    
-                        
-                            
-                        
-                        
-                            GitHub Profile
-                        
-                    
-                    
-                        
-                            
-                        
-                        
-                            Personal Website
+    <!-- Header - Comes FIRST -->
+    <header class="site-header">
+        <div class="container">
+            <nav class="nav-inner">
+                <a href="index.html" class="nav-logo">
+                    <span class="nav-logo-mark">TK</span>
+                    <span class="nav-logo-text">Tala Khaddour</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link nav-link-active">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="research.html" class="nav-link">Research</a></li>
+                    <li><a href="volunteering.html" class="nav-link">Volunteering</a></li>
+                    <li><a href="cv.html" class="nav-link">CV</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Removed Cover Banner -->
+    <!-- Main Content with Single Column -->
+    <div class="container main-wrapper">
+        <!-- PROFILE SECTION ON TOP -->
+        <aside class="sidebar">
+            <div class="profile-card">
+                <img src="imgs/profile.jpg" alt="Tala Khaddour" class="profile-img">
+                <h1 class="profile-name">Tala Khaddour</h1>
+                <div class="profile-title">Robotics & Intelligent Systems Engineer | Bioengineering Applications (Rehab Exoskeleton) | AI & Computer Vision | Control Systems (MPC, Adaptive) | Interdisciplinary Researcher</div>
+               
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="far fa-envelope"></i>
+                        </div>
+                        <div class="contact-detail">
+                            <a href="mailto:khaddour.tala@gmail.com">khaddour.tala@gmail.com</a>
+                        </div>
+                    </div>
+                   
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-detail">
+                            <a href="https://www.linkedin.com/in/tala-khaddour/" target="_blank">LinkedIn Profile</a>
+                        </div>
+                    </div>
+                   
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-detail">
+                            <a href="https://github.com/KHADDOUR-TALA" target="_blank">GitHub Profile</a>
+                        </div>
+                    </div>
+                   
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-detail">
+                            <a href="https://khaddour-tala.github.io/" target="_blank">Personal Website</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- CONTENT AREA BELOW -->
+        <main class="content-area">
+            <!-- About Me Section -->
+            <section class="content-section">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <p>I am a robotics engineer specializing in intelligent systems and sustainable energy solutions. My work combines technical expertise with practical applications, focusing on creating innovative solutions for real-world challenges.</p>
+                   
+                    <p>My academic journey began with a deep interest in how machines can be designed to assist and enhance human capabilities. This led me to pursue studies in robotics engineering, where I developed skills in control systems, artificial intelligence, and mechanical design.</p>
+                   
+                    <p>I believe that technology should serve humanity in meaningful ways. Whether through rehabilitation robotics that help stroke patients regain mobility or sustainable energy systems that address environmental challenges, I'm committed to engineering solutions that make a positive impact.</p>
+                   
+                    <p>Currently, I'm expanding my knowledge through advanced research and practical projects, always seeking new challenges at the intersection of intelligent systems, robotics, and sustainable technology.</p>
+                </div>
+            </section>
+            <!-- Education Section -->
+            <section class="content-section">
+                <h2 class="section-title">Education</h2>
+               
+                <div class="education-item">
+                    <div class="education-period">2020 – 2025</div>
+                    <h3 class="education-title">Bachelor of Science in Robotics and Intelligent Systems Engineering</h3>
+                    <div class="education-institution">Manara University, Latakia, Syria</div>
+                    <div class="education-details">
+                        <p><strong>Final Grade:</strong> GPA: 3.28/4.0 (Graduated with Honors)</p>
+                        <p><strong>Thesis:</strong> Design and Nonlinear Control of Hand Exoskeleton | Score: 96/100</p>
+                        <p><strong>Focus Areas:</strong> Control Systems, Artificial Intelligence, Mechanical Design, Sustainable Energy</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-period">2017 – 2020</div>
+                    <h3 class="education-title">High School Diploma – Scientific Stream</h3>
+                    <div class="education-institution">National Center for the Distinguished (NCD), Latakia, Syria</div>
+                    <div class="education-details">
+                        <p><strong>Final Grade:</strong> 92.3% (Rank: 3 out of 75 nationwide)</p>
+                        <p><strong>Focus Areas:</strong> Advanced Mathematics, Physics, Computer Science</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Images Section -->
+            <section class="content-section images-section">
+                <h2 class="section-title">Academic & Professional Journey</h2>
+                <div class="images-grid">
+                    <div class="image-card">
+                        <img src="imgs/academic1.jpg" alt="University Studies" class="image-item">
+                    </div>
+                    <div class="image-card">
+                        <img src="imgs/academic2.jpg" alt="Research Work" class="image-item">
+                    </div>
+                    <div class="image-card">
+                        <img src="imgs/academic3.jpg" alt="Technical Projects" class="image-item">
+                    </div>
+                    <div class="image-card">
+                        <img src="imgs/academic4.jpg" alt="Robotics Lab" class="image-item">
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <h3 class="footer-name">Tala Khaddour</h3>
+            <p class="footer-tagline">Robotics · Intelligent Systems · Sustainable Energy</p>
+            <p class="footer-meta">
+                Academic portfolio showcasing expertise in robotics engineering and intelligent systems.
+            </p>
+        </div>
+    </footer>
+    <script>
+        // Set active nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('nav-link-active');
+            }
+        });
+        // Simple animation for image cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.image-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            card.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(card);
+        });
+        document.querySelectorAll('.education-item').forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            item.style.transitionDelay = `${index * 0.1 + 0.2}s`;
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
