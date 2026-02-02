@@ -192,59 +192,78 @@
             box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
         }
 
-        /* ========= HERO SECTION ========= */
+        /* ========= HERO SECTION WITH BACKGROUND IMAGE ========= */
         .hero-section {
-            background: linear-gradient(135deg, var(--color-light) 0%, #D4E7F5 100%);
-            padding: 5rem 0;
             position: relative;
+            padding: 8rem 0;
             overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, var(--color-secondary) 0%, transparent 70%);
-            opacity: 0.3;
-            border-radius: 50%;
+            background: linear-gradient(rgba(5, 71, 94, 0.85), rgba(10, 92, 122, 0.9)),
+                        url('https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
         }
 
         .hero-content {
             position: relative;
-            z-index: 1;
+            z-index: 2;
             max-width: 800px;
             margin: 0 auto;
+            text-align: center;
         }
 
         .hero-title {
             font-size: 3.5rem;
-            color: var(--color-primary);
+            color: var(--color-white);
             margin-bottom: 1.5rem;
             line-height: 1.1;
-            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .hero-subtitle {
             font-size: 1.4rem;
-            color: var(--color-text-secondary);
-            margin-bottom: 2rem;
-            font-weight: 500;
+            color: var(--color-light);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
         }
 
-        /* ========= RESEARCH PROJECTS - ENERGETIC ========= */
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--color-energy), #FF8B4D);
+            color: white;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.6);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* ========= RESEARCH PROJECTS - COMPACT CARDS ========= */
         .research-section {
             padding: 4rem 0;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .section-title {
@@ -274,11 +293,26 @@
             margin: 1.5rem auto 0;
         }
 
+        /* 4x2 Grid Layout */
         .research-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
             margin-top: 3rem;
+        }
+
+        /* For mobile, show 1 column */
+        @media (max-width: 768px) {
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* For tablets, show 2 columns */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .research-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         .research-card {
@@ -288,11 +322,13 @@
             box-shadow: var(--shadow-md);
             transition: var(--transition);
             border: 2px solid transparent;
-            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .research-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
             border-color: var(--color-energy);
         }
@@ -303,20 +339,20 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 6px;
+            height: 4px;
             background: linear-gradient(90deg, var(--color-energy), var(--color-accent));
         }
 
         .research-card-header {
-            padding: 2rem 2rem 1rem;
+            padding: 1.5rem 1.5rem 1rem;
         }
 
         .research-img-container {
             width: 100%;
-            height: 200px;
+            height: 160px;
             border-radius: 8px;
             overflow: hidden;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             box-shadow: var(--shadow-sm);
         }
 
@@ -332,139 +368,137 @@
         }
 
         .research-title {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--color-primary);
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
             line-height: 1.3;
         }
 
         .research-tech {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
+            gap: 0.4rem;
+            margin-bottom: 0.5rem;
         }
 
         .tech-tag {
             background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
             color: var(--color-white);
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
             font-weight: 600;
-            box-shadow: 0 3px 8px rgba(79, 151, 200, 0.3);
         }
 
         .research-card-body {
-            padding: 0 2rem 1.5rem;
+            padding: 0 1.5rem;
+            flex-grow: 1;
         }
 
         .research-description {
             color: var(--color-text-secondary);
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
         }
 
         .research-highlights {
-            background: rgba(172, 205, 228, 0.15);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1.5rem 0;
-            border-left: 4px solid var(--color-success);
-        }
-
-        .research-highlights h5 {
-            color: var(--color-primary);
-            margin-bottom: 0.75rem;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .research-highlights h5::before {
-            content: '⚡';
-            color: var(--color-energy);
+            margin: 1rem 0;
         }
 
         .research-highlights ul {
-            padding-left: 1.5rem;
+            padding-left: 1.2rem;
             list-style-type: none;
         }
 
         .research-highlights li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
             color: var(--color-text-secondary);
+            font-size: 0.9rem;
             position: relative;
         }
 
         .research-highlights li::before {
-            content: '▸';
+            content: '•';
             color: var(--color-energy);
             position: absolute;
-            left: -1.2rem;
+            left: -1rem;
         }
 
         .research-card-footer {
-            padding: 1.5rem 2rem 2rem;
+            padding: 1rem 1.5rem 1.5rem;
             border-top: 1px solid var(--color-border);
             background: rgba(172, 205, 228, 0.05);
         }
 
         .research-links {
             display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
+            gap: 0.75rem;
         }
 
         .research-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
             background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
             color: var(--color-white);
-            border-radius: 8px;
-            font-size: 0.95rem;
-            font-weight: 700;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
             text-decoration: none;
             transition: var(--transition);
-            box-shadow: 0 4px 12px rgba(79, 151, 200, 0.3);
+            flex: 1;
+            justify-content: center;
         }
 
         .research-link:hover {
             background: linear-gradient(135deg, var(--color-energy), #FF8B4D);
             color: var(--color-white);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
             text-decoration: none;
         }
 
-        /* ========= GALLERY SECTION ========= */
+        /* ========= GALLERY SECTION WITH 8 IMAGES ========= */
         .gallery-section {
             padding: 4rem 0;
             background: linear-gradient(135deg, var(--color-paper) 0%, #EDF5FD 100%);
         }
 
+        /* 4x2 Grid for 8 images */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
             margin-top: 3rem;
+        }
+
+        /* For mobile, show 2 columns */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* For tablets, show 3 columns */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
         .gallery-item {
             position: relative;
             border-radius: var(--border-radius);
             overflow: hidden;
-            height: 280px;
+            height: 220px;
             box-shadow: var(--shadow-md);
             transition: var(--transition);
             cursor: pointer;
         }
 
         .gallery-item:hover {
-            transform: translateY(-10px) scale(1.02);
+            transform: translateY(-5px) scale(1.03);
             box-shadow: var(--shadow-lg);
         }
 
@@ -485,24 +519,18 @@
             left: 0;
             right: 0;
             background: linear-gradient(to top, rgba(5, 71, 94, 0.9), transparent);
-            padding: 2rem 1.5rem 1.5rem;
+            padding: 1.5rem 1rem 1rem;
             color: white;
-            transform: translateY(100%);
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
         }
 
         .gallery-title {
-            font-size: 1.4rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
         }
 
         .gallery-category {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             opacity: 0.9;
             color: var(--color-light);
         }
@@ -572,10 +600,6 @@
             .hero-title {
                 font-size: 2.8rem;
             }
-            
-            .research-grid {
-                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            }
         }
 
         @media (max-width: 768px) {
@@ -603,19 +627,12 @@
                 font-size: 2.2rem;
             }
 
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
             .section-title {
                 font-size: 2.2rem;
-            }
-
-            .research-grid,
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .research-card-header,
-            .research-card-body,
-            .research-card-footer {
-                padding: 1.5rem;
             }
         }
 
@@ -661,7 +678,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Background Image -->
     <section class="hero-section">
         <div class="container">
             <div class="hero-content">
@@ -670,207 +687,347 @@
                     Pioneering robotics research with cutting-edge control systems and intelligent automation solutions. 
                     Explore groundbreaking projects that bridge theory with practical implementation.
                 </p>
+                <a href="#research" class="hero-cta">
+                    <i class="fas fa-arrow-down"></i> Explore Projects
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Research Projects -->
-    <section class="research-section">
+    <!-- Research Projects - 8 Projects in 4x2 Grid -->
+    <section id="research" class="research-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Featured Research Projects</h2>
+                <h2 class="section-title">Research Projects</h2>
                 <p class="section-subtitle">
-                    Cutting-edge research bridging theoretical innovation with practical applications in robotics and AI
+                    8 cutting-edge projects in robotics, control systems, and AI
                 </p>
             </div>
 
             <div class="research-grid">
-                
-                <!-- MPC Autonomous Vehicle -->
+                <!-- Project 1: MPC Autonomous Vehicle -->
                 <article class="research-card">
                     <div class="research-card-header">
                         <div class="research-img-container">
-                            <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                                 alt="Autonomous Vehicle Control" class="research-img">
+                            <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Autonomous Vehicle" class="research-img">
                         </div>
-                        <h3 class="research-title">MPC for Autonomous Vehicle</h3>
+                        <h3 class="research-title">MPC Autonomous Vehicle</h3>
                         <div class="research-tech">
                             <span class="tech-tag">MATLAB</span>
-                            <span class="tech-tag">Simulink</span>
                             <span class="tech-tag">MPC</span>
-                            <span class="tech-tag">Control Systems</span>
                         </div>
                     </div>
                     
                     <div class="research-card-body">
                         <p class="research-description">
-                            Implemented Model Predictive Control for precise autonomous vehicle trajectory tracking. 
-                            Developed a robust controller that optimizes control inputs while respecting system constraints.
+                            Model Predictive Control for precise autonomous vehicle trajectory tracking with constraint handling.
                         </p>
-                        
-                        <div class="research-highlights">
-                            <h5>Key Innovations</h5>
-                            <ul>
-                                <li>Advanced kinematic modeling with MPC integration</li>
-                                <li>Superior performance vs traditional PID controllers</li>
-                                <li>Real-time constraint handling for safety</li>
-                                <li>Precise trajectory tracking in complex scenarios</li>
-                            </ul>
-                        </div>
                     </div>
                     
                     <div class="research-card-footer">
                         <div class="research-links">
                             <a href="https://github.com/KHADDOUR-TALA/MPC-Simulation" target="_blank" class="research-link">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
-                            <a href="#" class="research-link">
-                                <i class="fas fa-file-pdf"></i> Read Paper
+                                <i class="fab fa-github"></i> Code
                             </a>
                         </div>
                     </div>
                 </article>
 
-                <!-- Hand Exoskeleton -->
+                <!-- Project 2: Hand Exoskeleton -->
                 <article class="research-card">
                     <div class="research-card-header">
                         <div class="research-img-container">
-                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                                 alt="Hand Exoskeleton Design" class="research-img">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Hand Exoskeleton" class="research-img">
                         </div>
-                        <h3 class="research-title">Hand Exoskeleton Rehabilitation</h3>
+                        <h3 class="research-title">Hand Exoskeleton</h3>
                         <div class="research-tech">
                             <span class="tech-tag">SolidWorks</span>
                             <span class="tech-tag">MATLAB</span>
-                            <span class="tech-tag">Genetic Algorithms</span>
-                            <span class="tech-tag">Biomechanics</span>
                         </div>
                     </div>
                     
                     <div class="research-card-body">
                         <p class="research-description">
-                            Designed an innovative hand exoskeleton for post-stroke rehabilitation with comprehensive 
-                            kinematic analysis and genetic algorithm optimization for maximum manipulability.
+                            Rehabilitation exoskeleton design with genetic algorithm optimization for stroke patients.
                         </p>
-                        
-                        <div class="research-highlights">
-                            <h5>Key Innovations</h5>
-                            <ul>
-                                <li>Anatomically accurate 3D modeling</li>
-                                <li>Closed-chain mechanism design</li>
-                                <li>Genetic algorithm optimization</li>
-                                <li>Patient safety-focused approach</li>
-                            </ul>
-                        </div>
                     </div>
                     
                     <div class="research-card-footer">
                         <div class="research-links">
                             <a href="https://github.com/KHADDOUR-TALA/Hand-Exoskeleton-Design-and-Modeling" target="_blank" class="research-link">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
-                            <a href="#" class="research-link">
-                                <i class="fas fa-file-pdf"></i> Read Paper
+                                <i class="fab fa-github"></i> Code
                             </a>
                         </div>
                     </div>
                 </article>
 
-                <!-- 3D Hand Pose Estimation -->
+                <!-- Project 3: Exoskeleton Control -->
                 <article class="research-card">
                     <div class="research-card-header">
                         <div class="research-img-container">
-                            <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                                 alt="3D Hand Pose Estimation" class="research-img">
+                            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Control Systems" class="research-img">
                         </div>
-                        <h3 class="research-title">3D Hand Pose Estimation</h3>
+                        <h3 class="research-title">Exoskeleton Control</h3>
                         <div class="research-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">OpenCV</span>
-                            <span class="tech-tag">PyTorch</span>
-                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">MATLAB</span>
+                            <span class="tech-tag">Adaptive</span>
                         </div>
                     </div>
                     
                     <div class="research-card-body">
                         <p class="research-description">
-                            Developed stereo camera-based 3D hand pose estimation with Direct Linear Transformation 
-                            and multiple keypoint detectors for high-accuracy motion tracking.
+                            Advanced control strategies comparison for nonlinear hand exoskeleton systems.
                         </p>
-                        
-                        <div class="research-highlights">
-                            <h5>Key Innovations</h5>
-                            <ul>
-                                <li>Stereo camera triangulation</li>
-                                <li>Multiple detector integration</li>
-                                <li>Fisheye distortion modeling</li>
-                                <li>Real-time filtering algorithms</li>
-                            </ul>
-                        </div>
                     </div>
                     
                     <div class="research-card-footer">
                         <div class="research-links">
-                            <a href="https://github.com/KHADDOUR-TALA/3D-Hand-Pose-Estimation" target="_blank" class="research-link">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
-                            <a href="#" class="research-link">
-                                <i class="fas fa-file-pdf"></i> Read Paper
+                            <a href="https://github.com/KHADDOUR-TALA/Control-of-Nonlinear-Model-of-Hand-Exoskeleton" target="_blank" class="research-link">
+                                <i class="fab fa-github"></i> Code
                             </a>
                         </div>
                     </div>
                 </article>
 
-                <!-- More Cards would follow the same structure -->
-                
+                <!-- Project 4: Fuzzy Logic Robot -->
+                <article class="research-card">
+                    <div class="research-card-header">
+                        <div class="research-img-container">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Fuzzy Logic" class="research-img">
+                        </div>
+                        <h3 class="research-title">Fuzzy Logic Robot</h3>
+                        <div class="research-tech">
+                            <span class="tech-tag">MATLAB</span>
+                            <span class="tech-tag">Fuzzy</span>
+                        </div>
+                    </div>
+                    
+                    <div class="research-card-body">
+                        <p class="research-description">
+                            Fuzzy logic controllers for mobile robot navigation with superior PID-like performance.
+                        </p>
+                    </div>
+                    
+                    <div class="research-card-footer">
+                        <div class="research-links">
+                            <a href="https://github.com/KHADDOUR-TALA/unicycle-fuzzy-logic-control" target="_blank" class="research-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 5: ROS Maze Navigation -->
+                <article class="research-card">
+                    <div class="research-card-header">
+                        <div class="research-img-container">
+                            <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="ROS Navigation" class="research-img">
+                        </div>
+                        <h3 class="research-title">ROS Maze Navigation</h3>
+                        <div class="research-tech">
+                            <span class="tech-tag">ROS</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                    </div>
+                    
+                    <div class="research-card-body">
+                        <p class="research-description">
+                            Autonomous differential robot navigation through mazes using LiDAR and wall-following algorithms.
+                        </p>
+                    </div>
+                    
+                    <div class="research-card-footer">
+                        <div class="research-links">
+                            <a href="https://github.com/KHADDOUR-TALA/DifferentialRobot-RosMazeNavigation" target="_blank" class="research-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 6: 3D Hand Pose -->
+                <article class="research-card">
+                    <div class="research-card-header">
+                        <div class="research-img-container">
+                            <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="3D Hand Pose" class="research-img">
+                        </div>
+                        <h3 class="research-title">3D Hand Pose Estimation</h3>
+                        <div class="research-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">OpenCV</span>
+                        </div>
+                    </div>
+                    
+                    <div class="research-card-body">
+                        <p class="research-description">
+                            Stereo camera-based 3D hand pose estimation with multiple keypoint detectors and DLT.
+                        </p>
+                    </div>
+                    
+                    <div class="research-card-footer">
+                        <div class="research-links">
+                            <a href="https://github.com/KHADDOUR-TALA/3D-Hand-Pose-Estimation" target="_blank" class="research-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 7: AI Control Systems -->
+                <article class="research-card">
+                    <div class="research-card-header">
+                        <div class="research-img-container">
+                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="AI Control" class="research-img">
+                        </div>
+                        <h3 class="research-title">AI Control Systems</h3>
+                        <div class="research-tech">
+                            <span class="tech-tag">AI</span>
+                            <span class="tech-tag">Control</span>
+                        </div>
+                    </div>
+                    
+                    <div class="research-card-body">
+                        <p class="research-description">
+                            Intelligent control systems integrating machine learning with traditional control methods.
+                        </p>
+                    </div>
+                    
+                    <div class="research-card-footer">
+                        <div class="research-links">
+                            <a href="#" class="research-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 8: Robotics Simulation -->
+                <article class="research-card">
+                    <div class="research-card-header">
+                        <div class="research-img-container">
+                            <img src="https://images.unsplash.com/photo-1581092580497-e0d4cb184827?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 alt="Robotics Sim" class="research-img">
+                        </div>
+                        <h3 class="research-title">Robotics Simulation</h3>
+                        <div class="research-tech">
+                            <span class="tech-tag">Simulation</span>
+                            <span class="tech-tag">Physics</span>
+                        </div>
+                    </div>
+                    
+                    <div class="research-card-body">
+                        <p class="research-description">
+                            Advanced robotics simulation environment for testing control algorithms and system dynamics.
+                        </p>
+                    </div>
+                    
+                    <div class="research-card-footer">
+                        <div class="research-links">
+                            <a href="#" class="research-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- Gallery Section with 8 Images -->
     <section class="gallery-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Research Gallery</h2>
                 <p class="section-subtitle">
-                    Visual documentation of experimental setups, prototypes, and research outcomes
+                    8 visual highlights from experimental setups and research outcomes
                 </p>
             </div>
 
             <div class="gallery-grid">
+                <!-- Image 1 -->
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="Control Systems Lab" class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Autonomous Systems" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h4 class="gallery-title">Control Systems Lab</h4>
-                        <p class="gallery-category">Experimental Setup</p>
+                        <h4 class="gallery-title">Autonomous Control</h4>
+                        <p class="gallery-category">Vehicle Systems</p>
                     </div>
                 </div>
 
+                <!-- Image 2 -->
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="AI Research" class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Rehabilitation Robotics" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h4 class="gallery-title">AI & Machine Learning</h4>
-                        <p class="gallery-category">Algorithm Development</p>
+                        <h4 class="gallery-title">Rehabilitation Robotics</h4>
+                        <p class="gallery-category">Medical Devices</p>
                     </div>
                 </div>
 
+                <!-- Image 3 -->
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="Robotics Prototype" class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Control Algorithms" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h4 class="gallery-title">Robotics Prototype</h4>
-                        <p class="gallery-category">Hardware Development</p>
+                        <h4 class="gallery-title">Control Systems</h4>
+                        <p class="gallery-category">Algorithm Testing</p>
                     </div>
                 </div>
 
+                <!-- Image 4 -->
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="Data Visualization" class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Intelligent Control" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Intelligent Control</h4>
+                        <p class="gallery-category">Fuzzy Logic</p>
+                    </div>
+                </div>
+
+                <!-- Image 5 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Robot Navigation" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Robot Navigation</h4>
+                        <p class="gallery-category">ROS Systems</p>
+                    </div>
+                </div>
+
+                <!-- Image 6 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Vision Systems" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Computer Vision</h4>
+                        <p class="gallery-category">3D Pose Estimation</p>
+                    </div>
+                </div>
+
+                <!-- Image 7 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Data Analysis" class="gallery-img">
                     <div class="gallery-overlay">
                         <h4 class="gallery-title">Data Analysis</h4>
                         <p class="gallery-category">Results Visualization</p>
+                    </div>
+                </div>
+
+                <!-- Image 8 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1581092580497-e0d4cb184827?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Simulation Lab" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Simulation Lab</h4>
+                        <p class="gallery-category">Virtual Testing</p>
                     </div>
                 </div>
             </div>
@@ -893,7 +1050,7 @@
         // Animation on scroll
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+            rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -908,18 +1065,18 @@
         // Animate research cards
         document.querySelectorAll('.research-card').forEach((card, index) => {
             card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            card.style.transitionDelay = `${index * 0.1}s`;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            card.style.transitionDelay = `${index * 0.05}s`;
             observer.observe(card);
         });
 
         // Animate gallery items
         document.querySelectorAll('.gallery-item').forEach((item, index) => {
             item.style.opacity = '0';
-            item.style.transform = 'translateY(30px)';
-            item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            item.style.transitionDelay = `${index * 0.1}s`;
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            item.style.transitionDelay = `${index * 0.05}s`;
             observer.observe(item);
         });
 
@@ -930,13 +1087,11 @@
             }
         });
 
-        // Add hover effect to cards
-        document.querySelectorAll('.research-card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.zIndex = '10';
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.zIndex = '1';
+        // Smooth scroll for CTA button
+        document.querySelector('.hero-cta').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#research').scrollIntoView({
+                behavior: 'smooth'
             });
         });
     </script>
