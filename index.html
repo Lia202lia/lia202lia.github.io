@@ -8,142 +8,16 @@
     
     <!-- Font Awesome & Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Unified CSS -->
+    <!-- Main CSS (Shared across all pages) -->
     <link rel="stylesheet" href="css/style.css">
     
-    <style>
-        /* Page-specific styles for index.html */
-        .hero-section {
-            background: linear-gradient(rgba(5, 71, 94, 0.9), rgba(18, 118, 134, 0.9)),
-                        url('https://qcs.ae/wp-content/uploads/2023/04/1020X450.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 8rem 0 5rem;
-            margin-top: 0;
-            position: relative;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .hero-title {
-            font-size: 3.2rem;
-            color: var(--color-white);
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-        }
-        
-        .hero-subtitle {
-            font-size: 1.4rem;
-            color: var(--color-light);
-            margin-bottom: 2.5rem;
-            font-weight: 400;
-            line-height: 1.6;
-        }
-        
-        /* Education items */
-        .education-item {
-            background: var(--color-paper);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            margin-bottom: 2rem;
-            transition: var(--transition);
-            border-left: 4px solid var(--color-accent);
-        }
-        
-        .education-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .education-period {
-            display: inline-block;
-            background: var(--color-primary);
-            color: var(--color-white);
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        
-        /* Images gallery */
-        .images-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .image-card {
-            background: var(--color-paper);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            transition: var(--transition);
-            height: 250px;
-        }
-        
-        .image-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .image-item {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        
-        .image-card:hover .image-item {
-            transform: scale(1.05);
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.4rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .education-item {
-                padding: 1.5rem;
-            }
-            
-            .images-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .image-card {
-                height: 220px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-        }
-    </style>
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header (Consistent across all pages) -->
     <header class="site-header">
         <div class="container">
             <nav class="nav-inner">
@@ -168,10 +42,15 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">Tala Khaddour</h1>
-                <p class="hero-subtitle">Robotics & Intelligent Systems Engineer | Bioengineering Applications (Rehab Exoskeleton) | AI & Computer Vision | Control Systems (MPC, Adaptive) | Interdisciplinary Researcher</p>
-                <a href="#about" class="btn btn-primary">
-                    <i class="fas fa-arrow-down"></i> Learn More
-                </a>
+                <p class="hero-subtitle">Robotics & Intelligent Systems Engineer | Bioengineering Applications | AI & Computer Vision | Control Systems</p>
+                <div class="hero-actions">
+                    <a href="#about" class="btn btn-primary">
+                        <i class="fas fa-user"></i> About Me
+                    </a>
+                    <a href="research.html" class="btn btn-secondary">
+                        <i class="fas fa-flask"></i> View Research
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -179,69 +58,49 @@
     <!-- Main Content -->
     <main class="main-content">
         <div class="container">
-            <!-- Profile Section -->
-            <section id="profile" class="section">
-                <div class="profile-card">
-                    <img src="imgs/profile.jpg" alt="Tala Khaddour" class="profile-img">
-                    <h1 class="profile-name">Tala Khaddour</h1>
-                    <div class="profile-title">Robotics & Intelligent Systems Engineer</div>
-                    
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="far fa-envelope"></i>
-                            </div>
-                            <div class="contact-detail">
+            <!-- About Section -->
+            <section id="about" class="content-section">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-grid">
+                    <div class="profile-card">
+                        <img src="imgs/profile.jpg" alt="Tala Khaddour" class="profile-img">
+                        <h3 class="profile-name">Tala Khaddour</h3>
+                        <p class="profile-title">Robotics & Intelligent Systems Engineer</p>
+                        
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope contact-icon"></i>
                                 <a href="mailto:khaddour.tala@gmail.com">khaddour.tala@gmail.com</a>
                             </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fab fa-linkedin"></i>
-                            </div>
-                            <div class="contact-detail">
+                            <div class="contact-item">
+                                <i class="fab fa-linkedin contact-icon"></i>
                                 <a href="https://www.linkedin.com/in/tala-khaddour/" target="_blank">LinkedIn Profile</a>
                             </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fab fa-github"></i>
-                            </div>
-                            <div class="contact-detail">
+                            <div class="contact-item">
+                                <i class="fab fa-github contact-icon"></i>
                                 <a href="https://github.com/KHADDOUR-TALA" target="_blank">GitHub Profile</a>
                             </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-globe"></i>
-                            </div>
-                            <div class="contact-detail">
+                            <div class="contact-item">
+                                <i class="fas fa-globe contact-icon"></i>
                                 <a href="https://khaddour-tala.github.io/" target="_blank">Personal Website</a>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <!-- About Section -->
-            <section id="about" class="section">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-content">
-                    <p>I am a robotics engineer specializing in intelligent systems and sustainable energy solutions. My work combines technical expertise with practical applications, focusing on creating innovative solutions for real-world challenges.</p>
                     
-                    <p>My academic journey began with a deep interest in how machines can be designed to assist and enhance human capabilities. This led me to pursue studies in robotics engineering, where I developed skills in control systems, artificial intelligence, and mechanical design.</p>
-                    
-                    <p>I believe that technology should serve humanity in meaningful ways. Whether through rehabilitation robotics that help stroke patients regain mobility or sustainable energy systems that address environmental challenges, I'm committed to engineering solutions that make a positive impact.</p>
-                    
-                    <p>Currently, I'm expanding my knowledge through advanced research and practical projects, always seeking new challenges at the intersection of intelligent systems, robotics, and sustainable technology.</p>
+                    <div class="about-text">
+                        <p>I am a robotics engineer specializing in intelligent systems and sustainable energy solutions. My work combines technical expertise with practical applications, focusing on creating innovative solutions for real-world challenges.</p>
+                        
+                        <p>My academic journey began with a deep interest in how machines can be designed to assist and enhance human capabilities. This led me to pursue studies in robotics engineering, where I developed skills in control systems, artificial intelligence, and mechanical design.</p>
+                        
+                        <p>I believe that technology should serve humanity in meaningful ways. Whether through rehabilitation robotics that help stroke patients regain mobility or sustainable energy systems that address environmental challenges, I'm committed to engineering solutions that make a positive impact.</p>
+                        
+                        <p>Currently, I'm expanding my knowledge through advanced research and practical projects, always seeking new challenges at the intersection of intelligent systems, robotics, and sustainable technology.</p>
+                    </div>
                 </div>
             </section>
 
             <!-- Education Section -->
-            <section class="section">
+            <section class="content-section">
                 <h2 class="section-title">Education</h2>
                 
                 <div class="education-item">
@@ -267,7 +126,7 @@
             </section>
 
             <!-- Images Section -->
-            <section class="section">
+            <section class="content-section images-section">
                 <h2 class="section-title">Academic & Professional Journey</h2>
                 <div class="images-grid">
                     <div class="image-card">
@@ -287,7 +146,7 @@
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer (Consistent across all pages) -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-inner">
@@ -301,5 +160,6 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>
