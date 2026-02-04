@@ -157,51 +157,28 @@
             font-weight: 600;
         }
 
-        /* ========= HERO SECTION WITH COVER IMAGE (EXACT SAME AS RESEARCH/ABOUT) ========= */
-        .hero-section {
-            position: relative;
-            padding: 6rem 0;
-            background: linear-gradient(rgba(5, 71, 94, 0.9), rgba(18, 118, 134, 0.9)),
-                        url('https://qcs.ae/wp-content/uploads/2023/04/1020X450.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            margin-bottom: 3rem;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .hero-title {
-            font-size: 3rem;
-            color: var(--color-white);
-            margin-bottom: 1rem;
-            line-height: 1.1;
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: var(--color-light);
-            margin-bottom: 2rem;
-        }
-
-        /* ========= MAIN CONTENT ========= */
+        /* ========= MAIN CONTENT LAYOUT ========= */
         .main-wrapper {
+            display: flex;
+            flex-wrap: wrap;
             flex: 1;
-            padding: 0 0 2rem;
+            padding: 2rem 0;
         }
 
-        /* Profile Section */
+        /* ORIGINAL PROFILE SECTION STYLING - LEFT SIDEBAR */
+        .sidebar {
+            flex: 0 0 35%;
+            max-width: 35%;
+            padding-right: 2rem;
+            position: sticky;
+            top: 6rem;
+            height: fit-content;
+        }
+
         .profile-card {
             background: var(--color-white);
             border-radius: var(--border-radius);
             padding: 2rem;
-            margin-bottom: 2rem;
             border: 1px solid var(--color-border);
             box-shadow: 0 4px 12px var(--color-shadow);
         }
@@ -209,11 +186,11 @@
         .profile-img {
             width: 180px;
             height: 180px;
-            border-radius: 0;
+            border-radius: 0; /* Square shape */
             object-fit: cover;
             display: block;
             margin: 0 auto 1.5rem;
-            border: 3px solid var(--color-border);
+            border: 1px solid var(--color-border);
         }
 
         .profile-name {
@@ -229,9 +206,10 @@
             font-weight: 600;
             margin-bottom: 1.5rem;
             text-align: center;
+            line-height: 1.5;
         }
 
-        /* Contact Info */
+        /* Contact Info - ORIGINAL STYLING */
         .contact-info {
             margin-top: 1.5rem;
         }
@@ -254,6 +232,22 @@
             color: var(--color-text);
             font-size: 0.95rem;
             line-height: 1.5;
+        }
+
+        .contact-detail a {
+            color: var(--color-text);
+            transition: var(--transition);
+        }
+
+        .contact-detail a:hover {
+            color: var(--color-secondary);
+        }
+
+        /* ORIGINAL CONTENT AREA - RIGHT SIDE */
+        .content-area {
+            flex: 0 0 65%;
+            max-width: 65%;
+            padding-left: 1rem;
         }
 
         /* Content Sections */
@@ -408,6 +402,31 @@
         }
 
         /* ========= RESPONSIVE ========= */
+        @media (max-width: 992px) {
+            .main-wrapper {
+                display: block;
+            }
+            
+            .sidebar {
+                width: 100%;
+                max-width: 100%;
+                position: static;
+                margin-bottom: 2rem;
+                padding-right: 0;
+            }
+            
+            .content-area {
+                width: 100%;
+                max-width: 100%;
+                padding-left: 0;
+            }
+            
+            .profile-card {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-inner {
                 flex-direction: column;
@@ -421,21 +440,13 @@
                 gap: 1rem;
             }
             
-            .hero-title {
-                font-size: 2.2rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-            
             .profile-img {
                 width: 160px;
                 height: 160px;
             }
             
             .profile-name {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
             
             .images-grid {
@@ -458,7 +469,7 @@
             }
             
             .profile-name {
-                font-size: 1.4rem;
+                font-size: 1.6rem;
             }
             
             .section-title {
@@ -488,68 +499,57 @@
         </div>
     </header>
 
-    <!-- Hero Section - Same as About/Research Pages -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Tala Khaddour</h1>
-                <p class="hero-subtitle">
-                    Robotics & Intelligent Systems Engineer | Bioengineering Applications (Rehab Exoskeleton) | 
-                    AI & Computer Vision | Control Systems (MPC, Adaptive) | Interdisciplinary Researcher
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Main Content -->
+    <!-- Main Content - ORIGINAL LAYOUT -->
     <div class="container main-wrapper">
-        <!-- Profile Section -->
-        <div class="profile-card">
-            <img src="imgs/profile.jpg" alt="Tala Khaddour" class="profile-img">
-            <h1 class="profile-name">Tala Khaddour</h1>
-            <div class="profile-title">Robotics & Intelligent Systems Engineer | Bioengineering Applications (Rehab Exoskeleton) | AI & Computer Vision | Control Systems (MPC, Adaptive) | Interdisciplinary Researcher</div>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="far fa-envelope"></i>
-                    </div>
-                    <div class="contact-detail">
-                        <a href="mailto:khaddour.tala@gmail.com">khaddour.tala@gmail.com</a>
-                    </div>
-                </div>
+        <!-- ORIGINAL PROFILE SECTION - LEFT SIDEBAR -->
+        <aside class="sidebar">
+            <div class="profile-card">
+                <img src="imgs/profile.jpg" alt="Tala Khaddour" class="profile-img">
+                <h1 class="profile-name">Tala Khaddour</h1>
+                <div class="profile-title">Robotics & Intelligent Systems Engineer | Bioengineering Applications (Rehab Exoskeleton) | AI & Computer Vision | Control Systems (MPC, Adaptive) | Interdisciplinary Researcher</div>
                 
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fab fa-linkedin"></i>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="far fa-envelope"></i>
+                        </div>
+                        <div class="contact-detail">
+                            <a href="mailto:khaddour.tala@gmail.com">khaddour.tala@gmail.com</a>
+                        </div>
                     </div>
-                    <div class="contact-detail">
-                        <a href="https://www.linkedin.com/in/tala-khaddour/" target="_blank">LinkedIn Profile</a>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-detail">
+                            <a href="https://www.linkedin.com/in/tala-khaddour/" target="_blank">LinkedIn Profile</a>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fab fa-github"></i>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-detail">
+                            <a href="https://github.com/KHADDOUR-TALA" target="_blank">GitHub Profile</a>
+                        </div>
                     </div>
-                    <div class="contact-detail">
-                        <a href="https://github.com/KHADDOUR-TALA" target="_blank">GitHub Profile</a>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <div class="contact-detail">
-                        <a href="https://khaddour-tala.github.io/" target="_blank">Personal Website</a>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-detail">
+                            <a href="https://khaddour-tala.github.io/" target="_blank">Personal Website</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </aside>
 
-        <!-- Content Area -->
-        <main>
+        <!-- ORIGINAL CONTENT AREA - RIGHT SIDE -->
+        <main class="content-area">
             <!-- About Me Section -->
             <section class="content-section">
                 <h2 class="section-title">About Me</h2>
@@ -632,7 +632,7 @@
             }
         });
         
-        // Animate image cards on scroll
+        // Animate education items and image cards on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
