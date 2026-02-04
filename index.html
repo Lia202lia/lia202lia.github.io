@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,6 +60,9 @@
             background-color: var(--color-bg);
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -109,107 +111,70 @@
             text-align: justify;
         }
 
-        /* ========= HEADER ========= */
+        /* ========= UNIFIED HEADER ========= */
         .site-header {
-            background: var(--color-header-bg); /* Dark header background */
+            background: var(--color-navy);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(5, 71, 94, 0.2);
-            border-bottom: 3px solid var(--color-accent);
+            border-bottom: 3px solid var(--color-blue);
         }
 
         .nav-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.25rem 0;
+            padding: 1rem 0;
         }
 
         .nav-logo {
             display: flex;
             align-items: center;
-            gap: 0.875rem;
+            gap: 0.75rem;
             text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .nav-logo:hover {
-            transform: translateY(-2px);
         }
 
         .nav-logo-mark {
-            width: 42px;
-            height: 42px;
-            background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--color-blue), var(--color-accent));
             color: var(--color-white);
-            border-radius: 10px;
+            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 12px rgba(79, 151, 200, 0.3);
-            transition: var(--transition);
-        }
-
-        .nav-logo:hover .nav-logo-mark {
-            transform: rotate(5deg);
-            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            font-size: 1rem;
         }
 
         .nav-logo-text {
             font-family: var(--font-serif);
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--color-white);
             font-weight: 700;
-            letter-spacing: -0.01em;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
-            font-size: 0.95rem;
+            gap: 1.5rem;
+            font-size: 0.9rem;
         }
 
         .nav-link {
             color: rgba(255, 255, 255, 0.9);
-            font-weight: 600;
+            font-weight: 500;
             padding: 0.5rem 0;
-            position: relative;
             transition: var(--transition);
-            letter-spacing: 0.01em;
         }
 
         .nav-link:hover {
-            color: var(--color-accent);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--color-accent);
-            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 1px;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
+            color: var(--color-secondary);
         }
 
         .nav-link-active {
-            color: var(--color-accent);
-            font-weight: 700;
-        }
-
-        .nav-link-active::after {
-            width: 100%;
-            background: var(--color-accent);
+            color: var(--color-secondary);
+            font-weight: 600;
         }
 
         /* ========= MAIN CONTENT LAYOUT ========= */
@@ -218,6 +183,7 @@
             flex-wrap: wrap;
             margin: 0 -1rem;
             padding: 3rem 0;
+            flex: 1;
         }
 
         .col-sm-4 {
@@ -501,24 +467,13 @@
             margin-bottom: 1.5rem;
         }
 
-        /* ========= FOOTER ========= */
+        /* ========= UNIFIED FOOTER ========= */
         .site-footer {
-            background: linear-gradient(135deg, var(--color-navy), var(--color-primary-dark));
+            background: var(--color-navy);
             color: var(--color-white);
-            padding: 4rem 0 3rem;
-            margin-top: 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .site-footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--color-accent), var(--color-secondary));
+            padding: 2.5rem 0 2rem;
+            margin-top: auto;
+            border-top: 3px solid var(--color-accent);
         }
 
         .footer-inner {
@@ -526,38 +481,30 @@
             max-width: var(--max-width);
             margin: 0 auto;
             padding: 0 1.5rem;
-            position: relative;
-            z-index: 1;
         }
 
         .footer-name {
             font-family: var(--font-serif);
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             color: var(--color-white);
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
             font-weight: 700;
-            letter-spacing: -0.01em;
         }
 
         .footer-tagline {
             color: var(--color-secondary);
-            margin-bottom: 2rem;
-            font-size: 1.2rem;
-            font-weight: 500;
-            letter-spacing: 0.02em;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
         }
 
         .footer-meta {
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 60ch;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
             margin: 0 auto;
-            line-height: 1.7;
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
-            padding-top: 2rem;
+            line-height: 1.6;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1.5rem;
         }
 
         /* ========= RESPONSIVE ========= */
@@ -602,14 +549,14 @@
         @media (max-width: 768px) {
             .nav-inner {
                 flex-direction: column;
-                gap: 1.5rem;
-                padding: 1.5rem 0;
+                gap: 1rem;
+                padding: 1rem 0;
             }
 
             .nav-links {
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 1rem 1.5rem;
+                gap: 1rem;
             }
 
             .nav-link {
@@ -637,14 +584,6 @@
                 margin-left: 0;
                 display: block;
                 margin-top: 0.75rem;
-            }
-
-            .footer-name {
-                font-size: 1.8rem;
-            }
-
-            .footer-tagline {
-                font-size: 1.1rem;
             }
         }
 
@@ -677,7 +616,7 @@
 </head>
 
 <body>
-    <!-- Header -->
+    <!-- Unified Header -->
     <header class="site-header">
         <div class="container">
             <nav class="nav-inner">
@@ -763,22 +702,23 @@
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Unified Footer -->
     <footer class="site-footer">
         <div class="footer-inner">
-            <p class="footer-name">Tala Khaddour</p>
+            <h3 class="footer-name">Tala Khaddour</h3>
             <p class="footer-tagline">Robotics · Intelligent Systems · Sustainable Energy</p>
             <p class="footer-meta">
-                Academic portfolio showcasing expertise in robotics engineering, intelligent systems, and sustainable technology.
+                khaddour.tala@gmail.com | 
+                <a href="https://www.linkedin.com/in/tala-khaddour/" style="color: var(--color-secondary);">LinkedIn</a> | 
+                <a href="https://github.com/KHADDOUR-TALA" style="color: var(--color-secondary);">GitHub</a>
             </p>
         </div>
     </footer>
 
     <script>
-        // Set active nav link based on current page
-        const currentPage = window.location.pathname.split('/').pop();
+        // Set active nav link
         document.querySelectorAll('.nav-link').forEach(link => {
-            if (link.getAttribute('href') === currentPage) {
+            if (link.href === window.location.href) {
                 link.classList.add('nav-link-active');
             }
         });
