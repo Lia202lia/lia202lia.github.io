@@ -55,6 +55,9 @@
             background-color: var(--color-bg);
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -167,21 +170,7 @@
             font-weight: 600;
         }
 
-        /* ========= MAIN CONTENT LAYOUT ========= */
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -1rem;
-            padding: 3rem 0 1rem;
-        }
-
-        .col-sm-12 {
-            flex: 0 0 100%;
-            max-width: 100%;
-            padding: 0 1rem;
-        }
-
-        /* ========= HERO SECTION WITH COVER IMAGE ========= */
+        /* ========= HERO SECTION WITH COVER IMAGE (EXACT SAME AS RESEARCH) ========= */
         .hero-section {
             position: relative;
             padding: 6rem 0;
@@ -212,6 +201,20 @@
             font-size: 1.2rem;
             color: var(--color-light);
             margin-bottom: 2rem;
+        }
+
+        /* ========= MAIN CONTENT LAYOUT ========= */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -1rem;
+            padding: 0 0 1rem;
+        }
+
+        .col-sm-12 {
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding: 0 1rem;
         }
 
         /* ========= WORK EXPERIENCE STYLES ========= */
@@ -500,7 +503,7 @@
             background: var(--color-primary);
             color: var(--color-white);
             padding: 2.5rem 0 2rem;
-            margin-top: 4rem;
+            margin-top: auto;
             border-top: 3px solid var(--color-blue);
         }
 
@@ -647,7 +650,7 @@
             }
 
             .row {
-                padding: 2rem 0 1rem;
+                padding: 0 0 1rem;
             }
 
             .footer-name {
@@ -678,7 +681,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - EXACT SAME AS RESEARCH PAGE -->
     <section class="hero-section">
         <div class="container">
             <div class="hero-content">
