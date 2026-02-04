@@ -1,37 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tala Khaddour | Robotics & Intelligent Systems Engineer</title>
     <meta name="description" content="Academic portfolio of Tala Khaddour, specializing in robotics, intelligent systems, and sustainable energy solutions.">
+
     <!-- Font Awesome & Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+
     <style>
-        /* ========= PROFESSIONAL COLOR SCHEME ========= */
+        /* ========= PROFESSIONAL CV-ALIGNED COLOR SCHEME ========= */
         :root {
-            /* Professional Color Palette */
-            --color-bg: #FFFFFF;
-            --color-paper: #F8FAFC;
-            --color-text: #1A2A36;
+            /* Professional Color Palette - Based on your new colors */
+            --color-bg: #F5F9FC;           /* Light background */
+            --color-paper: #FFFFFF;
+            --color-light-gray: #E8F1F7;
+            --color-medium-gray: #D1E2F0;
+            --color-dark-gray: #2A3B47;
+            --color-text: #1A2A36;         /* Dark text */
             --color-text-light: #5A6B7A;
-            --color-primary: #339BA7;
-            --color-primary-dark: #127686;
-            --color-accent: #4F97C8;
-            --color-border: #E2E8F0;
+            --color-primary: #339BA7;      /* Teal primary color */
+            --color-primary-dark: #127686; /* Darker teal */
+            --color-accent: #4F97C8;       /* Blue accent */
+            --color-accent-light: #E8F4FA;
+            --color-border: #D1E2F0;
             --color-white: #FFFFFF;
-            --color-navy: #05475E;
-            --color-header-bg: #05475E;
-            --color-light-bg: #F8FAFC;
+            --color-black: #000000;
+            --color-navy: #05475E;         /* Dark navy/teal */
+            --color-navy-light: #127686;
+            --color-secondary: #ACCDE4;    /* Light blue for profile frame */
+            --color-highlight: #4F97C8;    /* Blue highlight */
+            --color-header-bg: #05475E;    /* Dark header background */
 
             /* Typography */
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            --font-heading: 'Source Sans Pro', sans-serif;
+            --font-serif: 'Source Serif Pro', Georgia, 'Times New Roman', serif;
 
             --max-width: 1200px;
             --border-radius: 8px;
-            --transition: all 0.3s ease;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         /* ========= GENERAL ========= */
@@ -51,21 +61,18 @@
             background-color: var(--color-bg);
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
         }
 
         h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-heading);
-            color: var(--color-navy);
+            font-family: var(--font-serif);
+            color: var(--color-text);
             font-weight: 600;
             line-height: 1.3;
             letter-spacing: -0.01em;
         }
 
         p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
         }
 
         a {
@@ -77,6 +84,7 @@
 
         a:hover {
             color: var(--color-primary-dark);
+            text-decoration: underline;
         }
 
         .container {
@@ -85,408 +93,432 @@
             padding: 0 1.5rem;
         }
 
+        .mt-4 {
+            margin-top: 2rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 2rem;
+        }
+
         .text-center {
             text-align: center;
         }
 
+        .text-justify {
+            text-align: justify;
+        }
+
         /* ========= HEADER ========= */
         .site-header {
-            background: var(--color-header-bg);
+            background: var(--color-header-bg); /* Dark header background */
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(5, 71, 94, 0.1);
+            box-shadow: 0 4px 20px rgba(5, 71, 94, 0.2);
+            border-bottom: 3px solid var(--color-accent);
         }
 
         .nav-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            padding: 1.25rem 0;
         }
 
         .nav-logo {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 0.875rem;
             text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .nav-logo:hover {
+            transform: translateY(-2px);
         }
 
         .nav-logo-mark {
-            width: 36px;
-            height: 36px;
+            width: 42px;
+            height: 42px;
             background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
             color: var(--color-white);
-            border-radius: 8px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 12px rgba(79, 151, 200, 0.3);
+            transition: var(--transition);
+        }
+
+        .nav-logo:hover .nav-logo-mark {
+            transform: rotate(5deg);
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
         }
 
         .nav-logo-text {
-            font-family: var(--font-heading);
-            font-size: 1.3rem;
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
             color: var(--color-white);
             font-weight: 700;
-        }
-
-        .nav-content {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
+            letter-spacing: -0.01em;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 1.5rem;
-            font-size: 0.9rem;
+            gap: 2.5rem;
+            font-size: 0.95rem;
         }
 
         .nav-link {
             color: rgba(255, 255, 255, 0.9);
-            font-weight: 500;
+            font-weight: 600;
             padding: 0.5rem 0;
             position: relative;
             transition: var(--transition);
+            letter-spacing: 0.01em;
         }
 
         .nav-link:hover {
-            color: var(--color-white);
+            color: var(--color-accent);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-accent);
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 1px;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
         }
 
         .nav-link-active {
-            color: var(--color-white);
-            font-weight: 600;
+            color: var(--color-accent);
+            font-weight: 700;
         }
 
-        /* ========= HERO SECTION WITH NEW LAYOUT ========= */
-        .hero-section {
-            background: var(--color-light-bg);
-            padding: 4rem 0 3rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        /* Left Column: Contact Info (Clean, no borders) */
-        .contact-column {
-            padding-top: 1rem;
-        }
-
-        .contact-column h2 {
-            font-size: 1.5rem;
-            color: var(--color-navy);
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .contact-column h2:after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: var(--color-primary);
-        }
-
-        .contact-info-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1.8rem;
-        }
-
-        .contact-info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        .contact-icon-wrapper {
-            width: 44px;
-            height: 44px;
-            background: var(--color-white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--color-primary);
-            font-size: 1.1rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            flex-shrink: 0;
-        }
-
-        .contact-details {
-            flex: 1;
-        }
-
-        .contact-label {
-            font-weight: 600;
-            color: var(--color-navy);
-            font-size: 0.95rem;
-            margin-bottom: 0.25rem;
-            letter-spacing: 0.3px;
-        }
-
-        .contact-value {
-            color: var(--color-text);
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .contact-link {
-            color: var(--color-text);
-            transition: var(--transition);
-            display: inline-block;
-        }
-
-        .contact-link:hover {
-            color: var(--color-primary);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2.5rem;
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1.2rem;
-            background: var(--color-white);
-            border-radius: 30px;
-            color: var(--color-text);
-            font-weight: 500;
-            font-size: 0.9rem;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-        }
-
-        .social-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            color: var(--color-primary);
-        }
-
-        /* Right Column: Profile & About Me */
-        .profile-column {
-            position: relative;
-        }
-
-        .profile-header {
-            margin-bottom: 2.5rem;
-        }
-
-        .profile-name {
-            font-size: 2.8rem;
-            color: var(--color-navy);
-            margin-bottom: 0.5rem;
-            line-height: 1.1;
-        }
-
-        .profile-title {
-            color: var(--color-primary);
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.3px;
-        }
-
-        .profile-image-container {
-            width: 280px;
-            height: 280px;
-            border-radius: 5px;
-            overflow: hidden;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            position: relative;
-        }
-
-        .profile-image {
+        .nav-link-active::after {
             width: 100%;
-            height: 100%;
+            background: var(--color-accent);
+        }
+
+        /* ========= MAIN CONTENT LAYOUT ========= */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -1rem;
+            padding: 3rem 0;
+        }
+
+        .col-sm-4 {
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+            padding: 0 1rem;
+            position: sticky;
+            top: 6rem;
+            height: fit-content;
+        }
+
+        .col-sm-8 {
+            flex: 0 0 66.666667%;
+            max-width: 66.666667%;
+            padding: 0 1rem;
+        }
+
+        /* ========= LEFT SIDEBAR ========= */
+        .rounded-circle {
+            border-radius: 50% !important;
+            border: 6px solid var(--color-secondary); /* Light blue frame */
+            box-shadow: 
+                0 8px 32px rgba(79, 151, 200, 0.2),
+                0 0 0 4px rgba(172, 205, 228, 0.3),
+                inset 0 0 20px rgba(172, 205, 228, 0.1);
+            display: block;
+            margin: 0 auto 2rem;
+            width: 70%;
+            max-width: 280px;
+            aspect-ratio: 1/1;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            background-color: var(--color-paper);
+            transition: var(--transition);
+            position: relative;
         }
 
-        .profile-image-container:hover .profile-image {
-            transform: scale(1.03);
+        .rounded-circle::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: -12px;
+            right: -12px;
+            bottom: -12px;
+            border-radius: 50%;
+            border: 3px solid rgba(79, 151, 200, 0.3);
+            z-index: -1;
+            animation: pulse 3s infinite;
         }
 
-        .about-section {
-            margin-top: 2rem;
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.02); }
         }
 
-        .about-section h3 {
-            font-size: 1.5rem;
+        .rounded-circle:hover {
+            transform: scale(1.02) rotate(2deg);
+            border-color: var(--color-accent);
+            box-shadow: 
+                0 12px 40px rgba(79, 151, 200, 0.3),
+                0 0 0 6px rgba(172, 205, 228, 0.4),
+                inset 0 0 30px rgba(172, 205, 228, 0.2);
+        }
+
+        .card-body {
+            text-align: center;
+            padding: 2rem;
+            background: var(--color-paper);
+            border-radius: var(--border-radius);
+            box-shadow: 0 6px 24px rgba(79, 151, 200, 0.1);
+            border: 1px solid var(--color-border);
+        }
+
+        .card-body h4 {
+            font-size: 1.9rem;
+            margin-bottom: 0.5rem;
             color: var(--color-navy);
+            background: linear-gradient(135deg, var(--color-navy), var(--color-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-body > p {
+            color: var(--color-text-light);
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Social Icons List - ONLY CV LINKS */
+        .social-icons {
+            list-style: none;
+            padding-left: 0;
+            text-align: left;
             margin-bottom: 1.5rem;
-            position: relative;
         }
 
-        .about-section h3:after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: var(--color-primary);
+        .social-icons li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
         }
 
-        .about-content {
-            font-size: 1.05rem;
-            line-height: 1.8;
+        .social-icons li a {
             color: var(--color-text);
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 0.875rem 1.25rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            border: 1px solid var(--color-border);
+            background: var(--color-paper);
+            font-weight: 500;
         }
 
-        .about-content p {
-            margin-bottom: 1.2rem;
+        .social-icons li a:hover {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            color: var(--color-white);
+            text-decoration: none;
+            border-color: transparent;
+            transform: translateX(8px);
+            box-shadow: 0 6px 20px rgba(51, 155, 167, 0.3);
         }
 
-        /* ========= MAIN CONTENT AREA ========= */
-        .main-content {
-            padding: 4rem 0;
-            background: var(--color-bg);
+        .social-icons li a:hover .fa-fw {
+            color: var(--color-white);
+            transform: scale(1.1);
         }
 
-        .content-section {
-            margin-bottom: 4rem;
+        .social-icons .fa-fw {
+            margin-right: 1rem;
+            width: 1.25rem;
+            text-align: center;
+            color: var(--color-primary);
+            font-size: 1.2rem;
+            transition: var(--transition);
         }
 
-        .section-title {
-            font-size: 1.8rem;
-            color: var(--color-navy);
-            margin-bottom: 2rem;
+        .pl-5 {
+            padding-left: 3rem !important;
+        }
+
+        @media (max-width: 768px) {
+            .pl-5 {
+                padding-left: 1.5rem !important;
+            }
+        }
+
+        /* ========= RIGHT CONTENT AREA ========= */
+        .font-weight-bold {
+            font-weight: 700;
+        }
+
+        .content-area h4 {
+            font-size: 1.6rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
             padding-bottom: 0.75rem;
-            border-bottom: 2px solid var(--color-border);
+            border-bottom: 3px solid;
+            border-image: linear-gradient(90deg, var(--color-accent), var(--color-primary)) 1;
+            color: var(--color-navy);
             position: relative;
         }
 
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 80px;
-            height: 2px;
-            background: var(--color-primary);
+        .content-area h4:first-of-type {
+            margin-top: 0;
         }
 
-        /* Education Section */
+        .content-area h4::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--color-secondary);
+        }
+
+        /* Education Section Styles */
         .education-item {
             margin-bottom: 2.5rem;
-            padding: 2.5rem;
-            background: var(--color-light-bg);
+            padding: 2rem;
             border-radius: var(--border-radius);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
-            border-left: 4px solid var(--color-primary);
+            background: var(--color-paper);
+            border-left: 4px solid var(--color-accent);
+            box-shadow: 0 4px 16px rgba(79, 151, 200, 0.1);
             transition: var(--transition);
-            max-width: 900px;
+            border: 1px solid var(--color-border);
         }
 
         .education-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(79, 151, 200, 0.2);
+            border-left-color: var(--color-primary);
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
         }
 
         .education-period {
             display: inline-block;
-            background: var(--color-primary);
+            background: linear-gradient(135deg, var(--color-primary), var(--color-navy));
             color: var(--color-white);
-            padding: 0.3rem 1rem;
+            padding: 0.5rem 1.25rem;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 600;
-            margin-bottom: 1rem;
-            letter-spacing: 0.5px;
+            margin-bottom: 1.25rem;
+            letter-spacing: 0.03em;
+            box-shadow: 0 3px 10px rgba(51, 155, 167, 0.3);
         }
 
         .education-title {
-            font-weight: 600;
+            font-weight: 700;
             color: var(--color-navy);
             margin-bottom: 0.5rem;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
+            line-height: 1.4;
         }
 
         .education-institution {
-            color: var(--color-primary);
-            margin-bottom: 1.2rem;
-            font-size: 1.1rem;
-            font-weight: 500;
+            color: var(--color-text-light);
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            font-style: italic;
+        }
+
+        .education-institution a {
+            color: var(--color-primary-dark);
+            font-weight: 600;
+        }
+
+        .education-institution a:hover {
+            color: var(--color-accent);
+            text-decoration: underline;
         }
 
         .education-details {
             color: var(--color-text);
-            font-size: 1.05rem;
+            margin-top: 1rem;
+            font-size: 1rem;
             line-height: 1.7;
         }
 
         .education-details p {
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.75rem;
         }
 
-        /* Images Gallery Section */
-        .images-section {
-            padding: 1rem 0;
+        .education-details strong {
+            color: var(--color-primary-dark);
+            font-weight: 600;
         }
 
-        .images-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-
-        .image-card {
-            background: var(--color-white);
+        .school-profile-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: 1rem;
+            padding: 0.625rem 1.25rem;
+            background: var(--color-accent-light);
             border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            border: 1px solid var(--color-border);
-            height: 260px;
-            position: relative;
-        }
-
-        .image-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .image-item {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
             transition: var(--transition);
         }
 
-        .image-card:hover .image-item {
-            transform: scale(1.05);
+        .school-profile-link:hover {
+            background: var(--color-primary);
+            color: var(--color-white);
+            text-decoration: none;
+            transform: translateX(4px);
+        }
+
+        .content-area > p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--color-text);
+            margin-bottom: 1.5rem;
         }
 
         /* ========= FOOTER ========= */
         .site-footer {
-            background: var(--color-header-bg);
+            background: linear-gradient(135deg, var(--color-navy), var(--color-primary-dark));
             color: var(--color-white);
-            padding: 3rem 0 2rem;
-            margin-top: 2rem;
+            padding: 4rem 0 3rem;
+            margin-top: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-accent), var(--color-secondary));
         }
 
         .footer-inner {
@@ -494,141 +526,125 @@
             max-width: var(--max-width);
             margin: 0 auto;
             padding: 0 1.5rem;
+            position: relative;
+            z-index: 1;
         }
 
         .footer-name {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
             color: var(--color-white);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             font-weight: 700;
+            letter-spacing: -0.01em;
         }
 
         .footer-tagline {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
+            color: var(--color-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .footer-meta {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-            max-width: 600px;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 60ch;
             margin: 0 auto;
-            line-height: 1.6;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            padding-top: 1.5rem;
+            line-height: 1.7;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 2rem;
         }
 
         /* ========= RESPONSIVE ========= */
-        @media (max-width: 1024px) {
-            .hero-container {
-                gap: 3rem;
+        @media (max-width: 992px) {
+            .col-sm-4,
+            .col-sm-8 {
+                flex: 0 0 100%;
+                max-width: 100%;
             }
-            
-            .profile-name {
-                font-size: 2.5rem;
-            }
-            
-            .profile-image-container {
-                width: 250px;
-                height: 250px;
-            }
-        }
 
-        @media (max-width: 900px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            
-            .contact-column {
-                order: 2;
-            }
-            
-            .profile-column {
-                order: 1;
-            }
-            
-            .profile-header {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+            .col-sm-4 {
+                position: static;
+                margin-bottom: 3rem;
                 text-align: center;
             }
-            
-            .profile-image-container {
-                margin: 0 auto 2rem;
-            }
-            
-            .about-section h3:after,
-            .contact-column h2:after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .about-section h3,
-            .contact-column h2 {
+
+            .social-icons {
                 text-align: center;
+                max-width: 500px;
+                margin: 0 auto;
             }
-            
-            .social-links {
+
+            .social-icons li {
                 justify-content: center;
+            }
+
+            .pl-5 {
+                padding-left: 0 !important;
+            }
+
+            .nav-links {
+                gap: 1.75rem;
+                font-size: 0.9rem;
+            }
+
+            .rounded-circle {
+                width: 60%;
+                max-width: 240px;
             }
         }
 
         @media (max-width: 768px) {
-            .hero-section {
-                padding: 3rem 0 2rem;
-            }
-            
-            .profile-name {
-                font-size: 2.2rem;
-            }
-            
-            .profile-title {
-                font-size: 1.2rem;
-            }
-            
-            .profile-image-container {
-                width: 220px;
-                height: 220px;
-            }
-            
             .nav-inner {
                 flex-direction: column;
                 gap: 1.5rem;
                 padding: 1.5rem 0;
             }
-            
-            .nav-content {
-                flex-direction: column;
-                gap: 1rem;
-                width: 100%;
-                align-items: center;
-            }
-            
+
             .nav-links {
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 1rem;
+                gap: 1rem 1.5rem;
             }
-            
-            .section-title {
-                font-size: 1.6rem;
+
+            .nav-link {
+                font-size: 0.9rem;
             }
-            
+
+            .rounded-circle {
+                width: 70%;
+                max-width: 220px;
+            }
+
+            .rounded-circle::before {
+                display: none; /* Disable animation on mobile */
+            }
+
+            .content-area h4 {
+                font-size: 1.4rem;
+            }
+
             .education-item {
-                padding: 2rem;
+                padding: 1.5rem;
             }
-            
-            .images-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 1.5rem;
+
+            .school-profile-link {
+                margin-left: 0;
+                display: block;
+                margin-top: 0.75rem;
             }
-            
-            .image-card {
-                height: 240px;
+
+            .footer-name {
+                font-size: 1.8rem;
+            }
+
+            .footer-tagline {
+                font-size: 1.1rem;
             }
         }
 
@@ -636,54 +652,30 @@
             .container {
                 padding: 0 1rem;
             }
-            
-            .hero-section {
-                padding: 2.5rem 0 2rem;
-            }
-            
-            .profile-name {
-                font-size: 2rem;
-            }
-            
-            .profile-image-container {
-                width: 200px;
-                height: 200px;
-            }
-            
-            .contact-info-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.75rem;
-            }
-            
-            .contact-icon-wrapper {
-                align-self: flex-start;
-            }
-            
-            .social-link {
-                padding: 0.5rem 1rem;
-                font-size: 0.85rem;
-            }
-            
-            .education-item {
+
+            .card-body {
                 padding: 1.5rem;
             }
-            
-            .education-title {
-                font-size: 1.2rem;
+
+            .education-item {
+                padding: 1.25rem;
             }
-            
-            .images-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
+
+            .card-body h4 {
+                font-size: 1.6rem;
             }
-            
-            .image-card {
-                height: 220px;
+
+            .content-area h4 {
+                font-size: 1.3rem;
+            }
+
+            .row {
+                padding: 2rem 0;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header class="site-header">
@@ -693,223 +685,102 @@
                     <span class="nav-logo-mark">TK</span>
                     <span class="nav-logo-text">Tala Khaddour</span>
                 </a>
-                
-                <div class="nav-content">
-                    <ul class="nav-links">
-                        <li><a href="index.html" class="nav-link nav-link-active">Home</a></li>
-                        <li><a href="about.html" class="nav-link">About</a></li>
-                        <li><a href="research.html" class="nav-link">Research</a></li>
-                        <li><a href="volunteering.html" class="nav-link">Volunteering</a></li>
-                        <li><a href="cv.html" class="nav-link">CV</a></li>
-                        <li><a href="contact.html" class="nav-link">Contact</a></li>
-                    </ul>
-                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link nav-link-active">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="research.html" class="nav-link">Research</a></li>
+                    <li><a href="volunteering.html" class="nav-link">Volunteering</a></li>
+                    <li><a href="cv.html" class="nav-link">CV</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section with Contact & About -->
-    <section class="hero-section">
-        <div class="hero-container">
-            <!-- Left Column: Contact Info (Clean, no borders) -->
-            <div class="contact-column">
-                <h2>Contact Information</h2>
-                <ul class="contact-info-list">
-                    <li class="contact-info-item">
-                        <div class="contact-icon-wrapper">
-                            <i class="far fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <div class="contact-label">Email</div>
-                            <a href="mailto:khaddour.tala@gmail.com" class="contact-value contact-link">khaddour.tala@gmail.com</a>
-                        </div>
-                    </li>
-                    
-                    <li class="contact-info-item">
-                        <div class="contact-icon-wrapper">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <div class="contact-label">Location</div>
-                            <div class="contact-value">Latakia, Syria</div>
-                        </div>
-                    </li>
-                    
-                    <li class="contact-info-item">
-                        <div class="contact-icon-wrapper">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="contact-details">
-                            <div class="contact-label">Education</div>
-                            <div class="contact-value">B.Sc. Robotics & Intelligent Systems Engineering<br>Manara University</div>
-                        </div>
-                    </li>
-                    
-                    <li class="contact-info-item">
-                        <div class="contact-icon-wrapper">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <div class="contact-details">
-                            <div class="contact-label">Status</div>
-                            <div class="contact-value">Graduated with Honors (GPA: 3.28/4.0)</div>
-                        </div>
-                    </li>
-                </ul>
-                
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/tala-khaddour/" target="_blank" class="social-link">
-                        <i class="fab fa-linkedin"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/KHADDOUR-TALA" target="_blank" class="social-link">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub</span>
-                    </a>
-                    <a href="mailto:khaddour.tala@gmail.com" class="social-link">
-                        <i class="far fa-envelope"></i>
-                        <span>Email</span>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Right Column: Profile & About Me -->
-            <div class="profile-column">
-                <div class="profile-header">
-                    <h1 class="profile-name">Tala Khaddour</h1>
-                    <div class="profile-title">Robotics & Intelligent Systems Engineer</div>
-                    
-                    <div class="profile-image-container">
-                        <img src="imgs/profile.jpg" alt="Tala Khaddour" class="profile-image">
-                    </div>
-                </div>
-                
-                <div class="about-section">
-                    <h3>About Me</h3>
-                    <div class="about-content">
-                        <p>I am a robotics engineer specializing in intelligent systems and sustainable energy solutions. My work combines technical expertise with practical applications, focusing on creating innovative solutions for real-world challenges.</p>
-                        
-                        <p>My academic journey began with a deep interest in how machines can be designed to assist and enhance human capabilities. This led me to pursue studies in robotics engineering, where I developed skills in control systems, artificial intelligence, and mechanical design.</p>
-                        
-                        <p>I believe that technology should serve humanity in meaningful ways. Whether through rehabilitation robotics that help stroke patients regain mobility or sustainable energy systems that address environmental challenges, I'm committed to engineering solutions that make a positive impact.</p>
-                        
-                        <p>Currently, I'm expanding my knowledge through advanced research and practical projects, always seeking new challenges at the intersection of intelligent systems, robotics, and sustainable technology.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
-            <!-- Education Section -->
-            <section class="content-section">
-                <h2 class="section-title">Education</h2>
-                
-                <div class="education-item">
-                    <div class="education-period">2020 – 2025</div>
-                    <h3 class="education-title">Bachelor of Science in Robotics and Intelligent Systems Engineering</h3>
-                    <div class="education-institution">Manara University, Latakia, Syria</div>
-                    <div class="education-details">
-                        <p><strong>Final Grade:</strong> GPA: 3.28/4.0 (Graduated with Honors)</p>
-                        <p><strong>Thesis:</strong> Design and Nonlinear Control of Hand Exoskeleton | Score: 96/100</p>
-                        <p><strong>Focus Areas:</strong> Control Systems, Artificial Intelligence, Mechanical Design, Sustainable Energy</p>
-                    </div>
-                </div>
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Left Column: Profile Picture & Social Links -->
+            <div class="col-sm-4">
+                <div class="">
+                    <img class="rounded-circle" src="imgs/profile.jpg" alt="Portrait of Tala Khaddour">
+                    <div class="card-body">
+                        <h4 class="mb-0">Tala Khaddour</h4>
+                        <p class="mb-4">Robotics & Intelligent Systems Engineer</p>
 
-                <div class="education-item">
-                    <div class="education-period">2017 – 2020</div>
-                    <h3 class="education-title">High School Diploma – Scientific Stream</h3>
-                    <div class="education-institution">National Center for the Distinguished (NCD), Latakia, Syria</div>
-                    <div class="education-details">
-                        <p><strong>Final Grade:</strong> 92.3% (Rank: 3 out of 75 nationwide)</p>
-                        <p><strong>Focus Areas:</strong> Advanced Mathematics, Physics, Computer Science</p>
+                        <div class="">
+                            <ul class="social-icons pl-5 pl-md-0">
+                                <li class="pl-4 pl-md-5"><a href="mailto:khaddour.tala@gmail.com" target="_blank"><i class="mr-3 fa-fw fa-regular fa-envelope"></i> Email</a></li>
+                                <li class="pl-4 pl-md-5"><a href="https://www.linkedin.com/in/tala-khaddour/" target="_blank"><i class="mr-3 fab fa-fw fa-linkedin"></i> LinkedIn</a></li>
+                                <li class="pl-4 pl-md-5"><a href="https://github.com/KHADDOUR-TALA" target="_blank"><i class="mr-3 fab fa-fw fa-github"></i> Github</a></li>
+                                <li class="pl-4 pl-md-5"><a href="https://khaddour-tala.github.io/" target="_blank"><i class="mr-3 fa-fw fa-solid fa-globe"></i> Website</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <!-- Images Section -->
-            <section class="content-section images-section">
-                <h2 class="section-title">Academic & Professional Journey</h2>
-                <div class="images-grid">
-                    <div class="image-card">
-                        <img src="imgs/academic1.jpg" alt="University Studies" class="image-item">
+            <!-- Right Column: Main Content -->
+            <div class="col-sm-8">
+                <div class="content-area">
+                    <h4 class="font-weight-bold">About Me</h4>
+                    <p class="mb-4 text-justify">I am a robotics engineer specializing in intelligent systems and sustainable energy solutions. My work combines technical expertise with practical applications, focusing on creating innovative solutions for real-world challenges.</p>
+
+                    <h4 class="mt-4 font-weight-bold">Education</h4>
+                    
+                    <div class="education-item">
+                        <div class="education-period">[ 11/2020 – 08/2025 ]</div>
+                        <div class="education-title">Bachelor of Science in Robotics and Intelligent Systems Engineering</div>
+                        <div class="education-institution">
+                            <a href="https://www.manara.edu.sy/" target="_blank">Manara University</a> | Latakia, Syria
+                        </div>
+                        <div class="education-details">
+                            <p><strong>Final grade:</strong> GPA: 3.28/4</p>
+                            <p><strong>Thesis:</strong> Design and Nonlinear Control of Hand Exoskeleton | Score: 96 / 100 (Graduated with Honors)</p>
+                        </div>
                     </div>
-                    <div class="image-card">
-                        <img src="imgs/academic2.jpg" alt="Research Work" class="image-item">
+
+                    <div class="education-item">
+                        <div class="education-period">[ 10/2017 – 06/2020 ]</div>
+                        <div class="education-title">High School Diploma – Scientific Stream</div>
+                        <div class="education-institution">
+                            <a href="https://drive.google.com/file/d/1tnpYg5ZqQMAVZNXajz4BVBNBz7T6IWNA/view?usp=drive_link" target="_blank">National Center for the Distinguished (NCD)</a> | Latakia, Syria
+                            <a href="https://drive.google.com/file/d/1tnpYg5ZqQMAVZNXajz4BVBNBz7T6IWNA/view?usp=drive_link" target="_blank" class="school-profile-link">
+                                <i class="fas fa-external-link-alt"></i> School Profile
+                            </a>
+                        </div>
+                        <div class="education-details">
+                            <p><strong>Final grade:</strong> 92.3% (Rank: 3 out of 75 nationwide)</p>
+                        </div>
                     </div>
-                    <div class="image-card">
-                        <img src="imgs/academic3.jpg" alt="Technical Projects" class="image-item">
-                    </div>
-                    <div class="image-card">
-                        <img src="imgs/academic4.jpg" alt="Robotics Lab" class="image-item">
-                    </div>
+
+                    <h4 class="font-weight-bold">Academic Journey</h4>
+                    <p class="mb-4 text-justify">My path in engineering began with a focus on robotics and control systems. Through academic projects and hands-on experience, I developed expertise in adaptive control and system optimization.</p>
+
+                    <p class="mb-4 text-justify">I am now seeking to advance my knowledge through graduate studies, aiming to contribute to innovative research at the intersection of intelligent systems and sustainable technology.</p>
                 </div>
-            </section>
+            </div>
         </div>
-    </main>
+    </div>
 
     <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-inner">
-            <h3 class="footer-name">Tala Khaddour</h3>
+            <p class="footer-name">Tala Khaddour</p>
             <p class="footer-tagline">Robotics · Intelligent Systems · Sustainable Energy</p>
             <p class="footer-meta">
-                Academic portfolio showcasing expertise in robotics engineering and intelligent systems.
+                Academic portfolio showcasing expertise in robotics engineering, intelligent systems, and sustainable technology.
             </p>
         </div>
     </footer>
 
     <script>
-        // Set active nav link
+        // Set active nav link based on current page
+        const currentPage = window.location.pathname.split('/').pop();
         document.querySelectorAll('.nav-link').forEach(link => {
-            if (link.href === window.location.href) {
+            if (link.getAttribute('href') === currentPage) {
                 link.classList.add('nav-link-active');
             }
-        });
-
-        // Animation for elements
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Animate image cards
-        document.querySelectorAll('.image-card').forEach((card, index) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            card.style.transitionDelay = `${index * 0.1}s`;
-            observer.observe(card);
-        });
-
-        // Animate education items
-        document.querySelectorAll('.education-item').forEach((item, index) => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(20px)';
-            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            item.style.transitionDelay = `${index * 0.1 + 0.2}s`;
-            observer.observe(item);
-        });
-
-        // Add subtle hover effect to social links
-        document.querySelectorAll('.social-link').forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-3px)';
-            });
-            
-            link.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-            });
         });
     </script>
 </body>
