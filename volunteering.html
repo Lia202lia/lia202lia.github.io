@@ -190,14 +190,15 @@
             margin-bottom: 2rem;
         }
 
-        /* ========= VOLUNTEER SECTION ========= */
-        .volunteer-section {
-            padding: 2rem 0;
+        /* ========= VOLUNTEER TIMELINE ========= */
+        .timeline-section {
+            padding: 4rem 0;
+            background: var(--color-paper);
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         .section-title {
@@ -213,42 +214,126 @@
             margin: 0 auto;
         }
 
-        /* Volunteer Grid */
-        .volunteer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .volunteer-card {
-            background: var(--color-paper);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            border: 1px solid var(--color-border);
-            transition: var(--transition);
-            padding: 1.5rem;
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--color-border);
         }
 
-        .volunteer-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px var(--color-shadow);
-        }
-
-        .volunteer-header {
+        .timeline-item {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.5s ease;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .timeline-content {
+            background: var(--color-bg);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--color-border);
+            padding: 1.5rem;
+            width: 90%;
+            box-shadow: 0 3px 10px var(--color-shadow);
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--color-bg);
+            border-right: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            transform: rotate(-45deg);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--color-bg);
+            border-left: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            transform: rotate(45deg);
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--color-secondary);
+            border: 3px solid var(--color-bg);
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .timeline-img-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: var(--border-radius);
             margin-bottom: 1rem;
         }
 
-        .volunteer-title {
-            font-size: 1.3rem;
-            color: var(--color-primary);
-            margin-bottom: 0.5rem;
+        .timeline-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
         }
 
-        .volunteer-period {
+        .timeline-img:hover {
+            transform: scale(1.05);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            color: var(--color-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-period {
             background: rgba(18, 118, 134, 0.1);
             color: var(--color-secondary);
             padding: 0.25rem 0.75rem;
@@ -258,26 +343,26 @@
             white-space: nowrap;
         }
 
-        .volunteer-organization {
+        .timeline-organization {
             color: var(--color-text-light);
             font-size: 0.95rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
-        .volunteer-organization i {
+        .timeline-organization i {
             color: var(--color-accent);
         }
 
-        .volunteer-description {
+        .timeline-description {
             color: var(--color-text);
             line-height: 1.6;
             margin-bottom: 1rem;
         }
 
-        .volunteer-link {
+        .timeline-link {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
@@ -288,173 +373,77 @@
             font-size: 0.9rem;
             text-decoration: none;
             transition: var(--transition);
-            margin-top: 0.5rem;
         }
 
-        .volunteer-link:hover {
+        .timeline-link:hover {
             background: var(--color-accent);
             color: var(--color-white);
         }
 
-        /* Skills Section */
-        .skills-section {
-            padding: 3rem 0;
-            background: var(--color-paper);
-            margin-top: 3rem;
+        /* ========= GALLERY SECTION ========= */
+        .gallery-section {
+            padding: 4rem 0;
+            background: var(--color-bg);
         }
 
-        .skills-container {
+        .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
             margin-top: 2rem;
         }
 
-        .skills-category {
-            background: var(--color-bg);
+        .gallery-item {
             border-radius: var(--border-radius);
-            padding: 1.5rem;
-            border: 1px solid var(--color-border);
-        }
-
-        .skills-title {
-            font-size: 1.2rem;
-            color: var(--color-primary);
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--color-light);
-        }
-
-        .skills-list {
-            list-style: none;
-        }
-
-        .skill-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-            padding: 0.5rem;
-            border-radius: 4px;
-            transition: var(--transition);
-        }
-
-        .skill-item:hover {
-            background: rgba(18, 118, 134, 0.05);
-        }
-
-        .skill-icon {
-            color: var(--color-secondary);
-            font-size: 1rem;
-            width: 24px;
-            text-align: center;
-        }
-
-        .skill-name {
-            color: var(--color-text);
-        }
-
-        /* ========= GALLERY SLIDER ========= */
-        .gallery-section {
-            padding: 3rem 0;
-            background: var(--color-bg);
-            margin-top: 3rem;
-        }
-
-        .gallery-container {
-            position: relative;
-            max-width: 1000px;
-            margin: 2rem auto;
             overflow: hidden;
-            border-radius: var(--border-radius);
-            box-shadow: 0 5px 15px var(--color-shadow);
-        }
-
-        .gallery-slider {
-            display: flex;
-            transition: transform 0.5s ease;
-            height: 400px;
-        }
-
-        .gallery-slide {
-            min-width: 100%;
-            height: 100%;
             position: relative;
+            border: 1px solid var(--color-border);
+            height: 250px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px var(--color-shadow);
         }
 
         .gallery-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: var(--transition);
         }
 
-        .slide-content {
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(5, 71, 94, 0.8);
+            background: linear-gradient(transparent, rgba(5, 71, 94, 0.9));
             color: white;
             padding: 1.5rem;
+            transform: translateY(100%);
+            transition: var(--transition);
         }
 
-        .slide-title {
-            font-size: 1.1rem;
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-title {
+            font-size: 1rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
 
-        .slide-desc {
-            font-size: 0.9rem;
+        .gallery-desc {
+            font-size: 0.85rem;
             opacity: 0.9;
-        }
-
-        .gallery-controls {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .slider-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--color-secondary);
-            color: var(--color-white);
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .slider-btn:hover {
-            background: var(--color-accent);
-        }
-
-        .slider-dots {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .slider-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--color-border);
-            border: none;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .slider-dot.active {
-            background: var(--color-secondary);
-            transform: scale(1.2);
         }
 
         /* ========= UNIFIED FOOTER ========= */
@@ -519,26 +508,43 @@
                 font-size: 1rem;
             }
             
-            .volunteer-grid,
-            .skills-container {
-                grid-template-columns: 1fr;
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                justify-content: flex-start;
+                padding-left: 60px;
+                padding-right: 0;
+            }
+            
+            .timeline-marker {
+                left: 30px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::after,
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: -10px;
+                right: auto;
+                transform: rotate(45deg);
             }
             
             .section-title {
                 font-size: 1.8rem;
             }
             
-            .volunteer-header {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .timeline-header {
                 flex-direction: column;
                 gap: 0.5rem;
             }
             
-            .volunteer-period {
+            .timeline-period {
                 align-self: flex-start;
-            }
-            
-            .gallery-slider {
-                height: 300px;
             }
         }
     </style>
@@ -576,337 +582,284 @@
         </div>
     </section>
 
-    <!-- Volunteer Activities -->
-    <section class="volunteer-section">
+    <!-- Volunteer Timeline -->
+    <section class="timeline-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Volunteer Activities & Service</h2>
                 <p class="section-subtitle">
-                    Active involvement in robotics education, science olympiad support, and community service initiatives
+                    Timeline of active involvement in robotics education, science olympiad support, and community service initiatives
                 </p>
             </div>
 
-            <div class="volunteer-grid">
+            <div class="timeline">
                 <!-- World Robot Olympiad -->
-                <article class="volunteer-card">
-                    <div class="volunteer-header">
-                        <div>
-                            <h3 class="volunteer-title">World Robot Olympiad (WRO) - Future Engineers Category Trainer</h3>
-                            <div class="volunteer-organization">
-                                <i class="fas fa-robot"></i>
-                                <span>World Robot Olympiad Syria - Official</span>
-                            </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-img-container">
+                            <img src="https://lia202lia.github.io/imgs/1.jpg" alt="World Robot Olympiad" class="timeline-img">
                         </div>
-                        <span class="volunteer-period">2023</span>
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">World Robot Olympiad (WRO) - Future Engineers Category Trainer</h3>
+                                <div class="timeline-organization">
+                                    <i class="fas fa-robot"></i>
+                                    <span>World Robot Olympiad Syria - Official</span>
+                                </div>
+                            </div>
+                            <span class="timeline-period">2023</span>
+                        </div>
+                        <p class="timeline-description">
+                            Trained and mentored a 3-member team to design and implement an autonomous robot for map-based navigation challenges. Guided students through robot design, programming, and competition strategy for national-level robotics competitions.
+                        </p>
+                        <p class="timeline-description">
+                            Focused on developing problem-solving skills and technical expertise in robotics and automation, preparing students for complex engineering challenges in competitive environments.
+                        </p>
+                        <a href="https://www.facebook.com/WRO.Syria.DCA/?locale=ar_AR" target="_blank" class="timeline-link">
+                            <i class="fab fa-facebook"></i> Visit Organization
+                        </a>
                     </div>
-                    <p class="volunteer-description">
-                        Trained and mentored a 3-member team to design and implement an autonomous robot for map-based navigation challenges. Guided students through robot design, programming, and competition strategy for national-level robotics competitions.
-                    </p>
-                    <p class="volunteer-description">
-                        Focused on developing problem-solving skills and technical expertise in robotics and automation, preparing students for complex engineering challenges in competitive environments.
-                    </p>
-                    <a href="https://www.facebook.com/WRO.Syria.DCA/?locale=ar_AR" target="_blank" class="volunteer-link">
-                        <i class="fab fa-facebook"></i> Visit Organization
-                    </a>
-                </article>
+                </div>
 
                 <!-- Syrian Science Olympiad -->
-                <article class="volunteer-card">
-                    <div class="volunteer-header">
-                        <div>
-                            <h3 class="volunteer-title">Syrian Science Olympiad - Academic Support (Junior Category)</h3>
-                            <div class="volunteer-organization">
-                                <i class="fas fa-graduation-cap"></i>
-                                <span>Distinction and Creativity Agency (DCA)</span>
-                            </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-img-container">
+                            <img src="https://lia202lia.github.io/imgs/2.jpg" alt="Syrian Science Olympiad" class="timeline-img">
                         </div>
-                        <span class="volunteer-period">2018 – 2024</span>
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">Syrian Science Olympiad - Academic Support (Junior Category)</h3>
+                                <div class="timeline-organization">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span>Distinction and Creativity Agency (DCA)</span>
+                                </div>
+                            </div>
+                            <span class="timeline-period">2018 – 2024</span>
+                        </div>
+                        <p class="timeline-description">
+                            Tutored mathematics for junior-level Olympiad preparation and assisted with exam logistics and event organization. Provided academic support to talented students preparing for national science competitions.
+                        </p>
+                        <p class="timeline-description">
+                            Contributed to organizing and administering competitions, helping to identify and nurture young scientific talent through structured academic programs and mentorship.
+                        </p>
+                        <a href="https://dca-net.org/" target="_blank" class="timeline-link">
+                            <i class="fas fa-external-link-alt"></i> Visit DCA Website
+                        </a>
                     </div>
-                    <p class="volunteer-description">
-                        Tutored mathematics for junior-level Olympiad preparation and assisted with exam logistics and event organization. Provided academic support to talented students preparing for national science competitions.
-                    </p>
-                    <p class="volunteer-description">
-                        Contributed to organizing and administering competitions, helping to identify and nurture young scientific talent through structured academic programs and mentorship.
-                    </p>
-                    <a href="https://dca-net.org/" target="_blank" class="volunteer-link">
-                        <i class="fas fa-external-link-alt"></i> Visit DCA Website
-                    </a>
-                </article>
+                </div>
 
                 <!-- DCA Event Volunteer -->
-                <article class="volunteer-card">
-                    <div class="volunteer-header">
-                        <div>
-                            <h3 class="volunteer-title">Distinction and Creativity Agency (DCA) - Event-Based Volunteer</h3>
-                            <div class="volunteer-organization">
-                                <i class="fas fa-calendar-alt"></i>
-                                <span>Distinction and Creativity Agency</span>
-                            </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-img-container">
+                            <img src="https://lia202lia.github.io/imgs/3.png" alt="DCA Events" class="timeline-img">
                         </div>
-                        <span class="volunteer-period">Ongoing</span>
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">Distinction and Creativity Agency (DCA) - Event-Based Volunteer</h3>
+                                <div class="timeline-organization">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Distinction and Creativity Agency</span>
+                                </div>
+                            </div>
+                            <span class="timeline-period">Ongoing</span>
+                        </div>
+                        <p class="timeline-description">
+                            Assisted in organizing academic events, admission tests, and competition-related activities on an event basis. Supported logistics and coordination for various educational initiatives and talent development programs.
+                        </p>
+                        <p class="timeline-description">
+                            Played key roles in event management, participant coordination, and ensuring smooth execution of academic competitions and talent identification programs.
+                        </p>
+                        <a href="https://dca-net.org/" target="_blank" class="timeline-link">
+                            <i class="fas fa-external-link-alt"></i> Learn More
+                        </a>
                     </div>
-                    <p class="volunteer-description">
-                        Assisted in organizing academic events, admission tests, and competition-related activities on an event basis. Supported logistics and coordination for various educational initiatives and talent development programs.
-                    </p>
-                    <p class="volunteer-description">
-                        Played key roles in event management, participant coordination, and ensuring smooth execution of academic competitions and talent identification programs.
-                    </p>
-                    <a href="https://dca-net.org/" target="_blank" class="volunteer-link">
-                        <i class="fas fa-external-link-alt"></i> Learn More
-                    </a>
-                </article>
+                </div>
 
                 <!-- Saiyar Jableh Team -->
-                <article class="volunteer-card">
-                    <div class="volunteer-header">
-                        <div>
-                            <h3 class="volunteer-title">Saiyar Jableh Team - Volunteer</h3>
-                            <div class="volunteer-organization">
-                                <i class="fas fa-hands-helping"></i>
-                                <span>سيار فريق جبلة - Saiyar Jableh Team</span>
-                            </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-img-container">
+                            <img src="https://lia202lia.github.io/imgs/4.png" alt="Saiyar Jableh Team" class="timeline-img">
                         </div>
-                        <span class="volunteer-period">Ongoing</span>
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">Saiyar Jableh Team - Volunteer</h3>
+                                <div class="timeline-organization">
+                                    <i class="fas fa-hands-helping"></i>
+                                    <span>سيار فريق جبلة - Saiyar Jableh Team</span>
+                                </div>
+                            </div>
+                            <span class="timeline-period">Ongoing</span>
+                        </div>
+                        <p class="timeline-description">
+                            Volunteered with a team working with vulnerable children aged 3-16 who face risks including begging, forced labor, and school dropout. Provided support and educational activities for at-risk youth in the community.
+                        </p>
+                        <p class="timeline-description">
+                            Contributed to creating safe spaces and educational opportunities for children in challenging circumstances, focusing on empowerment and skill development.
+                        </p>
+                        <a href="https://www.facebook.com/saiyar.project.jableh/?locale=ar_AR" target="_blank" class="timeline-link">
+                            <i class="fab fa-facebook"></i> Visit Team Page
+                        </a>
                     </div>
-                    <p class="volunteer-description">
-                        Volunteered with a team working with vulnerable children aged 3-16 who face risks including begging, forced labor, and school dropout. Provided support and educational activities for at-risk youth in the community.
-                    </p>
-                    <p class="volunteer-description">
-                        Contributed to creating safe spaces and educational opportunities for children in challenging circumstances, focusing on empowerment and skill development.
-                    </p>
-                    <a href="https://www.facebook.com/saiyar.project.jableh/?locale=ar_AR" target="_blank" class="volunteer-link">
-                        <i class="fab fa-facebook"></i> Visit Team Page
-                    </a>
-                </article>
+                </div>
 
                 <!-- Kon Balsama Charity -->
-                <article class="volunteer-card">
-                    <div class="volunteer-header">
-                        <div>
-                            <h3 class="volunteer-title">Kon Balsama Charity - Community Volunteer</h3>
-                            <div class="volunteer-organization">
-                                <i class="fas fa-heart"></i>
-                                <span>كن بلسما الخيرية - Kon Balsama Charity</span>
-                            </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-img-container">
+                            <img src="https://lia202lia.github.io/imgs/5.jpg" alt="Kon Balsama Charity" class="timeline-img">
                         </div>
-                        <span class="volunteer-period">Ongoing</span>
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">Kon Balsama Charity - Community Volunteer</h3>
+                                <div class="timeline-organization">
+                                    <i class="fas fa-heart"></i>
+                                    <span>كن بلسما الخيرية - Kon Balsama Charity</span>
+                                </div>
+                            </div>
+                            <span class="timeline-period">Ongoing</span>
+                        </div>
+                        <p class="timeline-description">
+                            Participated in charitable activities and community support initiatives through this public volunteer group. Engaged in various humanitarian projects aimed at supporting vulnerable communities.
+                        </p>
+                        <p class="timeline-description">
+                            Contributed to organized charity work, resource distribution, and community development programs focused on providing essential support to those in need.
+                        </p>
+                        <a href="https://www.facebook.com/groups/265173162738052/" target="_blank" class="timeline-link">
+                            <i class="fab fa-facebook"></i> Visit Group
+                        </a>
                     </div>
-                    <p class="volunteer-description">
-                        Participated in charitable activities and community support initiatives through this public volunteer group. Engaged in various humanitarian projects aimed at supporting vulnerable communities.
-                    </p>
-                    <p class="volunteer-description">
-                        Contributed to organized charity work, resource distribution, and community development programs focused on providing essential support to those in need.
-                    </p>
-                    <a href="https://www.facebook.com/groups/265173162738052/" target="_blank" class="volunteer-link">
-                        <i class="fab fa-facebook"></i> Visit Group
-                    </a>
-                </article>
+                </div>
 
                 <!-- Acquaint Organization -->
-                <article class="volunteer-card">
-                    <div class="volunteer-header">
-                        <div>
-                            <h3 class="volunteer-title">Acquaint - Global Connections Volunteer</h3>
-                            <div class="volunteer-organization">
-                                <i class="fas fa-globe"></i>
-                                <span>Acquaint - Meaningful Conversations Start Here</span>
-                            </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-img-container">
+                            <img src="https://lia202lia.github.io/imgs/6.jpg" alt="Acquaint Organization" class="timeline-img">
                         </div>
-                        <span class="volunteer-period">Ongoing</span>
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">Acquaint - Global Connections Volunteer</h3>
+                                <div class="timeline-organization">
+                                    <i class="fas fa-globe"></i>
+                                    <span>Acquaint - Meaningful Conversations Start Here</span>
+                                </div>
+                            </div>
+                            <span class="timeline-period">Ongoing</span>
+                        </div>
+                        <p class="timeline-description">
+                            Volunteered to connect with people from over 100 countries through empathy-based conversations, building stronger global communities. Facilitated cross-cultural understanding and meaningful dialogue.
+                        </p>
+                        <p class="timeline-description">
+                            Practiced human connection and cultural exchange, contributing to building bridges between diverse communities through structured conversation and active listening.
+                        </p>
+                        <a href="https://www.acquaint.org/" target="_blank" class="timeline-link">
+                            <i class="fas fa-external-link-alt"></i> Visit Website
+                        </a>
                     </div>
-                    <p class="volunteer-description">
-                        Volunteered to connect with people from over 100 countries through empathy-based conversations, building stronger global communities. Facilitated cross-cultural understanding and meaningful dialogue.
-                    </p>
-                    <p class="volunteer-description">
-                        Practiced human connection and cultural exchange, contributing to building bridges between diverse communities through structured conversation and active listening.
-                    </p>
-                    <a href="https://www.acquaint.org/" target="_blank" class="volunteer-link">
-                        <i class="fas fa-external-link-alt"></i> Visit Website
-                    </a>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Skills & Expertise</h2>
-                <p class="section-subtitle">
-                    Skills developed through volunteer work and academic service
-                </p>
-            </div>
-
-            <div class="skills-container">
-                <!-- Language Skills -->
-                <div class="skills-category">
-                    <h3 class="skills-title">Language Skills</h3>
-                    <ul class="skills-list">
-                        <li class="skill-item">
-                            <span class="skill-icon"><i class="fas fa-language"></i></span>
-                            <span class="skill-name">Arabic - Native</span>
-                        </li>
-                        <li class="skill-item">
-                            <span class="skill-icon"><i class="fas fa-language"></i></span>
-                            <span class="skill-name">English - Professional Proficiency</span>
-                        </li>
-                        <li class="skill-item">
-                            <span class="skill-icon"><i class="fas fa-language"></i></span>
-                            <span class="skill-name">French - Intermediate</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Technical Skills -->
-                <div class="skills-category">
-                    <h3 class="skills-title">Volunteer & Leadership Skills</h3>
-                    <ul class="skills-list">
-                        <li class="skill-item">
-                            <span class="skill-icon"><i class="fas fa-users"></i></span>
-                            <span class="skill-name">Mentoring & Training</span>
-                        </li>
-                        <li class="skill-item">
-                            <span class="skill-icon"><i class="fas fa-calendar-check"></i></span>
-                            <span class="skill-name">Event Organization</span>
-                        </li>
-                        <li class="skill-item">
-                            <span class="skill-icon"><i class="fas fa-comments"></i></span>
-                            <span class="skill-name">Cross-cultural Communication</span>
-                        </li>
-                        <li class="skill-item">
-                            <span class="skill-icon"><i class="fas fa-hands-helping"></i></span>
-                            <span class="skill-name">Community Service</span>
-                        </li>
-                        <li class="skill-item">
-                            <span class="skill-icon"><i class="fas fa-chalkboard-teacher"></i></span>
-                            <span class="skill-name">Academic Tutoring</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Participation & Awards -->
-                <div class="skills-category">
-                    <h3 class="skills-title">Participation & Awards</h3>
-                    <ul class="skills-list">
-                        <li class="skill-item">
-                            <span class="skill-icon"><i class="fas fa-robot"></i></span>
-                            <span class="skill-name">WRO Trainer Certification</span>
-                        </li>
-                        <li class="skill-item">
-                            <span class="skill-icon"><i class="fas fa-award"></i></span>
-                            <span class="skill-name">DCA Volunteer Recognition</span>
-                        </li>
-                        <li class="skill-item">
-                            <span class="skill-icon"><i class="fas fa-certificate"></i></span>
-                            <span class="skill-name">Community Service Awards</span>
-                        </li>
-                        <li class="skill-item">
-                            <span class="skill-icon"><i class="fas fa-users"></i></span>
-                            <span class="skill-name">Global Volunteer Network</span>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Slider Section -->
+    <!-- Gallery Section -->
     <section class="gallery-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Volunteer Gallery</h2>
                 <p class="section-subtitle">
-                    Highlights from volunteer activities and community service initiatives
+                    9 visual highlights from volunteer activities and community service initiatives
                 </p>
             </div>
 
-            <div class="gallery-container">
-                <div class="gallery-slider" id="gallerySlider">
-                    <!-- Slide 1 -->
-                    <div class="gallery-slide">
-                        <img src="https://lia202lia.github.io/imgs/1.jpg" alt="Robotics Training Session" class="gallery-img">
-                        <div class="slide-content">
-                            <h4 class="slide-title">Robotics Training Session</h4>
-                            <p class="slide-desc">Mentoring students for World Robot Olympiad competition</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 2 -->
-                    <div class="gallery-slide">
-                        <img src="https://lia202lia.github.io/imgs/2.jpg" alt="Science Olympiad Preparation" class="gallery-img">
-                        <div class="slide-content">
-                            <h4 class="slide-title">Science Olympiad Preparation</h4>
-                            <p class="slide-desc">Mathematics tutoring for junior Olympiad participants</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 3 -->
-                    <div class="gallery-slide">
-                        <img src="https://lia202lia.github.io/imgs/3.png" alt="Community Service Event" class="gallery-img">
-                        <div class="slide-content">
-                            <h4 class="slide-title">Community Service Event</h4>
-                            <p class="slide-desc">Organizing educational activities with local organizations</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 4 -->
-                    <div class="gallery-slide">
-                        <img src="https://lia202lia.github.io/imgs/4.png" alt="Youth Empowerment Workshop" class="gallery-img">
-                        <div class="slide-content">
-                            <h4 class="slide-title">Youth Empowerment Workshop</h4>
-                            <p class="slide-desc">Working with vulnerable children through Saiyar Jableh Team</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 5 -->
-                    <div class="gallery-slide">
-                        <img src="https://lia202lia.github.io/imgs/5.jpg" alt="Charity Activities" class="gallery-img">
-                        <div class="slide-content">
-                            <h4 class="slide-title">Charity Activities</h4>
-                            <p class="slide-desc">Participating in Kon Balsama Charity initiatives</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 6 -->
-                    <div class="gallery-slide">
-                        <img src="https://lia202lia.github.io/imgs/6.jpg" alt="Global Connections" class="gallery-img">
-                        <div class="slide-content">
-                            <h4 class="slide-title">Global Connections</h4>
-                            <p class="slide-desc">Cross-cultural conversations through Acquaint platform</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 7 -->
-                    <div class="gallery-slide">
-                        <img src="https://lia202lia.github.io/imgs/7.png" alt="Event Organization" class="gallery-img">
-                        <div class="slide-content">
-                            <h4 class="slide-title">Event Organization</h4>
-                            <p class="slide-desc">Supporting DCA academic events and competitions</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 8 -->
-                    <div class="gallery-slide">
-                        <img src="https://lia202lia.github.io/imgs/8.png" alt="Volunteer Recognition" class="gallery-img">
-                        <div class="slide-content">
-                            <h4 class="slide-title">Volunteer Recognition</h4>
-                            <p class="slide-desc">Contributions to education and community development</p>
-                        </div>
+            <div class="gallery-grid">
+                <!-- Gallery 1 -->
+                <div class="gallery-item">
+                    <img src="https://lia202lia.github.io/imgs/1.jpg" alt="Robotics Training Session" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Robotics Training</h4>
+                        <p class="gallery-desc">Mentoring students for WRO competition</p>
                     </div>
                 </div>
-                
-                <div class="gallery-controls">
-                    <button class="slider-btn" id="prevBtn">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="slider-btn" id="nextBtn">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
+
+                <!-- Gallery 2 -->
+                <div class="gallery-item">
+                    <img src="https://lia202lia.github.io/imgs/2.jpg" alt="Science Olympiad" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Science Olympiad</h4>
+                        <p class="gallery-desc">Mathematics tutoring sessions</p>
+                    </div>
                 </div>
-                
-                <div class="slider-dots" id="sliderDots">
-                    <!-- Dots will be generated by JavaScript -->
+
+                <!-- Gallery 3 -->
+                <div class="gallery-item">
+                    <img src="https://lia202lia.github.io/imgs/3.png" alt="Community Events" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Community Events</h4>
+                        <p class="gallery-desc">Organizing academic activities</p>
+                    </div>
+                </div>
+
+                <!-- Gallery 4 -->
+                <div class="gallery-item">
+                    <img src="https://lia202lia.github.io/imgs/4.png" alt="Youth Support" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Youth Support</h4>
+                        <p class="gallery-desc">Working with vulnerable children</p>
+                    </div>
+                </div>
+
+                <!-- Gallery 5 -->
+                <div class="gallery-item">
+                    <img src="https://lia202lia.github.io/imgs/5.jpg" alt="Charity Work" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Charity Work</h4>
+                        <p class="gallery-desc">Community service initiatives</p>
+                    </div>
+                </div>
+
+                <!-- Gallery 6 -->
+                <div class="gallery-item">
+                    <img src="https://lia202lia.github.io/imgs/6.jpg" alt="Global Connections" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Global Connections</h4>
+                        <p class="gallery-desc">Cross-cultural conversations</p>
+                    </div>
+                </div>
+
+                <!-- Gallery 7 -->
+                <div class="gallery-item">
+                    <img src="https://lia202lia.github.io/imgs/7.png" alt="Event Organization" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Event Organization</h4>
+                        <p class="gallery-desc">Academic competition support</p>
+                    </div>
+                </div>
+
+                <!-- Gallery 8 -->
+                <div class="gallery-item">
+                    <img src="https://lia202lia.github.io/imgs/8.png" alt="Volunteer Recognition" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Volunteer Recognition</h4>
+                        <p class="gallery-desc">Contributions to education</p>
+                    </div>
+                </div>
+
+                <!-- Gallery 9 -->
+                <div class="gallery-item">
+                    <img src="https://lia202lia.github.io/imgs/9.jpg" alt="Team Collaboration" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Team Collaboration</h4>
+                        <p class="gallery-desc">Working with volunteer teams</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -934,60 +887,23 @@
             }
         });
 
-        // Gallery Slider Functionality
-        const slider = document.getElementById('gallerySlider');
-        const slides = document.querySelectorAll('.gallery-slide');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const dotsContainer = document.getElementById('sliderDots');
+        // Timeline animation on scroll
+        const timelineItems = document.querySelectorAll('.timeline-item');
         
-        let currentSlide = 0;
-        const totalSlides = slides.length;
-        
-        // Create dots
-        slides.forEach((_, index) => {
-            const dot = document.createElement('button');
-            dot.classList.add('slider-dot');
-            if (index === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => goToSlide(index));
-            dotsContainer.appendChild(dot);
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
         });
         
-        const dots = document.querySelectorAll('.slider-dot');
-        
-        function updateSlider() {
-            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-            
-            // Update dots
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentSlide);
-            });
-        }
-        
-        function goToSlide(slideIndex) {
-            currentSlide = slideIndex;
-            updateSlider();
-        }
-        
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateSlider();
-        }
-        
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateSlider();
-        }
-        
-        // Event listeners
-        nextBtn.addEventListener('click', nextSlide);
-        prevBtn.addEventListener('click', prevSlide);
-        
-        // Auto slide every 5 seconds
-        setInterval(nextSlide, 5000);
-        
-        // Initialize slider
-        updateSlider();
+        timelineItems.forEach(item => {
+            observer.observe(item);
+        });
     </script>
 </body>
 </html>
