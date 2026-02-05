@@ -33,7 +33,7 @@
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             --font-heading: 'Source Sans Pro', sans-serif;
             --max-width: 1400px;
-            --border-radius: 8px;
+            --border-radius: 12px;
             --transition: all 0.3s ease;
         }
 
@@ -160,13 +160,14 @@
         /* ========= HERO SECTION ========= */
         .hero-section {
             position: relative;
-            padding: 4rem 0;
-            background: linear-gradient(rgba(5, 71, 94, 0.9), rgba(18, 118, 134, 0.9)),
+            padding: 5rem 0;
+            background: linear-gradient(135deg, rgba(5, 71, 94, 0.9) 0%, rgba(18, 118, 134, 0.9) 50%, rgba(51, 155, 167, 0.8) 100%),
                         url('https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             color: white;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
         }
 
         .hero-content {
@@ -178,139 +179,148 @@
         }
 
         .hero-title {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--color-white);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             line-height: 1.1;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
         .hero-subtitle {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             color: var(--color-light);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* ========= PARTICIPATIONS SECTION ========= */
+        /* ========= PARTICIPATIONS SECTION - SIMPLE LIST ========= */
         .participations-section {
-            padding: 2rem 0;
+            padding: 3rem 0;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         .section-title {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             color: var(--color-primary);
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--color-secondary), var(--color-accent));
+            border-radius: 2px;
         }
 
         .section-subtitle {
             color: var(--color-text-light);
-            font-size: 1.05rem;
-            max-width: 700px;
+            font-size: 1.2rem;
+            max-width: 800px;
             margin: 0 auto;
+            line-height: 1.6;
         }
 
-        /* Timeline Layout */
-        .timeline-container {
+        /* Simple Participation Cards */
+        .participation-container {
             max-width: 1000px;
             margin: 0 auto;
-            position: relative;
-        }
-
-        .timeline-container::before {
-            content: '';
-            position: absolute;
-            left: 20px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--color-border);
-        }
-
-        .timeline-item {
             display: flex;
-            margin-bottom: 2.5rem;
-            position: relative;
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
-        .timeline-year {
+        .participation-card {
+            background: var(--color-paper);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--color-border);
+            padding: 1.5rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px var(--color-shadow);
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .participation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px var(--color-shadow);
+            border-color: var(--color-secondary);
+        }
+
+        .participation-year {
             flex: 0 0 80px;
-            text-align: right;
-            padding-right: 1.5rem;
-            position: relative;
+            text-align: center;
         }
 
-        .year-box {
+        .year-badge {
             background: var(--color-secondary);
             color: var(--color-white);
-            padding: 0.4rem 0.8rem;
-            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 600;
             display: inline-block;
+            box-shadow: 0 4px 12px rgba(18, 118, 134, 0.3);
         }
 
-        .timeline-content {
+        .participation-content {
             flex: 1;
-            padding-left: 2rem;
-            position: relative;
         }
 
-        .timeline-content::before {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 8px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--color-secondary);
-            border: 3px solid var(--color-white);
-            box-shadow: 0 0 0 2px var(--color-secondary);
-        }
-
-        .timeline-title {
-            font-size: 1.1rem;
+        .participation-title {
+            font-size: 1.2rem;
             color: var(--color-primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             font-weight: 600;
+            line-height: 1.4;
         }
 
-        .timeline-description {
+        .participation-description {
             color: var(--color-text);
-            font-size: 0.95rem;
+            font-size: 1rem;
             line-height: 1.6;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0;
         }
 
-        /* ========= COURSERA COURSES SLIDER ========= */
+        /* ========= ENHANCED COURSERA COURSES SLIDER ========= */
         .courses-section {
-            padding: 3rem 0;
-            background: var(--color-paper);
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--color-paper) 0%, #f0f7fa 100%);
             margin-top: 2rem;
+            border-radius: var(--border-radius);
         }
 
         .courses-container {
             position: relative;
-            max-width: 1000px;
-            margin: 1.5rem auto 0;
+            max-width: 1200px;
+            margin: 2rem auto 0;
             overflow: hidden;
             border-radius: var(--border-radius);
         }
 
         .courses-slider {
             display: flex;
-            transition: transform 0.5s ease;
-            gap: 1.5rem;
-            padding: 0 1.5rem;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            gap: 2rem;
+            padding: 1rem 2rem;
         }
 
         .course-slide {
-            flex: 0 0 calc(33.333% - 1rem);
-            height: 200px;
+            flex: 0 0 calc(33.333% - 1.33rem);
+            height: 280px;
             position: relative;
             border-radius: var(--border-radius);
             overflow: hidden;
@@ -318,17 +328,23 @@
             transition: var(--transition);
             cursor: pointer;
             background: var(--color-white);
+            box-shadow: 0 6px 20px var(--color-shadow);
         }
 
         .course-slide:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px var(--color-shadow);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(5, 71, 94, 0.15);
         }
 
         .course-img {
             width: 100%;
-            height: 70%;
+            height: 65%;
             object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .course-slide:hover .course-img {
+            transform: scale(1.1);
         }
 
         .course-overlay {
@@ -338,82 +354,113 @@
             right: 0;
             background: var(--color-white);
             color: var(--color-text);
-            padding: 1rem;
-            height: 30%;
+            padding: 1.5rem;
+            height: 35%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .course-title {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 0.2rem;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
             color: var(--color-primary);
+            line-height: 1.3;
         }
 
         .course-platform {
-            font-size: 0.75rem;
-            color: var(--color-text-light);
+            font-size: 0.85rem;
+            color: var(--color-secondary);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .course-platform::before {
+            content: '🎓';
+            font-size: 1rem;
         }
 
         .courses-controls {
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            margin-top: 1.5rem;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
             align-items: center;
         }
 
         .course-btn {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             background: var(--color-secondary);
             color: var(--color-white);
             border: none;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 1.2rem;
             transition: var(--transition);
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 4px 15px rgba(18, 118, 134, 0.3);
         }
 
         .course-btn:hover {
             background: var(--color-accent);
-            transform: scale(1.05);
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(51, 155, 167, 0.4);
         }
 
         .course-dots {
             display: flex;
-            gap: 0.5rem;
-            margin: 0 1rem;
+            gap: 0.8rem;
+            margin: 0 2rem;
         }
 
         .course-dot {
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
             background: var(--color-border);
             border: none;
             cursor: pointer;
             transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-dot::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: var(--color-secondary);
+            transition: width 0.3s ease;
         }
 
         .course-dot.active {
-            background: var(--color-secondary);
-            transform: scale(1.2);
+            transform: scale(1.3);
         }
 
-        /* ========= HOBBIES SECTION ========= */
+        .course-dot.active::after {
+            width: 100%;
+        }
+
+        /* ========= ENHANCED HOBBIES SECTION ========= */
         .hobbies-section {
-            padding: 3rem 0;
+            padding: 4rem 0;
             background: var(--color-bg);
         }
 
         .hobbies-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
         }
 
         .hobby-card {
@@ -422,83 +469,131 @@
             border: 1px solid var(--color-border);
             overflow: hidden;
             transition: var(--transition);
+            position: relative;
+            box-shadow: 0 6px 20px var(--color-shadow);
         }
 
         .hobby-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px var(--color-shadow);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(5, 71, 94, 0.15);
         }
 
         .hobby-header {
-            padding: 1.5rem;
-            background: var(--color-primary);
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
             color: var(--color-white);
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .hobby-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+        .hobby-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .hobby-card:hover .hobby-header::before {
+            transform: translateX(100%);
         }
 
         .hobby-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-light);
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .hobby-card:hover .hobby-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .hobby-title {
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
-            color: var(--color-light);
+            font-weight: 700;
+        }
+
+        .hobby-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .hobby-description {
+            padding: 1.5rem;
+            color: var(--color-text);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: center;
+            background: var(--color-white);
         }
 
         .hobby-gallery {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.5rem;
-            padding: 1rem;
+            gap: 0.8rem;
+            padding: 1.5rem;
+            background: var(--color-white);
         }
 
         .hobby-img {
             width: 100%;
-            height: 120px;
+            height: 150px;
             object-fit: cover;
-            border-radius: 4px;
+            border-radius: 8px;
             transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         .hobby-img:hover {
             transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
         }
 
         /* Nature Photography - 4 images */
         .nature-gallery {
             grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
         }
 
         .nature-gallery .hobby-img:nth-child(1) {
             grid-column: 1 / span 2;
-            height: 150px;
+            height: 180px;
         }
 
-        /* Handmade - 3 images */
+        /* Handmade from Recycling Products - 3 images */
         .handmade-gallery {
             grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
         }
 
         .handmade-gallery .hobby-img:nth-child(3) {
             grid-column: 1 / span 2;
+            height: 180px;
         }
 
-        /* Piano - 2 images */
+        /* Piano and Music Playing - 2 images */
         .piano-gallery {
             grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, 1fr);
         }
 
         .piano-gallery .hobby-img {
-            height: 150px;
+            height: 180px;
         }
 
         /* ========= UNIFIED FOOTER ========= */
         .site-footer {
             background: var(--color-primary);
             color: var(--color-white);
-            padding: 2rem 0 1.5rem;
+            padding: 3rem 0 2rem;
             margin-top: auto;
             border-top: 3px solid var(--color-blue);
         }
@@ -512,7 +607,7 @@
 
         .footer-name {
             font-family: var(--font-heading);
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             color: var(--color-white);
             margin-bottom: 0.5rem;
             font-weight: 700;
@@ -520,18 +615,18 @@
 
         .footer-tagline {
             color: var(--color-light);
-            margin-bottom: 1.25rem;
-            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
         }
 
         .footer-meta {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.8);
             max-width: 700px;
             margin: 0 auto;
             line-height: 1.6;
             border-top: 1px solid rgba(255, 255, 255, 0.2);
-            padding-top: 1.25rem;
+            padding-top: 1.5rem;
         }
 
         /* ========= RESPONSIVE ========= */
@@ -541,7 +636,12 @@
             }
             
             .course-slide {
-                flex: 0 0 calc(50% - 0.75rem);
+                flex: 0 0 calc(50% - 1rem);
+                height: 260px;
+            }
+            
+            .hobbies-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             }
         }
 
@@ -559,41 +659,48 @@
             }
             
             .hero-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .hero-subtitle {
-                font-size: 0.95rem;
+                font-size: 1.1rem;
             }
             
-            .timeline-container::before {
-                left: 15px;
+            .section-title {
+                font-size: 2rem;
             }
             
-            .timeline-year {
-                flex: 0 0 70px;
-                padding-right: 1rem;
-            }
-            
-            .timeline-content {
-                padding-left: 1.5rem;
+            .section-subtitle {
+                font-size: 1rem;
             }
             
             .course-slide {
                 flex: 0 0 calc(100% - 1rem);
-                height: 180px;
+                height: 240px;
             }
             
             .hobbies-grid {
                 grid-template-columns: 1fr;
             }
             
-            .section-title {
-                font-size: 1.8rem;
+            .hobby-img {
+                height: 130px;
             }
             
-            .hobby-gallery {
-                grid-template-columns: repeat(2, 1fr);
+            .nature-gallery .hobby-img:nth-child(1),
+            .handmade-gallery .hobby-img:nth-child(3),
+            .piano-gallery .hobby-img {
+                height: 160px;
+            }
+            
+            .participation-card {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .participation-year {
+                flex: 0 0 auto;
+                text-align: left;
             }
         }
 
@@ -602,36 +709,51 @@
                 padding: 0 1rem;
             }
             
-            .timeline-item {
-                flex-direction: column;
+            .hero-section {
+                padding: 3rem 0;
             }
             
-            .timeline-year {
-                text-align: left;
-                padding-right: 0;
-                margin-bottom: 0.5rem;
+            .hero-title {
+                font-size: 1.8rem;
             }
             
-            .timeline-content {
-                padding-left: 1rem;
+            .hero-subtitle {
+                font-size: 1rem;
             }
             
-            .timeline-content::before {
-                left: -8px;
+            .section-title {
+                font-size: 1.6rem;
             }
             
-            .hobby-img {
-                height: 100px;
+            .participation-card {
+                padding: 1.25rem;
             }
             
-            .nature-gallery .hobby-img:nth-child(1),
-            .piano-gallery .hobby-img {
-                height: 120px;
+            .participation-title {
+                font-size: 1.1rem;
+            }
+            
+            .hobby-header {
+                padding: 1.5rem;
+            }
+            
+            .hobby-title {
+                font-size: 1.3rem;
             }
             
             .course-btn {
-                width: 35px;
-                height: 35px;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .hobby-img {
+                height: 110px;
+            }
+            
+            .nature-gallery .hobby-img:nth-child(1),
+            .handmade-gallery .hobby-img:nth-child(3),
+            .piano-gallery .hobby-img {
+                height: 140px;
             }
         }
     </style>
@@ -663,110 +785,110 @@
             <div class="hero-content">
                 <h1 class="hero-title">Participation & Activities</h1>
                 <p class="hero-subtitle">
-                    Academic achievements, competition participations, conferences, exhibitions, and personal interests
+                    Academic achievements, competition participations, conferences, exhibitions, and personal creative pursuits
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Participations Section -->
+    <!-- Participations Section - Simple List -->
     <section class="participations-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Academic Participations & Achievements</h2>
                 <p class="section-subtitle">
-                    Timeline of academic competitions, conferences, exhibitions, and scholarships
+                    Timeline of academic competitions, conferences, exhibitions, scholarships, and selected coursework
                 </p>
             </div>
 
-            <div class="timeline-container">
+            <div class="participation-container">
                 <!-- Scholarship -->
-                <div class="timeline-item">
-                    <div class="timeline-year">
-                        <span class="year-box">2019 – 2025</span>
+                <div class="participation-card">
+                    <div class="participation-year">
+                        <span class="year-badge">2019 – 2025</span>
                     </div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Distinction and Creativity Agency (DCA) Academic Merit-Based Scholarship</h3>
-                        <p class="timeline-description">
-                            Awarded for academic excellence and outstanding performance in scientific competitions and research activities.
+                    <div class="participation-content">
+                        <h3 class="participation-title">Distinction and Creativity Agency (DCA) Academic Merit-Based Scholarship</h3>
+                        <p class="participation-description">
+                            Awarded for academic excellence and outstanding performance in scientific competitions and research activities. Renewable scholarship based on continuous academic achievement.
                         </p>
                     </div>
                 </div>
 
                 <!-- 2025 - Damascus International Fair -->
-                <div class="timeline-item">
-                    <div class="timeline-year">
-                        <span class="year-box">2025</span>
+                <div class="participation-card">
+                    <div class="participation-year">
+                        <span class="year-badge">2025</span>
                     </div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Damascus International Fair - Scientific Projects Pavilion</h3>
-                        <p class="timeline-description">
-                            Showcased robotics and AI research projects at the national scientific exhibition.
+                    <div class="participation-content">
+                        <h3 class="participation-title">Damascus International Fair - Scientific Projects Pavilion</h3>
+                        <p class="participation-description">
+                            Showcased robotics and AI research projects at the national scientific exhibition. Presented innovative solutions to industrial and academic visitors from across the region.
                         </p>
                     </div>
                 </div>
 
                 <!-- 2025 - InnoSync Conference -->
-                <div class="timeline-item">
-                    <div class="timeline-year">
-                        <span class="year-box">2025</span>
+                <div class="participation-card">
+                    <div class="participation-year">
+                        <span class="year-badge">2025</span>
                     </div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">InnoSync Conference - Junior Chamber International (JCI)</h3>
-                        <p class="timeline-description">
-                            Participated in innovation and leadership conference focusing on technology and entrepreneurship.
+                    <div class="participation-content">
+                        <h3 class="participation-title">InnoSync Conference - Junior Chamber International (JCI)</h3>
+                        <p class="participation-description">
+                            Participated in innovation and leadership conference focusing on technology and entrepreneurship. Engaged in workshops on startup development and digital transformation.
                         </p>
                     </div>
                 </div>
 
                 <!-- 2025 - Manara University Exhibition -->
-                <div class="timeline-item">
-                    <div class="timeline-year">
-                        <span class="year-box">2025</span>
+                <div class="participation-card">
+                    <div class="participation-year">
+                        <span class="year-badge">2025</span>
                     </div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Manara University Student Exhibition</h3>
-                        <p class="timeline-description">
-                            Presented academic projects and research achievements in university-wide exhibition.
+                    <div class="participation-content">
+                        <h3 class="participation-title">Manara University Student Exhibition</h3>
+                        <p class="participation-description">
+                            Presented academic projects and research achievements in university-wide exhibition. Demonstrated practical applications of robotics and control systems.
                         </p>
                     </div>
                 </div>
 
                 <!-- 2022 - Ada Lovelace Hackathon -->
-                <div class="timeline-item">
-                    <div class="timeline-year">
-                        <span class="year-box">2022</span>
+                <div class="participation-card">
+                    <div class="participation-year">
+                        <span class="year-badge">2022</span>
                     </div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">International Ada Lovelace Hackathon - Girls in AI Hackathon</h3>
-                        <p class="timeline-description">
-                            Competed in international AI hackathon focused on women in technology and artificial intelligence.
+                    <div class="participation-content">
+                        <h3 class="participation-title">International Ada Lovelace Hackathon - Girls in AI Hackathon</h3>
+                        <p class="participation-description">
+                            Competed in international AI hackathon focused on women in technology and artificial intelligence. Developed innovative solutions using machine learning algorithms.
                         </p>
                     </div>
                 </div>
 
                 <!-- 2021 - WRO Competition -->
-                <div class="timeline-item">
-                    <div class="timeline-year">
-                        <span class="year-box">2021</span>
+                <div class="participation-card">
+                    <div class="participation-year">
+                        <span class="year-badge">2021</span>
                     </div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">5th Place Nationwide in World Robot Olympiad (WRO) - Future Engineers Category</h3>
-                        <p class="timeline-description">
-                            Achieved 5th place in national robotics competition for autonomous robot design and programming.
+                    <div class="participation-content">
+                        <h3 class="participation-title">5th Place Nationwide in World Robot Olympiad (WRO) - Future Engineers Category</h3>
+                        <p class="participation-description">
+                            Achieved 5th place in national robotics competition for autonomous robot design and programming. Implemented advanced navigation algorithms and sensor integration.
                         </p>
                     </div>
                 </div>
 
                 <!-- Selected Coursework -->
-                <div class="timeline-item">
-                    <div class="timeline-year">
-                        <span class="year-box">2026</span>
+                <div class="participation-card">
+                    <div class="participation-year">
+                        <span class="year-badge">2026</span>
                     </div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">SELECTED COURSEWORK</h3>
-                        <p class="timeline-description">
-                            Advanced Robotics, Machine Learning, Control Systems, Computer Vision, Artificial Intelligence, Embedded Systems
+                    <div class="participation-content">
+                        <h3 class="participation-title">SELECTED COURSEWORK</h3>
+                        <p class="participation-description">
+                            Advanced Robotics, Machine Learning, Control Systems, Computer Vision, Artificial Intelligence, Embedded Systems, Digital Signal Processing, Neural Networks, Optimization Methods
                         </p>
                     </div>
                 </div>
@@ -774,13 +896,13 @@
         </div>
     </section>
 
-    <!-- Coursera Courses Slider -->
+    <!-- Enhanced Coursera Courses Slider -->
     <section class="courses-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Online Courses & Certifications</h2>
                 <p class="section-subtitle">
-                    Professional development through online learning platforms
+                    Continuous learning through online platforms to enhance technical skills and knowledge
                 </p>
             </div>
 
@@ -858,13 +980,13 @@
         </div>
     </section>
 
-    <!-- Hobbies Section -->
+    <!-- Enhanced Hobbies Section -->
     <section class="hobbies-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Personal Interests & Hobbies</h2>
+                <h2 class="section-title">Creative Pursuits & Personal Interests</h2>
                 <p class="section-subtitle">
-                    Creative pursuits and personal activities outside academics
+                    Exploring creativity through photography, sustainable crafts, and musical expression
                 </p>
             </div>
 
@@ -876,6 +998,10 @@
                             <i class="fas fa-camera"></i>
                         </div>
                         <h3 class="hobby-title">Nature Photography</h3>
+                        <p class="hobby-subtitle">Capturing the beauty of natural landscapes</p>
+                    </div>
+                    <div class="hobby-description">
+                        Exploring natural environments through the lens, focusing on landscapes, wildlife, and environmental conservation. Photography serves as both artistic expression and documentation of nature's beauty.
                     </div>
                     <div class="hobby-gallery nature-gallery">
                         <img src="https://lia202lia.github.io/imgs/10.png" alt="Nature Photography 1" class="hobby-img">
@@ -885,32 +1011,40 @@
                     </div>
                 </div>
 
-                <!-- Handmade Crafts -->
+                <!-- Handmade from Recycling Products -->
                 <div class="hobby-card">
                     <div class="hobby-header">
                         <div class="hobby-icon">
-                            <i class="fas fa-paint-brush"></i>
+                            <i class="fas fa-recycle"></i>
                         </div>
                         <h3 class="hobby-title">Handmade Crafts</h3>
+                        <p class="hobby-subtitle">Creating art from recycled materials</p>
+                    </div>
+                    <div class="hobby-description">
+                        Transforming discarded materials into beautiful, functional art pieces. Focus on sustainability, creativity, and giving new life to materials that would otherwise be wasted.
                     </div>
                     <div class="hobby-gallery handmade-gallery">
-                        <img src="https://lia202lia.github.io/imgs/20.jpg" alt="Handmade 1" class="hobby-img">
-                        <img src="https://lia202lia.github.io/imgs/21.jpg" alt="Handmade 2" class="hobby-img">
-                        <img src="https://lia202lia.github.io/imgs/22.jpg" alt="Handmade 3" class="hobby-img">
+                        <img src="https://lia202lia.github.io/imgs/20.jpg" alt="Recycled Craft 1" class="hobby-img">
+                        <img src="https://lia202lia.github.io/imgs/21.jpg" alt="Recycled Craft 2" class="hobby-img">
+                        <img src="https://lia202lia.github.io/imgs/22.jpg" alt="Recycled Craft 3" class="hobby-img">
                     </div>
                 </div>
 
-                <!-- Playing Piano -->
+                <!-- Piano and Music Playing -->
                 <div class="hobby-card">
                     <div class="hobby-header">
                         <div class="hobby-icon">
                             <i class="fas fa-music"></i>
                         </div>
-                        <h3 class="hobby-title">Playing Piano</h3>
+                        <h3 class="hobby-title">Piano & Music</h3>
+                        <p class="hobby-subtitle">Expressing through musical performance</p>
+                    </div>
+                    <div class="hobby-description">
+                        Playing piano as a form of creative expression and emotional outlet. Exploring classical and contemporary pieces, with focus on technical skill and emotional interpretation.
                     </div>
                     <div class="hobby-gallery piano-gallery">
-                        <img src="https://lia202lia.github.io/imgs/23.jpg" alt="Piano 1" class="hobby-img">
-                        <img src="https://lia202lia.github.io/imgs/24.jpg" alt="Piano 2" class="hobby-img">
+                        <img src="https://lia202lia.github.io/imgs/23.jpg" alt="Piano Performance 1" class="hobby-img">
+                        <img src="https://lia202lia.github.io/imgs/24.jpg" alt="Piano Performance 2" class="hobby-img">
                     </div>
                 </div>
             </div>
@@ -921,7 +1055,7 @@
     <footer class="site-footer">
         <div class="footer-inner">
             <h3 class="footer-name">Tala Khaddour</h3>
-            <p class="footer-tagline">Robotics · Intelligent Systems · Community Service</p>
+            <p class="footer-tagline">Robotics · Intelligent Systems · Creative Expression</p>
             <p class="footer-meta">
                 Robotics and Intelligent Systems Engineering | Manara University<br>
                 khaddour.tala@gmail.com | 
@@ -939,7 +1073,7 @@
             }
         });
 
-        // Courses Slider Functionality
+        // Enhanced Courses Slider Functionality
         const coursesSlider = document.getElementById('coursesSlider');
         const coursesSlides = document.querySelectorAll('.course-slide');
         const coursePrevBtn = document.getElementById('coursePrevBtn');
@@ -951,7 +1085,7 @@
         const totalCourseSlides = coursesSlides.length;
         const totalCoursePages = Math.ceil(totalCourseSlides / coursesPerView);
         
-        // Create dots for courses slider
+        // Create enhanced dots for courses slider
         for (let i = 0; i < totalCoursePages; i++) {
             const dot = document.createElement('button');
             dot.classList.add('course-dot');
@@ -967,9 +1101,13 @@
             const translateX = -currentCourseSlide * (slideWidth * coursesPerView);
             coursesSlider.style.transform = `translateX(${translateX}%)`;
             
-            // Update dots
+            // Update dots with animation
             courseDots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentCourseSlide);
+                if (index === currentCourseSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
             });
         }
         
@@ -992,8 +1130,16 @@
         courseNextBtn.addEventListener('click', nextCoursePage);
         coursePrevBtn.addEventListener('click', prevCoursePage);
         
-        // Auto slide every 5 seconds
-        setInterval(nextCoursePage, 5000);
+        // Auto slide every 5 seconds with pause on hover
+        let slideInterval = setInterval(nextCoursePage, 5000);
+        
+        coursesSlider.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+        
+        coursesSlider.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(nextCoursePage, 5000);
+        });
         
         // Initialize courses slider
         updateCoursesSlider();
@@ -1003,7 +1149,7 @@
             if (window.innerWidth <= 1024) {
                 // For tablet
                 coursesSlides.forEach(slide => {
-                    slide.style.flex = '0 0 calc(50% - 0.75rem)';
+                    slide.style.flex = '0 0 calc(50% - 1rem)';
                 });
             } else if (window.innerWidth <= 768) {
                 // For mobile
@@ -1013,10 +1159,33 @@
             } else {
                 // For desktop
                 coursesSlides.forEach(slide => {
-                    slide.style.flex = '0 0 calc(33.333% - 1rem)';
+                    slide.style.flex = '0 0 calc(33.333% - 1.33rem)';
                 });
             }
         }
+        
+        // Add hover effect to participation cards
+        document.querySelectorAll('.participation-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.boxShadow = '0 12px 30px rgba(5, 71, 94, 0.2)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 8px 25px var(--color-shadow)';
+            });
+        });
+        
+        // Add click effect to hobby cards
+        document.querySelectorAll('.hobby-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'translateY(-12px) scale(1.02)';
+                setTimeout(() => {
+                    this.style.transform = 'translateY(-10px)';
+                }, 200);
+            });
+        });
         
         // Initial call and event listener
         handleCoursesResize();
