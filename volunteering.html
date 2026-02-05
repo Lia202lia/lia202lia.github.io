@@ -32,7 +32,7 @@
             /* Typography */
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             --font-heading: 'Source Sans Pro', sans-serif;
-            --max-width: 1400px; /* Increased from 1200px */
+            --max-width: 1400px;
             --border-radius: 8px;
             --transition: all 0.3s ease;
         }
@@ -84,7 +84,7 @@
         .container {
             max-width: var(--max-width);
             margin: 0 auto;
-            padding: 0 2rem; /* Increased from 1.5rem */
+            padding: 0 2rem;
         }
 
         .text-center {
@@ -172,7 +172,7 @@
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 900px; /* Increased from 800px */
+            max-width: 900px;
             margin: 0 auto;
             text-align: center;
         }
@@ -197,27 +197,27 @@
 
         .section-header {
             text-align: center;
-            margin-bottom: 3rem; /* Increased from 2.5rem */
+            margin-bottom: 3rem;
         }
 
         .section-title {
-            font-size: 2.2rem; /* Increased from 2rem */
+            font-size: 2.2rem;
             color: var(--color-primary);
             margin-bottom: 0.75rem;
         }
 
         .section-subtitle {
             color: var(--color-text-light);
-            font-size: 1.05rem; /* Increased from 1rem */
-            max-width: 700px; /* Increased from 600px */
+            font-size: 1.05rem;
+            max-width: 700px;
             margin: 0 auto;
         }
 
-        /* Circular Image Volunteer Cards - WIDER LAYOUT */
+        /* Circular Image Volunteer Cards - COMPACT LAYOUT */
         .volunteer-container {
             display: flex;
             flex-direction: column;
-            gap: 2.5rem; /* Increased from 2rem */
+            gap: 2rem; /* Reduced from 2.5rem */
             margin: 0 auto;
         }
 
@@ -225,48 +225,54 @@
             background: var(--color-paper);
             border-radius: var(--border-radius);
             border: 1px solid var(--color-border);
-            overflow: hidden;
+            overflow: visible; /* Changed from hidden */
             transition: var(--transition);
             display: flex;
-            min-height: 280px; /* Increased from 220px */
+            min-height: 200px; /* Reduced from 280px */
             align-items: center;
-            padding: 2rem; /* Increased from 1.5rem */
+            padding: 1.5rem; /* Reduced from 2rem */
             width: 100%;
-            max-width: 1200px; /* Set max width */
+            max-width: 1200px;
             margin: 0 auto;
+            position: relative;
         }
 
         .volunteer-card:hover {
-            transform: translateY(-5px); /* Increased from -3px */
-            box-shadow: 0 8px 25px var(--color-shadow); /* Enhanced shadow */
+            transform: translateY(-3px); /* Reduced from -5px */
+            box-shadow: 0 5px 15px var(--color-shadow); /* Reduced shadow */
         }
 
-        /* Larger Circular Image Container */
+        /* Circular Image Container with Overlapping Effect */
         .volunteer-img-container {
-            flex: 0 0 220px; /* Increased from 150px */
-            margin-right: 2.5rem; /* Increased from 1.5rem */
+            flex: 0 0 140px; /* Reduced from 220px */
+            margin-right: 2rem;
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
+            z-index: 2;
         }
 
-        /* Much Larger Circular Image */
+        /* Thinner Circular Image Border with Overlap */
         .volunteer-img {
-            width: 180px; /* Increased from 120px */
-            height: 180px; /* Increased from 120px */
+            width: 120px; /* Reduced from 180px */
+            height: 120px; /* Reduced from 180px */
             object-fit: cover;
             border-radius: 50%;
-            border: 6px solid var(--color-secondary); /* Thicker border */
-            padding: 4px;
+            border: 2px solid var(--color-secondary); /* Thinner border */
+            padding: 2px; /* Reduced from 4px */
             background: var(--color-white);
             transition: var(--transition);
-            box-shadow: 0 6px 15px var(--color-shadow); /* Enhanced shadow */
+            box-shadow: 0 3px 10px var(--color-shadow); /* Reduced shadow */
+            position: relative;
+            z-index: 3;
+            margin-left: -20px; /* Overlaps with card border */
         }
 
         .volunteer-card:hover .volunteer-img {
-            transform: scale(1.08); /* Slightly more scale */
+            transform: scale(1.05); /* Reduced from 1.08 */
             border-color: var(--color-accent);
-            box-shadow: 0 8px 20px rgba(5, 71, 94, 0.2);
+            box-shadow: 0 5px 15px rgba(5, 71, 94, 0.15);
         }
 
         /* Wider Content Area */
@@ -274,66 +280,67 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            min-width: 0; /* Allows text to wrap properly */
+            min-width: 0;
+            padding-left: 10px; /* Offset for overlapping image */
         }
 
         .volunteer-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 1rem; /* Increased from 0.75rem */
+            margin-bottom: 0.75rem; /* Reduced from 1rem */
             flex-wrap: wrap;
-            gap: 0.75rem; /* Increased from 0.5rem */
+            gap: 0.5rem; /* Reduced from 0.75rem */
         }
 
         .volunteer-title {
-            font-size: 1.25rem; /* Increased from 1.1rem */
+            font-size: 1.15rem; /* Reduced from 1.25rem */
             color: var(--color-primary);
-            margin-bottom: 0.35rem; /* Increased from 0.25rem */
-            line-height: 1.4;
+            margin-bottom: 0.25rem;
+            line-height: 1.35;
         }
 
         .volunteer-period {
             background: rgba(18, 118, 134, 0.1);
             color: var(--color-secondary);
-            padding: 0.3rem 0.8rem; /* Increased padding */
-            border-radius: 12px; /* Slightly more rounded */
-            font-size: 0.85rem; /* Increased from 0.75rem */
+            padding: 0.25rem 0.7rem; /* Reduced padding */
+            border-radius: 10px;
+            font-size: 0.8rem; /* Reduced from 0.85rem */
             font-weight: 500;
             white-space: nowrap;
         }
 
         .volunteer-organization {
             color: var(--color-text-light);
-            font-size: 0.95rem; /* Increased from 0.85rem */
-            margin-bottom: 0.75rem; /* Increased from 0.5rem */
+            font-size: 0.9rem; /* Reduced from 0.95rem */
+            margin-bottom: 0.5rem; /* Reduced from 0.75rem */
             display: flex;
             align-items: center;
-            gap: 0.5rem; /* Increased from 0.4rem */
+            gap: 0.4rem; /* Reduced from 0.5rem */
         }
 
         .volunteer-organization i {
             color: var(--color-accent);
-            font-size: 1rem; /* Increased from 0.9rem */
+            font-size: 0.9rem; /* Reduced from 1rem */
         }
 
         .volunteer-description {
             color: var(--color-text);
-            font-size: 1rem; /* Increased from 0.9rem */
-            line-height: 1.6;
-            margin-bottom: 1rem; /* Increased from 0.75rem */
+            font-size: 0.9rem; /* Reduced from 1rem */
+            line-height: 1.5;
+            margin-bottom: 0.75rem; /* Reduced from 1rem */
             flex: 1;
         }
 
         .volunteer-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem; /* Increased from 0.4rem */
-            padding: 0.5rem 1rem; /* Increased padding */
+            gap: 0.4rem; /* Reduced from 0.5rem */
+            padding: 0.4rem 0.8rem; /* Reduced padding */
             background: var(--color-secondary);
             color: var(--color-white);
-            border-radius: 5px; /* Slightly more rounded */
-            font-size: 0.85rem; /* Increased from 0.8rem */
+            border-radius: 4px;
+            font-size: 0.8rem; /* Reduced from 0.85rem */
             text-decoration: none;
             transition: var(--transition);
             align-self: flex-start;
@@ -346,15 +353,15 @@
 
         /* ========= GALLERY SLIDER SECTION ========= */
         .gallery-section {
-            padding: 4rem 0; /* Increased from 3rem */
+            padding: 3rem 0; /* Reduced from 4rem */
             background: var(--color-paper);
-            margin-top: 3rem; /* Increased from 2rem */
+            margin-top: 2rem; /* Reduced from 3rem */
         }
 
         .gallery-container {
             position: relative;
-            max-width: 1200px; /* Increased from 1000px */
-            margin: 2rem auto 0; /* Increased margin */
+            max-width: 1200px;
+            margin: 1.5rem auto 0; /* Reduced margin */
             overflow: hidden;
             border-radius: var(--border-radius);
         }
@@ -362,13 +369,13 @@
         .gallery-slider {
             display: flex;
             transition: transform 0.5s ease;
-            gap: 1.5rem; /* Increased from 1rem */
-            padding: 0 1.5rem; /* Increased padding */
+            gap: 1.5rem;
+            padding: 0 1.5rem;
         }
 
         .gallery-slide {
-            flex: 0 0 calc(33.333% - 1rem); /* Adjusted for larger gap */
-            height: 250px; /* Increased from 220px */
+            flex: 0 0 calc(33.333% - 1rem);
+            height: 220px; /* Reduced from 250px */
             position: relative;
             border-radius: var(--border-radius);
             overflow: hidden;
@@ -378,8 +385,8 @@
         }
 
         .gallery-slide:hover {
-            transform: translateY(-7px); /* Increased from -5px */
-            box-shadow: 0 12px 25px var(--color-shadow); /* Enhanced shadow */
+            transform: translateY(-5px); /* Reduced from -7px */
+            box-shadow: 0 8px 20px var(--color-shadow); /* Reduced shadow */
         }
 
         .gallery-img {
@@ -390,7 +397,7 @@
         }
 
         .gallery-slide:hover .gallery-img {
-            transform: scale(1.07); /* Slightly more scale */
+            transform: scale(1.05); /* Reduced from 1.07 */
         }
 
         .gallery-overlay {
@@ -398,39 +405,39 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(5, 71, 94, 0.95)); /* Darker gradient */
+            background: linear-gradient(transparent, rgba(5, 71, 94, 0.9));
             color: white;
-            padding: 1.5rem; /* Increased from 1.2rem */
+            padding: 1rem; /* Reduced from 1.5rem */
         }
 
         .gallery-title {
-            font-size: 1.1rem; /* Increased from 1rem */
+            font-size: 1rem; /* Reduced from 1.1rem */
             font-weight: 600;
-            margin-bottom: 0.4rem; /* Increased from 0.3rem */
+            margin-bottom: 0.3rem;
         }
 
         .gallery-desc {
-            font-size: 0.85rem; /* Increased from 0.8rem */
-            opacity: 0.95;
+            font-size: 0.8rem; /* Reduced from 0.85rem */
+            opacity: 0.9;
         }
 
         .gallery-controls {
             display: flex;
             justify-content: center;
-            gap: 1.5rem; /* Increased from 1rem */
-            margin-top: 2rem; /* Increased from 1.5rem */
+            gap: 1rem; /* Reduced from 1.5rem */
+            margin-top: 1.5rem; /* Reduced from 2rem */
             align-items: center;
         }
 
         .slider-btn {
-            width: 45px; /* Increased from 40px */
-            height: 45px; /* Increased from 40px */
+            width: 40px; /* Reduced from 45px */
+            height: 40px; /* Reduced from 45px */
             border-radius: 50%;
             background: var(--color-secondary);
             color: var(--color-white);
             border: none;
             cursor: pointer;
-            font-size: 1.1rem; /* Increased from 1rem */
+            font-size: 1rem; /* Reduced from 1.1rem */
             transition: var(--transition);
             display: flex;
             align-items: center;
@@ -439,18 +446,18 @@
 
         .slider-btn:hover {
             background: var(--color-accent);
-            transform: scale(1.1);
+            transform: scale(1.05); /* Reduced from 1.1 */
         }
 
         .slider-dots {
             display: flex;
-            gap: 0.75rem; /* Increased from 0.5rem */
-            margin: 0 1.5rem; /* Increased from 1rem */
+            gap: 0.5rem; /* Reduced from 0.75rem */
+            margin: 0 1rem; /* Reduced from 1.5rem */
         }
 
         .slider-dot {
-            width: 12px; /* Increased from 10px */
-            height: 12px; /* Increased from 10px */
+            width: 10px; /* Reduced from 12px */
+            height: 10px; /* Reduced from 12px */
             border-radius: 50%;
             background: var(--color-border);
             border: none;
@@ -460,14 +467,14 @@
 
         .slider-dot.active {
             background: var(--color-secondary);
-            transform: scale(1.3); /* Increased from 1.2 */
+            transform: scale(1.2); /* Reduced from 1.3 */
         }
 
         /* ========= UNIFIED FOOTER ========= */
         .site-footer {
             background: var(--color-primary);
             color: var(--color-white);
-            padding: 2.5rem 0 2rem; /* Increased padding */
+            padding: 2rem 0 1.5rem;
             margin-top: auto;
             border-top: 3px solid var(--color-blue);
         }
@@ -476,12 +483,12 @@
             text-align: center;
             max-width: var(--max-width);
             margin: 0 auto;
-            padding: 0 2rem; /* Increased from 1.5rem */
+            padding: 0 2rem;
         }
 
         .footer-name {
             font-family: var(--font-heading);
-            font-size: 1.8rem; /* Increased from 1.6rem */
+            font-size: 1.6rem;
             color: var(--color-white);
             margin-bottom: 0.5rem;
             font-weight: 700;
@@ -489,18 +496,18 @@
 
         .footer-tagline {
             color: var(--color-light);
-            margin-bottom: 1.5rem; /* Increased from 1.25rem */
-            font-size: 1.05rem; /* Increased from 0.95rem */
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
         }
 
         .footer-meta {
-            font-size: 0.9rem; /* Increased from 0.85rem */
+            font-size: 0.85rem;
             color: rgba(255, 255, 255, 0.8);
-            max-width: 700px; /* Increased from 600px */
+            max-width: 700px;
             margin: 0 auto;
             line-height: 1.6;
             border-top: 1px solid rgba(255, 255, 255, 0.2);
-            padding-top: 1.5rem; /* Increased from 1.25rem */
+            padding-top: 1.25rem;
         }
 
         /* ========= RESPONSIVE ========= */
@@ -511,17 +518,17 @@
             
             .volunteer-card {
                 max-width: 1000px;
-                min-height: 260px;
+                min-height: 180px; /* Reduced */
             }
             
             .volunteer-img {
-                width: 160px;
-                height: 160px;
+                width: 100px; /* Reduced */
+                height: 100px; /* Reduced */
             }
             
             .volunteer-img-container {
-                flex: 0 0 200px;
-                margin-right: 2rem;
+                flex: 0 0 120px; /* Reduced */
+                margin-right: 1.5rem; /* Reduced */
             }
         }
 
@@ -547,21 +554,21 @@
             }
             
             .volunteer-card {
-                flex-direction: column;
+                flex-direction: row; /* Keep horizontal on mobile too */
                 min-height: auto;
-                text-align: center;
-                padding: 1.5rem;
+                padding: 1.25rem; /* Reduced */
                 max-width: 100%;
             }
             
             .volunteer-img-container {
-                margin-right: 0;
-                margin-bottom: 1.5rem;
+                margin-right: 1rem; /* Reduced */
+                margin-bottom: 0;
             }
             
             .volunteer-img {
-                width: 140px;
-                height: 140px;
+                width: 80px; /* Reduced */
+                height: 80px; /* Reduced */
+                margin-left: -15px; /* Reduced overlap */
             }
             
             .section-title {
@@ -570,24 +577,28 @@
             
             .gallery-slide {
                 flex: 0 0 calc(50% - 0.75rem);
-                height: 220px;
+                height: 180px; /* Reduced */
             }
             
             .volunteer-header {
                 flex-direction: column;
-                align-items: center;
+                align-items: flex-start; /* Keep left aligned */
             }
             
             .volunteer-period {
-                align-self: center;
+                align-self: flex-start;
             }
             
             .volunteer-link {
-                align-self: center;
+                align-self: flex-start;
             }
             
             .gallery-container {
                 max-width: 95%;
+            }
+            
+            .volunteer-content {
+                padding-left: 0; /* Remove offset on mobile */
             }
         }
 
@@ -597,34 +608,54 @@
             }
             
             .volunteer-card {
-                padding: 1.25rem;
+                padding: 1rem;
+                flex-direction: column; /* Stack on very small screens */
+                text-align: center;
             }
             
             .gallery-slide {
                 flex: 0 0 100%;
-                height: 200px;
+                height: 160px; /* Reduced */
             }
             
             .volunteer-img {
-                width: 120px;
-                height: 120px;
+                width: 70px; /* Reduced */
+                height: 70px; /* Reduced */
+                margin-left: 0; /* Remove overlap */
+                margin-bottom: 0.75rem;
+            }
+            
+            .volunteer-img-container {
+                margin-right: 0;
             }
             
             .gallery-overlay {
-                padding: 1.25rem;
+                padding: 0.75rem; /* Reduced */
             }
             
             .gallery-title {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
             
             .gallery-desc {
-                font-size: 0.8rem;
+                font-size: 0.75rem;
             }
             
             .slider-btn {
-                width: 40px;
-                height: 40px;
+                width: 35px; /* Reduced */
+                height: 35px; /* Reduced */
+            }
+            
+            .volunteer-header {
+                align-items: center; /* Center on mobile */
+            }
+            
+            .volunteer-period {
+                align-self: center;
+            }
+            
+            .volunteer-link {
+                align-self: center;
             }
         }
     </style>
