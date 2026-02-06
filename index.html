@@ -9,23 +9,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* ========= UNIFIED PROFESSIONAL COLOR SCHEME ========= */
+        /* ========= REFINED PROFESSIONAL ACADEMIC COLOR SCHEME ========= */
         :root {
-            /* Academic Crimson-Navy Palette */
-            --color-primary: #001F3F; /* Navy - Intelligence, Trust */
-            --color-secondary: #A51C30; /* Crimson - Confidence, Academic */
-            --color-accent: #FFD700; /* Gold - Warmth */
-            --color-light: #F8F8F8; /* Light Gray - Backgrounds */
-            --color-blue: #001F3F; /* Navy - Highlights */
+            /* Academic Deep Navy & Burgundy Palette */
+            --color-primary: #0A2342;     /* Oxford Blue - Intelligence, Depth */
+            --color-secondary: #5D001E;   /* Burgundy - Academic Excellence */
+            --color-accent: #B3A369;      /* Gold - Prestige, Warmth */
+            --color-light: #FAFAFA;       /* Off-White - Clean Background */
+            --color-blue: #1A365D;        /* Deep Navy - Professionalism */
            
             /* Neutral Colors */
             --color-bg: #FFFFFF;
-            --color-paper: #F8F8F8;
-            --color-text: #333333;
-            --color-text-light: #666666;
-            --color-border: #DDDDDD;
+            --color-paper: #F5F5F7;       /* Slightly warm light gray */
+            --color-text: #2C3E50;        /* Charcoal - Better readability */
+            --color-text-light: #6B7280;  /* Muted gray for secondary text */
+            --color-border: #E5E7EB;      /* Soft gray border */
             --color-white: #FFFFFF;
-            --color-shadow: rgba(0, 31, 63, 0.1);
+            --color-shadow: rgba(10, 35, 66, 0.08); /* Subtle shadow */
            
             /* Typography */
             --font-sans: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -95,7 +95,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 3px solid var(--color-blue);
+            border-bottom: 3px solid var(--color-accent);
         }
         .nav-inner {
             display: flex;
@@ -112,7 +112,7 @@
         .nav-logo-mark {
             width: 36px;
             height: 36px;
-            background: linear-gradient(135deg, var(--color-blue), var(--color-accent));
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
             color: var(--color-white);
             border-radius: 6px;
             display: flex;
@@ -140,10 +140,10 @@
             transition: var(--transition);
         }
         .nav-link:hover {
-            color: var(--color-light);
+            color: var(--color-accent);
         }
         .nav-link-active {
-            color: var(--color-light);
+            color: var(--color-accent);
             font-weight: 600;
         }
         /* ========= MAIN CONTENT LAYOUT ========= */
@@ -173,8 +173,8 @@
             border: 6px solid var(--color-light);
             box-shadow:
                 0 8px 32px var(--color-shadow),
-                0 0 0 4px rgba(248, 248, 248, 0.3),
-                inset 0 0 20px rgba(248, 248, 248, 0.1);
+                0 0 0 4px rgba(245, 245, 247, 0.3),
+                inset 0 0 20px rgba(245, 245, 247, 0.1);
             display: block;
             margin: 0 auto 2rem;
             width: 70%;
@@ -193,7 +193,7 @@
             right: -12px;
             bottom: -12px;
             border-radius: 50%;
-            border: 3px solid rgba(0, 31, 63, 0.3);
+            border: 3px solid rgba(179, 163, 105, 0.3);
             z-index: -1;
             animation: pulse 3s infinite;
         }
@@ -206,8 +206,8 @@
             border-color: var(--color-accent);
             box-shadow:
                 0 12px 40px var(--color-shadow),
-                0 0 0 6px rgba(248, 248, 248, 0.4),
-                inset 0 0 30px rgba(248, 248, 248, 0.2);
+                0 0 0 6px rgba(245, 245, 247, 0.4),
+                inset 0 0 30px rgba(245, 245, 247, 0.2);
         }
         .card-body {
             text-align: center;
@@ -384,7 +384,7 @@
             font-size: 0.95rem;
             margin-top: 1rem;
             padding: 0.625rem 1.25rem;
-            background: rgba(165, 28, 48, 0.1);
+            background: rgba(93, 0, 30, 0.08);
             border-radius: var(--border-radius);
             transition: var(--transition);
         }
@@ -406,7 +406,7 @@
             color: var(--color-white);
             padding: 2.5rem 0 2rem;
             margin-top: auto;
-            border-top: 3px solid var(--color-blue);
+            border-top: 3px solid var(--color-accent);
         }
         .footer-inner {
             text-align: center;
@@ -422,7 +422,7 @@
             font-weight: 700;
         }
         .footer-tagline {
-            color: var(--color-light);
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 1.5rem;
             font-size: 1rem;
         }
@@ -432,8 +432,14 @@
             max-width: 600px;
             margin: 0 auto;
             line-height: 1.6;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
             padding-top: 1.5rem;
+        }
+        .footer-meta a {
+            color: var(--color-accent) !important;
+        }
+        .footer-meta a:hover {
+            color: var(--color-white) !important;
         }
         /* ========= RESPONSIVE ========= */
         @media (max-width: 992px) {
