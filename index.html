@@ -7,29 +7,29 @@
     <meta name="description" content="Academic portfolio of Tala Khaddour, specializing in robotics, intelligent systems, and sustainable energy solutions.">
     <!-- Font Awesome & Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
     <style>
         /* ========= UNIFIED PROFESSIONAL COLOR SCHEME ========= */
         :root {
-            /* Suggested Academic Color Palette */
-            --color-primary: #1F2C3A; /* Heritage Navy */
-            --color-secondary: #415C7F; /* Slate Blue */
-            --color-accent: #C9A24D; /* Warm Gold */
-            --color-light: #F7F7F5; /* Ivory */
-            --color-blue: #415C7F; /* Slate Blue for Highlights */
+            /* Blue-Green Academic Palette */
+            --color-primary: #264348; /* Dark Blue-Green - Primary */
+            --color-secondary: #367588; /* Blue-Green - Secondary */
+            --color-accent: #5d8aa8; /* Light Blue - Accent */
+            --color-light: #E0F2F1; /* Light Teal - Backgrounds */
+            --color-blue: #367588; /* Blue-Green - Highlights */
            
             /* Neutral Colors */
             --color-bg: #FFFFFF;
-            --color-paper: #F7F7F5;
-            --color-text: #1C1F24;
+            --color-paper: #F8FAFC;
+            --color-text: #1A2A36;
             --color-text-light: #5A6B7A;
             --color-border: #E2E8F0;
             --color-white: #FFFFFF;
-            --color-shadow: rgba(31, 44, 58, 0.1);
+            --color-shadow: rgba(38, 67, 72, 0.1);
            
             /* Typography */
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            --font-serif: 'Source Serif Pro', Georgia, 'Times New Roman', serif;
+            --font-sans: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
             --max-width: 1200px;
             --border-radius: 8px;
             --transition: all 0.3s ease;
@@ -172,9 +172,9 @@
             border-radius: 50% !important;
             border: 6px solid var(--color-light);
             box-shadow:
-                0 8px 32px var(--color-shadow),
-                0 0 0 4px rgba(247, 247, 245, 0.3),
-                inset 0 0 20px rgba(247, 247, 245, 0.1);
+                0 8px 32px rgba(54, 117, 136, 0.2),
+                0 0 0 4px rgba(224, 242, 241, 0.3),
+                inset 0 0 20px rgba(224, 242, 241, 0.1);
             display: block;
             margin: 0 auto 2rem;
             width: 70%;
@@ -193,7 +193,7 @@
             right: -12px;
             bottom: -12px;
             border-radius: 50%;
-            border: 3px solid rgba(31, 44, 58, 0.3);
+            border: 3px solid rgba(54, 117, 136, 0.3);
             z-index: -1;
             animation: pulse 3s infinite;
         }
@@ -205,16 +205,16 @@
             transform: scale(1.02) rotate(2deg);
             border-color: var(--color-accent);
             box-shadow:
-                0 12px 40px var(--color-shadow),
-                0 0 0 6px rgba(247, 247, 245, 0.4),
-                inset 0 0 30px rgba(247, 247, 245, 0.2);
+                0 12px 40px rgba(54, 117, 136, 0.3),
+                0 0 0 6px rgba(224, 242, 241, 0.4),
+                inset 0 0 30px rgba(224, 242, 241, 0.2);
         }
         .card-body {
             text-align: center;
             padding: 2rem;
             background: var(--color-paper);
             border-radius: var(--border-radius);
-            box-shadow: 0 6px 24px var(--color-shadow);
+            box-shadow: 0 6px 24px rgba(54, 117, 136, 0.1);
             border: 1px solid var(--color-border);
         }
         .card-body h4 {
@@ -262,7 +262,7 @@
             text-decoration: none;
             border-color: transparent;
             transform: translateX(8px);
-            box-shadow: 0 6px 20px rgba(65, 92, 127, 0.3);
+            box-shadow: 0 6px 20px rgba(54, 117, 136, 0.3);
         }
         .social-icons li a:hover .fa-fw {
             color: var(--color-white);
@@ -317,13 +317,13 @@
             border-radius: var(--border-radius);
             background: var(--color-paper);
             border-left: 4px solid var(--color-secondary);
-            box-shadow: 0 4px 16px var(--color-shadow);
+            box-shadow: 0 4px 16px rgba(54, 117, 136, 0.1);
             transition: var(--transition);
             border: 1px solid var(--color-border);
         }
         .education-item:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 32px var(--color-shadow);
+            box-shadow: 0 8px 32px rgba(54, 117, 136, 0.2);
             border-left-color: var(--color-accent);
         }
         .education-item:last-child {
@@ -339,7 +339,7 @@
             font-weight: 600;
             margin-bottom: 1.25rem;
             letter-spacing: 0.03em;
-            box-shadow: 0 3px 10px rgba(65, 92, 127, 0.3);
+            box-shadow: 0 3px 10px rgba(54, 117, 136, 0.3);
         }
         .education-title {
             font-weight: 700;
@@ -384,7 +384,7 @@
             font-size: 0.95rem;
             margin-top: 1rem;
             padding: 0.625rem 1.25rem;
-            background: rgba(65, 92, 127, 0.1);
+            background: rgba(93, 138, 168, 0.1);
             border-radius: var(--border-radius);
             transition: var(--transition);
         }
