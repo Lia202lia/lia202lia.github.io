@@ -11,21 +11,21 @@
     <style>
         /* ========= UNIFIED PROFESSIONAL COLOR SCHEME ========= */
         :root {
-            /* Academic Blue and Gold Palette Inspired by Universities like Berkeley */
-            --color-primary: #003262; /* Deep Blue - Primary */
-            --color-secondary: #3B7EA1; /* Mid Blue - Secondary */
-            --color-accent: #FDB515; /* Gold - Accent */
-            --color-light: #EEF4F8; /* Light Blue - Backgrounds */
-            --color-blue: #3B7EA1; /* Mid Blue - Highlights */
+            /* Suggested Academic Color Palette */
+            --color-primary: #1F2C3A; /* Heritage Navy */
+            --color-secondary: #415C7F; /* Slate Blue */
+            --color-accent: #C9A24D; /* Warm Gold */
+            --color-light: #F7F7F5; /* Ivory */
+            --color-blue: #415C7F; /* Slate Blue for Highlights */
            
             /* Neutral Colors */
             --color-bg: #FFFFFF;
-            --color-paper: #F8FAFC;
-            --color-text: #333333;
-            --color-text-light: #666666;
-            --color-border: #DDDDDD;
+            --color-paper: #F7F7F5;
+            --color-text: #1C1F24;
+            --color-text-light: #5A6B7A;
+            --color-border: #E2E8F0;
             --color-white: #FFFFFF;
-            --color-shadow: rgba(0, 50, 98, 0.1);
+            --color-shadow: rgba(31, 44, 58, 0.1);
            
             /* Typography */
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -172,9 +172,9 @@
             border-radius: 50% !important;
             border: 6px solid var(--color-light);
             box-shadow:
-                0 8px 32px rgba(0, 50, 98, 0.2),
-                0 0 0 4px rgba(238, 244, 248, 0.3),
-                inset 0 0 20px rgba(238, 244, 248, 0.1);
+                0 8px 32px var(--color-shadow),
+                0 0 0 4px rgba(247, 247, 245, 0.3),
+                inset 0 0 20px rgba(247, 247, 245, 0.1);
             display: block;
             margin: 0 auto 2rem;
             width: 70%;
@@ -193,7 +193,7 @@
             right: -12px;
             bottom: -12px;
             border-radius: 50%;
-            border: 3px solid rgba(0, 50, 98, 0.3);
+            border: 3px solid rgba(31, 44, 58, 0.3);
             z-index: -1;
             animation: pulse 3s infinite;
         }
@@ -205,16 +205,16 @@
             transform: scale(1.02) rotate(2deg);
             border-color: var(--color-accent);
             box-shadow:
-                0 12px 40px rgba(0, 50, 98, 0.3),
-                0 0 0 6px rgba(238, 244, 248, 0.4),
-                inset 0 0 30px rgba(238, 244, 248, 0.2);
+                0 12px 40px var(--color-shadow),
+                0 0 0 6px rgba(247, 247, 245, 0.4),
+                inset 0 0 30px rgba(247, 247, 245, 0.2);
         }
         .card-body {
             text-align: center;
             padding: 2rem;
             background: var(--color-paper);
             border-radius: var(--border-radius);
-            box-shadow: 0 6px 24px rgba(0, 50, 98, 0.1);
+            box-shadow: 0 6px 24px var(--color-shadow);
             border: 1px solid var(--color-border);
         }
         .card-body h4 {
@@ -262,7 +262,7 @@
             text-decoration: none;
             border-color: transparent;
             transform: translateX(8px);
-            box-shadow: 0 6px 20px rgba(59, 126, 161, 0.3);
+            box-shadow: 0 6px 20px rgba(65, 92, 127, 0.3);
         }
         .social-icons li a:hover .fa-fw {
             color: var(--color-white);
@@ -317,13 +317,13 @@
             border-radius: var(--border-radius);
             background: var(--color-paper);
             border-left: 4px solid var(--color-secondary);
-            box-shadow: 0 4px 16px rgba(59, 126, 161, 0.1);
+            box-shadow: 0 4px 16px var(--color-shadow);
             transition: var(--transition);
             border: 1px solid var(--color-border);
         }
         .education-item:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 32px rgba(59, 126, 161, 0.2);
+            box-shadow: 0 8px 32px var(--color-shadow);
             border-left-color: var(--color-accent);
         }
         .education-item:last-child {
@@ -339,7 +339,7 @@
             font-weight: 600;
             margin-bottom: 1.25rem;
             letter-spacing: 0.03em;
-            box-shadow: 0 3px 10px rgba(59, 126, 161, 0.3);
+            box-shadow: 0 3px 10px rgba(65, 92, 127, 0.3);
         }
         .education-title {
             font-weight: 700;
@@ -384,7 +384,7 @@
             font-size: 0.95rem;
             margin-top: 1rem;
             padding: 0.625rem 1.25rem;
-            background: rgba(59, 126, 161, 0.1);
+            background: rgba(65, 92, 127, 0.1);
             border-radius: var(--border-radius);
             transition: var(--transition);
         }
