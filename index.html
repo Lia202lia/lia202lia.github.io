@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Tala Khaddour | Robotics & Intelligent Systems Engineer</title>
+<meta name="description" content="Academic portfolio of Tala Khaddour, specializing in robotics, intelligent systems, and sustainable energy solutions.">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
@@ -30,69 +32,181 @@
     --transition: all 0.3s ease;
 }
 
-/* ===== Base styles unchanged ===== */
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-    font-family:var(--font-sans);
-    background:var(--color-bg);
-    color:var(--color-text);
-    line-height:1.7;
-    display:flex;
-    flex-direction:column;
-    min-height:100vh
+/* ========= BASE ========= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+a:hover {
+    color: var(--color-accent);
+}
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
-/* ===== Header ===== */
-.site-header{
-    background:var(--color-primary);
-    border-bottom:3px solid var(--color-accent);
-    position:sticky;top:0;z-index:1000
+/* ========= HEADER ========= */
+.site-header {
+    background: var(--color-primary);
+    border-bottom: 3px solid var(--color-accent);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
-.nav-inner{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:1rem 0
+.nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
 }
-.nav-logo-text{
-    color:var(--color-white);
-    font-family:var(--font-serif);
-    font-size:1.3rem;
-    font-weight:700
+.nav-logo-text {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-white);
 }
-.nav-links{
-    list-style:none;
-    display:flex;
-    gap:1.5rem
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
 }
-.nav-link{
-    color:rgba(255,255,255,0.9);
-    font-weight:500;
-    transition:var(--transition)
+.nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
 }
 .nav-link:hover,
-.nav-link-active{color:var(--color-light)}
-
-/* ===== Footer ===== */
-.site-footer{
-    background:var(--color-primary);
-    border-top:3px solid var(--color-accent);
-    color:var(--color-white);
-    margin-top:auto;
-    padding:2.5rem 0
+.nav-link-active {
+    color: var(--color-light);
 }
-.footer-tagline{color:var(--color-light)}
+
+/* ========= MAIN LAYOUT ========= */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+}
+.col-sm-4 {
+    flex: 0 0 33.333%;
+    padding: 1rem;
+}
+.col-sm-8 {
+    flex: 0 0 66.666%;
+    padding: 1rem;
+}
+
+/* ========= PROFILE CARD ========= */
+.rounded-circle {
+    border-radius: 50%;
+    border: 6px solid var(--color-light);
+    width: 70%;
+    max-width: 260px;
+    display: block;
+    margin: 0 auto 2rem;
+}
+.card-body {
+    background: var(--color-paper);
+    padding: 2rem;
+    text-align: center;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+}
+.card-body h4 {
+    font-family: var(--font-serif);
+    font-size: 1.9rem;
+    color: var(--color-primary);
+}
+.card-body p {
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+}
+
+/* ========= SOCIAL LINKS ========= */
+.social-icons {
+    list-style: none;
+    padding: 0;
+}
+.social-icons li {
+    margin-bottom: 1rem;
+}
+.social-icons a {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+}
+.social-icons a:hover {
+    background: var(--color-secondary);
+    color: var(--color-white);
+}
+.social-icons i {
+    margin-right: 1rem;
+}
+
+/* ========= CONTENT ========= */
+.content-area h4 {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    color: var(--color-primary);
+    margin: 2.5rem 0 1rem;
+    border-bottom: 3px solid var(--color-accent);
+    padding-bottom: 0.5rem;
+}
+.education-item {
+    background: var(--color-paper);
+    padding: 1.75rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--color-secondary);
+    margin-bottom: 2rem;
+}
+
+/* ========= FOOTER ========= */
+.site-footer {
+    background: var(--color-primary);
+    border-top: 3px solid var(--color-accent);
+    color: var(--color-white);
+    margin-top: auto;
+    padding: 2.5rem 0;
+    text-align: center;
+}
+.footer-tagline {
+    color: var(--color-light);
+}
+
+/* ========= RESPONSIVE ========= */
+@media (max-width: 900px) {
+    .col-sm-4,
+    .col-sm-8 {
+        flex: 0 0 100%;
+    }
+}
 </style>
 </head>
 
 <body>
 
+<!-- ========= HEADER ========= -->
 <header class="site-header">
 <div class="container">
 <nav class="nav-inner">
-<a href="index.html" class="nav-logo">
 <span class="nav-logo-text">Tala Khaddour</span>
-</a>
 <ul class="nav-links">
 <li><a href="index.html" class="nav-link nav-link-active">Name</a></li>
 <li><a href="professional experience.html" class="nav-link">Professional Experience</a></li>
@@ -104,18 +218,50 @@ body{
 </div>
 </header>
 
+<!-- ========= MAIN ========= -->
+<div class="container">
+<div class="row">
+
+<div class="col-sm-4">
+<img src="imgs/profile.jpg" alt="Portrait of Tala Khaddour" class="rounded-circle">
+<div class="card-body">
+<h4>Tala Khaddour</h4>
+<p>Robotics & Intelligent Systems Engineer</p>
+<ul class="social-icons">
+<li><a href="mailto:khaddour.tala@gmail.com"><i class="fa fa-envelope"></i>Email</a></li>
+<li><a href="https://www.linkedin.com/in/tala-khaddour/"><i class="fab fa-linkedin"></i>LinkedIn</a></li>
+<li><a href="https://github.com/KHADDOUR-TALA"><i class="fab fa-github"></i>GitHub</a></li>
+<li><a href="https://khaddour-tala.github.io/"><i class="fa fa-globe"></i>Website</a></li>
+</ul>
+</div>
+</div>
+
+<div class="col-sm-8 content-area">
+<h4>About Me</h4>
+<p>I am a robotics engineer specializing in intelligent systems and sustainable energy solutions.</p>
+
+<h4>Education</h4>
+<div class="education-item">
+<strong>BSc Robotics & Intelligent Systems Engineering</strong><br>
+Manara University — GPA: 3.28/4
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ========= FOOTER ========= -->
 <footer class="site-footer">
-<div class="footer-inner">
 <h3>Tala Khaddour</h3>
 <p class="footer-tagline">Robotics · Intelligent Systems · Sustainable Energy</p>
-</div>
 </footer>
 
 <script>
-document.querySelectorAll('.nav-link').forEach(link=>{
-if(link.href===window.location.href){
-link.classList.add('nav-link-active');
-}});
+document.querySelectorAll('.nav-link').forEach(link => {
+    if (link.href === window.location.href) {
+        link.classList.add('nav-link-active');
+    }
+});
 </script>
 
 </body>
